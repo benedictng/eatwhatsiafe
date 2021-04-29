@@ -1,5 +1,6 @@
   import React, { Component } from 'react'
-  
+  import NextButton from '../common/elements/NextButton'
+
   export class Entrance extends Component {
         continue = e => {
             this.props.handleChange('size');
@@ -12,7 +13,9 @@
                 <div>
                 <p> Eatwhatsia... </p>
                 <p> Dont beta, force your friends to decide together lah</p>
-                <button type="button" onClick = {this.continue}>Create food room</button>
+                <NextButton 
+                        nextStep = {this.props.nextStep}
+                    />
                 </div>
             )
       }

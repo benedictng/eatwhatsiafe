@@ -1,17 +1,11 @@
 
-  import React, { Component } from 'react'
+import React, { Component } from 'react'
+  
+import BackButton from '../common/BackButton'
+import NextButton from '../common/elements/NextButton'
+
   
   export class PartySize extends Component {
-    continue = e => {
-        this.props.handleChange('size');
-        e.preventDefault();
-        this.props.nextStep();
-        }
-
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    }
     
     render() {
         return (
@@ -35,10 +29,14 @@
                     </datalist>
                 </form>
                 <br />
-                <button onClick={this.continue}>Next</button> 
+                <NextButton 
+                        nextStep = {this.props.nextStep}
+                    />
                 <br />
                 <br />
-                <button onClick={this.back}>Back</button> 
+                <BackButton 
+                        prevStep = {this.props.prevStep}
+                    />
                 <p>{this.props.values.size}</p>
             </div>
             )
