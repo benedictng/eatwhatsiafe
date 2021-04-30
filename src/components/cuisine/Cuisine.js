@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BackButton from '../common/BackButton'
-import NextButton from '../common/elements/NextButton'
+import NextButton from '../common/NextButton'
 
 
 export class Cuisine extends Component {

@@ -1,5 +1,5 @@
   import React, { Component } from 'react'
-  import NextButton from '../common/elements/NextButton'
+  import NextButton from '../common/NextButton'
 
   export class Entrance extends Component {
         continue = e => {
