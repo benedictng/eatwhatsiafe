@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import BackButton from '../common/BackButton'
+import NextButton from '../common/elements/NextButton'
 
 export class DietRestrict extends Component {
     continue = e => {
@@ -6,11 +8,7 @@ export class DietRestrict extends Component {
         this.props.nextStep();
         }
 
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    }
-    
+       
     render() {
         return (
             <div>
@@ -29,10 +27,14 @@ export class DietRestrict extends Component {
                     </datalist>
                 </form>
                 <br />
-                <button onClick={this.continue}>Next</button> 
+                <NextButton 
+                        nextStep = {this.props.nextStep}
+                    />                
                 <br />
                 <br />
-                <button onClick={this.back}>Back</button> 
+                <BackButton 
+                        prevStep = {this.props.prevStep}
+                    />
                 <p>{this.props.values.dietRest}</p>
             </div>
             )

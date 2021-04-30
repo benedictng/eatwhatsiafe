@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Entrance from './Entrance';
-import PartySize from './PartySize';
-import Cuisine from './Cuisine';
-import DietRestrict from './DietRestrict'
-import Location from './Location'
+import Entrance from '../entrance/Entrance';
+import PartySize from '../party-size/PartySize';
+import Cuisine from '../cuisine/Cuisine';
+import DietRestrict from '../diet-restrict/DietRestrict'
+import Location from '../location/Location'
+import BackButton from '../common/BackButton'
+import NextButton from '../common/elements/NextButton'
 
 
 
@@ -96,6 +98,9 @@ export class UserForm extends Component {
                         <p>{this.state.cuisineVeto}</p>
                         <p>{this.state.dietRest}</p>
                         <p>{this.state.loc}</p>
+                        <BackButton 
+                        prevStep = {this.prevStep}
+                        />
                     </div>
                 )
 

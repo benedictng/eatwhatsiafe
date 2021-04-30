@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import BackButton from '../common/BackButton'
+import NextButton from '../common/elements/NextButton'
+
 
 export class Cuisine extends Component {
     continue = e => {
@@ -6,10 +9,7 @@ export class Cuisine extends Component {
         this.props.nextStep();
         }
 
-    back = e => {
-        e.preventDefault();
-        this.props.prevStep();
-    }
+   
 
     render() {
         const { handleChange } = this.props;
@@ -25,10 +25,14 @@ export class Cuisine extends Component {
                         </select>
                         <br />
                         <br />
-                        <button onClick={this.continue}>Submit</button>
+                        <NextButton 
+                        nextStep = {this.props.nextStep}
+                    />                
                 </form>
                 <br />
-                <button onClick={this.back}>Back</button>
+                <BackButton 
+                        prevStep = {this.props.prevStep}
+                    />
                 <p>{this.props.values.size}</p>
             </div>
         )
