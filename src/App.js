@@ -1,15 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LandingPage from './components/landing-page';
 import { UserForm } from './components/user-form/UserForm';
 
 function App() {
-  state = {
-    step: 1
-  }
 
   return (
     <div className="App">
-      <UserForm />
+      <Router>
+        <Switch>
+          <Route exact path='/'><LandingPage /></Route>
+          <Route path='/preferences'><UserForm /></Route>
+          {/* <Route path='/restaurant-details'></Route> */}
+        </Switch>
+      </Router>
     </div>
   );
 }

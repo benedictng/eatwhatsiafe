@@ -5,7 +5,7 @@ import Cuisine from '../cuisine/Cuisine';
 import DietRestrict from '../diet-restrict/DietRestrict'
 import Location from '../location/Location'
 import BackButton from '../common/BackButton'
-import NextButton from '../common/elements/NextButton'
+import NextButton from '../common/NextButton'
 
 
 
