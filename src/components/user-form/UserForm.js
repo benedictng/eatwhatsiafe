@@ -12,11 +12,33 @@ import NextButton from '../common/NextButton'
 
 export class UserForm extends Component {
     state = {
+        //step decides which page of the form to show
         step: 1,
+        
+        //Party size
         size: 0,
-        cuisineVeto: 0,
-        dietRest: 0,
+
+        //cuisineSelected
+        selectedChinese: true,
+        selectedWestern: true,
+        selectedJapanese: true,
+        selectedKorean: true,
+
+        //cuisineVeto
+        vetoChinese: 0,
+        vetoWestern: 0,
+        vetoJapanese: 0,
+        vetoKorean: 0,
+
+        //location
+        //1 = East
+        //2 = West
+        //3 = North
+        //4 = South
         loc: 0,
+
+        dietRest: 0,
+       
     }
 
     // Proceed to next step
@@ -40,10 +62,21 @@ export class UserForm extends Component {
         this.setState({[input]: e.target.value});
     }
 
+    handleChecked = input => e => {
+        this.setState({[input]: e.target.checked});
+    }
+    // Handle cuisineVeto selections
+    //handleNestedChange = input => e => {}
+        
+
+
     render() {
         const { step } = this.state;
         const { size, cuisineVeto, dietRest, loc } = this.state;
         const values = { size, cuisineVeto, dietRest, loc };
+        const { selectedChinese, selectedWestern, selectedJapanese, selectedKorean } = this.state;
+        const selectedValues = { selectedChinese, selectedWestern, selectedJapanese, selectedKorean }
+
 
         switch(step) {
             case 1: 
@@ -69,6 +102,8 @@ export class UserForm extends Component {
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
                         handleChange = {this.handleChange}
+                        handleChecked = {this.handleChecked}
+                        selectedValues = {selectedValues}
                         values = {values}
                     />
                 )
@@ -78,6 +113,7 @@ export class UserForm extends Component {
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
                         handleChange = {this.handleChange}
+                        handleSelect = {this.handleSelect}
                         values = {values}
                     />
                 )
