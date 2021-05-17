@@ -1,4 +1,4 @@
-# Getting Started with BENEDICT IS FAT
+# Getting Started with QUEK IS SPECIAL
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
