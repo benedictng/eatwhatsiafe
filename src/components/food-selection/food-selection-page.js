@@ -9,7 +9,8 @@ import ProductInformation from "./productInformation";
 import Reviews from "./reviews";
 import Tags from "./tags";
 
-import { carouselData } from "./carouselData";
+
+import { allData } from "./allData";
 
 function FoodSelectionPage() {
   return (
@@ -17,7 +18,9 @@ function FoodSelectionPage() {
       <Container>
         <Col>
           <Row>
-            <Carousel slides={carouselData} />
+            <Carousel photos={allData.data[0].photos}
+            
+            />
           </Row>
           <Row>
             <Tags />
