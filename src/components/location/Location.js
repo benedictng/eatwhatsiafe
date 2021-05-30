@@ -35,7 +35,7 @@ export class Location extends Component {
                 <BackButton 
                         prevStep = {this.props.prevStep}
                     />
-                <p>{this.props.values.loc}</p>
+                <p>location = {this.props.locValues.loc}</p>
             </div>
             )
       }

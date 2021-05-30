@@ -5,43 +5,67 @@ import SelectionButton from '../common/SelectionButton'
 
 
 export class Cuisine extends Component {
-
-    state = {
-        selectedChinese: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            chinese: 0,
+            korean: 0,
+            western: 0,
+            japanese: 0
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
     
+        this.setState({
+          [name]: value
+        });
+    }  
+     
 
     render() {
-        const { handleChange } = this.props;
-        const { handleChecked } = this.props;
         return (
             <div>
                 <p> Me no like this</p>
-                <form >
-                        <select id="cuisineVeto" name="cuisineVeto" multiple onChange = {this.props.handleChange('cuisineVeto')}>
-                            <option value="1">Chinese</option>
-                            <option value="2">Western</option>
-                            <option value="3">Japanese</option>
-                            <option value="4">Korean</option>
-                        </select>
-                        <br />
-                        <br />                                      
-                </form>
-
-                <button onclick= {this.props.handleChange('loc')}>
-                    change loc value
-                </button> 
-                <br />
-
-                <input type="checkbox" checked={this.props.selectedValues.selectedChinese} onChange = {this.props.handleChecked('selectedChinese')}/>
-                <label>Chinese</label>
-                <input type="checkbox" checked={this.props.selectedValues.selectedWestern} onChange = {this.props.handleChecked('selectedWestern')}/>
-                <label>Western</label>
-                <input type="checkbox" checked={this.props.selectedValues.selectedJapanese} onChange = {this.props.handleChecked('selectedJapanese')}/>
-                <label>Japanese</label>
-                <input type="checkbox" checked={this.props.selectedValues.selectedKorean} onChange = {this.props.handleChecked('selectedKorean')}/>
-                <label>Korean</label>
                 
+                <br />
+                <label>
+                    Chinese
+                    <input 
+                    name = "vetoChinese"
+                    type = "checkbox" 
+                    checked = {this.props.vetoChinese} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Korean
+                    <input 
+                    name = "vetoKorean"
+                    type = "checkbox" 
+                    checked = {this.props.vetoKorean} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Western
+                    <input 
+                    name = "vetoWestern"
+                    type = "checkbox" 
+                    checked = {this.props.vetoWestern} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Japanese
+                    <input 
+                    name = "vetoJapanese"
+                    type = "checkbox" 
+                    checked = {this.props.vetoJapanese} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <br />
+               
                 <NextButton 
                     nextStep = {this.props.nextStep}
                     />
@@ -49,18 +73,9 @@ export class Cuisine extends Component {
                 <BackButton 
                     prevStep = {this.props.prevStep}
                     />
-
-                <p>{this.props.selectedValues.selectedChinese}</p>
-                <p>{this.props.values.loc}</p>
-
             </div>
         )
     }
 }
 
 export default Cuisine
-
-/*<SelectionButton 
-                    select = {this.props.handleSelect('selectedChinese')}
-                    text = 'Chinese'
-                    />*/

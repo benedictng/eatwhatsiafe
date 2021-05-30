@@ -11,7 +11,7 @@ import NextButton from '../common/NextButton'
         return (
             <div>
                 <p> We have a party of: </p>
-                <form >
+               
                 <input 
                     list="partySize" 
                     placeholder = "party size"
@@ -27,7 +27,6 @@ import NextButton from '../common/NextButton'
                         <option value= '7' />
                         <option value= '8' />
                     </datalist>
-                </form>
                 <br />
                 <NextButton 
                         nextStep = {this.props.nextStep}
@@ -37,7 +36,8 @@ import NextButton from '../common/NextButton'
                 <BackButton 
                         prevStep = {this.props.prevStep}
                     />
-                <p>{this.props.values.size}</p>
+                <p>this.props.sizeValues.size = {this.props.sizeValues.size}</p>
+                
             </div>
             )
       }

@@ -13,19 +13,38 @@ export class DietRestrict extends Component {
         return (
             <div>
                 <p> dietary restriction</p>
-                <form >
-                <input 
-                    list="veto" 
-                    placeholder = "cuisineVeto"
-                    onChange = {this.props.handleChange('dietRest')}
-                />
-                    <datalist id="veto">
-                        <option value="1">Chinese</option>
-                        <option value="2">Western</option>
-                        <option value="3">Japanese</option>
-                        <option value="4">Korean</option>
-                    </datalist>
-                </form>
+                <label>
+                    Chinese
+                    <input 
+                    name = "restChinese"
+                    type = "checkbox" 
+                    checked = {this.props.restChinese} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Korean
+                    <input 
+                    name = "restKorean"
+                    type = "checkbox" 
+                    checked = {this.props.restKorean} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Western
+                    <input 
+                    name = "restWestern"
+                    type = "checkbox" 
+                    checked = {this.props.restWestern} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
+                <label>
+                    Japanese
+                    <input 
+                    name = "restJapanese"
+                    type = "checkbox" 
+                    checked = {this.props.restJapanese} 
+                    onChange = {this.props.handleInputChange} />
+                </label>
                 <br />
                 <NextButton 
                         nextStep = {this.props.nextStep}
@@ -35,7 +54,6 @@ export class DietRestrict extends Component {
                 <BackButton 
                         prevStep = {this.props.prevStep}
                     />
-                <p>{this.props.values.dietRest}</p>
             </div>
             )
       }

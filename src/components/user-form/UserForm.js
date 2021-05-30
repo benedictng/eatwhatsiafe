@@ -19,26 +19,34 @@ export class UserForm extends Component {
         size: 0,
 
         //cuisineSelected
-        selectedChinese: true,
-        selectedWestern: true,
-        selectedJapanese: true,
-        selectedKorean: true,
-
+        restChinese: false,
+        restWestern: false,
+        restJapanese: false,
+        restKorean: false,
+       
         //cuisineVeto
-        vetoChinese: 0,
-        vetoWestern: 0,
-        vetoJapanese: 0,
-        vetoKorean: 0,
+        vetoChinese: false,
+        vetoWestern: false,
+        vetoJapanese: false,
+        vetoKorean: false,
 
         //location
         //1 = East
         //2 = West
         //3 = North
-        //4 = South
         loc: 0,
+    }
 
-        dietRest: 0,
-       
+    //handle change function from react tutorial
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]:value
+            })    
+         
     }
 
     // Proceed to next step
@@ -59,23 +67,31 @@ export class UserForm extends Component {
 
     // Handle fields change
     handleChange = input => e => {
-        this.setState({[input]: e.target.value});
+        this.setState({
+            [input]: e.target.value
+        });
     }
 
-    handleChecked = input => e => {
-        this.setState({[input]: e.target.checked});
-    }
-    // Handle cuisineVeto selections
-    //handleNestedChange = input => e => {}
+    
+      
         
 
 
     render() {
         const { step } = this.state;
-        const { size, cuisineVeto, dietRest, loc } = this.state;
-        const values = { size, cuisineVeto, dietRest, loc };
-        const { selectedChinese, selectedWestern, selectedJapanese, selectedKorean } = this.state;
-        const selectedValues = { selectedChinese, selectedWestern, selectedJapanese, selectedKorean }
+
+        const { size, loc} = this.state;
+        const sizeValues = { size };
+        const locValues = { loc };
+
+        const { restChinese, restWestern, restJapanese, restKorean } = this.state;
+        const restValues = { restChinese, restWestern, restJapanese, restKorean }
+
+        const { vetoChinese, vetoWestern, vetoJapanese, vetoKorean } = this.state;
+        const vetoValues = { vetoChinese, vetoWestern, vetoJapanese, vetoKorean } 
+
+
+
 
 
         switch(step) {
@@ -84,7 +100,6 @@ export class UserForm extends Component {
                     <Entrance 
                         nextStep = {this.nextStep}
                         handleChange = {this.handleChange}
-                        values={values}
                     />
                 )
             case 2: 
@@ -93,7 +108,8 @@ export class UserForm extends Component {
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
                         handleChange = {this.handleChange}
-                        values = {values}
+                        handleInputChange = { this.handleInputChange}
+                        sizeValues = {sizeValues}
                     />
                 )
             case 3:
@@ -101,10 +117,8 @@ export class UserForm extends Component {
                     <Cuisine 
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
-                        handleChange = {this.handleChange}
-                        handleChecked = {this.handleChecked}
-                        selectedValues = {selectedValues}
-                        values = {values}
+                        handleInputChange = { this.handleInputChange}
+                        vetoValues = {vetoValues}
                     />
                 )
             case 4: 
@@ -112,9 +126,8 @@ export class UserForm extends Component {
                     <DietRestrict 
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
-                        handleChange = {this.handleChange}
-                        handleSelect = {this.handleSelect}
-                        values = {values}
+                        handleInputChange = { this.handleInputChange}
+                        restValues = {restValues}
                     />
                 )
             case 5:
@@ -123,17 +136,76 @@ export class UserForm extends Component {
                     nextStep = {this.nextStep}
                     prevStep = {this.prevStep}
                     handleChange = {this.handleChange}
-                    values = {values}
+                    locValues = {locValues}
                 />
                 )
             case 6:
+                //just to show state
                 return (
                     <div>
-                        <p>size, cuisineVeto, dietRest, loc</p>
-                        <p>{this.state.size}</p>
-                        <p>{this.state.cuisineVeto}</p>
-                        <p>{this.state.dietRest}</p>
-                        <p>{this.state.loc}</p>
+                        <p>size {this.state.size}</p>
+                        <p>loc {this.state.loc}</p>
+                        <p>veto</p>
+                        <label>
+                            Chinese
+                            <input 
+                            name = "vetoChinese"
+                            type = "checkbox" 
+                            checked = {this.state.vetoChinese}  />
+                        </label>
+                        <label>
+                            Korean
+                            <input 
+                            name = "vetoKorean"
+                            type = "checkbox" 
+                            checked = {this.state.vetoKorean}  />
+                        </label>
+                        <label>
+                            Western
+                            <input 
+                            name = "vetoWestern"
+                            type = "checkbox" 
+                            checked = {this.state.vetoWestern} />
+                        </label>
+                        <label>
+                            Japanese
+                            <input 
+                            name = "vetoJapanese"
+                            type = "checkbox" 
+                            checked = {this.state.vetoJapanese} />
+                        </label>
+                        <br />
+                        <p>restricted</p>
+                        <label>
+                            Chinese
+                            <input 
+                            name = "restChinese"
+                            type = "checkbox" 
+                            checked = {this.state.restChinese} />
+                        </label>
+                         
+                        <label>
+                            Korean
+                            <input 
+                            name = "restKorean"
+                            type = "checkbox" 
+                            checked = {this.state.restKorean} />
+                        </label>
+                        <label>
+                            Western
+                            <input 
+                            name = "restWestern"
+                            type = "checkbox" 
+                            checked = {this.state.restWestern} />
+                        </label>
+                        <label>
+                            Japanese
+                            <input 
+                            name = "restJapanese"
+                            type = "checkbox" 
+                            checked = {this.state.restJapanese} />
+                        </label>
+                        <br />
                         <BackButton 
                         prevStep = {this.prevStep}
                         />
