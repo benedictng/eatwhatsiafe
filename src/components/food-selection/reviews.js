@@ -1,17 +1,21 @@
-import { reviewData } from "./reviewData";
+
 import Col from "react-bootstrap/Col";
 
-const Reviews = () => {
+const Reviews = ({reviews}) => {
+
   return (
     <>
-      {reviewData.map((onereview) => {
-        const { id, review } = onereview;
-        return (
+      {
+        reviews.map((review,id)=> (
           <Col xs={12} md={3} key={id}>
-            <p>{review}</p>
+            <p>Rating: {review.rating}</p>
+            <p>{review.comment}</p>
           </Col>
-        );
-      })}
+          )
+        )
+      
+      }
+
     </>
   );
 };

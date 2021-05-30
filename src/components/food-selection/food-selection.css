@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.img {
+.image {
   border-radius: 10px;
   max-width: 100%;
   height: auto;
@@ -67,4 +67,9 @@
 
 .btn-group {
   width: auto;
+}
+
+.selection {
+  width: 10%;
+  height: auto;
 }

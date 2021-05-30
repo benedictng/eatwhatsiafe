@@ -5,8 +5,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Carousel = ({ slides }) => {
   const [current, setCurrent] = useState(0);
-  const here = slides.data[0].photos;
-  const length = here.length;
+  const length = slides.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -22,13 +21,11 @@ const Carousel = ({ slides }) => {
       <section className="slider">
         <AiOutlineArrowLeft className="left-arrow" onClick={prevSlide} />
         <AiOutlineArrowRight className="right-arrow" onClick={nextSlide} />
-        {here.map((slider, id) => {
-          //why must set the if else for the className?
-          console.log(slider);
+        {slides.map((slider, id) => {
           return (
             <div className={current === id ? "slide active" : "slide"} key={id}>
               {id === current && (
-                <img src={slider} className="img" alt="Food Pictures" />
+                <img src={slider} className="image" alt="Food Pictures" />
                 
               )}
               

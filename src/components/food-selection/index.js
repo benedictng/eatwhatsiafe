@@ -1,3 +1,3 @@
-import FoodSelectionPage from "./food-selection-page";
+import RestaurantsCards from "./restaurantsCards";
 
-export default FoodSelectionPage;
+export default RestaurantsCards;

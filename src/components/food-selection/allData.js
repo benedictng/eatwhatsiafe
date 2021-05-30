@@ -37,7 +37,7 @@ export const allData = {
         // },
         {
             food_id: 1551,
-            name: "Mala Hotpot",
+            name: "Man Man Japanese Unagi Restaurant",
             address: "1 Bedok Street, Singapore 617834",
             nearest_mrt: "Bedok",
             average_rating: 4.68,
@@ -63,6 +63,14 @@ export const allData = {
                 {
                     rating: 5,
                     comment: "又辣又香，我的最爱"
+                },
+                {
+                    rating: 4,
+                    comment: "pretty good but NTU can 9 is better"
+                },
+                {
+                    rating: 4,
+                    comment: "pretty good but NTU can 9 is better"
                 },
                 {
                     rating: 4,
