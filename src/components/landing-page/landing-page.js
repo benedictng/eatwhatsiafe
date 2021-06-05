@@ -6,7 +6,8 @@ class LandingPage extends React.Component {
         return (
             <div>
                 <h1>Welcome!</h1>
-                <Link to='/preferences'>Click Me</Link>
+                <Link to='/preferences'>Click Me</Link><br/>
+                <Link to='/demo'>Demo for Boon</Link>
             </div>
         )
     }
