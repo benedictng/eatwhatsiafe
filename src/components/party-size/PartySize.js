@@ -28,10 +28,10 @@ import NextButton from '../common/NextButton'
                         <option value= '8' />
                     </datalist>
                 <br />
+                <br />
                 <NextButton 
                         nextStep = {this.props.nextStep}
                     />
-                <br />
                 <br />
                 <BackButton 
                         prevStep = {this.props.prevStep}
