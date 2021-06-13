@@ -8,7 +8,10 @@ import Carousel from "./carousel";
 import ProductInformation from "./productInformation";
 import Reviews from "./reviews";
 import Tags from "./tags";
-import Toggle from "./toggle";
+import Pagination from "./pagination";
+
+import React from 'react';
+
 
 
 //{} extract out key for you. If it is individual elements you have to put {} but not if props
@@ -16,11 +19,11 @@ import Toggle from "./toggle";
 
 function RestaurantCard({restaurant}) {
 
-  // restaurant.reviews.map((review,id)=> (
-  //   <Reviews key = {id} review = {review}></Reviews>
-  // )
-  // );
-  // console.log(restaurant.reviews);
+  restaurant.reviews.map((review,id)=> (
+    <Reviews key = {id} review = {review}></Reviews>
+  )
+  );
+  
 
   return (
     <>
@@ -51,9 +54,6 @@ function RestaurantCard({restaurant}) {
         />
       </Container>
 
-      <Container>
-        <Toggle />
-      </Container>
     </>
   );
 }
