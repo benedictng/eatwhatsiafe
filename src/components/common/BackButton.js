@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button'
+
 
 export class BackButton extends Component {
     
@@ -10,7 +12,7 @@ export class BackButton extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.back}>back</button>            
+                <Button onClick={this.back} variant = "secondary">back</Button>            
             </div>
         )
     }

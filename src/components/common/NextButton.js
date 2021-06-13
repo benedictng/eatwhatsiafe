@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button'
 
 export class NextButton extends Component {
     
@@ -10,7 +11,7 @@ export class NextButton extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.continue}>Next</button>            
+                <Button onClick={this.continue} variant = "secondary">Next</Button>            
             </div>
         )
     }
