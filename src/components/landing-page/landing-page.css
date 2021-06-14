@@ -1,0 +1,9 @@
+.create-enter-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.room-code-input {
+    max-width: 200px;
+    margin: auto;
+}
