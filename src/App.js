@@ -1,7 +1,8 @@
-import './App.css';
+import 'App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LandingPage from './components/landing-page';
-import { UserForm } from './components/user-form/UserForm';
+
+import LandingPage from 'components/landing-page';
+import { UserForm } from 'components/user-form/UserForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
