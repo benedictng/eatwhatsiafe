@@ -1,3 +1,3 @@
-import RestaurantsCards from "./restaurantsCards";
+import RestaurantsCards from "./restaurants-cards";
 
 export default RestaurantsCards;

@@ -5,10 +5,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import Carousel from "./carousel";
-import ProductInformation from "./productInformation";
+import ProductInformation from "./product-information";
 import Reviews from "./reviews";
 import Tags from "./tags";
-import Pagination from "./pagination";
+
 
 import React from 'react';
 
