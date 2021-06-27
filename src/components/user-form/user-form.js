@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Entrance from '../entrance/Entrance';
-import Cuisine from '../cuisine/Cuisine';
-import DietRestrict from '../diet-restrict/DietRestrict'
-import Location from '../location/Location'
-import BackButton from '../common/BackButton'
-import NextButton from '../common/NextButton'
+import Entrance from '../entrance/entrance';
+import Cuisine from '../cuisine/cuisine';
+import DietRestrict from '../diet-restrict/diet-restrict'
+import Location from '../location/location'
+import BackButton from '../common/back-button'
+import NextButton from '../common/next-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'

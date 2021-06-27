@@ -1,5 +1,6 @@
   import React, { Component } from 'react'
-  import NextButton from '../common/NextButton'
+  import NextButton from '../common/next-button'
+
 
   export class Entrance extends Component {
         continue = e => {
@@ -11,6 +12,9 @@
         render() {
             return (
                 <div>
+
+
+
                 <p> Eatwhatsia... </p>
                 <p> Dont beta, force your friends to decide together lah</p>
                 <NextButton 
