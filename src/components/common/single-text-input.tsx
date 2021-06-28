@@ -12,14 +12,18 @@ type InputProps = {
 
 const SingleTextInput = (props: InputProps) => {
     const {label, submitButtonLabel, onSubmit, backButtonLabel, onBack} = props
-    const [value, setValue] = useState(null)
+    const [value, setValue] = useState<string | null>(null)
     
-    const _onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const _onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
     }
 
     const _onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault()
+        if (value === null) {
+            alert('Please enter a value!')
+            return
+        }
         onSubmit(value)
     }
 
