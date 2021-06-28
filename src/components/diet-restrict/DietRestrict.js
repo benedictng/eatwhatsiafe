@@ -1,44 +1,87 @@
 import React, { Component } from 'react'
-import BackButton from '../common/BackButton'
 import NextButton from '../common/NextButton'
+import BackButton from '../common/BackButton'
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 
-export class DietRestrict extends Component {
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
+
+export class Cuisine extends Component {
+    constructor(props) {
+        super(props)
+        if (props.formData == null) {
+            this.state = {chinese: false, western: false, japanese: false, korean: false}
+            props.setFormData({...this.state})
+        } else {
+            this.state = {...props.formData}
         }
+    }
 
-       
+    onCheckboxTicked = (cuisine) => {
+        this.setState({
+            ...this.state,
+            [cuisine]: !this.state[cuisine]
+        })
+    }
+
+    onDone = () => {
+       this.props.setFormData(this.state)
+       this.props.nextStep()
+    }
+
     render() {
-        return (
-            <div>
-                <p> dietary restriction</p>
-                <form >
-                <input 
-                    list="veto" 
-                    placeholder = "cuisineVeto"
-                    onChange = {this.props.handleChange('dietRest')}
-                />
-                    <datalist id="veto">
-                        <option value="1">Chinese</option>
-                        <option value="2">Western</option>
-                        <option value="3">Japanese</option>
-                        <option value="4">Korean</option>
-                    </datalist>
-                </form>
-                <br />
-                <NextButton 
-                        nextStep = {this.props.nextStep}
-                    />                
-                <br />
-                <br />
-                <BackButton 
-                        prevStep = {this.props.prevStep}
-                    />
-                <p>{this.props.values.dietRest}</p>
-            </div>
-            )
-      }
+        return(
+        <>
+
+        <p>I can't eat these</p>    
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.chinese}
+          name = 'chinese'
+          onChange={() => this.onCheckboxTicked('chinese')}
+        >
+          Chinese
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.western}
+          name = 'western'
+          onChange={() => this.onCheckboxTicked('western')}
+        >
+          Western
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.japanese}
+          name = 'japanese'
+          onChange={() => this.onCheckboxTicked('japanese')}
+        >
+          Japanese
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.korean}
+          name = 'korean'
+          onChange={() => this.onCheckboxTicked('korean')}
+        >
+          Korean
+        </ToggleButton>
+        <br/>
+        <br/>
+        <NextButton nextStep={this.onDone}/> 
+        <br/>
+        <BackButton prevStep={this.props.prevStep}/>
+        
+        </>
+        )
+    }
 }
 
-export default DietRestrict
+export default Cuisine

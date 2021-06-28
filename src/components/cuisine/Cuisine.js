@@ -1,40 +1,87 @@
 import React, { Component } from 'react'
-import BackButton from '../common/BackButton'
 import NextButton from '../common/NextButton'
+import BackButton from '../common/BackButton'
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+
 
 
 export class Cuisine extends Component {
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
+    constructor(props) {
+        super(props)
+        if (props.formData == null) {
+            this.state = {chinese: false, western: false, japanese: false, korean: false }
+            props.setFormData({...this.state})
+        } else {
+            this.state = {...props.formData}
         }
+    }
 
-   
+    onCheckboxTicked = (cuisine) => {
+        this.setState({
+            ...this.state,
+            [cuisine]: !this.state[cuisine]
+        })
+    }
+
+    onDone = () => {
+       this.props.setFormData(this.state)
+       this.props.nextStep()
+    }
 
     render() {
-        const { handleChange } = this.props;
-        return (
-            <div>
-                <p> Me no like this</p>
-                <form >
-                        <select id="cuisineVeto" name="cuisineVeto" multiple onChange = {this.props.handleChange('cuisineVeto')}>
-                            <option value="1">Chinese</option>
-                            <option value="2">Western</option>
-                            <option value="3">Japanese</option>
-                            <option value="4">Korean</option>
-                        </select>
-                        <br />
-                        <br />
-                        <NextButton 
-                        nextStep = {this.props.nextStep}
-                    />                
-                </form>
-                <br />
-                <BackButton 
-                        prevStep = {this.props.prevStep}
-                    />
-                <p>{this.props.values.size}</p>
-            </div>
+        return(
+        <>
+
+        <p>Me no like this</p>    
+
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.chinese}
+          name = 'chinese'
+          onChange={() => this.onCheckboxTicked('chinese')}
+        >
+          Chinese
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.western}
+          name = 'western'
+          onChange={() => this.onCheckboxTicked('western')}
+        >
+          Western
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.japanese}
+          name = 'japanese'
+          onChange={() => this.onCheckboxTicked('japanese')}
+        >
+          Japanese
+        </ToggleButton>
+        
+        <ToggleButton
+          type="checkbox"
+          variant="primary"
+          checked={this.state.korean}
+          name = 'korean'
+          onChange={() => this.onCheckboxTicked('korean')}
+        >
+          Korean
+        </ToggleButton>
+        <br/>
+        <br/>
+        <NextButton nextStep={this.onDone}/> 
+        <br/>
+        <BackButton prevStep={this.props.prevStep}/>
+        
+        </>
         )
     }
 }

@@ -1,22 +1,47 @@
 import React, { Component } from 'react';
 import Entrance from '../entrance/Entrance';
-import PartySize from '../party-size/PartySize';
 import Cuisine from '../cuisine/Cuisine';
 import DietRestrict from '../diet-restrict/DietRestrict'
 import Location from '../location/Location'
 import BackButton from '../common/BackButton'
 import NextButton from '../common/NextButton'
-
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 
 
 
 export class UserForm extends Component {
     state = {
+        //step decides which page of the form to show
         step: 1,
-        size: 0,
-        cuisineVeto: 0,
-        dietRest: 0,
-        loc: 0,
+                
+        //cuisineVeto
+        veto: null,
+
+        //dietary restriction
+        rest:null,
+
+        //location
+        location: null
+    }
+
+    setVeto = (value) => {
+        this.setState ({
+            veto: value
+        })
+    }
+
+    setRest = (value) => {
+        this.setState ({
+            rest: value
+        })
+    }
+
+    setLocation = (value) => {
+        this.setState ({
+            location: value
+        })
     }
 
     // Proceed to next step
@@ -35,15 +60,9 @@ export class UserForm extends Component {
         })
     }
 
-    // Handle fields change
-    handleChange = input => e => {
-        this.setState({[input]: e.target.value});
-    }
 
     render() {
         const { step } = this.state;
-        const { size, cuisineVeto, dietRest, loc } = this.state;
-        const values = { size, cuisineVeto, dietRest, loc };
 
         switch(step) {
             case 1: 
@@ -51,59 +70,61 @@ export class UserForm extends Component {
                     <Entrance 
                         nextStep = {this.nextStep}
                         handleChange = {this.handleChange}
-                        values={values}
                     />
                 )
-            case 2: 
-                return ( 
-                    <PartySize 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        handleChange = {this.handleChange}
-                        values = {values}
-                    />
-                )
-            case 3:
-                return ( 
-                    <Cuisine 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        handleChange = {this.handleChange}
-                        values = {values}
-                    />
-                )
-            case 4: 
-                return (
-                    <DietRestrict 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        handleChange = {this.handleChange}
-                        values = {values}
-                    />
-                )
-            case 5:
-                return (
-                    <Location 
-                    nextStep = {this.nextStep}
-                    prevStep = {this.prevStep}
-                    handleChange = {this.handleChange}
-                    values = {values}
-                />
-                )
-            case 6:
+           
+            case 2:
                 return (
                     <div>
-                        <p>size, cuisineVeto, dietRest, loc</p>
-                        <p>{this.state.size}</p>
-                        <p>{this.state.cuisineVeto}</p>
-                        <p>{this.state.dietRest}</p>
-                        <p>{this.state.loc}</p>
+                        <Cuisine 
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setVeto}
+                        formData = {this.state.veto}
+                        />
+                        <br/>
+                        <p>VETO DATA: {JSON.stringify(this.state.veto, null, '\t')}</p>
+                    </div>
+                )
+
+            case 3: 
+                return (
+                    <div>
+                        <DietRestrict 
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setRest}
+                        formData = {this.state.rest}
+                        />
+                        <br/>
+                        <p>REST DATA: {JSON.stringify(this.state.rest, null, '\t')}</p>
+                    </div>
+            )
+            case 4:
+                return (
+                    <div>
+                        <Location 
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setLocation}
+                        formData = {this.state.location}
+                        />
+                        <br/>
+                        <p>LOCATION DATA: {JSON.stringify(this.state.location, null, '\t')}</p>
+                    </div>
+                )
+            case 5:
+                //just to show state
+                return (
+                    <div>
+                        <p>DATA: {JSON.stringify(this.state, null, '\t')}</p>
+
                         <BackButton 
                         prevStep = {this.prevStep}
                         />
                     </div>
                 )
-
+                
         }
         return (
             <div>
