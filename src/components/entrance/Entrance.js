@@ -1,6 +1,5 @@
-  import React, { Component } from 'react'
-  import { Link, useLocation } from 'react-router-dom'
-  import NextButton from '../common/NextButton'
+import { Link, useLocation } from 'react-router-dom'
+import NextButton from '../common/NextButton'
 
 const Entrance = ({nextStep}) => {
     const location = useLocation()
@@ -26,5 +25,4 @@ const Entrance = ({nextStep}) => {
     )
 }
   
-  export default Entrance
-  
+export default Entrance
