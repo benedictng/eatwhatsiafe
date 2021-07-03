@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-const CreateOrEnterRoom = ({submitRoomCode}) => {
+const CreateOrEnterRoom = ({createOrEnter}) => {
     const [isEnter, setIsEnter] = useState(false)
     const [roomCode, setRoomCode] = useState(null)
 
@@ -16,13 +16,13 @@ const CreateOrEnterRoom = ({submitRoomCode}) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        submitRoomCode(roomCode)
+        createOrEnter(roomCode)
     }
 
     const renderChoice = () => (
         <>
         <Button variant='light' onClick={toggleIsEnter}>Enter Room</Button>
-        <Button variant='light'>Create Room</Button>
+        <Button variant='light' onClick={() => createOrEnter()}>Create Room</Button>
         </>
     )
 
@@ -39,12 +39,12 @@ const CreateOrEnterRoom = ({submitRoomCode}) => {
     )
 
     return (
-        <div className='create-enter-container'>
+        <>
         { isEnter
             ? renderEnterCode()
             : renderChoice()
         }
-        </div>
+        </>
     )
 }
 
