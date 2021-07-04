@@ -18,7 +18,7 @@ const SingleTextInput = (props: InputProps) => {
         setValue(e.currentTarget.value)
     }
 
-    const _onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const _onSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) => {
         e.preventDefault()
         if (value === null) {
             alert('Please enter a value!')
