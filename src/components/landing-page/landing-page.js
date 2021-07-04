@@ -44,7 +44,8 @@ const LandingPage = () => {
     return (
         <div>
             <h1>Welcome!</h1>
-            <Link to='/create-room'>Shortcut to create room</Link>
+            <Link to='/create-room'>Shortcut to create room</Link><br />
+            <Link to='/room/ABCD'>Shortcut to room ABCD</Link><p style={{display: 'inline'}}> replace the "ABCD" in the url with any code</p>
             <br />
             <hr />
             <br />
