@@ -44,7 +44,8 @@ const LandingPage = () => {
     return (
         <div>
             <h1>Welcome!</h1>
-            <Link to='/create-room'>Shortcut to create room</Link>
+            <Link to='/create-room'>Shortcut to create room</Link><br />
+            <Link to='/example-api-call'>Example API Call</Link>
             <br />
             <hr />
             <br />

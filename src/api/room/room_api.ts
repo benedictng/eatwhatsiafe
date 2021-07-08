@@ -1,4 +1,4 @@
-export interface RoomAPI {
+export interface IRoomAPI {
     /**
      * Makes a POST request to create a room
      * 

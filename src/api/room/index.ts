@@ -1,13 +1,13 @@
 import MockRoomAPI from "./local_mocks";
 import RoomAPIImpl from "./room";
-import { RoomAPI } from "./room_api";
+import { IRoomAPI } from "./room_api";
 
-let roomApi: any
+let RoomAPI: IRoomAPI
 if (process.env.REACT_APP_ENV === 'LOCAL') {
-    roomApi = MockRoomAPI
+    RoomAPI = MockRoomAPI
 } else {
-    roomApi = RoomAPIImpl
+    RoomAPI = RoomAPIImpl
 }
 
 // export default (process.env.REACT_APP_ENV === 'LOCAL') ? MockRoomAPI : RoomAPIImpl
-export default (roomApi as RoomAPI)
+export default RoomAPI
