@@ -1,26 +1,13 @@
-export interface IRoomAPI {
-    /**
-     * Makes a POST request to create a room
-     * 
-     * Usage: createRoom(payload).then(response => {your logic here..}).catch(error => {handle error here})
-     */
-    createRoom: (payload: CreateRoomPayload) => Promise<CreateRoomResponse>
+import axios from 'axios'
+import { IRoomAPI, CreateRoomPayload, CreateRoomResponse } from "./room_api_interface"
+
+const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => {
+    const url = 'some url to be separated into a config / env file'
+    return axios.post(url, payload)
 }
 
-export interface CreateRoomPayload {
-    room_name: string,
-    host_username: string,
-    region: number,
-    price_levels: number[],
-    cuisine_types: number[],
-    dining_types: number[],
-    dietary_restrictions: number[]
+const RoomAPIImpl : IRoomAPI = {
+    createRoom: createRoom
 }
 
-export interface CreateRoomResponse {
-    error_code: number,
-    error_msg: string,
-    data: {
-        room_code: string
-    }
-}
+export default RoomAPIImpl

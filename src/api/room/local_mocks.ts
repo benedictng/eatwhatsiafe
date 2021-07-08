@@ -1,4 +1,4 @@
-import { IRoomAPI, CreateRoomPayload, CreateRoomResponse } from "./room_api"
+import { IRoomAPI, CreateRoomPayload, CreateRoomResponse } from "./room_api_interface"
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse>  => {
     return new Promise((res, rej) => {
