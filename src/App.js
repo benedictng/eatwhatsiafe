@@ -1,11 +1,10 @@
 import 'App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import LandingPage from 'components/landing-page';
+import ExampleApiCall from 'components/common/example-api-call';
 import { UserForm } from 'components/user-form/UserForm';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
 
@@ -17,6 +16,7 @@ function App() {
           <Route path='/preferences'><UserForm /></Route>
           {/* <Route path='/restaurant-details'></Route> */}
           <Route path='/create-room' component={UserForm} />
+          <Route path='/example-api-call' component={ExampleApiCall} />
         </Switch>
       </Router>
     </div>
