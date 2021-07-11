@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import NextButton from '../common/next-button'
-import BackButton from '../common/back-button'
+import NextButton from 'components/common/next-button'
+import BackButton from 'components/common/back-button'
 import { statusData } from "./status-data"
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom';
 
 const Status = (props) => {
 
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
   const { roomCode } = useParams()
 
   const votedUsers = statusData.voted_users
@@ -45,7 +43,7 @@ const Status = (props) => {
         <Link to='/preferences'>Shortcut to preferences</Link><br />
 
     </div>
-  );
+  )
 }
 
 export default Status

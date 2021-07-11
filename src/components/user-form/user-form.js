@@ -156,7 +156,7 @@ export class UserForm extends Component {
                 return (
                     <div>
                         <p>DATA: {JSON.stringify(this.state, null, '\t')}</p>
-                        <Link to='/room/:roomCode'>Go to status page</Link><br />
+                        <Link to='/room-status'>Go to status page</Link><br />
 
                         <BackButton 
                         prevStep = {this.prevStep}
