@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
-import NextButton from '../common/next-button'
-import BackButton from '../common/back-button'
-import SelectionButton from '../common/selection-button'
+import NextButton from '../../common/next-button'
+import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { cuisineData } from "./cuisine-data";
+import { dietRestrictData } from "./diet-restrict-data";
 
-const options = cuisineData.options
-const state = cuisineData.state
+const options = dietRestrictData.options
+const state = dietRestrictData.state
 
 export class Cuisine extends Component {
-
-    
     constructor(props) {
         super(props)
-
         if (props.formData == null) {
             this.state = state
             props.setFormData({...this.state})
@@ -23,7 +19,6 @@ export class Cuisine extends Component {
             this.state = {...props.formData}
         }
     }
-    
 
     onCheckboxTicked = (cuisine) => {
         this.setState({
@@ -53,7 +48,7 @@ export class Cuisine extends Component {
 
         return(
         <>
-        <p>Me no like this</p>    
+        <p>I can't eat this</p>    
         {buttonMap}
         <br/>
         <br/>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import NextButton from '../common/next-button'
-import BackButton from '../common/back-button'
+import NextButton from '../../common/next-button'
+import BackButton from '../../common/back-button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { locData } from "./loc-data";

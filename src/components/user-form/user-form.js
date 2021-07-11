@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Entrance from '../entrance/entrance';
-import Cuisine from '../cuisine/cuisine';
-import DietRestrict from '../diet-restrict/diet-restrict'
-import Location from '../location/location'
+import Cuisine from './cuisine/cuisine';
+import DietRestrict from './diet-restrict/diet-restrict'
+import Location from './location/location'
 import BackButton from '../common/back-button'
 import NextButton from '../common/next-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
