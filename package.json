@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.0.1",
+>>>>>>> main
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
@@ -16,14 +20,14 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.3.4",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:local": "Set REACT_APP_ENV=LOCAL && npm run start",
+    "start": "REACT_APP_ENV=LOCAL react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
