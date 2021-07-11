@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 5em;
+}
+
+.col {
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.right-arrow {
+  position: absolute;
+  right: -1.5em;
+  font-size: 2.5rem; /*why the icon can be changed with font-size*/
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  left: -1.5em;
+  font-size: 2.5rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition: 2s;
+  max-width: 100%;
+  height: auto;
+}
+
+.slide.active {
+  opacity: 1;
+  transition: 1s ease;
+  transform: scale(1.08);
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  margin: 2px;
+  border-radius: 0.3em !important;
+}
+
+.btn-group {
+  width: auto;
+}
+
+.selection {
+  width: 10%;
+  height: auto;
+}
