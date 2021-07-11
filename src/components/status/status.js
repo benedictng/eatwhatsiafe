@@ -4,15 +4,15 @@ import BackButton from '../common/back-button'
 import { statusData } from "./status-data"
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
+const Status = (props) => {
 
-
-
-
-function Status(props) {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
+  const { roomCode } = useParams()
 
   const votedUsers = statusData.voted_users
   const votedUsersMap = votedUsers.map(x =>
@@ -22,8 +22,8 @@ function Status(props) {
   return (
     <div>
         <p>Lets check out the status of this page!</p>
-        <p>Room Code - room code tied to url?</p>
-        <p>sharing options - where to get url from</p>
+        <p>Room Code - { roomCode }</p>
+        <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
         
         <br/>
         <Card style={{ width: '50rem'}} >
@@ -39,12 +39,11 @@ function Status(props) {
         </Card>
         <br/>
         
-        <Button variant = "primary">route to alexis pages - enter swiping flow</Button>
-        <br/>
-        <br/>
-        <NextButton nextStep={props.nextStep}/> 
-        <br/>
-        <BackButton prevStep={props.prevStep}/>
+
+        <Link to='/restaurant-details'>Enter Swiping Flow</Link>
+        <br />
+        <Link to='/preferences'>Shortcut to preferences</Link><br />
+
     </div>
   );
 }

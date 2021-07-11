@@ -4,23 +4,23 @@ import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { cuisinePresetData } from "./cuisine-data";
+import { pricePresetData } from "./price-data";
 
-const Cuisine = (props) => {
-    const options = cuisinePresetData.options
-    const state = cuisinePresetData.state
+const Price = (props) => {
+    const options = pricePresetData.options
+    const state = pricePresetData.state
 
-    const [cuisineData, setCuisineData] = useState(props.formData == null ? {...state} : {...props.formData})
+    const [priceData, setPriceData] = useState(props.formData == null ? {...state} : {...props.formData})
 
     const onCheckboxTicked = (cuisine) => {
-        setCuisineData({
-            ...cuisineData,
-            [cuisine]: !cuisineData[cuisine]
+        setPriceData({
+            ...priceData,
+            [cuisine]: !priceData[cuisine]
         })
     }
 
     const onDone = () => {
-        props.setFormData(cuisineData)
+        props.setFormData(priceData)
         props.nextStep()
     }
 
@@ -28,7 +28,7 @@ const Cuisine = (props) => {
         <ToggleButton
         type="checkbox"
         variant="primary"
-        checked={cuisineData[x]}
+        checked={priceData[x]}
         name = {x}
         onChange={() => onCheckboxTicked(x)}
         >
@@ -38,7 +38,7 @@ const Cuisine = (props) => {
 
     return (
         <>
-        <p>I can't eat this</p>    
+        <p>Price points</p>    
         {buttonMap}
         <br/>
         <br/>
@@ -50,4 +50,4 @@ const Cuisine = (props) => {
     )
 }
 
-export default Cuisine
+export default Price

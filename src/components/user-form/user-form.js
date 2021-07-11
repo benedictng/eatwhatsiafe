@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Entrance from '../entrance/entrance';
-import Cuisine from './cuisine/cuisine';
-import DietRestrict from './diet-restrict/diet-restrict'
-import Location from './location/location'
-import BackButton from '../common/back-button'
-import NextButton from '../common/next-button'
-import ToggleButton from 'react-bootstrap/ToggleButton'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import Status from '../status/status'
+import Price from 'components/user-form/price'
+import Cuisine from 'components/user-form/cuisine';
+import DiningType from 'components/user-form/dining-type'
+import DietRestrict from 'components/user-form/diet-restrict'
+import Location from 'components/user-form/location'
+import BackButton from 'components/common/back-button'
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -16,9 +14,15 @@ export class UserForm extends Component {
     state = {
         //step decides which page of the form to show
         step: 1,
-                
+        
+        //price
+        price: null,
+
         //cuisineVeto
         veto: null,
+
+        //dining type
+        diningType: null,
 
         //dietary restriction
         rest:null,
@@ -30,6 +34,18 @@ export class UserForm extends Component {
     setVeto = (value) => {
         this.setState ({
             veto: value
+        })
+    }
+
+    setDining = (value) => {
+        this.setState ({
+            diningType: value
+        })
+    }
+
+    setPrice = (value) => {
+        this.setState ({
+            price: value
         })
     }
 
@@ -66,14 +82,20 @@ export class UserForm extends Component {
         const { step } = this.state;
 
         switch(step) {
-            case 1: 
+            case 1:
                 return (
-                    <Entrance 
+                    <div>
+                        <Price 
                         nextStep = {this.nextStep}
-                        handleChange = {this.handleChange}
-                    />
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setPrice}
+                        formData = {this.state.price}
+                        />
+                        <br/>
+                        <p>VETO DATA: {JSON.stringify(this.state.price, null, '\t')}</p>
+                    </div>
                 )
-           
+            
             case 2:
                 return (
                     <div>
@@ -91,6 +113,20 @@ export class UserForm extends Component {
             case 3: 
                 return (
                     <div>
+                        <DiningType
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setDining}
+                        formData = {this.state.diningType}
+                        />
+                        <br/>
+                        <p>REST DATA: {JSON.stringify(this.state.diningType, null, '\t')}</p>
+                    </div>
+            )
+
+            case 4: 
+                return (
+                    <div>
                         <DietRestrict 
                         nextStep = {this.nextStep}
                         prevStep = {this.prevStep}
@@ -101,7 +137,7 @@ export class UserForm extends Component {
                         <p>REST DATA: {JSON.stringify(this.state.rest, null, '\t')}</p>
                     </div>
             )
-            case 4:
+            case 5:
                 return (
                     <div>
                         <Location 
@@ -114,23 +150,13 @@ export class UserForm extends Component {
                         <p>LOCATION DATA: {JSON.stringify(this.state.location, null, '\t')}</p>
                     </div>
                 )
-            case 5:
-                return (
-                    <div>
-                        <Status 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setLocation}
-                        formData = {this.state.location}
-                        />
-                        <br/>
-                    </div>
-                )
+            
             case 6:
                 //just to show state
                 return (
                     <div>
                         <p>DATA: {JSON.stringify(this.state, null, '\t')}</p>
+                        <Link to='/room/:roomCode'>Go to status page</Link><br />
 
                         <BackButton 
                         prevStep = {this.prevStep}

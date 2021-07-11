@@ -1,4 +1,4 @@
 export const dietRestrictData = {
-    options: ['chinese','japanese','muslim','italian','thai','western','mediterranean'],
-    state: {chinese: false, japanese: false, muslim: false, italian: false, thai: false, western: false, mediterranean: false}
+    options: ['halal','vegetarian','vegan','kosher','seafoodFree','glutenFree','nutFree'],
+    state: {halal: false, vegetarian: false, vegan: false, kosher: false, seafoodFree: false, glutenFree: false, nutFree: false}
 }

@@ -4,23 +4,23 @@ import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { cuisinePresetData } from "./cuisine-data";
+import { diningTypePresetData } from "./dining-type-data";
 
-const Cuisine = (props) => {
-    const options = cuisinePresetData.options
-    const state = cuisinePresetData.state
+const DiningType = (props) => {
+    const options = diningTypePresetData.options
+    const state = diningTypePresetData.state
 
-    const [cuisineData, setCuisineData] = useState(props.formData == null ? {...state} : {...props.formData})
+    const [diningTypeData, setDiningTypeData] = useState(props.formData == null ? {...state} : {...props.formData})
 
     const onCheckboxTicked = (cuisine) => {
-        setCuisineData({
-            ...cuisineData,
-            [cuisine]: !cuisineData[cuisine]
+        setDiningTypeData({
+            ...diningTypeData,
+            [cuisine]: !diningTypeData[cuisine]
         })
     }
 
     const onDone = () => {
-        props.setFormData(cuisineData)
+        props.setFormData(diningTypeData)
         props.nextStep()
     }
 
@@ -28,7 +28,7 @@ const Cuisine = (props) => {
         <ToggleButton
         type="checkbox"
         variant="primary"
-        checked={cuisineData[x]}
+        checked={diningTypeData[x]}
         name = {x}
         onChange={() => onCheckboxTicked(x)}
         >
@@ -38,7 +38,7 @@ const Cuisine = (props) => {
 
     return (
         <>
-        <p>I can't eat this</p>    
+        <p>Dining Types</p>    
         {buttonMap}
         <br/>
         <br/>
@@ -50,4 +50,4 @@ const Cuisine = (props) => {
     )
 }
 
-export default Cuisine
+export default DiningType
