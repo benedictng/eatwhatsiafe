@@ -8,6 +8,7 @@ import NextButton from '../common/next-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import Status from '../status/status'
 
 
 
@@ -114,6 +115,18 @@ export class UserForm extends Component {
                     </div>
                 )
             case 5:
+                return (
+                    <div>
+                        <Status 
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        setFormData = {this.setLocation}
+                        formData = {this.state.location}
+                        />
+                        <br/>
+                    </div>
+                )
+            case 6:
                 //just to show state
                 return (
                     <div>

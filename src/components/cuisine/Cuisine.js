@@ -7,15 +7,15 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import { cuisineData } from "./cuisine-data";
 
-
 const options = cuisineData.options
 const state = cuisineData.state
 
-
 export class Cuisine extends Component {
+
+    
     constructor(props) {
         super(props)
-        
+
         if (props.formData == null) {
             this.state = state
             props.setFormData({...this.state})
