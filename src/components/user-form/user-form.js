@@ -5,7 +5,9 @@ import DiningType from 'components/user-form/dining-type'
 import DietRestrict from 'components/user-form/diet-restrict'
 import Location from 'components/user-form/location'
 import BackButton from 'components/common/back-button'
+import NextButton from 'components/common/next-button'
 import { Link } from 'react-router-dom';
+import Status from 'components/room-status';
 
 
 
@@ -156,11 +158,19 @@ export class UserForm extends Component {
                 return (
                     <div>
                         <p>DATA: {JSON.stringify(this.state, null, '\t')}</p>
-                        <Link to='/room-status'>Go to status page</Link><br />
+                        <Link to='/room/abcd'>Go to status page</Link><br />
 
                         <BackButton 
                         prevStep = {this.prevStep}
                         />
+                        <NextButton nextStep={this.nextStep}/> 
+                    </div>
+                )
+
+            case 7:
+                return (
+                    <div>
+                        <Status />
                     </div>
                 )
                 

@@ -19,7 +19,7 @@ const Status = (props) => {
 
   return (
     <div>
-        <p>Lets check out the status of this page!</p>
+        <p>Friday Dinner</p>
         <p>Room Code - { roomCode }</p>
         <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
         
