@@ -1,25 +1,41 @@
-import React, { useState } from 'react'
-import NextButton from 'components/common/next-button'
-import BackButton from 'components/common/back-button'
-import { statusData } from "./status-data"
+import React, { useState, useEffect } from 'react'
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
+import RoomAPI from 'api/room'
 
 
 const Status = (props) => {
 
   const { roomCode } = useParams()
+  const [roomName, setRoomName] = useState('')
+  const [votedUsers, setVotedUsers] = useState([])
 
-  const votedUsers = statusData.voted_users
+  useEffect(()=> {
+    makeCall()
+  }, [roomCode])// Only re-run if roomCode changes
+
+  const makeCall = () => {
+    console.log(RoomAPI)
+    RoomAPI.getRoomStatus({
+        room_name: roomCode
+    }).then(res => {
+        alert(`received response: ${JSON.stringify(res)}`)
+        setRoomName(res.data.room_name)
+        setVotedUsers(res.data.voted_users)
+    })
+  }
+
   const votedUsersMap = votedUsers.map(x =>
     <ListGroupItem>{x}</ListGroupItem>
     )
+  
+
 
   return (
     <div>
-        <p>Friday Dinner</p>
+        <p>{ roomName }</p>
         <p>Room Code - { roomCode }</p>
         <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
         

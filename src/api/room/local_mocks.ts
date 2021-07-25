@@ -48,7 +48,7 @@ const MockData = {
         error_code: 0,
         error_msg: '',
         data: {
-            room_name: 'Lonch with Greg',
+            room_name: 'Lunch with Greg',
             status: 1,
             voted_users: ['Mary', 'Amy'],
             host_username: 'Greg'

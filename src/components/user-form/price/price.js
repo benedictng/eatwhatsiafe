@@ -7,15 +7,16 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import { pricePresetData } from "./price-data";
 
 const Price = (props) => {
-    const options = pricePresetData.options
+    const data = pricePresetData.options
+    const options = Object.keys(pricePresetData.options)
     const state = pricePresetData.state
 
     const [priceData, setPriceData] = useState(props.formData == null ? {...state} : {...props.formData})
 
-    const onCheckboxTicked = (cuisine) => {
+    const onCheckboxTicked = (option) => {
         setPriceData({
             ...priceData,
-            [cuisine]: !priceData[cuisine]
+            [option]: !priceData[option]
         })
     }
 
@@ -28,9 +29,9 @@ const Price = (props) => {
         <ToggleButton
         type="checkbox"
         variant="primary"
-        checked={priceData[x]}
+        checked={priceData[data[x]]}
         name = {x}
-        onChange={() => onCheckboxTicked(x)}
+        onChange={() => onCheckboxTicked(data[x])}
         >
           {x}
         </ToggleButton>

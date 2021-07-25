@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Price from 'components/user-form/price'
 import Cuisine from 'components/user-form/cuisine';
 import DiningType from 'components/user-form/dining-type'
@@ -8,93 +8,70 @@ import BackButton from 'components/common/back-button'
 import NextButton from 'components/common/next-button'
 import { Link } from 'react-router-dom';
 import Status from 'components/room-status';
+import Button from 'react-bootstrap/Button';
+import RoomAPI from 'api/room'
 
 
 
 
-export class UserForm extends Component {
-    state = {
-        //step decides which page of the form to show
-        step: 1,
-        
-        //price
-        price: null,
 
-        //cuisineVeto
-        veto: null,
-
-        //dining type
-        diningType: null,
-
-        //dietary restriction
-        rest:null,
-
-        //location
-        location: null
-    }
-
-    setVeto = (value) => {
-        this.setState ({
-            veto: value
-        })
-    }
-
-    setDining = (value) => {
-        this.setState ({
-            diningType: value
-        })
-    }
-
-    setPrice = (value) => {
-        this.setState ({
-            price: value
-        })
-    }
-
-    setRest = (value) => {
-        this.setState ({
-            rest: value
-        })
-    }
-
-    setLocation = (value) => {
-        this.setState ({
-            location: value
-        })
-    }
+const UserForm = () => {
+    
+    const [step, setStep] = useState(1)
+    const [price, setPrice] = useState(null)
+    const [veto, setVeto] = useState(null)
+    const [rest, setRest] = useState(null)
+    const [diningType, setDiningType] = useState(null)
+    const [location, setLocation] = useState(null)
+    const [roomCode, setRoomCode] = useState(null)
 
     // Proceed to next step
-    nextStep = () => {
-        const { step } = this.state;
-        this.setState({
-            step: step + 1
-        })
+    const nextStep = () => {
+        setStep(step+1)
     }
 
     // Go back to previous step
-    prevStep = () => {
-        const { step } = this.state;
-        this.setState({
-            step: step - 1
+    const prevStep = () => {
+        setStep(step-1)
+    }
+
+    const createRoom = () => {
+        const priceResult = []
+        Object.keys(price).map(x => {
+                if (price[x] == true) {
+                    priceResult.push(x)
+                }}
+        )
+        alert("price_levels = " + priceResult)
+        console.log(RoomAPI)
+        RoomAPI.createRoom({
+            room_name: 'my room name',
+            host_username: 'hoEward',
+            region: 3,
+            price_levels: priceResult,
+            cuisine_types: [1, 4],
+            dining_types: [1, 3],
+            dietary_restrictions: [1, 3, 5]
+        }).then(res => {
+            alert(`received response: ${JSON.stringify(res)}`)
+            setRoomCode(res.data.room_code)
         })
     }
 
 
-    render() {
-        const { step } = this.state;
 
-        switch(step) {
+    switch(step) {
             case 1:
                 return (
                     <div>
                         <Price 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setPrice}
-                        formData = {this.state.price}
+                        nextStep = {nextStep}
+                        prevStep = {prevStep}
+                        setFormData = {setPrice}
+                        formData = {price}
                         />
                         <br/>
-                        <p>VETO DATA: {JSON.stringify(this.state.price, null, '\t')}</p>
+                        <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
                     </div>
                 )
             
@@ -102,13 +79,13 @@ export class UserForm extends Component {
                 return (
                     <div>
                         <Cuisine 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setVeto}
-                        formData = {this.state.veto}
+                        nextStep = {nextStep}
+                        prevStep = {prevStep}
+                        setFormData = {setVeto}
+                        formData = {veto}
                         />
                         <br/>
-                        <p>VETO DATA: {JSON.stringify(this.state.veto, null, '\t')}</p>
+                        <p>VETO DATA: {JSON.stringify(veto, null, '\t')}</p>
                     </div>
                 )
 
@@ -116,13 +93,13 @@ export class UserForm extends Component {
                 return (
                     <div>
                         <DiningType
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setDining}
-                        formData = {this.state.diningType}
+                        nextStep = {nextStep}
+                        prevStep = {prevStep}
+                        setFormData = {setDiningType}
+                        formData = {diningType}
                         />
                         <br/>
-                        <p>REST DATA: {JSON.stringify(this.state.diningType, null, '\t')}</p>
+                        <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
                     </div>
             )
 
@@ -130,26 +107,26 @@ export class UserForm extends Component {
                 return (
                     <div>
                         <DietRestrict 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setRest}
-                        formData = {this.state.rest}
+                        nextStep = {nextStep}
+                        prevStep = {prevStep}
+                        setFormData = {setRest}
+                        formData = {rest}
                         />
                         <br/>
-                        <p>REST DATA: {JSON.stringify(this.state.rest, null, '\t')}</p>
+                        <p>REST DATA: {JSON.stringify(rest, null, '\t')}</p>
                     </div>
             )
             case 5:
                 return (
                     <div>
                         <Location 
-                        nextStep = {this.nextStep}
-                        prevStep = {this.prevStep}
-                        setFormData = {this.setLocation}
-                        formData = {this.state.location}
+                        nextStep = {nextStep}
+                        prevStep = {prevStep}
+                        setFormData = {setLocation}
+                        formData = {location}
                         />
                         <br/>
-                        <p>LOCATION DATA: {JSON.stringify(this.state.location, null, '\t')}</p>
+                        <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
                     </div>
                 )
             
@@ -157,20 +134,19 @@ export class UserForm extends Component {
                 //just to show state
                 return (
                     <div>
-                        <p>DATA: {JSON.stringify(this.state, null, '\t')}</p>
+                        <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
+                        <p>VETO DATA: {JSON.stringify(veto, null, '\t')}</p>
+                        <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
+                        <p>REST DATA: {JSON.stringify(rest, null, '\t')}</p>
+                        <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
+
                         <Link to='/room/abcd'>Go to status page</Link><br />
 
                         <BackButton 
-                        prevStep = {this.prevStep}
+                        prevStep = {prevStep}
                         />
-                        <NextButton nextStep={this.nextStep}/> 
-                    </div>
-                )
-
-            case 7:
-                return (
-                    <div>
-                        <Status />
+                        <NextButton nextStep={nextStep}/> 
+                        <Button onClick = {createRoom}>Create room</Button>
                     </div>
                 )
                 
@@ -181,6 +157,6 @@ export class UserForm extends Component {
             </div>
         )
     }
-}
+
 
 export default UserForm
