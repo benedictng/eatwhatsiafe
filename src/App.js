@@ -7,12 +7,19 @@ import Status from 'components/room-status';
 import FoodSelectionPage from "./components/food-selection";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import PageOne from 'components/history-push-example/page_1'
+import PageTwo from 'components/history-push-example/page_2'
+import PageThree from 'components/history-push-example/page_3'
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path='/'><LandingPage /></Route>
+          {/* <Route exact path='/'><LandingPage /></Route> */}
+          <Route exact path='/'><PageOne /></Route>
+          <Route path='/page-2'><PageTwo /></Route>
+          <Route path='/page-3'><PageThree /></Route>
           <Route path='/preferences'><UserForm /></Route>
           <Route path="/restaurant-details"><FoodSelectionPage /></Route>
           <Route path='/create-room' component={UserForm} />
