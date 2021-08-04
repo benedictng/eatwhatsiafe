@@ -55,6 +55,7 @@ const UserForm = () => {
         }).then(res => {
             alert(`received response: ${JSON.stringify(res)}`)
             setRoomCode(res.data.room_code)
+            //history push here
         })
     }
 
