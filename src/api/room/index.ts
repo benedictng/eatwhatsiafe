@@ -9,5 +9,4 @@ if (process.env.NODE_ENV === 'development') {
     RoomAPI = RoomAPIImpl
 }
 
-// export default (process.env.REACT_APP_ENV === 'LOCAL') ? MockRoomAPI : RoomAPIImpl
 export default RoomAPI
