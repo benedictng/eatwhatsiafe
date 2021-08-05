@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import { Link, useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 import RoomAPI from 'api/room'
+import Button from 'react-bootstrap/Button';
+
 
 
 const Status = (props) => {
@@ -59,8 +61,8 @@ const Status = (props) => {
         </Card>
         <br/>
         
-
-        <Link to='/restaurant-details'>Enter Swiping Flow</Link>
+      
+        <Button onClick = {swipingFlow}>Enter Swiping Flow</Button>
         <br />
         <Link to='/preferences'>Shortcut to preferences</Link><br />
 
