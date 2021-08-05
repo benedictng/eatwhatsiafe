@@ -6,7 +6,7 @@ import DietRestrict from 'components/user-form/diet-restrict'
 import Location from 'components/user-form/location'
 import BackButton from 'components/common/back-button'
 import NextButton from 'components/common/next-button'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Status from 'components/room-status';
 import Button from 'react-bootstrap/Button';
 import RoomAPI from 'api/room'
@@ -24,6 +24,7 @@ const UserForm = () => {
     const [diningType, setDiningType] = useState(null)
     const [location, setLocation] = useState(null)
     const [roomCode, setRoomCode] = useState(null)
+    const history = useHistory()
 
     // Proceed to next step
     const nextStep = () => {
@@ -42,11 +43,11 @@ const UserForm = () => {
                     priceResult.push(x)
                 }}
         )
-        alert("price_levels = " + priceResult)
+        alert("price_levels = " + priceResult + "history = " + JSON.stringify(history.location.state))
         console.log(RoomAPI)
         RoomAPI.createRoom({
-            room_name: 'my room name',
-            host_username: 'hoEward',
+            room_name: history.location.state.roomName,
+            host_username: history.location.state.name,
             region: 3,
             price_levels: priceResult,
             cuisine_types: [1, 4],
@@ -55,7 +56,8 @@ const UserForm = () => {
         }).then(res => {
             alert(`received response: ${JSON.stringify(res)}`)
             setRoomCode(res.data.room_code)
-            //history push here
+            //history.push('/room/'+res.data.room_code, {name: history.location.state.name, roomName: history.location.state.roomName})
+            history.push('/room/'+res.data.room_code, history.location.state)
         })
     }
 
@@ -70,6 +72,7 @@ const UserForm = () => {
                         prevStep = {prevStep}
                         setFormData = {setPrice}
                         formData = {price}
+                        history = {history}
                         />
                         <br/>
                         <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 import RoomAPI from 'api/room'
 
@@ -11,6 +11,7 @@ const Status = (props) => {
   const { roomCode } = useParams()
   const [roomName, setRoomName] = useState('')
   const [votedUsers, setVotedUsers] = useState([])
+  const history = useHistory()
 
   useEffect(()=> {
     makeCall()
@@ -27,6 +28,10 @@ const Status = (props) => {
     })
   }
 
+  const swipingFlow = () => {
+    history.push('/restaurant-details', {name: history.location.state.name, roomName: roomName})
+  }
+
   const votedUsersMap = votedUsers.map(x =>
     <ListGroupItem>{x}</ListGroupItem>
     )
@@ -35,6 +40,7 @@ const Status = (props) => {
 
   return (
     <div>
+        <p>history.location.state: ${JSON.stringify(history.location.state)}</p>
         <p>{ roomName }</p>
         <p>Room Code - { roomCode }</p>
         <p>sharing url - http://localhost:3000/room/{ roomCode }</p>

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import RestaurantCard from "./restaurant-card";
+import { Link, useHistory, useLocation } from 'react-router-dom';
+
 
 import Col from "react-bootstrap/Col";
 
@@ -12,6 +14,12 @@ const RestaurantsCards = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const currentRestaurant = allData.data[currentPage];
     const totalRestaurants = allData.data.length;
+
+    const history = useHistory()
+    const location = useLocation()
+    console.log(history)
+    console.log(location)
+
 
     const [selections, setSelections] = useState([]);
     //cannot put hooks in javascript functions
@@ -42,8 +50,9 @@ const RestaurantsCards = () => {
 
 
     return (
-        <>        
-        
+        <> 
+        <p>history.location.state: ${JSON.stringify(history.location.state)}</p>
+  
         <RestaurantCard restaurant = {currentRestaurant}></RestaurantCard>
         <Col>
             <button onClick = {recordNextPage}> 
