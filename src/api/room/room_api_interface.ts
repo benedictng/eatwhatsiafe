@@ -2,6 +2,7 @@ export interface IRoomAPI {
     createRoom: (payload: CreateRoomPayload) => Promise<CreateRoomResponse>,
     getRoomStatus: (payload: RoomStatusPayload) => Promise<RoomStatusResponse>,
     submitVote: (payload: SubmitVotePayload) => Promise<SubmitVoteResponse>
+    getFoodList: (payload: FoodListPayload) => Promise<FoodListResponse>
 }
 
 export interface CreateRoomPayload {
@@ -48,6 +49,35 @@ export interface SubmitVoteResponse {
     error_code: number,
     error_msg: string
 }
+
+export interface FoodListPayload {
+    room_code: string
+}
+
+export interface FoodListResponse {
+    error_code: number
+    error_msg: string
+    data: {
+        food_list: Array<{
+            food_id: number
+            name: string
+            address: string
+            region : number
+            average_rating: number
+            price_level: number
+            dining_type: number
+            opening_hours: string[]
+            cuisine_type: number[]
+            restrictions: number[]
+            photos: string[]
+            reviews: Array<{
+                rating: number
+                comment: string
+            }>
+        }>
+    }
+}
+
 /**
  * Request Body:
 
