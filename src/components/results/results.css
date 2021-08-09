@@ -1,0 +1,12 @@
+.winnercard {
+  background-color: #00ffff;
+  border-radius: 2rem;
+}
+
+.horizontalcenter {
+  margin: auto;
+}
+
+.overflow {
+  overflow: hidden;
+}
