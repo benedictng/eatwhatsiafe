@@ -1,6 +1,7 @@
 import React from "react";
 
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import "./results.css";
 
@@ -11,12 +12,14 @@ const FirstPlace = ({ first_result }) => {
     <>
       <Col lg={6} className="horizontalcenter">
         <img
-          className="image"
+          className="results_image"
           src={first_result.food.photos[0]}
           alt="restaurant food"
         ></img>
       </Col>
       <Col lg={6}>
+        <h1>Yall should eat at:</h1>
+        <br></br>
         <h2>{first_result.food.name}</h2>
         <h3>{first_result.food.address}</h3>
         <p>Who voted: {first_result.voted_users}</p>
