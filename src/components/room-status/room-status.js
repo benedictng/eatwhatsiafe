@@ -31,7 +31,7 @@ const Status = (props) => {
   }
 
   const swipingFlow = () => {
-    history.push('/restaurant-details', {name: history.location.state.name, roomName: roomName})
+    history.push('/restaurant-details', {name: history.location.state.name, roomName: roomName, roomCode: roomCode})
   }
 
   const votedUsersMap = votedUsers.map(x =>
