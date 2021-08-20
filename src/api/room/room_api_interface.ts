@@ -2,7 +2,8 @@ export interface IRoomAPI {
     createRoom: (payload: CreateRoomPayload) => Promise<CreateRoomResponse>,
     getRoomStatus: (payload: RoomStatusPayload) => Promise<RoomStatusResponse>,
     submitVote: (payload: SubmitVotePayload) => Promise<SubmitVoteResponse>
-    getFoodList: (payload: FoodListPayload) => Promise<FoodListResponse>
+    getFoodList: (payload: FoodListPayload) => Promise<FoodListResponse>,
+    closeRoom: (payload: CloseRoomPayload) => Promise<CloseRoomResponse>
 }
 
 export interface CreateRoomPayload {
@@ -42,7 +43,6 @@ export interface SubmitVotePayload {
     room_code: string,
     food_ids: number[],
     username: string
-
 }
 
 export interface SubmitVoteResponse {
@@ -76,6 +76,15 @@ export interface FoodListResponse {
             }>
         }>
     }
+}
+
+export interface CloseRoomPayload {
+    room_code: string
+}
+
+export interface CloseRoomResponse {
+    error_code: number
+    error_msg: string
 }
 
 /**

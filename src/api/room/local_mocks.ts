@@ -1,4 +1,4 @@
-import { IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListPayload, FoodListResponse } from './room_api_interface'
+import { IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListPayload, FoodListResponse, CloseRoomPayload, CloseRoomResponse } from './room_api_interface'
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse>  => {
     return new Promise((res, rej) => {
@@ -40,11 +40,22 @@ const getFoodList = (payload: FoodListPayload): Promise<FoodListResponse> => {
     })
 }
 
+const closeRoom = (payload: CloseRoomPayload): Promise<CloseRoomResponse> => {
+    return new Promise((res, rej) => {
+        setTimeout(
+            () => res(MockData.CloseRoomResponse),
+            1000
+        )
+        // error when payload is wrong format?
+    })
+}
+
 const MockRoomAPI: IRoomAPI = {
     createRoom: createRoom,
     getRoomStatus: getRoomStatus,
     submitVote: submitVote,
-    getFoodList: getFoodList
+    getFoodList: getFoodList,
+    closeRoom: closeRoom
 }
 
 const MockData = {
@@ -146,6 +157,11 @@ const MockData = {
                 ]
             }]
         }
+    },
+
+    CloseRoomResponse: {
+        error_code: 0,
+        error_msg: ''
     }
 }
 
