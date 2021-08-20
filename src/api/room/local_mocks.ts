@@ -13,7 +13,7 @@ const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse>  =>
 const getRoomStatus = (payload: RoomStatusPayload): Promise<RoomStatusResponse> => {
     return new Promise((res, rej) => {
         setTimeout(
-            () => res(MockData.RoomStatusResponse),
+            () => res(getMockedRoomStatus(payload.room_code)),
             1000
         )
         // error when payload is wrong format?
@@ -58,23 +58,40 @@ const MockRoomAPI: IRoomAPI = {
     closeRoom: closeRoom
 }
 
+const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
+    let status: number
+    switch(roomCode.toUpperCase()) {
+        case 'ERROR':
+            status = 4
+            break
+        case 'DELETED':
+            status = 3
+            break
+        case 'CLOSED':
+            status = 2
+            break
+        default:
+            status = 1
+    }
+
+    return {
+        error_code: 0,
+        error_msg: '',
+        data: {
+            room_name: 'Lonch with Greg',
+            status: status,
+            voted_users: ['Mary', 'Amy', 'Boon', 'Richard the Rich'],
+            host_username: 'Greg'
+        }
+    }
+}
+
 const MockData = {
     CreateRoomResponse: {
         error_code: 0,
         error_msg: '',
         data: {
             room_code: 'ABCD'
-        }
-    },
-
-    RoomStatusResponse: {
-        error_code: 0,
-        error_msg: '',
-        data: {
-            room_name: 'Lonch with Greg',
-            status: 1,
-            voted_users: ['Mary', 'Amy'],
-            host_username: 'Greg'
         }
     },
 
