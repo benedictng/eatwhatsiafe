@@ -11,7 +11,7 @@ const LandingPage = () => {
 
     const [step, setStep] = useState(0)
     const [roomCode, setRoomCode] = useState(null)
-    const [usersDoneVoting, setUsersDoneVoting] = useState([])
+    const [roomStatusData, setRoomStatusData] = useState(null)
     const history = useHistory()
 
     const createOrEnter = (_roomCode=null) => {
@@ -26,7 +26,7 @@ const LandingPage = () => {
             RoomAPI.getRoomStatus({room_code: _roomCode}).then(res => {
                 switch(res.data.status) {
                     case 1: // active
-                        setUsersDoneVoting(res.data.voted_users)
+                        setRoomStatusData(res.data)
                         setStep(1)
                         break
                     case 2: // closed
@@ -51,8 +51,12 @@ const LandingPage = () => {
         history.push('/create-room', data)
     }
 
+    const toRoomStatusPage = (userVoted) => {
+        history.push(`/room/${roomCode}`, {...roomStatusData, userVote: userVoted})
+    }
+
     const restart = () => {
-        setUsersDoneVoting([])
+        setRoomStatusData(null)
         setRoomCode(null)
         setStep(0)
     }
@@ -62,9 +66,9 @@ const LandingPage = () => {
             case 0:
                 return <CreateOrEnterRoom createOrEnter={createOrEnter}/>
             case 1:
-                return <GetJoinerName existingUsers={usersDoneVoting} />
+                return <GetJoinerName existingUsers={roomStatusData.voted_users} toRoomStatusPage={toRoomStatusPage} />
             case 2:
-                return <GetHostName createRoom={createRoom}/>
+                return <GetHostName createRoom={createRoom} roomCode= {roomCode}/>
             case 3:
                 return <RoomDeleted restart={restart} roomCode={roomCode} />
             case 4:
