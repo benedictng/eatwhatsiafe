@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import NextButton from '../common/NextButton'
-import BackButton from '../common/BackButton'
+import NextButton from 'components/common/next-button'
+import BackButton from 'components/common/back-button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { locData } from "./loc-data";
 
 
+const options = locData.options
+const state = locData.state
 
 export class Cuisine extends Component {
     constructor(props) {
         super(props)
         if (props.formData == null) {
-            this.state = {location: 'Choose your location'}
+            this.state = state
             props.setFormData({...this.state})
         } else {
             this.state = {...props.formData}
@@ -29,16 +32,15 @@ export class Cuisine extends Component {
     }
 
     render() {
+        const dropdownMap = options.map(x =>
+            <Dropdown.Item eventKey={x}>{x}</Dropdown.Item>
+        )
         return(
         <div>
         <p>Where do you wanna eat</p>    
         
         <DropdownButton id="dropdown-basic-button" title={this.state.location} onSelect = {this.handleChange} >
-            <Dropdown.Item eventKey='North'>North</Dropdown.Item>
-            <Dropdown.Item eventKey="South">South</Dropdown.Item>
-            <Dropdown.Item eventKey="East">East</Dropdown.Item>
-            <Dropdown.Item eventKey="West">West</Dropdown.Item>
-            
+            {dropdownMap}
         </DropdownButton>
         
         <br/>
