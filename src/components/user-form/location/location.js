@@ -51,9 +51,15 @@ function Location(props) {
     }
 
     const onDone = () => {
-       props.setFormData(locData)
-       props.nextStep()
-    }
+        for (let x in locData) {
+            if (locData[x] == true) {
+                props.setFormData(locData)
+                props.nextStep()
+                return;
+            }
+        }
+        alert("Please choose something")
+        }
 
    
     const dropdownMap = options.map(x =>

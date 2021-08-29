@@ -79,7 +79,7 @@ const UserForm = () => {
 
 
 
-        alert("price_levels = " + priceResult + "history = " + JSON.stringify(history.location.state))
+        alert("price_levels = " + locationResult + "history = " + JSON.stringify(history.location.state))
         console.log(RoomAPI)
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,

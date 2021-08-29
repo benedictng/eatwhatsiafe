@@ -26,9 +26,15 @@ const Price = (props) => {
     }
 
     const onDone = () => {
-        props.setFormData(priceData)
-        props.nextStep()
-    }
+        for (let x in priceData) {
+            if (priceData[x] == true) {
+                props.setFormData(priceData)
+                props.nextStep()
+                return;
+            }
+        }
+        alert("Please choose something")
+        }
 
     const buttonMap = options.map(x => 
         <ToggleButton
@@ -50,7 +56,6 @@ const Price = (props) => {
         <br/>
         <NextButton nextStep={onDone}/> 
         <br/>
-        <BackButton prevStep={props.prevStep}/>
         
         </>
     )

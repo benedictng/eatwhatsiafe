@@ -25,9 +25,16 @@ const DiningType = (props) => {
     }
 
     const onDone = () => {
-        props.setFormData(diningTypeData)
-        props.nextStep()
-    }
+        for (let x in diningTypeData) {
+            if (diningTypeData[x] == true) {
+                props.setFormData(diningTypeData)
+                props.nextStep()
+                return;
+            }
+        }
+        alert("Please choose something")
+        }
+    
 
     const buttonMap = Object.keys(diningTypePresetData.enum).map(x => 
         <ToggleButton
@@ -45,7 +52,6 @@ const DiningType = (props) => {
 
     return (
         <>
-        {JSON.stringify(state, null, '\t')}        
         <p>Dining Types</p>    
         {buttonMap}
         <br/>
