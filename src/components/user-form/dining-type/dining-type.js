@@ -4,11 +4,16 @@ import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { diningTypePresetData } from "./dining-type-data";
+import { diningTypePresetData } from "common/constants/dining-type-preset-data";
 
 const DiningType = (props) => {
-    const options = diningTypePresetData.options
-    const state = diningTypePresetData.state
+    const state = {};
+    const result = []
+
+    
+    for (let x in diningTypePresetData.enum) {
+        state[x] = false
+    }
 
     const [diningTypeData, setDiningTypeData] = useState(props.formData == null ? {...state} : {...props.formData})
 
@@ -24,7 +29,7 @@ const DiningType = (props) => {
         props.nextStep()
     }
 
-    const buttonMap = options.map(x => 
+    const buttonMap = Object.keys(diningTypePresetData.enum).map(x => 
         <ToggleButton
         type="checkbox"
         variant="primary"
@@ -36,8 +41,11 @@ const DiningType = (props) => {
         </ToggleButton>
         )
 
+    
+
     return (
         <>
+        {JSON.stringify(state, null, '\t')}        
         <p>Dining Types</p>    
         {buttonMap}
         <br/>

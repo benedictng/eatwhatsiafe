@@ -10,7 +10,7 @@ const ExampleApiCall = () => {
         RoomAPI.createRoom({
             room_name: 'my room name',
             host_username: 'hoeward',
-            region: 3,
+            regions: 3,
             price_levels: [1, 2, 3],
             cuisine_types: [1, 4],
             dining_types: [1, 3],

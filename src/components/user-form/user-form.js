@@ -10,6 +10,13 @@ import { Link, useHistory } from 'react-router-dom';
 import Status from 'components/room-status';
 import Button from 'react-bootstrap/Button';
 import RoomAPI from 'api/room'
+import { cuisinePresetData } from "common/constants/cuisine-preset-data";
+import { dietRestrictPresetData } from "common/constants/diet-restriction-preset-data";
+import { diningTypePresetData } from "common/constants/dining-type-preset-data";
+import { locationPresetData } from "common/constants/location-preset-data";
+import { pricePresetData } from "common/constants/price-preset-data";
+
+
 
 
 
@@ -40,23 +47,51 @@ const UserForm = () => {
         const priceResult = []
         Object.keys(price).map(x => {
                 if (price[x] == true) {
-                    priceResult.push(x)
+                    priceResult.push(pricePresetData.enum[x])
                 }}
         )
+        const cuisineResult = []
+        Object.keys(veto).map(x => {
+                if (veto[x] == true) {
+                    cuisineResult.push(cuisinePresetData.enum[x])
+                }}
+        )
+
+        const diningTypeResult = []
+        Object.keys(diningType).map(x => {
+                if (diningType[x] == true) {
+                    diningTypeResult.push(diningTypePresetData.enum[x])
+                }}
+        )
+        const dietRestrictResult = []
+        Object.keys(rest).map(x => {
+                if (rest[x] == true) {
+                    dietRestrictResult.push(dietRestrictPresetData.enum[x])
+                }}
+        )
+
+        const locationResult = []
+        Object.keys(location).map(x => {
+                if (location[x] == true) {
+                    locationResult.push(locationPresetData.enum[x])
+                }}
+        )
+
+
+
         alert("price_levels = " + priceResult + "history = " + JSON.stringify(history.location.state))
         console.log(RoomAPI)
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
             host_username: history.location.state.name,
-            region: 3,
+            regions: locationResult,
             price_levels: priceResult,
-            cuisine_types: [1, 4],
-            dining_types: [1, 3],
-            dietary_restrictions: [1, 3, 5]
+            cuisine_types: cuisineResult,
+            dining_types: diningTypeResult,
+            dietary_restrictions: dietRestrictResult
         }).then(res => {
             alert(`received response: ${JSON.stringify(res)}`)
             setRoomCode(res.data.room_code)
-            //history.push('/room/'+res.data.room_code, {name: history.location.state.name, roomName: history.location.state.roomName})
             history.push('/room/'+res.data.room_code, history.location.state)
         })
     }

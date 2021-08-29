@@ -1,57 +1,140 @@
-import React, { Component } from 'react'
+import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
-import { locData } from "./loc-data";
+import { locationPresetData } from "common/constants/location-preset-data";
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import Button from 'react-bootstrap/ToggleButton'
 
 
-const options = locData.options
-const state = locData.state
 
-export class Cuisine extends Component {
-    constructor(props) {
-        super(props)
-        if (props.formData == null) {
-            this.state = state
-            props.setFormData({...this.state})
+
+
+function Location(props) {
+
+    const [wordEntered, setWordEntered] = useState("");
+    const [filteredData, setFilteredData] = useState([]);
+    const data = Object.keys(locationPresetData.enum)
+
+    const handleFilter = (event) => {
+        const searchWord = event.target.value;
+        setWordEntered(searchWord);
+        const newFilter = data.filter((value) => {
+          return value.toLowerCase().includes(searchWord.toLowerCase());
+        });
+    
+        if (searchWord === "") {
+          setFilteredData([]);
         } else {
-            this.state = {...props.formData}
+          setFilteredData(newFilter);
         }
-    }
+      };
+    
+      const clearInput = () => {
+        setFilteredData([]);
+        setWordEntered("");
+      };
 
-    handleChange = (value) => {
-        this.setState({
-            location: value
+
+    const options = Object.keys(locationPresetData.enum)
+    const state = locationPresetData.state
+
+    const [locData, setLocData] = useState(props.formData == null ? {...state} : {...props.formData})
+
+
+    const handleChange = (value) => {
+        setLocData({
+            ...locData,
+            [value]: !locData[value]
         })
     }
 
-    onDone = () => {
-       this.props.setFormData(this.state)
-       this.props.nextStep()
+    const onDone = () => {
+       props.setFormData(locData)
+       props.nextStep()
     }
 
-    render() {
-        const dropdownMap = options.map(x =>
-            <Dropdown.Item eventKey={x}>{x}</Dropdown.Item>
-        )
-        return(
-        <div>
-        <p>Where do you wanna eat</p>    
-        
-        <DropdownButton id="dropdown-basic-button" title={this.state.location} onSelect = {this.handleChange} >
-            {dropdownMap}
-        </DropdownButton>
-        
-        <br/>
-        <NextButton nextStep={this.onDone}/> 
-        <br/>
-        <BackButton prevStep={this.props.prevStep}/>
-        </div>
-        
-        
-        )
+   
+    const dropdownMap = options.map(x =>
+        <Dropdown.Item eventKey={x}>{x}</Dropdown.Item>
+    )
+    
+    const onCheckboxTicked = (cuisine) => {
+        setLocData({
+            ...locData,
+            [cuisine]: !locData[cuisine]
+        })
     }
+
+    
+    const tagMap =[]
+
+    for (var key in locData) {
+        if (locData[key]==true) {
+            tagMap.push(
+                <ToggleButton
+                    type="checkbox"
+                    variant="primary"
+                    checked={locData[key]}
+                    name = {key}
+                    onChange={() => onCheckboxTicked(key)}
+                    >
+                    {key}
+                </ToggleButton>
+                )    
+        }
+    }    
+
+
+
+    return(
+    <div>
+    <p>Where do you wanna eat</p>    
+    {tagMap}
+    <p></p>
+    <DropdownButton id="dropdown-basic-button" title = "Options" onSelect = {handleChange} >
+        {dropdownMap}
+    </DropdownButton>
+    
+    <br/>
+    <NextButton nextStep={onDone}/> 
+    <br/>
+    <BackButton prevStep={props.prevStep}/>
+
+
+    <div className="search">
+      <div className="searchInputs">
+        <input
+          type="text"
+          placeholder='locations'
+          value={wordEntered}
+          onChange={handleFilter}
+        />
+        <div className="searchIcon">
+          {filteredData.length === 0 ? (
+            <Button />
+          ) : (
+            <Button id="clearBtn" onClick={clearInput} />
+          )}
+        </div>
+      </div>
+      {filteredData.length != 0 && (
+        <div className="dataResult">
+          {filteredData.slice(0, 15).map((value, key) => {
+            return (
+              <a className="dataItem" href={value.link} target="_blank">
+                <p>{value.title} </p>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+    </div>
+    
+    
+    )
 }
 
-export default Cuisine
+export default Location

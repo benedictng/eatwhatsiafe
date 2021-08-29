@@ -7,7 +7,7 @@ export interface IRoomAPI {
 export interface CreateRoomPayload {
     room_name: string,
     host_username: string,
-    region: number,
+    regions: number,
     price_levels: number[],
     cuisine_types: number[],
     dining_types: number[],
