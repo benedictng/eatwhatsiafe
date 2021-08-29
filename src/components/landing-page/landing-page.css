@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-.room-code-input {
+.create-enter-room-container .form-control {
     max-width: 200px;
     margin: auto;
 }

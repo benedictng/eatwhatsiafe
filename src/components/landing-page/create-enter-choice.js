@@ -1,21 +1,15 @@
 import {useState} from 'react'
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import SingleTextInput from 'components/common/single-text-input'
 
 const CreateOrEnterRoom = ({createOrEnter}) => {
     const [isEnter, setIsEnter] = useState(false)
-    const [roomCode, setRoomCode] = useState(null)
 
     const toggleIsEnter = () => {
         setIsEnter(!isEnter)
     }
 
-    const onChange = (e) => {
-        setRoomCode(e.target.value)
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault()
+    const onSubmit = (roomCode) => {
         createOrEnter(roomCode)
     }
 
@@ -27,24 +21,22 @@ const CreateOrEnterRoom = ({createOrEnter}) => {
     )
 
     const renderEnterCode = () => (
-        <Form onSubmit={onSubmit}>
-            <Form.Group>
-                <Form.Label>Room Code: </Form.Label>
-                <Form.Control className='room-code-input' type='text' name='roomCode' onChange={onChange}/>
-            </Form.Group>
-            <br />
-            <Button variant='light' type='submit'>Submit</Button>
-            <Button variant='light' onClick={toggleIsEnter}>Back</Button>
-        </Form>
+        <SingleTextInput
+            label='Room Code:'
+            submitButtonLabel='Submit'
+            onSubmit={onSubmit}
+            backButtonLabel='Back'
+            onBack={toggleIsEnter}
+        />
     )
 
     return (
-        <>
+        <div className='create-enter-room-container'>
         { isEnter
             ? renderEnterCode()
             : renderChoice()
         }
-        </>
+        </div>
     )
 }
 

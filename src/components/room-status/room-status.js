@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Redirect } from 'react-router-dom'
 import RoomAPI from 'api/room'
 import Button from 'react-bootstrap/Button';
 
 
 
-const Status = (props) => {
+const Status = () => {
 
+  const location = useLocation()
   const { roomCode } = useParams()
   const [roomName, setRoomName] = useState('')
   const [votedUsers, setVotedUsers] = useState([])
@@ -22,7 +23,7 @@ const Status = (props) => {
   const makeCall = () => {
     console.log(RoomAPI)
     RoomAPI.getRoomStatus({
-        room_name: roomCode
+        room_code: roomCode
     }).then(res => {
         alert(`received response: ${JSON.stringify(res)}`)
         setRoomName(res.data.room_name)

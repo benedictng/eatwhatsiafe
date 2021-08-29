@@ -30,7 +30,7 @@ const SingleTextInput = (props: InputProps) => {
     const renderBackButton = () => {
         return (backButtonLabel === null || onBack === null)
             ? null
-            : <Button variant='light' onClick={onBack}>{backButtonLabel}</Button>
+            : <Button className='back-button' variant='light' onClick={onBack}>{backButtonLabel}</Button>
     }
 
     return (
@@ -40,7 +40,7 @@ const SingleTextInput = (props: InputProps) => {
                 <Form.Control type='text' name='user_input' onChange={_onChange}/>
             </Form.Group>
             <br />
-            <Button variant='light' type='submit'>{submitButtonLabel}</Button>
+            <Button className='submit-button' variant='light' type='submit'>{submitButtonLabel}</Button>
             {renderBackButton()}
         </Form>
     )
