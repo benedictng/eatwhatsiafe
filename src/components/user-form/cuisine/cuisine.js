@@ -4,11 +4,17 @@ import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { cuisinePresetData } from "./cuisine-data";
+import { cuisinePresetData } from "common/constants/cuisine-preset-data";
 
 const Cuisine = (props) => {
-    const options = cuisinePresetData.options
-    const state = cuisinePresetData.state
+    const state = {};
+    const result = [];
+    const options =  Object.keys(cuisinePresetData.enum)
+
+    for (let x in cuisinePresetData.enum) {
+        state[x] = false
+    }
+
 
     const [cuisineData, setCuisineData] = useState(props.formData == null ? {...state} : {...props.formData})
 
@@ -38,7 +44,7 @@ const Cuisine = (props) => {
 
     return (
         <>
-        <p>I can't eat this</p>    
+        <p>I don't wanna eat this</p>    
         {buttonMap}
         <br/>
         <br/>

@@ -4,25 +4,37 @@ import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { pricePresetData } from "./price-data";
+import { pricePresetData } from "common/constants/price-preset-data";
+
 
 const Price = (props) => {
-    const options = pricePresetData.options
-    const state = pricePresetData.state
+    const state = {};
+    const result = [];
+    const options =  Object.keys(pricePresetData.enum)
+
+    for (let x in pricePresetData.enum) {
+        state[x] = false
+    }
 
     const [priceData, setPriceData] = useState(props.formData == null ? {...state} : {...props.formData})
 
-    const onCheckboxTicked = (cuisine) => {
+    const onCheckboxTicked = (option) => {
         setPriceData({
             ...priceData,
-            [cuisine]: !priceData[cuisine]
+            [option]: !priceData[option]
         })
     }
 
     const onDone = () => {
-        props.setFormData(priceData)
-        props.nextStep()
-    }
+        for (let x in priceData) {
+            if (priceData[x] == true) {
+                props.setFormData(priceData)
+                props.nextStep()
+                return;
+            }
+        }
+        alert("Please choose something")
+        }
 
     const buttonMap = options.map(x => 
         <ToggleButton
@@ -44,7 +56,6 @@ const Price = (props) => {
         <br/>
         <NextButton nextStep={onDone}/> 
         <br/>
-        <BackButton prevStep={props.prevStep}/>
         
         </>
     )
