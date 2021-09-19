@@ -29,7 +29,7 @@ const DiningType = (props) => {
             if (diningTypeData[x] == true) {
                 props.setFormData(diningTypeData)
                 props.nextStep()
-                return;
+                return;             
             }
         }
         alert("Please choose something")

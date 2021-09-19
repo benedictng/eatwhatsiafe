@@ -24,7 +24,7 @@ import { pricePresetData } from "common/constants/price-preset-data";
 
 const UserForm = () => {
     
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(5)
     const [price, setPrice] = useState(null)
     const [veto, setVeto] = useState(null)
     const [rest, setRest] = useState(null)
@@ -40,7 +40,7 @@ const UserForm = () => {
 
     // Go back to previous step
     const prevStep = () => {
-        setStep(step-1)
+        setStep(step-1)                                                                               
     }
 
     const createRoom = () => {
