@@ -29,7 +29,10 @@ function RestaurantCard({ restaurant }) {
             <Carousel slides={restaurant.photos} />
           </Row>
           <Row>
-            <Tags />
+            <Tags
+              cuisineType={restaurant.cuisine_type}
+              restriction={restaurant.restrictions}
+            />
           </Row>
         </Col>
         <Col>
