@@ -2,7 +2,6 @@ import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 
-
 const Price = (props) => {
     const initialState = {};
     for (let x in (props.presetData.enum)) {
