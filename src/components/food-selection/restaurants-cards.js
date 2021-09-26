@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import RestaurantCard from "./restaurant-card";
 
 import Col from "react-bootstrap/Col";
@@ -12,15 +12,13 @@ const RestaurantsCards = () => {
   const [allData, setAllData] = useState({});
   const [loaded, setLoaded] = useState(false);
   const { roomCode } = useParams();
+  const history = useHistory();
 
-  useEffect(
-    () =>
-      RoomAPI.getFoodList({ room_code: roomCode }).then((res) => {
-        console.log(res);
-        setAllData(res.data);
-        setLoaded(true);
-      }),
-    []
+  useEffect(() =>
+    RoomAPI.getFoodList({ room_code: roomCode }).then((res) => {
+      setAllData(res.data);
+      setLoaded(true);
+    })
   );
 
   // () can replace return
@@ -40,18 +38,39 @@ const RestaurantsCards = () => {
   function recordNextPage() {
     // selection.push(currentRestaurant.food_id);
     //^ not a good idea because you cannot set currentRestaurant as an empty array without it being a global variable.
-
     const newSelections = selections.concat(currentRestaurant.food_id);
     setSelections(newSelections);
 
     if (currentPage < totalRestaurants - 1) {
       setCurrentPage(currentPage + 1);
+    } else {
+      RoomAPI.submitVote({
+        room_name: "my room name",
+        username: "hoeward",
+        room_code: roomCode,
+        votes: selections,
+      }).then((res) => {
+        if (res.error_code === 0) {
+          history.push("/room/" + roomCode);
+        }
+      });
     }
   }
 
   function nextPage() {
     if (currentPage < totalRestaurants - 1) {
       setCurrentPage(currentPage + 1);
+    } else {
+      RoomAPI.submitVote({
+        room_name: "my room name",
+        username: "hoeward",
+        room_code: roomCode,
+        votes: selections,
+      }).then((res) => {
+        if (res.error_code === 0) {
+          history.push("/room/" + roomCode);
+        }
+      });
     }
   }
 
@@ -59,7 +78,10 @@ const RestaurantsCards = () => {
     if (loaded) {
       return (
         <>
-          <RestaurantCard restaurant={currentRestaurant}></RestaurantCard>
+          <RestaurantCard
+            restaurant={currentRestaurant}
+            key={currentRestaurant}
+          ></RestaurantCard>
           <Col>
             <button onClick={recordNextPage}>
               <img

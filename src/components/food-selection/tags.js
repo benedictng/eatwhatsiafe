@@ -16,7 +16,7 @@ const tags = ({ cuisineType, restriction }) => {
             {cuisinePresetData.enum2[cuisineTag]}
           </Button>
         ))}
-        ;
+
         {restriction.map((dietaryTag, id) => (
           <Button variant="secondary">
             {dietRestrictPresetData.enum2[dietaryTag]}

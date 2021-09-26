@@ -23,9 +23,9 @@ function App() {
           <Route path="/results">
             <Results />
           </Route>
-          {/* <Route path="/restaurant-details">
-                        <FoodSelectionPage />
-                    </Route> */}
+          <Route path="/restaurant-details">
+            <FoodSelectionPage />
+          </Route>
           <Route path="/create-room" component={UserForm} />
           <Route path="/example-api-call" component={ExampleApiCall} />
           <Route
