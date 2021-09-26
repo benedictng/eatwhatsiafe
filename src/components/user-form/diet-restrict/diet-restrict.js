@@ -2,33 +2,32 @@ import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { dietRestrictPresetData } from "common/constants/diet-restriction-preset-data";
 
 const DietRestrict = (props) => {
-    const state = {};
-    const result = [];
-    const options =  Object.keys(dietRestrictPresetData.enum)
-
-    
-    for (let x in dietRestrictPresetData.enum) {
-        state[x] = false
+    const initialState = {};
+    for (let x in (props.presetData.enum)) {
+        initialState[x] = false
     }
 
+    const options =  Object.keys(props.presetData.enum)
+    const [restData, setRestData] = useState(props.formData == null ? {...initialState} : {...props.formData})
 
-    const [restData, setRestData] = useState(props.formData == null ? {...state} : {...props.formData})
 
-
-    const onCheckboxTicked = (cuisine) => {
+    const onCheckboxTicked = (option) => {
         setRestData({
             ...restData,
-            [cuisine]: !restData[cuisine]
+            [option]: !restData[option]
         })
     }
 
     const onDone = () => {
-        props.setFormData(restData)
+        const result  = []
+        for (let x in restData) {
+            if (restData[x] === true) {
+                result.push(props.presetData.enum[x])
+            }
+        }
+        props.setFormData(result)
         props.nextStep()
     }
 
