@@ -1,22 +1,16 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { pricePresetData } from "common/constants/price-preset-data";
 
 
 const Price = (props) => {
-    const state = {};
-    const result = [];
-    const options =  Object.keys(pricePresetData.enum)
-
-    for (let x in pricePresetData.enum) {
-        state[x] = false
+    const initialState = {};
+    for (let x in (props.presetData.enum)) {
+        initialState[x] = false
     }
 
-    const [priceData, setPriceData] = useState(props.formData == null ? {...state} : {...props.formData})
+    const options =  Object.keys(props.presetData.enum)
+    const [priceData, setPriceData] = useState(props.formData == null ? {...initialState} : {...props.formData})
 
     const onCheckboxTicked = (option) => {
         setPriceData({
@@ -26,15 +20,20 @@ const Price = (props) => {
     }
 
     const onDone = () => {
+        const result  = []
         for (let x in priceData) {
-            if (priceData[x] == true) {
-                props.setFormData(priceData)
-                props.nextStep()
-                return;
+            if (priceData[x] === true) {
+                result.push(props.presetData.enum[x])
             }
         }
+        if (result.length<1) {
         alert("Please choose something")
+        } else {
+            props.setFormData(result)
+            props.nextStep()
+            return
         }
+    }
 
     const buttonMap = options.map(x => 
         <ToggleButton
@@ -49,15 +48,18 @@ const Price = (props) => {
         )
 
     return (
-        <>
-        <p>Price points</p>    
-        {buttonMap}
-        <br/>
-        <br/>
-        <NextButton nextStep={onDone}/> 
-        <br/>
-        
-        </>
+        <div>
+            <h1>
+                <p>Price points</p>    
+            </h1>
+            <div>
+                {buttonMap}
+            </div>
+            <br/>
+            <br/>
+            <NextButton nextStep={onDone}/> 
+            <br/>
+        </div>
     )
 }
 

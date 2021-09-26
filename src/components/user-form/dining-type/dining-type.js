@@ -2,41 +2,40 @@ import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from '../../common/back-button'
 import ToggleButton from 'react-bootstrap/ToggleButton'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-import { diningTypePresetData } from "common/constants/dining-type-preset-data";
 
 const DiningType = (props) => {
-    const state = {};
-    const result = []
-
-    
-    for (let x in diningTypePresetData.enum) {
-        state[x] = false
+    const initialState = {};
+    for (let x in (props.presetData.enum)) {
+        initialState[x] = false
     }
 
-    const [diningTypeData, setDiningTypeData] = useState(props.formData == null ? {...state} : {...props.formData})
+    const options =  Object.keys(props.presetData.enum)
+    const [diningTypeData, setDiningTypeData] = useState(props.formData == null ? {...initialState} : {...props.formData})
 
-    const onCheckboxTicked = (cuisine) => {
+    const onCheckboxTicked = (option) => {
         setDiningTypeData({
             ...diningTypeData,
-            [cuisine]: !diningTypeData[cuisine]
+            [option]: !diningTypeData[option]
         })
     }
 
     const onDone = () => {
+        const result  = []
         for (let x in diningTypeData) {
-            if (diningTypeData[x] == true) {
-                props.setFormData(diningTypeData)
-                props.nextStep()
-                return;
+            if (diningTypeData[x] === true) {
+                result.push(props.presetData.enum[x])
             }
         }
+        if (result.length<1) {
         alert("Please choose something")
+        } else {
+            props.setFormData(result)
+            props.nextStep()
+            return
         }
-    
+    }
 
-    const buttonMap = Object.keys(diningTypePresetData.enum).map(x => 
+    const buttonMap = options.map(x => 
         <ToggleButton
         type="checkbox"
         variant="primary"

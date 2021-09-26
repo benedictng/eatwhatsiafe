@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { Redirect } from 'react-router-dom'
 import RoomAPI from 'api/room'
 import Button from 'react-bootstrap/Button';
 
@@ -38,6 +37,15 @@ const Status = () => {
   const votedUsersMap = votedUsers.map(x =>
     <ListGroupItem>{x}</ListGroupItem>
     )
+
+  const closeRoom = () => {
+    RoomAPI.closeRoom({
+      room_code: roomCode
+  }).then(res => {
+      alert(`received response: ${JSON.stringify(res)}`)
+      //find some way to refresh page or load results page - see quek's wrapper implementation
+  })
+  }
   
 
 
@@ -49,7 +57,7 @@ const Status = () => {
         <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
         
         <br/>
-        <Card style={{ width: '50rem'}} >
+        <Card style={{ width: '50rem', margin: "auto"}} >
             <Card.Body>
                 <Card.Title>Co-operative friends who have voted</Card.Title>
             </Card.Body>
@@ -57,7 +65,7 @@ const Status = () => {
                {votedUsersMap}
             </ListGroup>
             <Card.Body>
-                <Card.Link href="#">Close room - POST "/room/endvote"</Card.Link>
+                <Button variant='primary' onClick = {closeRoom}>Close room</Button>
             </Card.Body>
         </Card>
         <br/>
