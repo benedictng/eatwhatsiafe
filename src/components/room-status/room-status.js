@@ -7,34 +7,19 @@ import Button from 'react-bootstrap/Button';
 
 
 
-const Status = () => {
+const Status = ({ roomData }) => {
 
   const location = useLocation()
   const { roomCode } = useParams()
-  const [roomName, setRoomName] = useState('')
-  const [votedUsers, setVotedUsers] = useState([])
+
   const history = useHistory()
 
-  useEffect(()=> {
-    makeCall()
-  }, [roomCode])// Only re-run if roomCode changes
-
-  const makeCall = () => {
-    console.log(RoomAPI)
-    RoomAPI.getRoomStatus({
-        room_code: roomCode
-    }).then(res => {
-        alert(`received response: ${JSON.stringify(res)}`)
-        setRoomName(res.data.room_name)
-        setVotedUsers(res.data.voted_users)
-    })
-  }
-
   const swipingFlow = () => {
-    history.push('/restaurant-details', {name: history.location.state.name, roomName: roomName, roomCode: roomCode})
+    history.push('/restaurant-details', {name: "placeholder name", roomName: roomData.room_name, roomCode: roomCode})
+    // history.push('/restaurant-details', {name: history.location.state.name, roomName: roomData.room_name, roomCode: roomCode})
   }
 
-  const votedUsersMap = votedUsers.map(x =>
+  const votedUsersMap = roomData.voted_users.map(x =>
     <ListGroupItem>{x}</ListGroupItem>
     )
 
@@ -52,7 +37,7 @@ const Status = () => {
   return (
     <div>
         <p>history.location.state: ${JSON.stringify(history.location.state)}</p>
-        <p>{ roomName }</p>
+        <p>{ roomData.room_name }</p>
         <p>Room Code - { roomCode }</p>
         <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
         
@@ -71,7 +56,7 @@ const Status = () => {
         <br/>
         
       
-        <Button onClick = {swipingFlow}>Enter Swiping Flow</Button>
+        <Button onClick={swipingFlow}>Enter Swiping Flow</Button>
         <br />
         <Link to='/preferences'>Shortcut to preferences</Link><br />
 
