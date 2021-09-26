@@ -15,12 +15,6 @@ import { diningTypePresetData } from "common/constants/dining-type-preset-data";
 import { locationPresetData } from "common/constants/location-preset-data";
 import { pricePresetData } from "common/constants/price-preset-data";
 
-
-
-
-
-
-
 const UserForm = () => {
     
     const [step, setStep] = useState(1)
@@ -169,6 +163,5 @@ const UserForm = () => {
                 alert(`ERROR`);
         }
     }
-
 
 export default UserForm
