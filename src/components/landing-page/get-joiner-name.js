@@ -4,6 +4,7 @@ const GetJoinerName = ({existingUsers, toRoomStatusPage}) => {
 
     const submitName = (name) => {
         console.log(existingUsers)
+        window.sessionStorage.setItem('name', name)
         if (existingUsers.includes(name)) {
             // direct to results page
             alert(`${name} has already voted. Direct to results page now.`)
