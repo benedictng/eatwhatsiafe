@@ -52,33 +52,31 @@ function Location(props) {
     }
     
     return(
-    <>
-        <h1>
-            <p>Where do you wanna eat</p>    
-        </h1>  
-        <br/>
-        <br/>
-        <div>
-            <Autocomplete
-                onChange={(event, newValue) => {
-                    if (newValue) {
-                handleChange(newValue)
-                    }
-                }}
-                id="autocomplete dropdown search bar"
-                options={options}
-                style={{ width: 300, margin: "auto" }}
-                renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
-            />
-        </div>
-        <br/>
-        <NextButton nextStep={onDone}/> 
-        <br/>
-        <BackButton prevStep={props.prevStep}/>
-    
-    </>
-    
-    
+        <>
+            <h1>
+                <p>Where do you wanna eat</p>    
+            </h1>  
+            <br/>
+            <br/>
+            <div>
+                <Autocomplete
+                    onChange={(event, newValue) => {
+                        if (newValue) {
+                    handleChange(newValue)
+                        }
+                    }}
+                    id="autocomplete dropdown search bar"
+                    options={options}
+                    style={{ width: 300, margin: "auto" }}
+                    renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
+                />
+            </div>
+            <br/>
+            <NextButton nextStep={onDone}/> 
+            <br/>
+            <BackButton prevStep={props.prevStep}/>
+        
+        </>
     )
 }
 

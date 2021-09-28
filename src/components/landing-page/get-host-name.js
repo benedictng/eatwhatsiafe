@@ -9,6 +9,7 @@ const GetHostName = ({createRoom}) => {
     const onSubmitName = (name) => {
         setState({...state, name: name})
         setEnteringName(false)
+        window.sessionStorage.setItem('name', name)
     }
 
     const onSubmitRoomName = (roomName) => {

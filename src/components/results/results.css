@@ -1,0 +1,29 @@
+.winnercard {
+  background-color: #eeeeee;
+  border-radius: 2rem;
+  text-align: left;
+}
+
+.horizontalcenter {
+  margin: auto;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.results_image {
+  border-radius: 1rem;
+  max-width: 100%;
+  object-fit: cover;
+  width: 22.5rem;
+  height: 22.5rem;
+}
+
+.results_image_others {
+  border-radius: 1rem;
+  max-width: 100%;
+  object-fit: cover;
+  width: 22.5rem;
+  height: 15rem;
+}
