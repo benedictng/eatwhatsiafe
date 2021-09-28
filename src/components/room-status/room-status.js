@@ -61,4 +61,4 @@ const Status = ({ roomData }) => {
     )
 }
 
-export default Status
+export default Status;

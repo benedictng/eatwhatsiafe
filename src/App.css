@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+/* --Fonts--------------------------- */
+.h0 {
+  font-family: "Poppins", serif;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 7.5rem;
+}
+
+h1 {
+  font-family: "Poppins", serif;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  line-height: 2rem;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+  line-height: 1.75rem !important;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem !important;
+  line-height: 1.25rem !important;
+}
+
+.mainsubtitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.p2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+}
