@@ -10,21 +10,21 @@ import { Results } from './components/results/results';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <div className='App'>
-      <Router>
-        <Switch>
-            <Route exact path='/' component={LandingPage} />
-            <Route path='/preferences' component={UserForm} />
-            <Route path='/results' component={Results} />
-            <Route path='/restaurant-details' component={FoodSelectionPage} />
-            <Route path='/create-room' component={UserForm} />
-            <Route path='/example-api-call' component={ExampleApiCall} />
-            <RequireNameRoute path='/room/:roomCode/selection'><FoodSelectionPage /></RequireNameRoute>
-            <RequireNameRoute path='/room/:roomCode'><Room /></RequireNameRoute>
-        </Switch>
-      </Router>
-    </div>
+    return (
+        <div className='App'>
+            <Router>
+            <Switch>
+                <Route exact path='/' component={LandingPage} />
+                <Route path='/preferences' component={UserForm} />
+                <Route path='/results' component={Results} />
+                <Route path='/restaurant-details' component={FoodSelectionPage} />
+                <Route path='/create-room' component={UserForm} />
+                <Route path='/example-api-call' component={ExampleApiCall} />
+                <RequireNameRoute path='/room/:roomCode/selection'><FoodSelectionPage /></RequireNameRoute>
+                <RequireNameRoute path='/room/:roomCode'><Room /></RequireNameRoute>
+            </Switch>
+            </Router>
+        </div>
   )
 }
 
