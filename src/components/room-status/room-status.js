@@ -14,7 +14,7 @@ const Status = ({ roomData }) => {
     const history = useHistory()
 
     const swipingFlow = () => {
-        history.push('/restaurant-details', {name: "placeholder name", roomName: roomData.room_name, roomCode: roomCode})
+        history.push('/room/' + roomCode + '/selection')
         // history.push('/restaurant-details', {name: history.location.state.name, roomName: roomData.room_name, roomCode: roomCode})
     }
 
@@ -34,8 +34,9 @@ const Status = ({ roomData }) => {
     return (
         <div>
             <p>history.location.state: ${JSON.stringify(history.location.state)}</p>
-            <p>{ roomData.room_name }</p>
-            <p>Room Code - { roomCode }</p>
+            <p>Room Name: { roomData.room_name }</p>
+            <p>Room Code: { roomCode }</p>
+            <p>Dude's name: {window.sessionStorage.getItem('name')}</p>
             <p>sharing url - http://localhost:3000/room/{ roomCode }</p>
             
             <br/>

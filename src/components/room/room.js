@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from 'components/common/loading'
 import Status from 'components/room-status'
+import { Results } from 'components/results/results'
 
 const Room = () => {
 
@@ -26,7 +27,7 @@ const Room = () => {
             case 1:
                 return <Status roomData={data} />
             case 2:
-                return <p>Results</p>
+                return <Results />
             default:
                 return <h1>ERROR</h1>
         }
