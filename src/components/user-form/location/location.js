@@ -13,7 +13,18 @@ function Location(props) {
         initialState[x] = false
     }
     
-    const options = Object.keys(props.presetData.enum)
+    
+    
+    var options = Object.keys(props.presetData.enum)
+
+    var temp = options.slice(0,5)
+    
+    for (let i = 0; i<5;i++) {
+        options.shift()
+    }
+
+    options = options.sort()
+    options.unshift(...temp)
     const [locData, setLocData] = useState(props.formData == null ? {...initialState} : {...props.formData})
 
     const handleChange = (value) => {
