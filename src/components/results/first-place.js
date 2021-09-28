@@ -1,8 +1,5 @@
 import React from "react";
-
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-
 import "./results.css";
 
 //Class name image is in react bootstrap

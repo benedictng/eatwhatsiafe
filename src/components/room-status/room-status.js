@@ -1,14 +1,11 @@
 import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import RoomAPI from 'api/room'
 import Button from 'react-bootstrap/Button';
 
-
-
 const Status = ({ roomData }) => {
 
-    const location = useLocation()
     const { roomCode } = useParams()
 
     const history = useHistory()

@@ -5,7 +5,6 @@ import ExampleApiCall from 'components/common/example-api-call';
 import UserForm from 'components/user-form';
 import Room from 'components/room';
 import FoodSelectionPage from './components/food-selection';
-import { Results } from './components/results/results';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
