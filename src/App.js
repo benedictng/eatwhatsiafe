@@ -17,7 +17,6 @@ function App() {
                 <Route exact path='/' component={LandingPage} />
                 <Route path='/preferences' component={UserForm} />
                 <Route path='/results' component={Results} />
-                <Route path='/restaurant-details' component={FoodSelectionPage} />
                 <Route path='/create-room' component={UserForm} />
                 <Route path='/example-api-call' component={ExampleApiCall} />
                 <RequireNameRoute path='/room/:roomCode/selection'><FoodSelectionPage /></RequireNameRoute>
