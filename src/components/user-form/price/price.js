@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-import ToggleButton from 'react-bootstrap/ToggleButton'
+//import ToggleButton from 'react-bootstrap/ToggleButton'
+import ToggleButton from '@mui/material/ToggleButton';
+
+
 
 const Price = (props) => {
     const initialState = {};
@@ -36,9 +39,7 @@ const Price = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        type="checkbox"
-        variant="primary"
-        checked={priceData[x]}
+        selected={priceData[x]}
         name = {x}
         onChange={() => onCheckboxTicked(x)}
         >

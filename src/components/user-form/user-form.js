@@ -7,7 +7,8 @@ import Location from 'components/user-form/location'
 import BackButton from 'components/common/back-button'
 import NextButton from 'components/common/next-button'
 import { Link, useHistory } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 import RoomAPI from 'api/room'
 import { cuisinePresetData } from "common/constants/cuisine-preset-data";
 import { dietRestrictPresetData } from "common/constants/diet-restriction-preset-data";
@@ -154,7 +155,7 @@ const UserForm = () => {
                         prevStep = {prevStep}
                         />
                         <NextButton nextStep={nextStep}/> 
-                        <Button onClick = {createRoom}>Create room</Button>
+                        <Button variant = 'contained' onClick = {createRoom}>Create room</Button>
                     </div>
                 )
 

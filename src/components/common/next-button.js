@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
+import Button from '@mui/material/Button';
 
 export class NextButton extends Component {
     
@@ -11,7 +12,7 @@ export class NextButton extends Component {
     render() {
         return (
             <div>
-                <Button onClick={this.continue} variant = "secondary">Next</Button>            
+                <Button onClick={this.continue} variant = "contained">Next</Button>            
             </div>
         )
     }

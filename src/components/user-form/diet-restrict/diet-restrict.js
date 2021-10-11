@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from '../../common/back-button'
-import ToggleButton from 'react-bootstrap/ToggleButton'
+//import ToggleButton from 'react-bootstrap/ToggleButton'
+import ToggleButton from '@mui/material/ToggleButton';
+
 
 const DietRestrict = (props) => {
     const initialState = {};
@@ -33,9 +35,7 @@ const DietRestrict = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        type="checkbox"
-        variant="primary"
-        checked={restData[x]}
+        selected={restData[x]}
         name = {x}
         onChange={() => onCheckboxTicked(x)}
         >
