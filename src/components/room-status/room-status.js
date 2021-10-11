@@ -2,7 +2,9 @@ import { Card, ListGroup, ListGroupItem }from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { Link, useHistory } from 'react-router-dom';
 import RoomAPI from 'api/room'
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
+
 
 const Status = ({ roomData }) => {
 
@@ -19,15 +21,27 @@ const Status = ({ roomData }) => {
         <ListGroupItem>{x}</ListGroupItem>
     )
 
+    const SwipingButton = () => {
+        if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
+            return null
+        } else {
+            return (
+                <Button onClick={swipingFlow}>Enter Swiping Flow</Button>
+            )
+        }
+    }
+
+
     const closeRoom = () => {
         RoomAPI.closeRoom({
             room_code: roomCode
         }).then(res => {
             alert(`received response: ${JSON.stringify(res)}`)
-            //find some way to refresh page or load results page - see quek's wrapper implementation
+            window.location.reload()
+            //after api call, room status in BE should be updated. upon reload, room page(wrapper page) should detect that status is now closed and will render results instead)
         })
     }
-  
+    
     return (
         <div>
             <p>history.location.state: ${JSON.stringify(history.location.state)}</p>
@@ -45,13 +59,13 @@ const Status = ({ roomData }) => {
                     {votedUsersMap}
                 </ListGroup>
                 <Card.Body>
-                    <Button variant='primary' onClick = {closeRoom}>Close room</Button>
-                </Card.Body>
+                    <Button variant='contained' onClick = {closeRoom}>Close room</Button>
+                </Card.Body>                
             </Card>
             <br/>
             
+            <SwipingButton /> 
             
-            <Button onClick={swipingFlow}>Enter Swiping Flow</Button>
             <br />
             <Link to='/preferences'>Shortcut to preferences</Link><br />
 

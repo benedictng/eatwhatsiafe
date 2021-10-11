@@ -3,6 +3,9 @@ import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
 import { Autocomplete } from '@material-ui/lab';
 import { TextField } from '@material-ui/core';
+//import ToggleButton from 'react-bootstrap/ToggleButton'
+import ToggleButton from '@mui/material/ToggleButton';
+
 
 
 
@@ -33,7 +36,7 @@ function Location(props) {
             [value]: !locData[value]
         })
     }
-
+    
     
     const onDone = () => {
         const result  = []
@@ -50,12 +53,38 @@ function Location(props) {
             return
         }
     }
+    const onCheckboxTicked = (cuisine) => {
+        setLocData({
+            ...locData,
+            [cuisine]: !locData[cuisine]
+        })
+    }
+
+    const tagMap =[]
+
+    for (var key in locData) {
+        if (locData[key]===true) {
+            tagMap.push(
+                <div>
+                <ToggleButton
+                    selected={locData[key]}
+                    name = {key}
+                    onChange={() => onCheckboxTicked(key)}
+                    >
+                    {key}
+                </ToggleButton>
+                <br/>
+                </div>
+                )    
+        }
+    }    
     
     return(
         <>
             <h1>
                 <p>Where do you wanna eat</p>    
             </h1>  
+            {tagMap}
             <br/>
             <br/>
             <div>
