@@ -33,13 +33,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext js,ts,tsx src",
+    "lint-file": "eslint --ext js,ts,tsx ",
+    "husky-install": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -54,6 +63,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.8"
+    "@types/react-router-dom": "^5.1.8",
+    "husky": "^7.0.2"
   }
 }

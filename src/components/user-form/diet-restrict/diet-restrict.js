@@ -35,23 +35,23 @@ const DietRestrict = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        selected={restData[x]}
-        name = {x}
-        onChange={() => onCheckboxTicked(x)}
+            selected={restData[x]}
+            name = {x}
+            onChange={() => onCheckboxTicked(x)}
         >
-          {x}
+            {x}
         </ToggleButton>
-        )
+    )
 
     return (
         <>
-        <p>I can't eat this</p>    
-        {buttonMap}
-        <br/>
-        <br/>
-        <NextButton nextStep={onDone}/> 
-        <br/>
-        <BackButton prevStep={props.prevStep}/>
+            <p>I can't eat this</p>    
+            {buttonMap}
+            <br/>
+            <br/>
+            <NextButton nextStep={onDone}/> 
+            <br/>
+            <BackButton prevStep={props.prevStep}/>
         
         </>
     )

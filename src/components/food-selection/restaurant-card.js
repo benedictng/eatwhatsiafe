@@ -15,42 +15,42 @@ import React from "react";
 //props passes everything
 
 function RestaurantCard({ restaurant }) {
-  //API to call food list
+    //API to call food list
 
-  restaurant.reviews.map((review, id) => (
-    <Reviews key={id} review={review}></Reviews>
-  ));
+    restaurant.reviews.map((review, id) => (
+        <Reviews key={id} review={review}></Reviews>
+    ));
 
-  return (
-    <>
-      <Container>
-        <Col>
-          <Row>
-            <Carousel slides={restaurant.photos} />
-          </Row>
-          <Row>
-            <Tags
-              cuisineType={restaurant.cuisine_type}
-              restriction={restaurant.restrictions}
-            />
-          </Row>
-        </Col>
-        <Col>
-          <ProductInformation
-            name={restaurant.name}
-            // hours = {restaurant.opening_hours}
-            // price = {} price not available*****
-            address={restaurant.address}
-            mrt={restaurant.nearest_mrt}
-          />
-        </Col>
-      </Container>
+    return (
+        <>
+            <Container>
+                <Col>
+                    <Row>
+                        <Carousel slides={restaurant.photos} />
+                    </Row>
+                    <Row>
+                        <Tags
+                            cuisineType={restaurant.cuisine_type}
+                            restriction={restaurant.restrictions}
+                        />
+                    </Row>
+                </Col>
+                <Col>
+                    <ProductInformation
+                        name={restaurant.name}
+                        // hours = {restaurant.opening_hours}
+                        // price = {} price not available*****
+                        address={restaurant.address}
+                        mrt={restaurant.nearest_mrt}
+                    />
+                </Col>
+            </Container>
 
-      <Container>
-        <Reviews reviews={restaurant.reviews} />
-      </Container>
-    </>
-  );
+            <Container>
+                <Reviews reviews={restaurant.reviews} />
+            </Container>
+        </>
+    );
 }
 
 export default RestaurantCard;

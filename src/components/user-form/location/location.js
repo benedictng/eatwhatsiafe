@@ -46,7 +46,7 @@ function Location(props) {
             }
         }
         if (result.length<1) {
-        alert("Please choose something")
+            alert("Please choose something")
         } else {
             props.setFormData(result)
             props.nextStep()
@@ -66,16 +66,16 @@ function Location(props) {
         if (locData[key]===true) {
             tagMap.push(
                 <div>
-                <ToggleButton
-                    selected={locData[key]}
-                    name = {key}
-                    onChange={() => onCheckboxTicked(key)}
+                    <ToggleButton
+                        selected={locData[key]}
+                        name = {key}
+                        onChange={() => onCheckboxTicked(key)}
                     >
-                    {key}
-                </ToggleButton>
-                <br/>
+                        {key}
+                    </ToggleButton>
+                    <br/>
                 </div>
-                )    
+            )    
         }
     }    
     
@@ -91,7 +91,7 @@ function Location(props) {
                 <Autocomplete
                     onChange={(event, newValue) => {
                         if (newValue) {
-                    handleChange(newValue)
+                            handleChange(newValue)
                         }
                     }}
                     id="autocomplete dropdown search bar"

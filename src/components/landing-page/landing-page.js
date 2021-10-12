@@ -25,22 +25,22 @@ const LandingPage = () => {
             // TODO make call for room information NOTE - this call should be done in room. no calls her.
             RoomAPI.getRoomStatus({room_code: _roomCode}).then(res => {
                 switch(res.data.status) {
-                    case 1: // active
-                        setRoomStatusData(res.data)
-                        setStep(1)
-                        break
-                    case 2: // closed
-                        history.push(`/room/${_roomCode}`, res.data)
-                        break
-                    case 3: // deleted
-                        setStep(3)
-                        break
-                    default:
-                        // some error
-                        console.log(`Unexpected room status code ${res.data.status}.`)
-                        setStep(4)
-                        setTimeout(() => setStep(0), 1500)
-                        break
+                case 1: // active
+                    setRoomStatusData(res.data)
+                    setStep(1)
+                    break
+                case 2: // closed
+                    history.push(`/room/${_roomCode}`, res.data)
+                    break
+                case 3: // deleted
+                    setStep(3)
+                    break
+                default:
+                    // some error
+                    console.log(`Unexpected room status code ${res.data.status}.`)
+                    setStep(4)
+                    setTimeout(() => setStep(0), 1500)
+                    break
                 }
             })
         }
@@ -63,18 +63,18 @@ const LandingPage = () => {
 
     const renderSteps = () => {
         switch(step) {
-            case 0:
-                return <CreateOrEnterRoom createOrEnter={createOrEnter}/>
-            case 1:
-                return <GetJoinerName existingUsers={roomStatusData.voted_users} toRoomStatusPage={toRoomStatusPage} />
-            case 2:
-                return <GetHostName createRoom={createRoom} roomCode= {roomCode}/>
-            case 3:
-                return <RoomDeleted restart={restart} roomCode={roomCode} />
-            case 4:
-                return <p>Error ocurred, refreshing page..</p>
-            default:
-                return null
+        case 0:
+            return <CreateOrEnterRoom createOrEnter={createOrEnter}/>
+        case 1:
+            return <GetJoinerName existingUsers={roomStatusData.voted_users} toRoomStatusPage={toRoomStatusPage} />
+        case 2:
+            return <GetHostName createRoom={createRoom} roomCode= {roomCode}/>
+        case 3:
+            return <RoomDeleted restart={restart} roomCode={roomCode} />
+        case 4:
+            return <p>Error ocurred, refreshing page..</p>
+        default:
+            return null
         }
     }
 
@@ -88,7 +88,7 @@ const LandingPage = () => {
             <hr />
             <br />
             <div className="landing-page-content-container">
-            {renderSteps()}
+                {renderSteps()}
             </div>
         </div>
     )

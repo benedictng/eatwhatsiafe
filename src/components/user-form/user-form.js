@@ -61,108 +61,108 @@ const UserForm = () => {
 
 
     switch(step) {
-            case 1:
-                return (
-                    <div>
-                        <Price 
-                        nextStep = {nextStep}
-                        prevStep = {prevStep}
-                        setFormData = {setPrice}
-                        formData = {price}
-                        history = {history}
-                        presetData = {pricePresetData}
-                        />
-                        <br/>
-                        <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
-                    </div>
-                );
+    case 1:
+        return (
+            <div>
+                <Price 
+                    nextStep = {nextStep}
+                    prevStep = {prevStep}
+                    setFormData = {setPrice}
+                    formData = {price}
+                    history = {history}
+                    presetData = {pricePresetData}
+                />
+                <br/>
+                <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
+            </div>
+        );
                 
-            case 2:
-                return (
-                    <div>
-                        <Cuisine 
-                        nextStep = {nextStep}
-                        prevStep = {prevStep}
-                        setFormData = {setCuisineType}
-                        formData = {cuisineType}
-                        presetData = {cuisinePresetData}
-                        />
-                        <br/>
-                        <p>VETO DATA: {JSON.stringify(cuisineType, null, '\t')}</p>
-                    </div>
-                )
+    case 2:
+        return (
+            <div>
+                <Cuisine 
+                    nextStep = {nextStep}
+                    prevStep = {prevStep}
+                    setFormData = {setCuisineType}
+                    formData = {cuisineType}
+                    presetData = {cuisinePresetData}
+                />
+                <br/>
+                <p>VETO DATA: {JSON.stringify(cuisineType, null, '\t')}</p>
+            </div>
+        )
 
-            case 3: 
-                return (
-                    <div>
-                        <DiningType
-                        nextStep = {nextStep}
-                        prevStep = {prevStep}
-                        setFormData = {setDiningType}
-                        formData = {diningType}
-                        presetData = {diningTypePresetData}
+    case 3: 
+        return (
+            <div>
+                <DiningType
+                    nextStep = {nextStep}
+                    prevStep = {prevStep}
+                    setFormData = {setDiningType}
+                    formData = {diningType}
+                    presetData = {diningTypePresetData}
 
-                        />
-                        <br/>
-                        <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
-                    </div>
-            )
+                />
+                <br/>
+                <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
+            </div>
+        )
 
-            case 4: 
-                return (
-                    <div>
-                        <DietRestrict 
-                        nextStep = {nextStep}
-                        prevStep = {prevStep}
-                        setFormData = {setDietRest}
-                        formData = {dietRest}
-                        presetData = {dietRestrictPresetData}
+    case 4: 
+        return (
+            <div>
+                <DietRestrict 
+                    nextStep = {nextStep}
+                    prevStep = {prevStep}
+                    setFormData = {setDietRest}
+                    formData = {dietRest}
+                    presetData = {dietRestrictPresetData}
 
-                        />
-                        <br/>
-                        <p>REST DATA: {JSON.stringify(dietRest, null, '\t')}</p>
-                    </div>
-            )
-            case 5:
-                return (
-                    <div>
-                        <Location 
-                        nextStep = {nextStep}
-                        prevStep = {prevStep}
-                        setFormData = {setLocation}
-                        formData = {location}
-                        presetData = {locationPresetData}
+                />
+                <br/>
+                <p>REST DATA: {JSON.stringify(dietRest, null, '\t')}</p>
+            </div>
+        )
+    case 5:
+        return (
+            <div>
+                <Location 
+                    nextStep = {nextStep}
+                    prevStep = {prevStep}
+                    setFormData = {setLocation}
+                    formData = {location}
+                    presetData = {locationPresetData}
 
-                        />
-                        <br/>
-                        <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
-                    </div>
-                )
+                />
+                <br/>
+                <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
+            </div>
+        )
             
-            case 6:
-                //just to show state
-                return (
-                    <div>
-                        <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
-                        <p>VETO DATA: {JSON.stringify(cuisineType, null, '\t')}</p>
-                        <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
-                        <p>REST DATA: {JSON.stringify(dietRest, null, '\t')}</p>
-                        <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
+    case 6:
+        //just to show state
+        return (
+            <div>
+                <p>PRICE DATA: {JSON.stringify(price, null, '\t')}</p>
+                <p>VETO DATA: {JSON.stringify(cuisineType, null, '\t')}</p>
+                <p>DININGTYPE DATA: {JSON.stringify(diningType, null, '\t')}</p>
+                <p>REST DATA: {JSON.stringify(dietRest, null, '\t')}</p>
+                <p>LOCATION DATA: {JSON.stringify(location, null, '\t')}</p>
 
-                        <Link to='/room/abcd'>Go to status page</Link><br />
+                <Link to='/room/abcd'>Go to status page</Link><br />
 
-                        <BackButton 
-                        prevStep = {prevStep}
-                        />
-                        <NextButton nextStep={nextStep}/> 
-                        <Button variant = 'contained' onClick = {createRoom}>Create room</Button>
-                    </div>
-                )
+                <BackButton 
+                    prevStep = {prevStep}
+                />
+                <NextButton nextStep={nextStep}/> 
+                <Button variant = 'contained' onClick = {createRoom}>Create room</Button>
+            </div>
+        )
 
-            default:
-                console.log("ERROR")
-                alert(`ERROR`);
-        }
+    default:
+        console.log("ERROR")
+        alert(`ERROR`);
     }
+}
 
 export default UserForm

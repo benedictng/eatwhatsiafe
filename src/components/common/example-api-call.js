@@ -25,9 +25,9 @@ const ExampleApiCall = () => {
 
     return (
         <>
-        <h1>Sample Room Code: {roomCode}</h1>
-        <button onClick={makeCall}>Make API call</button>
-        <button onClick={clear}>Clear</button>
+            <h1>Sample Room Code: {roomCode}</h1>
+            <button onClick={makeCall}>Make API call</button>
+            <button onClick={clear}>Clear</button>
         </>
     )
 }

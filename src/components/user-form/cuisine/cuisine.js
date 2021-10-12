@@ -35,13 +35,13 @@ const Cuisine = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        selected={cuisineData[x]}
-        name = {x}
-        onChange={() => onCheckboxTicked(x)}
+            selected={cuisineData[x]}
+            name = {x}
+            onChange={() => onCheckboxTicked(x)}
         >
-          {x}
+            {x}
         </ToggleButton>
-        )
+    )
 
     return (
         <div>

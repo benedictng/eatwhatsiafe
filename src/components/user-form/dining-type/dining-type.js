@@ -29,7 +29,7 @@ const DiningType = (props) => {
             }
         }
         if (result.length<1) {
-        alert("Please choose something")
+            alert("Please choose something")
         } else {
             props.setFormData(result)
             props.nextStep()
@@ -39,30 +39,30 @@ const DiningType = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        sx={{
-            width: 300,
-            background: 'white',
-            radius: 50
-          }}
-        selected={diningTypeData[x]}
-        name = {x}
-        onChange={() => onCheckboxTicked(x)}
+            sx={{
+                width: 300,
+                background: 'white',
+                radius: 50
+            }}
+            selected={diningTypeData[x]}
+            name = {x}
+            onChange={() => onCheckboxTicked(x)}
         >
-          {x}
+            {x}
         </ToggleButton>
-        )
+    )
 
     
 
     return (
         <>
-        <p>Dining Types</p>    
-        {buttonMap}
-        <br/>
-        <br/>
-        <NextButton nextStep={onDone}/> 
-        <br/>
-        <BackButton prevStep={props.prevStep}/>
+            <p>Dining Types</p>    
+            {buttonMap}
+            <br/>
+            <br/>
+            <NextButton nextStep={onDone}/> 
+            <br/>
+            <BackButton prevStep={props.prevStep}/>
         
         </>
     )

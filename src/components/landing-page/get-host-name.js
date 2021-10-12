@@ -20,23 +20,23 @@ const GetHostName = ({createRoom}) => {
 
     const renderSetRoomName = () => (
         <>
-        <h4>{`Hi there, ${state.name}`}</h4>
-        <SingleTextInput
-            label='Give your room a name'
-            submitButtonLabel='Next'
-            onSubmit={onSubmitRoomName}
-            backButtonLabel='Back'
-            onBack={() => setEnteringName(true)}
-        />
+            <h4>{`Hi there, ${state.name}`}</h4>
+            <SingleTextInput
+                label='Give your room a name'
+                submitButtonLabel='Next'
+                onSubmit={onSubmitRoomName}
+                backButtonLabel='Back'
+                onBack={() => setEnteringName(true)}
+            />
         </>
     )
 
     return (
         <>
-        { enteringName
-            ? <GetName onSubmit={onSubmitName} />
-            : renderSetRoomName()
-        }
+            { enteringName
+                ? <GetName onSubmit={onSubmitName} />
+                : renderSetRoomName()
+            }
         </>
     )
 }

@@ -15,10 +15,10 @@ const Entrance = ({nextStep}) => {
 
     return (
         <div>
-        {renderReceivedData()}
-        <p> Eatwhatsia... </p>
-        <p> Dont beta, force your friends to decide together lah</p>
-        <NextButton 
+            {renderReceivedData()}
+            <p> Eatwhatsia... </p>
+            <p> Dont beta, force your friends to decide together lah</p>
+            <NextButton 
                 nextStep = {nextStep}
             />
         </div>

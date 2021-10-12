@@ -5,15 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Poppins"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins"
 ></link>;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

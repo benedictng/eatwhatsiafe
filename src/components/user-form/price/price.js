@@ -29,7 +29,7 @@ const Price = (props) => {
             }
         }
         if (result.length<1) {
-        alert("Please choose something")
+            alert("Please choose something")
         } else {
             props.setFormData(result)
             props.nextStep()
@@ -39,13 +39,13 @@ const Price = (props) => {
 
     const buttonMap = options.map(x => 
         <ToggleButton
-        selected={priceData[x]}
-        name = {x}
-        onChange={() => onCheckboxTicked(x)}
+            selected={priceData[x]}
+            name = {x}
+            onChange={() => onCheckboxTicked(x)}
         >
-          {x}
+            {x}
         </ToggleButton>
-        )
+    )
 
     return (
         <div>

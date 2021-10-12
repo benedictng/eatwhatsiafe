@@ -72,17 +72,17 @@ const MockRoomAPI: IRoomAPI = {
 const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
     let status: number
     switch(roomCode.toUpperCase()) {
-        case 'ERROR':
-            status = 4
-            break
-        case 'DELETED':
-            status = 3
-            break
-        case 'CLOSED':
-            status = 2
-            break
-        default:
-            status = 1
+    case 'ERROR':
+        status = 4
+        break
+    case 'DELETED':
+        status = 3
+        break
+    case 'CLOSED':
+        status = 2
+        break
+    default:
+        status = 1
     }
 
     return {

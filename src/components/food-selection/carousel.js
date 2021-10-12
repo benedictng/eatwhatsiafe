@@ -4,38 +4,38 @@ import "./food-selection.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Carousel = ({ slides }) => {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
+    const [current, setCurrent] = useState(0);
+    const length = slides.length;
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+    const nextSlide = () => {
+        setCurrent(current === length - 1 ? 0 : current + 1);
+    };
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1);
+    };
 
-  return (
-    <>
+    return (
+        <>
   
-      <section className="slider">
-        <AiOutlineArrowLeft className="left-arrow" onClick={prevSlide} />
-        <AiOutlineArrowRight className="right-arrow" onClick={nextSlide} />
-        {slides.map((slider, id) => {
-          return (
-            <div className={current === id ? "slide active" : "slide"} key={id}>
-              {id === current && (
-                <img src={slider} className="image" alt="Food Pictures" />
+            <section className="slider">
+                <AiOutlineArrowLeft className="left-arrow" onClick={prevSlide} />
+                <AiOutlineArrowRight className="right-arrow" onClick={nextSlide} />
+                {slides.map((slider, id) => {
+                    return (
+                        <div className={current === id ? "slide active" : "slide"} key={id}>
+                            {id === current && (
+                                <img src={slider} className="image" alt="Food Pictures" />
                 
-              )}
+                            )}
               
-            </div>
+                        </div>
             
-          );
-        })}
-      </section>
-    </>
-  );
+                    );
+                })}
+            </section>
+        </>
+    );
 };
 
 export default Carousel;

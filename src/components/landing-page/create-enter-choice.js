@@ -15,8 +15,8 @@ const CreateOrEnterRoom = ({createOrEnter}) => {
 
     const renderChoice = () => (
         <>
-        <Button variant='light' onClick={toggleIsEnter}>Enter Room</Button>
-        <Button variant='light' onClick={() => createOrEnter()}>Create Room</Button>
+            <Button variant='light' onClick={toggleIsEnter}>Enter Room</Button>
+            <Button variant='light' onClick={() => createOrEnter()}>Create Room</Button>
         </>
     )
 
@@ -32,10 +32,10 @@ const CreateOrEnterRoom = ({createOrEnter}) => {
 
     return (
         <div className='create-enter-room-container'>
-        { isEnter
-            ? renderEnterCode()
-            : renderChoice()
-        }
+            { isEnter
+                ? renderEnterCode()
+                : renderChoice()
+            }
         </div>
     )
 }
