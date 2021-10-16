@@ -3,90 +3,77 @@ import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
 import { Autocomplete } from '@material-ui/lab';
 import { TextField } from '@material-ui/core';
-//import ToggleButton from 'react-bootstrap/ToggleButton'
+// import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButton from '@mui/material/ToggleButton';
 
-
-
-
-function Location(props) {
-
+const Location = ({
+    presetData, formData, setFormData, nextStep, prevStep,
+}) => {
     const initialState = {};
-    for (let x in (props.presetData.enum)) {
-        initialState[x] = false
-    }
-    
-    
-    
-    var options = Object.keys(props.presetData.enum)
+    Object.keys(presetData.enum).forEach((x) => { initialState[x] = false })
 
-    var temp = options.slice(0,5)
-    
-    for (let i = 0; i<5;i++) {
-        options.shift()
-    }
+    let options = Object.keys(presetData.enum)
 
-    options = options.sort()
+    const temp = options.slice(0, 5)
+    options = options.slice(5).sort()
     options.unshift(...temp)
-    const [locData, setLocData] = useState(props.formData == null ? {...initialState} : {...props.formData})
+    const [locData, setLocData] = useState(formData == null ? { ...initialState } : { ...formData })
 
     const handleChange = (value) => {
         setLocData({
             ...locData,
-            [value]: !locData[value]
+            [value]: !locData[value],
         })
     }
-    
-    
+
     const onDone = () => {
-        const result  = []
-        for (let x in locData) {
-            if (locData[x] === true) {
-                result.push(props.presetData.enum[x])
+        const result = []
+        Object.keys(locData).forEach((key) => {
+            if (locData[key] === true) {
+                result.push(presetData.enum[key])
             }
-        }
-        if (result.length<1) {
-            alert("Please choose something")
+        })
+        if (result.length < 1) {
+            alert('Please choose something')
         } else {
-            props.setFormData(result)
-            props.nextStep()
-            return
+            setFormData(result)
+            nextStep()
         }
     }
     const onCheckboxTicked = (cuisine) => {
         setLocData({
             ...locData,
-            [cuisine]: !locData[cuisine]
+            [cuisine]: !locData[cuisine],
         })
     }
 
-    const tagMap =[]
+    const tagMap = []
 
-    for (var key in locData) {
-        if (locData[key]===true) {
+    Object.keys(locData).forEach((key) => {
+        if (locData[key] === true) {
             tagMap.push(
                 <div>
                     <ToggleButton
                         selected={locData[key]}
-                        name = {key}
+                        name={key}
                         onChange={() => onCheckboxTicked(key)}
                     >
                         {key}
                     </ToggleButton>
-                    <br/>
-                </div>
-            )    
+                    <br />
+                </div>,
+            )
         }
-    }    
-    
-    return(
+    })
+
+    return (
         <>
             <h1>
-                <p>Where do you wanna eat</p>    
-            </h1>  
+                <p>Where do you wanna eat</p>
+            </h1>
             {tagMap}
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div>
                 <Autocomplete
                     onChange={(event, newValue) => {
@@ -96,15 +83,15 @@ function Location(props) {
                     }}
                     id="autocomplete dropdown search bar"
                     options={options}
-                    style={{ width: 300, margin: "auto" }}
+                    style={{ width: 300, margin: 'auto' }}
                     renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
                 />
             </div>
-            <br/>
-            <NextButton nextStep={onDone}/> 
-            <br/>
-            <BackButton prevStep={props.prevStep}/>
-        
+            <br />
+            <NextButton nextStep={onDone} />
+            <br />
+            <BackButton prevStep={prevStep} />
+
         </>
     )
 }

@@ -1,4 +1,4 @@
-export const cuisinePresetData = {
+const cuisinePresetData = {
     enum: {
         Chinese: 1,
         Japanese: 2,
@@ -10,12 +10,14 @@ export const cuisinePresetData = {
     },
 
     enum2: {
-        1: "Chinese",
-        2: "Japanese",
-        3: "Muslim",
-        4: "Italian",
-        5: "Thai",
-        6: "Western",
-        7: "Mediterranean",
+        1: 'Chinese',
+        2: 'Japanese',
+        3: 'Muslim',
+        4: 'Italian',
+        5: 'Thai',
+        6: 'Western',
+        7: 'Mediterranean',
     },
 };
+
+export default cuisinePresetData

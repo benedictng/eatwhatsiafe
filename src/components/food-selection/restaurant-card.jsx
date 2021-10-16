@@ -1,24 +1,22 @@
-import "./food-selection.css";
+import './food-selection.css';
 
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-import Carousel from "./carousel";
-import ProductInformation from "./product-information";
-import Reviews from "./reviews";
-import Tags from "./tags";
+import Carousel from './carousel';
+import ProductInformation from './product-information';
+import Reviews from './reviews';
+import Tags from './tags';
 
-import React from "react";
-
-//{} extract out key for you. If it is individual elements you have to put {} but not if props
-//props passes everything
+// {} extract out key for you. If it is individual elements you have to put {} but not if props
+// props passes everything
 
 function RestaurantCard({ restaurant }) {
-    //API to call food list
+    // API to call food list
 
     restaurant.reviews.map((review, id) => (
-        <Reviews key={id} review={review}></Reviews>
+        <Reviews key={id} review={review} />
     ));
 
     return (

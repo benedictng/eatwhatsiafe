@@ -1,7 +1,6 @@
 import GetName from 'components/landing-page/get-name'
 
-const GetJoinerName = ({existingUsers, toRoomStatusPage}) => {
-
+const GetJoinerName = ({ existingUsers, toRoomStatusPage }) => {
     const submitName = (name) => {
         console.log(existingUsers)
         window.sessionStorage.setItem('name', name)
@@ -9,7 +8,6 @@ const GetJoinerName = ({existingUsers, toRoomStatusPage}) => {
             // direct to results page
             alert(`${name} has already voted. Direct to results page now.`)
             toRoomStatusPage(true)
-
         } else {
             // direct to voting page
             alert(`${name} has not voted. Direct to rooms landing page.`)

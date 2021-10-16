@@ -2,18 +2,18 @@ import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
 import GetName from 'components/landing-page/get-name'
 
-const GetHostName = ({createRoom}) => {
+const GetHostName = ({ createRoom }) => {
     const [enteringName, setEnteringName] = useState(true)
-    const [state, setState] = useState({name: '', roomName: ''})
+    const [state, setState] = useState({ name: '', roomName: '' })
 
     const onSubmitName = (name) => {
-        setState({...state, name: name})
+        setState({ ...state, name })
         setEnteringName(false)
         window.sessionStorage.setItem('name', name)
     }
 
     const onSubmitRoomName = (roomName) => {
-        const newState = {...state, roomName: roomName}
+        const newState = { ...state, roomName }
         setState(newState)
         createRoom(newState)
     }
@@ -22,10 +22,10 @@ const GetHostName = ({createRoom}) => {
         <>
             <h4>{`Hi there, ${state.name}`}</h4>
             <SingleTextInput
-                label='Give your room a name'
-                submitButtonLabel='Next'
+                label="Give your room a name"
+                submitButtonLabel="Next"
                 onSubmit={onSubmitRoomName}
-                backButtonLabel='Back'
+                backButtonLabel="Back"
                 onBack={() => setEnteringName(true)}
             />
         </>
@@ -35,8 +35,7 @@ const GetHostName = ({createRoom}) => {
         <>
             { enteringName
                 ? <GetName onSubmit={onSubmitName} />
-                : renderSetRoomName()
-            }
+                : renderSetRoomName()}
         </>
     )
 }

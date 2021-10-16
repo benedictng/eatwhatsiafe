@@ -1,13 +1,11 @@
-import React from "react";
+const ProductInformation = ({ name, address, mrt }) =>
+// const name = "Man Man Japanese Unagi Restaurant";
+// const hours = "11.30am - 3pm";
+// const price = "$$$";
+// const address = "1 Keong Saik Road";
+// const description = "Freshest unagi in Singapore";
 
-const ProductInformation = ({name, address, mrt}) => {
-    // const name = "Man Man Japanese Unagi Restaurant";
-    // const hours = "11.30am - 3pm";
-    // const price = "$$$";
-    // const address = "1 Keong Saik Road";
-    // const description = "Freshest unagi in Singapore";
-
-    return (
+    (
         <>
             <div className="">
                 <h1>{name}</h1>
@@ -24,6 +22,4 @@ const ProductInformation = ({name, address, mrt}) => {
             </div>
         </>
     );
-};
-
 export default ProductInformation;

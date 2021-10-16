@@ -6,15 +6,14 @@ import Status from 'components/room-status'
 import { Results } from 'components/results/results'
 
 const Room = () => {
-
     const { roomCode } = useParams()
     const [status, setStatus] = useState(null)
     const [data, setData] = useState({})
 
     useEffect(() => {
         RoomAPI.getRoomStatus({
-            room_code: roomCode
-        }).then( res => {
+            room_code: roomCode,
+        }).then((res) => {
             setData(res.data)
             setStatus(res.data.status)
         })
@@ -23,7 +22,7 @@ const Room = () => {
     const renderRoom = () => {
         switch (status) {
         case null:
-            return <Loading/>
+            return <Loading />
         case 1:
             return <Status roomData={data} />
         case 2:
@@ -32,7 +31,6 @@ const Room = () => {
             return <h1>ERROR</h1>
         }
     }
-
 
     return (
         <>

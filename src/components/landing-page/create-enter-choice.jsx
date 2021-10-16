@@ -1,8 +1,8 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import SingleTextInput from 'components/common/single-text-input'
 
-const CreateOrEnterRoom = ({createOrEnter}) => {
+const CreateOrEnterRoom = ({ createOrEnter }) => {
     const [isEnter, setIsEnter] = useState(false)
 
     const toggleIsEnter = () => {
@@ -15,27 +15,26 @@ const CreateOrEnterRoom = ({createOrEnter}) => {
 
     const renderChoice = () => (
         <>
-            <Button variant='light' onClick={toggleIsEnter}>Enter Room</Button>
-            <Button variant='light' onClick={() => createOrEnter()}>Create Room</Button>
+            <Button variant="light" onClick={toggleIsEnter}>Enter Room</Button>
+            <Button variant="light" onClick={() => createOrEnter()}>Create Room</Button>
         </>
     )
 
     const renderEnterCode = () => (
         <SingleTextInput
-            label='Room Code:'
-            submitButtonLabel='Submit'
+            label="Room Code:"
+            submitButtonLabel="Submit"
             onSubmit={onSubmit}
-            backButtonLabel='Back'
+            backButtonLabel="Back"
             onBack={toggleIsEnter}
         />
     )
 
     return (
-        <div className='create-enter-room-container'>
+        <div className="create-enter-room-container">
             { isEnter
                 ? renderEnterCode()
-                : renderChoice()
-            }
+                : renderChoice()}
         </div>
     )
 }

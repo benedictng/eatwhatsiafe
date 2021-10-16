@@ -2,9 +2,8 @@ import RoomAPI from 'api/room'
 import { useState } from 'react'
 
 const ExampleApiCall = () => {
-
     const [roomCode, setRoomCode] = useState('')
-    
+
     const makeCall = () => {
         console.log(RoomAPI)
         RoomAPI.createRoom({
@@ -14,8 +13,8 @@ const ExampleApiCall = () => {
             price_levels: [1, 2, 3],
             cuisine_types: [1, 4],
             dining_types: [1, 3],
-            dietary_restrictions: [1, 3, 5]
-        }).then(res => {
+            dietary_restrictions: [1, 3, 5],
+        }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             setRoomCode(res.data.room_code)
         })
@@ -25,9 +24,12 @@ const ExampleApiCall = () => {
 
     return (
         <>
-            <h1>Sample Room Code: {roomCode}</h1>
-            <button onClick={makeCall}>Make API call</button>
-            <button onClick={clear}>Clear</button>
+            <h1>
+                Sample Room Code:
+                {roomCode}
+            </h1>
+            <button type="button" onClick={makeCall}>Make API call</button>
+            <button type="button" onClick={clear}>Clear</button>
         </>
     )
 }
