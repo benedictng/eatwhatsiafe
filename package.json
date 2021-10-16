@@ -37,7 +37,13 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,ts,tsx src",
     "lint-file": "eslint --ext js,ts,tsx ",
-    "husky-install": "husky install"
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +60,9 @@
       "no-unused-vars": "off",
       "no-use-before-define": "off",
       "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/no-use-before-define": ["error"],
+      "@typescript-eslint/no-use-before-define": [
+        "error"
+      ],
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -64,7 +72,7 @@
           "ts": "never",
           "tsx": "never"
         }
-     ],
+      ],
       "indent": [
         "error",
         4,
@@ -74,13 +82,24 @@
           ]
         }
       ],
-      "max-len": ["warn", {
-        "code": 100,
-        "tabWidth": 4,
-        "ignoreUrls": true,
-        "ignoreComments": false
-      }],
-      "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+      "max-len": [
+        "warn",
+        {
+          "code": 100,
+          "tabWidth": 4,
+          "ignoreUrls": true,
+          "ignoreComments": false
+        }
+      ],
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".jsx",
+            ".tsx"
+          ]
+        }
+      ],
       "react/jsx-indent": [
         "error",
         4
@@ -111,6 +130,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.8",
     "eslint-import-resolver-typescript": "^2.5.0",
-    "husky": "^7.0.2"
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.3"
   }
 }
