@@ -1,5 +1,7 @@
 import axios from 'axios'
-import { IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListResponse, FoodListPayload, CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse } from "./room_api_interface"
+import {
+    IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListResponse, FoodListPayload, CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse,
+} from './room_api_interface'
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => {
     const url = 'some url to be separated into a config / env file'
@@ -32,12 +34,12 @@ const closeRoom = (payload: CloseRoomPayload): Promise<CloseRoomResponse> => {
 }
 
 const RoomAPIImpl : IRoomAPI = {
-    createRoom: createRoom,
-    getRoomStatus: getRoomStatus,
-    submitVote: submitVote,
-    getFoodList: getFoodList,
-    getRoomResults: getRoomResults,
-    closeRoom: closeRoom
+    createRoom,
+    getRoomStatus,
+    submitVote,
+    getFoodList,
+    getRoomResults,
+    closeRoom,
 }
 
 export default RoomAPIImpl
