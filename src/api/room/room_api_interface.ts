@@ -67,7 +67,7 @@ export interface Food {
     'food_id': number
     'name': string
     'address': string
-    'region ': number
+    'region': number
     'average_rating': number
     'price_level': number
     'dining_type': number

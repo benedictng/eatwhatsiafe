@@ -120,6 +120,14 @@ const MockFoodList = [
                 rating: 4,
                 comment: 'nice kebabs will come back again',
             },
+            {
+                rating: 4,
+                comment: 'nice kebabs will come back again',
+            },
+            {
+                rating: 4,
+                comment: 'nice kebabs will come back again',
+            },
         ],
     },
     {
@@ -156,6 +164,14 @@ const MockFoodList = [
                 rating: 4,
                 comment: 'pretty good but NTU can 9 is better',
             },
+            {
+                rating: 4,
+                comment: 'pretty good but NTU can 9 is better',
+            },
+            {
+                rating: 4,
+                comment: 'pretty good but NTU can 9 is better',
+            },
         ],
     },
     {
@@ -182,6 +198,18 @@ const MockFoodList = [
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlMTAG1-uMbJ_Q8VBynrWQmQMBcl9dvUqAAOQJIJuDUl4qNJXup_wTXE19UV7Qn2YNVA&usqp=CAU',
         ],
         reviews: [
+            {
+                rating: 3,
+                comment: 'lalalalallalal',
+            },
+            {
+                rating: 3,
+                comment: 'lalalalallalal',
+            },
+            {
+                rating: 3,
+                comment: 'lalalalallalal',
+            },
             {
                 rating: 3,
                 comment: 'lalalalallalal',

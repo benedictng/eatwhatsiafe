@@ -39,7 +39,8 @@ function RestaurantCard({ restaurant }) {
                         // hours = {restaurant.opening_hours}
                         // price = {} price not available*****
                         address={restaurant.address}
-                        mrt={restaurant.nearest_mrt}
+                        location={restaurant.region}
+                        hours={restaurant.opening_hours}
                     />
                 </Col>
             </Container>

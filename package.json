@@ -91,6 +91,7 @@
           "ignoreComments": false
         }
       ],
+      "react/no-array-index-key": ["warn"],
       "react/jsx-filename-extension": [
         "error",
         {
