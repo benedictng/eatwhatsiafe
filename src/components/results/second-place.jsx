@@ -4,23 +4,23 @@ import './results.css';
 
 // Class name image is in react bootstrap
 
-const SecondPlace = ({ second_result }) => (
+const SecondPlace = ({ secondResult }) => (
     <>
         <Col lg={6} className="horizontalcenter">
             <img
                 className="results_image_others"
-                src={second_result.food.photos[0]}
+                src={secondResult.food.photos[0]}
                 alt="restaurant food"
             />
         </Col>
         <Col lg={6}>
             <h1>In second place...</h1>
             <br />
-            <h2>{second_result.food.name}</h2>
-            <h3>{second_result.food.address}</h3>
+            <h2>{secondResult.food.name}</h2>
+            <h3>{secondResult.food.address}</h3>
             <p>
                 Who voted:
-                {second_result.voted_users}
+                {secondResult.voted_users}
             </p>
         </Col>
     </>

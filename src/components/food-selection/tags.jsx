@@ -9,13 +9,13 @@ import './food-selection.css'
 const tags = ({ cuisineType, restriction }) => (
     <>
         <ButtonGroup aria-label="Basic example">
-            {cuisineType.map((cuisineTag, id) => (
+            {cuisineType.map((cuisineTag) => (
                 <Button variant="secondary">
                     {cuisinePresetData.enum2[cuisineTag]}
                 </Button>
             ))}
 
-            {restriction.map((dietaryTag, id) => (
+            {restriction.map((dietaryTag) => (
                 <Button variant="secondary">
                     {dietRestrictPresetData.enum2[dietaryTag]}
                 </Button>

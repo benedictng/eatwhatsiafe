@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
     IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListPayload, FoodListResponse, CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse,
 } from './room_api_interface'

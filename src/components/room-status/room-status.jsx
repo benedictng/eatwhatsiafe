@@ -50,7 +50,7 @@ const Status = ({ roomData }) => {
                 { roomCode }
             </p>
             <p>
-                Dude's name:
+                Dude&apos;s name:
                 {window.sessionStorage.getItem('name')}
             </p>
             <p>
