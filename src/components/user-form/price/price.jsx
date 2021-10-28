@@ -42,7 +42,7 @@ const Price = ({
     }
 
     const buttonMap = options.map((x) => (
-        <Grid item xs={1}>
+        <Grid item md={3}>
             <ToggleButton
                 selected={priceData[x]}
                 name={x}
@@ -50,8 +50,6 @@ const Price = ({
                 sx={{
                     height: '43px',
                     width: '59px',
-                    left: '385px',
-                    top: '0px',
                     'border-radius': '50px',
                     padding: '12px, 24px, 12px, 24px',
                     'background-color': '#1D1D1D',
@@ -65,15 +63,15 @@ const Price = ({
     ))
 
     return (
-        <Container>
+        <Container style = {{ 'margin-top': '180px' }}>
             <Grid container spacing={2}>
-                <Grid item md={12}>
+                <Grid item md={12} style = {{ 'margin-bot': '48px' }}>
                     <h1>
                         <p>What prices are we looking at for this group people</p>
                     </h1>
                 </Grid>
-                {buttonMap}
-                <Grid item md={12}>
+                    {buttonMap}
+                <Grid item md={12} style={{ 'margin-top': '48px' }}>
                     <NextButton nextStep={onDone} />
                 </Grid>
             </Grid>

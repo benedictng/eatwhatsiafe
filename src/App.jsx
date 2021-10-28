@@ -6,6 +6,12 @@ import LandingPage from 'components/landing-page';
 import ExampleApiCall from 'components/common/example-api-call';
 import UserForm from 'components/user-form';
 import Room from 'components/room';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
+
 import FoodSelectionPage from './components/food-selection';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,6 +19,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
     return (
         <div className="App">
+            <AppBar position="static" style={{ 'margin-top': '76px' }}>
+                <Toolbar variant="dense">
+                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" color="inherit" component="div">
+                        EWS
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <Router>
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
