@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import RoomAPI from 'api/room'
 import { useState } from 'react'
 
@@ -5,7 +6,6 @@ const ExampleApiCall = () => {
     const [roomCode, setRoomCode] = useState('')
 
     const makeCall = () => {
-        console.log(RoomAPI)
         RoomAPI.createRoom({
             room_name: 'my room name',
             host_username: 'hoeward',

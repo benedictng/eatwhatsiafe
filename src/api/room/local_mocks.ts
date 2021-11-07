@@ -1,55 +1,70 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-    IRoomAPI, CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse, SubmitVotePayload, SubmitVoteResponse, FoodListPayload, FoodListResponse, CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse,
+    IRoomAPI,
+    CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse,
+    SubmitVotePayload, SubmitVoteResponse, FoodListPayload, FoodListResponse,
+    CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse,
 } from './room_api_interface'
 
-const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(MockData.CreateRoomResponse),
-        1000,
-    )
+const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(MockData.CreateRoomResponse),
+            1000,
+        )
     // error when payload is wrong format?
-})
+    },
+)
 
-const getRoomStatus = (payload: RoomStatusPayload): Promise<RoomStatusResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(getMockedRoomStatus(payload.room_code)),
-        1000,
-    )
+const getRoomStatus = (payload: RoomStatusPayload): Promise<RoomStatusResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(getMockedRoomStatus(payload.room_code)),
+            1000,
+        )
     // error when payload is wrong format?
-})
+    },
+)
 
-const submitVote = (payload: SubmitVotePayload): Promise<SubmitVoteResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(MockData.SubmitVoteResponse),
-        1000,
-    )
-    // error when payload is wrong format?
-})
+const submitVote = (payload: SubmitVotePayload): Promise<SubmitVoteResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(MockData.SubmitVoteResponse),
+            1000,
+        )
+        // error when payload is wrong format?
+    },
+)
 
-const getFoodList = (payload: FoodListPayload): Promise<FoodListResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(MockData.FoodListResponse),
-        1000,
-    )
-    // error when payload is wrong format?
-})
+const getFoodList = (payload: FoodListPayload): Promise<FoodListResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(MockData.FoodListResponse),
+            1000,
+        )
+        // error when payload is wrong format?
+    },
+)
 
-const getRoomResults = (payload: RoomResultsPayload): Promise<RoomResultsResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(MockData.RoomResultsResponse),
-        1000,
-    )
-    // error when payload is wrong format?
-})
+const getRoomResults = (payload: RoomResultsPayload): Promise<RoomResultsResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(MockData.RoomResultsResponse),
+            1000,
+        )
+        // error when payload is wrong format?
+    },
+)
 
-const closeRoom = (payload: CloseRoomPayload): Promise<CloseRoomResponse> => new Promise((res, rej) => {
-    setTimeout(
-        () => res(MockData.CloseRoomResponse),
-        1000,
-    )
-    // error when payload is wrong format?
-})
+const closeRoom = (payload: CloseRoomPayload): Promise<CloseRoomResponse> => new Promise(
+    (res, rej) => {
+        setTimeout(
+            () => res(MockData.CloseRoomResponse),
+            1000,
+        )
+        // error when payload is wrong format?
+    },
+)
 
 const MockRoomAPI: IRoomAPI = {
     createRoom,
