@@ -1,8 +1,11 @@
+/* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-import ToggleButton from '@mui/material/ToggleButton';
 import BackButton from '../../common/back-button'
-// import ToggleButton from 'react-bootstrap/ToggleButton'
+import { flexbox } from '@mui/system';
+import { Typography } from '@mui/material';
+import FormHeading from 'components/common/form-heading'
+import SelectionButton from 'components/common/selection-button'
 
 const Cuisine = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -37,28 +40,23 @@ const Cuisine = ({
     }
 
     const buttonMap = options.map((x) => (
-        <ToggleButton
-            selected={cuisineData[x]}
-            name={x}
-            onChange={() => onCheckboxTicked(x)}
-        >
-            {x}
-        </ToggleButton>
+      <SelectionButton text={x} data={cuisineData} onCheckboxTicked={onCheckboxTicked} />
     ))
 
     return (
-        <div>
-            <h1>
-                <p>I don&apos;t wanna eat this</p>
-            </h1>
-            <div>
-                {buttonMap}
-            </div>
-            <br />
-            <NextButton nextStep={onDone} />
-            <br />
-            <BackButton prevStep={prevStep} />
+      <>
+        <FormHeading heading='I want to eat at these areas' />
+        <div sx={{
+          display: flexbox,
+          'justify-content': 'space-around',
+        }}>
+          {buttonMap}
         </div>
+        <NextButton nextStep={onDone} />
+        <br />
+        <BackButton prevStep={prevStep} />
+
+      </>
     )
 }
 

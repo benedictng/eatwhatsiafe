@@ -1,10 +1,13 @@
+/* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
 import { Autocomplete } from '@material-ui/lab';
 import { TextField } from '@material-ui/core';
+import FormHeading from 'components/common/form-heading'
+import SelectionButton from 'components/common/selection-button'
+import { flexbox } from '@mui/system';
 // import ToggleButton from 'react-bootstrap/ToggleButton'
-import ToggleButton from '@mui/material/ToggleButton';
 
 const Location = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -52,26 +55,20 @@ const Location = ({
     Object.keys(locData).forEach((key) => {
         if (locData[key] === true) {
             tagMap.push(
-                <div>
-                    <ToggleButton
-                        selected={locData[key]}
-                        name={key}
-                        onChange={() => onCheckboxTicked(key)}
-                    >
-                        {key}
-                    </ToggleButton>
-                    <br />
-                </div>,
+              <SelectionButton text={key} data={locData} onCheckboxTicked={onCheckboxTicked} />
             )
         }
     })
 
     return (
         <>
-            <h1>
-                <p>Where do you wanna eat</p>
-            </h1>
-            {tagMap}
+            <FormHeading heading='Where do you wanna eat' />
+            <div sx={{
+                display: flexbox,
+                'justify-content': 'space-around',
+            }}>
+                {tagMap}
+            </div>
             <br />
             <br />
             <div>

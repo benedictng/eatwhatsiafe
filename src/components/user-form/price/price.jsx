@@ -1,10 +1,9 @@
 /* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-// import ToggleButton from 'react-bootstrap/ToggleButton'
-import ToggleButton from '@mui/material/ToggleButton';
-import Grid from '@mui/material/Grid'
-import Container from '@mui/material/Container'
+import { flexbox } from '@mui/system';
+import FormHeading from 'components/common/form-heading'
+import SelectionButton from 'components/common/selection-button'
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
@@ -40,42 +39,21 @@ const Price = ({
             nextStep()
         }
     }
-
     const buttonMap = options.map((x) => (
-        <Grid item md={3}>
-            <ToggleButton
-                selected={priceData[x]}
-                name={x}
-                onChange={() => onCheckboxTicked(x)}
-                sx={{
-                    height: '43px',
-                    width: '59px',
-                    'border-radius': '50px',
-                    padding: '12px, 24px, 12px, 24px',
-                    'background-color': '#1D1D1D',
-                    'box-shadow': '4px 4px #9FEADD',
-                    'color': '#FBFBFB',
-                }}
-            >
-                {x}
-            </ToggleButton>
-        </Grid>
+        <SelectionButton text={x} data={priceData} onCheckboxTicked={onCheckboxTicked} />
     ))
 
     return (
-        <Container style = {{ 'margin-top': '180px' }}>
-            <Grid container spacing={2}>
-                <Grid item md={12} style = {{ 'margin-bot': '48px' }}>
-                    <h1>
-                        <p>What prices are we looking at for this group people</p>
-                    </h1>
-                </Grid>
-                    {buttonMap}
-                <Grid item md={12} style={{ 'margin-top': '48px' }}>
-                    <NextButton nextStep={onDone} />
-                </Grid>
-            </Grid>
-        </Container>
+        <>
+            <FormHeading heading='I want to eat at these areas' />
+            <div sx={{
+                display: flexbox,
+                'justify-content': 'space-around',
+            }}>
+                {buttonMap}
+            </div>
+            <NextButton nextStep={onDone} />
+        </>
     )
 }
 

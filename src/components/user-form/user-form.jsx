@@ -70,10 +70,6 @@ const UserForm = () => {
                     presetData={pricePresetData}
                 />
                 <br />
-                <p>
-                    PRICE DATA:
-                    {JSON.stringify(price, null, '\t')}
-                </p>
             </div>
         );
 
@@ -88,10 +84,6 @@ const UserForm = () => {
                     presetData={cuisinePresetData}
                 />
                 <br />
-                <p>
-                    VETO DATA:
-                    {JSON.stringify(cuisineType, null, '\t')}
-                </p>
             </div>
         )
 
@@ -104,13 +96,8 @@ const UserForm = () => {
                     setFormData={setDiningType}
                     formData={diningType}
                     presetData={diningTypePresetData}
-
                 />
                 <br />
-                <p>
-                    DININGTYPE DATA:
-                    {JSON.stringify(diningType, null, '\t')}
-                </p>
             </div>
         )
 
@@ -123,13 +110,8 @@ const UserForm = () => {
                     setFormData={setDietRest}
                     formData={dietRest}
                     presetData={dietRestrictPresetData}
-
                 />
                 <br />
-                <p>
-                    REST DATA:
-                    {JSON.stringify(dietRest, null, '\t')}
-                </p>
             </div>
         )
     case 5:
@@ -144,10 +126,6 @@ const UserForm = () => {
 
                 />
                 <br />
-                <p>
-                    LOCATION DATA:
-                    {JSON.stringify(location, null, '\t')}
-                </p>
             </div>
         )
 

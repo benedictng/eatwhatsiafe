@@ -22,6 +22,7 @@ class NextButton extends Component {
                         'background-color': '#FFB854',
                         color: '#1D1D1D',
                         'box-shadow': '8px 8px #1D1D1D',
+                        'margin-top': '48px',
                     }}
                 >
                     Next
