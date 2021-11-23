@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { flexbox } from '@mui/system';
+// import { flexbox } from '@mui/system';
+import Box from '@mui/material/Box';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import NextButton from 'components/common/next-button'
@@ -47,13 +48,11 @@ const DiningType = ({
     return (
         <>
             <FormHeading heading="I want to eat at these areas" />
-            <div sx={{
-                display: flexbox,
-                'justify-content': 'space-around',
-            }}
-            >
-                {buttonMap}
-            </div>
+
+            <Box>
+                { buttonMap }
+            </Box>
+
             <NextButton nextStep={onDone} />
             <br />
             <BackButton prevStep={prevStep} />
