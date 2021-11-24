@@ -17,6 +17,7 @@ function App() {
                     <Route path="/preferences" component={UserForm} />
                     <Route path="/create-room" component={UserForm} />
                     <Route path="/example-api-call" component={ExampleApiCall} />
+
                     <RequireNameRoute
                         path="/room/:roomCode/selection"
                         component={<FoodSelectionPage />}

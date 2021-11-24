@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf';
 
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Poppins"
-    />;
+    <link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
 
 ReactDOM.render(
     <React.StrictMode>
