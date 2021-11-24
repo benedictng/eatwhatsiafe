@@ -15,6 +15,7 @@ import dietRestrictPresetData from 'common/constants/diet-restriction-preset-dat
 import diningTypePresetData from 'common/constants/dining-type-preset-data';
 import locationPresetData from 'common/constants/location-preset-data';
 import pricePresetData from 'common/constants/price-preset-data';
+import Box from '@mui/material/Box';
 
 const UserForm = () => {
     const [step, setStep] = useState(1)
@@ -156,11 +157,15 @@ const UserForm = () => {
 
                 <Link to="/room/abcd">Go to status page</Link>
                 <br />
-
-                <BackButton
-                    prevStep={prevStep}
-                />
-                <NextButton nextStep={nextStep} />
+                <Box sx={
+                    {
+                        display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                    }
+                }
+                >
+                    <NextButton nextStep={nextStep} />
+                    <BackButton prevStep={prevStep} />
+                </Box>
                 <Button variant="contained" onClick={createRoom}>Create room</Button>
             </div>
         )

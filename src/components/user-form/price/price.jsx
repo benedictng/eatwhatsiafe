@@ -4,6 +4,9 @@ import NextButton from 'components/common/next-button'
 import { flexbox } from '@mui/system';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
@@ -45,14 +48,25 @@ const Price = ({
 
     return (
         <>
-            <FormHeading heading='I want to eat at these areas' />
-            <div sx={{
-                display: flexbox,
-                'justify-content': 'space-around',
-            }}>
-                {buttonMap}
-            </div>
-            <NextButton nextStep={onDone} />
+            <FormHeading heading='What prices are we looking at?' />
+            {buttonMap}
+            <Box sx={{ my: 5, justifyContent: 'center'}}>
+                <Button
+                    onClick={onDone}
+                    variant="contained"
+                    sx={{
+                        'border-radius': 0,
+                        width: '343px',
+                        height: '48px',
+                        'background-color': '#FFB854',
+                        color: '#1D1D1D',
+                        'box-shadow': '8px 8px #1D1D1D',
+                        mx: 1,
+                    }}
+                >
+                    <strong>Next</strong>
+                </Button>
+            </Box>
         </>
     )
 }

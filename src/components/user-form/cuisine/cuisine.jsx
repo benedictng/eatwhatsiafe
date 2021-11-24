@@ -6,6 +6,7 @@ import { flexbox } from '@mui/system';
 import { Typography } from '@mui/material';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
+import Box from '@mui/material/Box';
 
 const Cuisine = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -45,17 +46,17 @@ const Cuisine = ({
 
     return (
       <>
-        <FormHeading heading='I want to eat at these areas' />
-        <div sx={{
-          display: flexbox,
-          'justify-content': 'space-around',
-        }}>
-          {buttonMap}
-        </div>
-        <NextButton nextStep={onDone} />
-        <br />
-        <BackButton prevStep={prevStep} />
-
+        <FormHeading heading='I want to opt out of these cuisines' />
+        {buttonMap}
+        <Box sx={
+                {
+                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                }
+            }
+            >
+                <NextButton nextStep={onDone} />
+                <BackButton prevStep={prevStep} />
+            </Box>
       </>
     )
 }

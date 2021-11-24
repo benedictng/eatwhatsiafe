@@ -7,7 +7,7 @@ import { TextField } from '@material-ui/core';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import { flexbox } from '@mui/system';
-// import ToggleButton from 'react-bootstrap/ToggleButton'
+import Box from '@mui/material/Box';
 
 const Location = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -62,7 +62,7 @@ const Location = ({
 
     return (
         <>
-            <FormHeading heading='Where do you wanna eat' />
+            <FormHeading heading='I want to eat at these locations:' />
             <div sx={{
                 display: flexbox,
                 'justify-content': 'space-around',
@@ -84,10 +84,15 @@ const Location = ({
                     renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
                 />
             </div>
-            <br />
-            <NextButton nextStep={onDone} />
-            <br />
-            <BackButton prevStep={prevStep} />
+            <Box sx={
+                {
+                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                }
+            }
+            >
+                <NextButton nextStep={onDone} />
+                <BackButton prevStep={prevStep} />
+            </Box>
 
         </>
     )

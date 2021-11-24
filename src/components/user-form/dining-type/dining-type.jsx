@@ -47,16 +47,17 @@ const DiningType = ({
 
     return (
         <>
-            <FormHeading heading="I want to eat at these areas" />
-
-            <Box>
-                { buttonMap }
+            <FormHeading heading="We are OK with eating in these settings:" />
+            { buttonMap }
+            <Box sx={
+                {
+                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                }
+            }
+            >
+                <NextButton nextStep={onDone} />
+                <BackButton prevStep={prevStep} />
             </Box>
-
-            <NextButton nextStep={onDone} />
-            <br />
-            <BackButton prevStep={prevStep} />
-
         </>
     )
 }

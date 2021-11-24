@@ -5,14 +5,27 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
         sx={{
             height: '43px',
             'border-radius': '50px',
-            margin: '16px 16px',
+            mx: 1,
             'background-color': '#1D1D1D',
-            'box-shadow': '4px 4px #9FEADD',
             color: '#FBFBFB',
+            '&.Mui-selected': {
+                backgroundColor: '#9FEADD',
+                color: 'black',
+                '&:hover': {
+                    backgroundColor: '#9FEADD',
+                    color: 'black',
+                },
+            },
+            '&:hover': {
+                backgroundColor: '#9FEADD',
+                color: 'black',
+            },
         }}
         selected={data[text]}
         name={text}
         onChange={() => onCheckboxTicked(text)}
+        thumbStyle={{ backgroundColor: 'red' }}
+        trackStyle={{ backgroundColor: 'green' }}
     >
         {text}
     </ToggleButton>

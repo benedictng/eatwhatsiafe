@@ -22,20 +22,18 @@ function App() {
     return (
       <>
         <div className="App">
-          <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ 'background-color': 'white', color: 'black', 'margin-bottom': '180px' }}>
-                <Toolbar variant="dense">
+            <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
+                <Toolbar variant="dense" sx={{ mx:10 }}>
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <MenuIcon />
                     </IconButton>
-                <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
+                    <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
                         EWS
                     </Typography>
                     <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
                     <Button color="inherit" sx={{ flexGrow: 1 }}>About Us</Button>
                     <Button color="inherit" sx={{ flexGrow: 1 }}>Feedback</Button>
                 </Toolbar>
-            </AppBar>
             </Box>
             <br />
             <Router>
