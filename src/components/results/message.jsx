@@ -21,7 +21,7 @@ const message = ({ isConclusive }) => {
             {isConclusive && <p>A decision has been made. Finally.</p>}
             {!isConclusive && (
                 <p>
-                    Eh... The results wasn't conclusive but who the F cares, we picked
+                    Eh... The results wasn&apos;t conclusive but who the F cares, we picked
                     this for you.
                 </p>
             )}

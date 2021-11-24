@@ -20,7 +20,7 @@ const LandingPage = () => {
             // creating room
             setStep(2)
         } else {
-            // TODO make call for room information NOTE - this call should be done in room. no calls her.
+            // TODO make call for room information NOTE - this call should be done in room. no calls here.
             RoomAPI.getRoomStatus({ room_code: _roomCode }).then((res) => {
                 switch (res.data.status) {
                 case 1: // active
@@ -64,7 +64,12 @@ const LandingPage = () => {
         case 0:
             return <CreateOrEnterRoom createOrEnter={createOrEnter} />
         case 1:
-            return <GetJoinerName existingUsers={roomStatusData.voted_users} toRoomStatusPage={toRoomStatusPage} />
+            return (
+                <GetJoinerName
+                    existingUsers={roomStatusData.voted_users}
+                    toRoomStatusPage={toRoomStatusPage}
+                />
+            )
         case 2:
             return <GetHostName createRoom={createRoom} roomCode={roomCode} />
         case 3:

@@ -15,10 +15,6 @@ import Tags from './tags';
 function RestaurantCard({ restaurant }) {
     // API to call food list
 
-    restaurant.reviews.map((review, id) => (
-        <Reviews key={id} review={review} />
-    ));
-
     return (
         <>
             <Container>

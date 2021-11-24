@@ -34,8 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext js,ts,tsx src",
-    "lint-file": "eslint --ext js,ts,tsx ",
+    "lint": "eslint --ext js,jsx,ts,tsx src",
+    "lint-file": "eslint --ext js,jsx,ts,tsx ",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
@@ -58,7 +58,13 @@
     "rules": {
       "no-unused-vars": "off",
       "no-use-before-define": "off",
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "^_",
+          "argsIgnorePattern": "^_"
+        }
+      ],
       "@typescript-eslint/no-use-before-define": [
         "error"
       ],
@@ -87,7 +93,7 @@
           "code": 100,
           "tabWidth": 4,
           "ignoreUrls": true,
-          "ignoreComments": false
+          "ignoreComments": true
         }
       ],
       "react/no-array-index-key": [

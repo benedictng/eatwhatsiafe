@@ -19,19 +19,25 @@ function App() {
                     <Route path="/preferences" component={UserForm} />
                     <Route path="/create-room" component={UserForm} />
                     <Route path="/example-api-call" component={ExampleApiCall} />
-                    <RequireNameRoute path="/room/:roomCode/selection"><FoodSelectionPage /></RequireNameRoute>
-                    <RequireNameRoute path="/room/:roomCode"><Room /></RequireNameRoute>
+                    <RequireNameRoute
+                        path="/room/:roomCode/selection"
+                        component={<FoodSelectionPage />}
+                    />
+                    <RequireNameRoute
+                        path="/room/:roomCode"
+                        component={<Room />}
+                    />
                 </Switch>
             </Router>
         </div>
     )
 }
 
-const RequireNameRoute = ({ children, ...rest }) => (
+const RequireNameRoute = ({ component, ...rest }) => (
     <Route
         {...rest}
         render={(_) => (window.sessionStorage.getItem('name') ? (
-            children
+            component
         ) : (
             <Redirect to="/" />
         ))}

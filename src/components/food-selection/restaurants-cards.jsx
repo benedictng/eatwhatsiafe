@@ -28,10 +28,14 @@ const RestaurantsCards = () => {
     const [selections, setSelections] = useState([]);
     // cannot put hooks in javascript functions
 
-    // const prevents reassignment. so u cant define const as a and do a = a.concat because this will reassign a's value.
-    // x= a.concat will help remain a's original array state. but x will take over the concatenated state
-    // a.push however, will add on to a's array and modify original array
-    // for state arrays, you have to concat because setState's function is innately reassignment
+    /*
+    const prevents reassignment.
+    so u cant define const as a and do a = a.concat because this will reassign a's value.
+    x = a.concat will help remain a's original array state,
+    but x will take over the concatenated state
+    a.push however, will add on to a's array and modify original array
+    for state arrays, you have to concat because setState's function is innately reassignment
+    */
 
     function recordNextPage() {
     // selection.push(currentRestaurant.food_id);

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from 'components/common/loading'
 import Status from 'components/room-status'
-import { Results } from 'components/results/results'
+import Results from 'components/results/results'
 
 const Room = () => {
     const { roomCode } = useParams()
