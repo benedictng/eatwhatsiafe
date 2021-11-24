@@ -8,8 +8,6 @@ import UserForm from 'components/user-form';
 import Room from 'components/room';
 import FoodSelectionPage from './components/food-selection';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 function App() {
     return (
         <div className="App">

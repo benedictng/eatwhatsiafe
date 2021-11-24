@@ -1,8 +1,7 @@
 import './food-selection.css';
 
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Box from '@material-ui/core/Box';
 
 import Carousel from './carousel';
 import ProductInformation from './product-information';
@@ -18,27 +17,23 @@ function RestaurantCard({ restaurant }) {
     return (
         <>
             <Container>
-                <Col>
-                    <Row>
-                        <Carousel slides={restaurant.photos} />
-                    </Row>
-                    <Row>
+                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                    <Carousel slides={restaurant.photos} />
+                    <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)' }}>
+                        <ProductInformation
+                            name={restaurant.name}
+                        />
                         <Tags
                             cuisineType={restaurant.cuisine_type}
                             restriction={restaurant.restrictions}
                         />
-                    </Row>
-                </Col>
-                <Col>
-                    <ProductInformation
-                        name={restaurant.name}
-                        // hours = {restaurant.opening_hours}
-                        // price = {} price not available*****
-                        address={restaurant.address}
-                        location={restaurant.region}
-                        hours={restaurant.opening_hours}
-                    />
-                </Col>
+                        <ProductInformation
+                            address={restaurant.address}
+                            location={restaurant.region}
+                            hours={restaurant.opening_hours}
+                        />
+                    </Box>
+                </Box>
             </Container>
 
             <Container>
