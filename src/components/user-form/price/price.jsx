@@ -1,12 +1,17 @@
+/* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-// import ToggleButton from 'react-bootstrap/ToggleButton'
-import ToggleButton from '@mui/material/ToggleButton';
+import { flexbox } from '@mui/system';
+import FormHeading from 'components/common/form-heading'
+import SelectionButton from 'components/common/selection-button'
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
 }) => {
-    const initialState = {};
+    const initialState  = {};
     Object.keys(presetData.enum).forEach((x) => { initialState[x] = false })
 
     const options = Object.keys(presetData.enum)
@@ -37,30 +42,32 @@ const Price = ({
             nextStep()
         }
     }
-
     const buttonMap = options.map((x) => (
-        <ToggleButton
-            selected={priceData[x]}
-            name={x}
-            onChange={() => onCheckboxTicked(x)}
-        >
-            {x}
-        </ToggleButton>
+        <SelectionButton text={x} data={priceData} onCheckboxTicked={onCheckboxTicked} />
     ))
 
     return (
-        <div>
-            <h1>
-                <p>Price points</p>
-            </h1>
-            <div>
-                {buttonMap}
-            </div>
-            <br />
-            <br />
-            <NextButton nextStep={onDone} />
-            <br />
-        </div>
+        <>
+            <FormHeading heading='What prices are we looking at?' />
+            {buttonMap}
+            <Box sx={{ my: 5, justifyContent: 'center'}}>
+                <Button
+                    onClick={onDone}
+                    variant="contained"
+                    sx={{
+                        'border-radius': 0,
+                        width: '343px',
+                        height: '48px',
+                        'background-color': '#FFB854',
+                        color: '#1D1D1D',
+                        'box-shadow': '8px 8px #1D1D1D',
+                        mx: 1,
+                    }}
+                >
+                    <strong>Next</strong>
+                </Button>
+            </Box>
+        </>
     )
 }
 

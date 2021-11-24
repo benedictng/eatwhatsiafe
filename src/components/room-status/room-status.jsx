@@ -1,9 +1,13 @@
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+/* eslint-disable */
 import { useParams, Link, useHistory } from 'react-router-dom'
 
 import RoomAPI from 'api/room'
 // import Button from 'react-bootstrap/Button';
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+
 
 const Status = ({ roomData }) => {
     const { roomCode } = useParams()
@@ -14,14 +18,28 @@ const Status = ({ roomData }) => {
         history.push(`/room/${roomCode}/selection`)
     }
 
-    const votedUsersMap = roomData.voted_users.map((x) => <ListGroupItem>{x}</ListGroupItem>)
+    const votedUsersString = roomData.voted_users.join(", ")
 
     const SwipingButton = () => {
         if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
             return null
         }
         return (
-            <Button onClick={swipingFlow}>Enter Swiping Flow</Button>
+            <Button
+                onClick={swipingFlow}
+                variant="contained"
+                sx={{
+                    'border-radius': 0,
+                    width: '343px',
+                    height: '48px',
+                    'background-color': '#FFB854',
+                    color: '#1D1D1D',
+                    'box-shadow': '8px 8px #1D1D1D',
+                    mx: 1,
+                }}
+            >
+                <strong>START SWIPING!</strong>
+            </Button>
         )
     }
 
@@ -37,46 +55,25 @@ const Status = ({ roomData }) => {
 
     return (
         <div>
-            <p>
-                history.location.state: $
-                {JSON.stringify(history.location.state)}
-            </p>
-            <p>
-                Room Name:
-                { roomData.room_name }
-            </p>
-            <p>
-                Room Code:
-                { roomCode }
-            </p>
-            <p>
-                Dude&apos;s name:
-                {window.sessionStorage.getItem('name')}
-            </p>
-            <p>
-                sharing url - http://localhost:3000/room/
-                { roomCode }
-            </p>
-
-            <br />
-            <Card style={{ width: '50rem', margin: 'auto' }}>
-                <Card.Body>
-                    <Card.Title>Co-operative friends who have voted</Card.Title>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                    {votedUsersMap}
-                </ListGroup>
-                <Card.Body>
-                    <Button variant="contained" onClick={closeRoom}>Close room</Button>
-                </Card.Body>
+            <Typography variant="h1">Nice,</Typography>
+            <Typography variant="h1">Time to make a bloody decision!</Typography>
+            <Typography >Share this link with your friends and start swiping. Please.</Typography>
+            <Box sx={
+                {
+                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                }
+            }>
+                <Typography sx={{ 'background-color': '#F4F4F4', p: 1 }}>{window.location.href}</Typography>
+                <Button sx={{ 'background-color': '#F4F4F4', p: 1, mx: 1}}>Copy</Button>
+            </Box>
+            <Typography variant="h2" sx={{ my: 5 }}>Suckers who have already voted:</Typography>
+            <Card sx={{ width: '400px', mx: 'auto', my: 5, border: '1px solid black', py: 5}}>
+                <Typography>{votedUsersString}</Typography>
             </Card>
-            <br />
+
 
             <SwipingButton />
 
-            <br />
-            <Link to="/preferences">Shortcut to preferences</Link>
-            <br />
 
         </div>
     )
