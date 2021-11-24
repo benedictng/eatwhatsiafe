@@ -1,8 +1,10 @@
 import { useState } from 'react'
+// import { flexbox } from '@mui/system';
+import Box from '@mui/material/Box';
+import FormHeading from 'components/common/form-heading'
+import SelectionButton from 'components/common/selection-button'
 import NextButton from 'components/common/next-button'
-import ToggleButton from '@mui/material/ToggleButton';
 import BackButton from '../../common/back-button'
-// import ToggleButton from 'react-bootstrap/ToggleButton'
 
 const DiningType = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -40,30 +42,22 @@ const DiningType = ({
     }
 
     const buttonMap = options.map((x) => (
-        <ToggleButton
-            sx={{
-                width: 300,
-                background: 'white',
-                radius: 50,
-            }}
-            selected={diningTypeData[x]}
-            name={x}
-            onChange={() => onCheckboxTicked(x)}
-        >
-            {x}
-        </ToggleButton>
+        <SelectionButton text={x} data={diningTypeData} onCheckboxTicked={onCheckboxTicked} />
     ))
 
     return (
         <>
-            <p>Dining Types</p>
-            {buttonMap}
-            <br />
-            <br />
-            <NextButton nextStep={onDone} />
-            <br />
-            <BackButton prevStep={prevStep} />
-
+            <FormHeading heading="We are OK with eating in these settings:" />
+            { buttonMap }
+            <Box sx={
+                {
+                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                }
+            }
+            >
+                <NextButton nextStep={onDone} />
+                <BackButton prevStep={prevStep} />
+            </Box>
         </>
     )
 }

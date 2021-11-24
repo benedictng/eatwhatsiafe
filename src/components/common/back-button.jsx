@@ -11,9 +11,21 @@ class BackButton extends Component {
 
     render() {
         return (
-            <div>
-                <Button onClick={this.back} variant="contained">back</Button>
-            </div>
+            <Button
+                onClick={this.back}
+                variant="contained"
+                sx={{
+                    'border-radius': 0,
+                    width: '166px',
+                    height: '48px',
+                    'background-color': '#FFB854',
+                    color: '#1D1D1D',
+                    'box-shadow': '8px 8px #1D1D1D',
+                    mx: 1,
+                }}
+            >
+                <strong>Back</strong>
+            </Button>
         )
     }
 }

@@ -15,6 +15,7 @@ import dietRestrictPresetData from 'common/constants/diet-restriction-preset-dat
 import diningTypePresetData from 'common/constants/dining-type-preset-data';
 import locationPresetData from 'common/constants/location-preset-data';
 import pricePresetData from 'common/constants/price-preset-data';
+import Box from '@mui/material/Box';
 
 const UserForm = () => {
     const [step, setStep] = useState(1)
@@ -70,10 +71,6 @@ const UserForm = () => {
                     presetData={pricePresetData}
                 />
                 <br />
-                <p>
-                    PRICE DATA:
-                    {JSON.stringify(price, null, '\t')}
-                </p>
             </div>
         );
 
@@ -88,10 +85,6 @@ const UserForm = () => {
                     presetData={cuisinePresetData}
                 />
                 <br />
-                <p>
-                    VETO DATA:
-                    {JSON.stringify(cuisineType, null, '\t')}
-                </p>
             </div>
         )
 
@@ -104,13 +97,8 @@ const UserForm = () => {
                     setFormData={setDiningType}
                     formData={diningType}
                     presetData={diningTypePresetData}
-
                 />
                 <br />
-                <p>
-                    DININGTYPE DATA:
-                    {JSON.stringify(diningType, null, '\t')}
-                </p>
             </div>
         )
 
@@ -123,13 +111,8 @@ const UserForm = () => {
                     setFormData={setDietRest}
                     formData={dietRest}
                     presetData={dietRestrictPresetData}
-
                 />
                 <br />
-                <p>
-                    REST DATA:
-                    {JSON.stringify(dietRest, null, '\t')}
-                </p>
             </div>
         )
     case 5:
@@ -144,10 +127,6 @@ const UserForm = () => {
 
                 />
                 <br />
-                <p>
-                    LOCATION DATA:
-                    {JSON.stringify(location, null, '\t')}
-                </p>
             </div>
         )
 
@@ -178,11 +157,15 @@ const UserForm = () => {
 
                 <Link to="/room/abcd">Go to status page</Link>
                 <br />
-
-                <BackButton
-                    prevStep={prevStep}
-                />
-                <NextButton nextStep={nextStep} />
+                <Box sx={
+                    {
+                        display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                    }
+                }
+                >
+                    <NextButton nextStep={nextStep} />
+                    <BackButton prevStep={prevStep} />
+                </Box>
                 <Button variant="contained" onClick={createRoom}>Create room</Button>
             </div>
         )
