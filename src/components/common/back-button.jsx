@@ -24,7 +24,7 @@ class BackButton extends Component {
                     mx: 1,
                 }}
             >
-                <strong>Back</strong>
+                Back
             </Button>
         )
     }

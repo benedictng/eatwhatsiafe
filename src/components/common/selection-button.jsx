@@ -6,6 +6,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
             height: '43px',
             'border-radius': '50px',
             mx: 1,
+            p: 1,
             'background-color': '#1D1D1D',
             color: '#FBFBFB',
             '&.Mui-selected': {

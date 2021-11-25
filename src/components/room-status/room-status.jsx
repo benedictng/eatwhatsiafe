@@ -38,7 +38,7 @@ const Status = ({ roomData }) => {
                     mx: 1,
                 }}
             >
-                <strong>START SWIPING!</strong>
+                START SWIPING!
             </Button>
         )
     }

@@ -62,9 +62,9 @@ const Price = ({
                         color: '#1D1D1D',
                         'box-shadow': '8px 8px #1D1D1D',
                         mx: 1,
-                    }}
-                >
-                    <strong>Next</strong>
+                      }}
+                      >
+                  Next
                 </Button>
             </Box>
         </>

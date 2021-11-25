@@ -24,7 +24,7 @@ class NextButton extends Component {
                     mx: 1,
                 }}
             >
-                <strong>Next</strong>
+                Next
             </Button>
         )
     }

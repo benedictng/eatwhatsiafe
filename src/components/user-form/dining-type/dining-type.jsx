@@ -55,8 +55,8 @@ const DiningType = ({
                 }
             }
             >
-                <NextButton nextStep={onDone} />
                 <BackButton prevStep={prevStep} />
+                <NextButton nextStep={onDone} />
             </Box>
         </>
     )
