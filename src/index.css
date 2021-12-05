@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "OPTIImprovNewWideNine";
+  src: local("fonts"),
+   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff") format("woff"),
+   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf") format("opentype"),
+   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot") format("embedded-opentype"),
+   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2") format("woff2"),
+
+  }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +21,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

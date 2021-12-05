@@ -16,7 +16,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import FoodSelectionPage from './components/food-selection';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
@@ -42,6 +41,7 @@ function App() {
                     <Route path="/preferences" component={UserForm} />
                     <Route path="/create-room" component={UserForm} />
                     <Route path="/example-api-call" component={ExampleApiCall} />
+
                     <RequireNameRoute
                         path="/room/:roomCode/selection"
                         component={<FoodSelectionPage />}
