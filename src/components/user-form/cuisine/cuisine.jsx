@@ -46,6 +46,7 @@ const Cuisine = ({
 
     return (
       <>
+
         <FormHeading heading='I want to opt out of these cuisines' />
         {buttonMap}
         <Box sx={

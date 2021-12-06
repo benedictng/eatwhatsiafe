@@ -49,22 +49,39 @@ const Price = ({
     return (
         <>
             <FormHeading heading='What prices are we looking at?' />
-            {buttonMap}
-            <Box sx={{ my: 5, justifyContent: 'center'}}>
+                {buttonMap}
+            <Box sx={{
+                position: 'relative',
+                bottom: '-8px',
+                right: '-8px',
+                'background-color': '#1d1d1d',
+                width: '343px',
+                height: '48px',
+                mx: 'auto',
+                my: 5,
+            }}
+            >
                 <Button
                     onClick={onDone}
                     variant="contained"
                     sx={{
+                        bottom: '8px',
+                        right: '8px',
+                        position: 'relative',
                         'border-radius': 0,
-                        width: '343px',
-                        height: '48px',
+                        width: '100%',
+                        height: '100%',
                         'background-color': '#FFB854',
                         color: '#1D1D1D',
-                        'box-shadow': '8px 8px #1D1D1D',
-                        mx: 1,
-                      }}
-                      >
-                  Next
+                        '&:hover': {
+                            transform: 'translate(8px, 8px)',
+                            'background-color': '#9eeadd',
+
+                        },
+                        transition: 'transform 0.3s',
+                    }}
+                >
+                    Next
                 </Button>
             </Box>
         </>

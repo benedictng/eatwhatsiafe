@@ -46,7 +46,7 @@
 }
 
 h1 {
-  font-family: "Poppins", serif;
+  font-family: 'OPTIImprovNewWideNine', serif;
   font-size: 1.5rem !important;
   font-weight: bold !important;
   line-height: 2rem;
@@ -65,6 +65,12 @@ h3 {
   line-height: 1.25rem !important;
 }
 
+h6 {
+  font-family: 'OPTIImprovNewWideNine', sans-serif;
+  font-size: 1rem !important;
+  line-height: 1.25rem !important;
+}
+
 .mainsubtitle {
   font-family: "Nunito", sans-serif;
   font-size: 0.875rem;
@@ -72,7 +78,7 @@ h3 {
 }
 
 p {
-  font-family: "Nunito", sans-serif;
+  font-family: 'OPTIImprovNewWideNine', sans-serif;
   font-size: 1rem;
 }
 
