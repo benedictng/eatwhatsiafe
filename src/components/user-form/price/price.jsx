@@ -62,6 +62,7 @@ const Price = ({
             }}
             >
                 <Button
+                    data={priceData}
                     onClick={onDone}
                     variant="contained"
                     sx={{
