@@ -1,16 +1,15 @@
-import Col from 'react-bootstrap/Col';
-
 const Reviews = ({ reviews }) => (
     <>
         {
             reviews.map((review, id) => (
-                <Col xs={12} md={3} key={id}>
+                <div className="review" key={id}>
                     <p>
                         Rating:
                         {review.rating}
                     </p>
                     <p>{review.comment}</p>
-                </Col>
+
+                </div>
             ))
 
         }
