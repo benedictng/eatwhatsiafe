@@ -39,7 +39,7 @@ const Location = ({
         if (result.length < 1) {
             alert('Please choose something')
         } else {
-            setFormData(result)
+            setFormData(locData)
             nextStep()
         }
     }

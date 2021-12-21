@@ -36,22 +36,33 @@ const UserForm = () => {
         setStep(step - 1)
     }
 
+    const enumerateState = (state, presetData) => {
+        const result = []
+        Object.keys(state).forEach((x) => {
+            if (state[x] === true) {
+                result.push(presetData.enum[x])
+            }
+        })
+        return result
+    }
+
     const createRoom = () => {
         alert(JSON.stringify({
-            regions: location,
-            price_levels: price,
-            cuisine_types: cuisineType,
-            dining_types: diningType,
-            dietary_restrictions: dietRest,
+            regions: enumerateState(location, locationPresetData),
+            price_levels: enumerateState(price, pricePresetData),
+            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+            dining_types: enumerateState(diningType, diningTypePresetData),
+            dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }))
+
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
             host_username: history.location.state.name,
-            regions: location,
-            price_levels: price,
-            cuisine_types: cuisineType,
-            dining_types: diningType,
-            dietary_restrictions: dietRest,
+            regions: enumerateState(location, locationPresetData),
+            price_levels: enumerateState(price, pricePresetData),
+            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+            dining_types: enumerateState(diningType, diningTypePresetData),
+            dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             history.push(`/room/${res.data.room_code}`, history.location.state)
@@ -157,6 +168,7 @@ const UserForm = () => {
 
                 <Link to="/room/abcd">Go to status page</Link>
                 <br />
+                <Button variant="contained" onClick={createRoom}>Create room</Button>
                 <Box sx={
                     {
                         display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
@@ -166,7 +178,6 @@ const UserForm = () => {
                     <NextButton nextStep={nextStep} />
                     <BackButton prevStep={prevStep} />
                 </Box>
-                <Button variant="contained" onClick={createRoom}>Create room</Button>
             </div>
         )
 

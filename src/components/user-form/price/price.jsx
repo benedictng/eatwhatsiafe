@@ -20,12 +20,12 @@ const Price = ({
             ? { ...initialState }
             : { ...formData },
     )
-
     const onCheckboxTicked = (option) => {
         setPriceData({
             ...priceData,
             [option]: !priceData[option],
         })
+        console.log
     }
 
     const onDone = () => {
@@ -38,12 +38,12 @@ const Price = ({
         if (result.length < 1) {
             alert('Please choose something')
         } else {
-            setFormData(result)
+            setFormData(priceData)
             nextStep()
         }
     }
     const buttonMap = options.map((x) => (
-        <SelectionButton text={x} data={priceData} onCheckboxTicked={onCheckboxTicked} />
+        <SelectionButton key={x} text={x} data={priceData} onCheckboxTicked={onCheckboxTicked} />
     ))
 
     return (

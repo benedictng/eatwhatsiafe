@@ -36,7 +36,7 @@ const Cuisine = ({
                 result.push(presetData.enum[x])
             }
         })
-        setFormData(result)
+        setFormData(cuisineData)
         nextStep()
     }
 

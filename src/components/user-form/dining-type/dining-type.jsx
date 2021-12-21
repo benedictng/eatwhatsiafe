@@ -36,7 +36,7 @@ const DiningType = ({
         if (result.length < 1) {
             alert('Please choose something')
         } else {
-            setFormData(result)
+            setFormData(diningTypeData)
             nextStep()
         }
     }

@@ -32,7 +32,7 @@ const DietRestrict = ({
                 result.push(presetData.enum[x])
             }
         })
-        setFormData(result)
+        setFormData(restData)
         nextStep()
     }
 
