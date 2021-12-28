@@ -22,3 +22,9 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: 'OPTIImprovNewWideNine';
+  src: local('OPTIImprovNewWideNine'), url(./fonts/OPTIImprovNewWideNine.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}

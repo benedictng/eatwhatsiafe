@@ -1,4 +1,5 @@
 import ToggleButton from '@mui/material/ToggleButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const SelectionButton = ({ text, data, onCheckboxTicked }) => (
     <ToggleButton
@@ -6,6 +7,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
             height: '43px',
             'border-radius': '50px',
             mx: 1,
+            p: 1,
             'background-color': '#1D1D1D',
             color: '#FBFBFB',
             '&.Mui-selected': {
@@ -28,6 +30,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
         trackStyle={{ backgroundColor: 'green' }}
     >
         {text}
+        {(data[text]) ? <CloseIcon /> : ''}
     </ToggleButton>
 )
 

@@ -1,7 +1,9 @@
-import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
 
 const FormHeading = ({ heading }) => (
-    <Typography variant="h1" sx={{ 'margin-bottom': '48px', mt: 15 }}>{heading}</Typography>
+    <Box sx={{ 'margin-bottom': '48px', mt: 15 }}>
+        <h1>{heading}</h1>
+    </Box>
 )
 
 export default FormHeading

@@ -5,9 +5,7 @@ import DiningType from 'components/user-form/dining-type'
 import DietRestrict from 'components/user-form/diet-restrict'
 import Location from 'components/user-form/location'
 import BackButton from 'components/common/back-button'
-import NextButton from 'components/common/next-button'
-import { Link, useHistory } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import RoomAPI from 'api/room'
 import cuisinePresetData from 'common/constants/cuisine-preset-data';
@@ -36,22 +34,33 @@ const UserForm = () => {
         setStep(step - 1)
     }
 
+    const enumerateState = (state, presetData) => {
+        const result = []
+        Object.keys(state).forEach((x) => {
+            if (state[x] === true) {
+                result.push(presetData.enum[x])
+            }
+        })
+        return result
+    }
+
     const createRoom = () => {
         alert(JSON.stringify({
-            regions: location,
-            price_levels: price,
-            cuisine_types: cuisineType,
-            dining_types: diningType,
-            dietary_restrictions: dietRest,
+            regions: enumerateState(location, locationPresetData),
+            price_levels: enumerateState(price, pricePresetData),
+            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+            dining_types: enumerateState(diningType, diningTypePresetData),
+            dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }))
+
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
             host_username: history.location.state.name,
-            regions: location,
-            price_levels: price,
-            cuisine_types: cuisineType,
-            dining_types: diningType,
-            dietary_restrictions: dietRest,
+            regions: enumerateState(location, locationPresetData),
+            price_levels: enumerateState(price, pricePresetData),
+            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+            dining_types: enumerateState(diningType, diningTypePresetData),
+            dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             history.push(`/room/${res.data.room_code}`, history.location.state)
@@ -155,7 +164,7 @@ const UserForm = () => {
                     {JSON.stringify(location, null, '\t')}
                 </p>
 
-                <Link to="/room/abcd">Go to status page</Link>
+                <Button variant="contained" onClick={createRoom}>Create room</Button>
                 <br />
                 <Box sx={
                     {
@@ -163,10 +172,8 @@ const UserForm = () => {
                     }
                 }
                 >
-                    <NextButton nextStep={nextStep} />
                     <BackButton prevStep={prevStep} />
                 </Box>
-                <Button variant="contained" onClick={createRoom}>Create room</Button>
             </div>
         )
 
