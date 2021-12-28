@@ -5,9 +5,7 @@ import DiningType from 'components/user-form/dining-type'
 import DietRestrict from 'components/user-form/diet-restrict'
 import Location from 'components/user-form/location'
 import BackButton from 'components/common/back-button'
-import NextButton from 'components/common/next-button'
-import { Link, useHistory } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import RoomAPI from 'api/room'
 import cuisinePresetData from 'common/constants/cuisine-preset-data';
@@ -166,16 +164,14 @@ const UserForm = () => {
                     {JSON.stringify(location, null, '\t')}
                 </p>
 
-                <Link to="/room/abcd">Go to status page</Link>
-                <br />
                 <Button variant="contained" onClick={createRoom}>Create room</Button>
+                <br />
                 <Box sx={
                     {
                         display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
                     }
                 }
                 >
-                    <NextButton nextStep={nextStep} />
                     <BackButton prevStep={prevStep} />
                 </Box>
             </div>

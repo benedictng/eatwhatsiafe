@@ -2,8 +2,6 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from '../../common/back-button'
-import { flexbox } from '@mui/system';
-import { Typography } from '@mui/material';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import Box from '@mui/material/Box';

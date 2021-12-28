@@ -16,7 +16,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import FoodSelectionPage from './components/food-selection';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
@@ -42,23 +41,30 @@ function App() {
                     <Route path="/preferences" component={UserForm} />
                     <Route path="/create-room" component={UserForm} />
                     <Route path="/example-api-call" component={ExampleApiCall} />
-                    <RequireNameRoute path="/room/:roomCode/selection"><FoodSelectionPage /></RequireNameRoute>
-                    <RequireNameRoute path="/room/:roomCode"><Room /></RequireNameRoute>
+
+                    <RequireNameRoute
+                        path="/room/:roomCode/selection"
+                        component={<FoodSelectionPage />}
+                    />
+                    <RequireNameRoute
+                        path="/room/:roomCode"
+                        component={<Room />}
+                    />
                 </Switch>
             </Router>
           <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, 'background-color': '#9FEADD' }}>
-            <Typography variant='h3' sx={{ margin: 'auto' }}>made with love; if you like what we do, buy us a coffee</Typography>
+            <h3>made with love; if you like what we do, buy us a coffee</h3>
           </BottomNavigation>
         </div>
         </>
     )
 }
 
-const RequireNameRoute = ({ children, ...rest }) => (
+const RequireNameRoute = ({ component, ...rest }) => (
     <Route
         {...rest}
         render={(_) => (window.sessionStorage.getItem('name') ? (
-            children
+            component
         ) : (
             <Redirect to="/" />
         ))}

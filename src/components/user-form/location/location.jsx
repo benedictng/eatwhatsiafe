@@ -81,7 +81,9 @@ const Location = ({
                     id="autocomplete dropdown search bar"
                     options={options}
                     style={{ width: 300, margin: 'auto' }}
-                    renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
+                    renderInput={
+                        (params) => <TextField {...params} label="Options" variant="outlined" />
+                    }
                 />
             </div>
             <Box sx={

@@ -2,7 +2,6 @@ import GetName from 'components/landing-page/get-name'
 
 const GetJoinerName = ({ existingUsers, toRoomStatusPage }) => {
     const submitName = (name) => {
-        console.log(existingUsers)
         window.sessionStorage.setItem('name', name)
         if (existingUsers.includes(name)) {
             // direct to results page

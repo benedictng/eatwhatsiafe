@@ -5,13 +5,16 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2';
+import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf';
+//boon shit below//
 import OPTIImprovNewWideNine from './fonts/OPTIImprovNewWideNine.otf'
 import ComforterBrush from './fonts/ComforterBrush-Regular.ttf'
 
-    // <link
-    //     rel="stylesheet"
-    //     href="https://fonts.googleapis.com/css?family=Poppins"
-    // />;
+<link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
+
 const theme = createTheme({
     typography: {
     fontFamily: 'OPTIImprovNewWideNine',

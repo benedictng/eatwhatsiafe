@@ -1,13 +1,10 @@
 import './food-selection.css';
 
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Box from '@material-ui/core/Box';
 
 import Carousel from './carousel';
 import ProductInformation from './product-information';
 import Reviews from './reviews';
-import Tags from './tags';
 
 // {} extract out key for you. If it is individual elements you have to put {} but not if props
 // props passes everything
@@ -15,39 +12,24 @@ import Tags from './tags';
 function RestaurantCard({ restaurant }) {
     // API to call food list
 
-    restaurant.reviews.map((review, id) => (
-        <Reviews key={id} review={review} />
-    ));
-
     return (
         <>
-            <Container>
-                <Col>
-                    <Row>
-                        <Carousel slides={restaurant.photos} />
-                    </Row>
-                    <Row>
-                        <Tags
-                            cuisineType={restaurant.cuisine_type}
-                            restriction={restaurant.restrictions}
-                        />
-                    </Row>
-                </Col>
-                <Col>
+            <Box className="container" sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                <Carousel slides={restaurant.photos} />
+                <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(2, 1fr)' }}>
                     <ProductInformation
                         name={restaurant.name}
-                        // hours = {restaurant.opening_hours}
-                        // price = {} price not available*****
+                        cuisineType={restaurant.cuisine_type}
+                        restriction={restaurant.restrictions}
                         address={restaurant.address}
                         location={restaurant.region}
                         hours={restaurant.opening_hours}
                     />
-                </Col>
-            </Container>
-
-            <Container>
+                </Box>
+            </Box>
+            <Box className="container" sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
                 <Reviews reviews={restaurant.reviews} />
-            </Container>
+            </Box>
         </>
     );
 }

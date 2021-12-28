@@ -1,10 +1,10 @@
+
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 5em;
 }
 
 .col {
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding:6vw;
 }
 
 .image {
@@ -27,8 +28,8 @@
 
 .right-arrow {
   position: absolute;
-  right: -1.5em;
-  font-size: 2.5rem; /*why the icon can be changed with font-size*/
+  right: 0em;
+  font-size: 2.5rem; 
   color: #000;
   z-index: 10;
   cursor: pointer;
@@ -37,7 +38,7 @@
 
 .left-arrow {
   position: absolute;
-  left: -1.5em;
+  left: 0em;
   font-size: 2.5rem;
   color: #000;
   z-index: 10;

@@ -4,9 +4,9 @@ import { useParams, Link, useHistory } from 'react-router-dom'
 import RoomAPI from 'api/room'
 // import Button from 'react-bootstrap/Button';
 import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import { NoEncryption } from '@mui/icons-material';
 
 
 const Status = ({ roomData }) => {
@@ -55,20 +55,22 @@ const Status = ({ roomData }) => {
 
     return (
         <div>
-            <Typography variant="h1">Nice,</Typography>
-            <Typography variant="h1">Time to make a bloody decision!</Typography>
-            <Typography >Share this link with your friends and start swiping. Please.</Typography>
+            <h1 >Nice,</h1>
+            <h1 >Time to make a bloody decision!</h1>
+            <p class="subtitle" >Share this link with your friends and start swiping. Please.</p>
             <Box sx={
                 {
-                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                    display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height:'52px'
                 }
             }>
-                <Typography sx={{ 'background-color': '#F4F4F4', p: 1 }}>{window.location.href}</Typography>
-                <Button sx={{ 'background-color': '#F4F4F4', p: 1, mx: 1}}>Copy</Button>
+                <Box sx={{ display: 'flex', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1}}>
+                    <p class="subtitle" >{window.location.href}</p>
+                </Box>
+                <Button class="subtitle copy-button">COPY</Button>
             </Box>
-            <Typography variant="h2" sx={{ my: 5 }}>Suckers who have already voted:</Typography>
-            <Card sx={{ width: '400px', mx: 'auto', my: 5, border: '1px solid black', py: 5}}>
-                <Typography>{votedUsersString}</Typography>
+            <h2>Suckers who have already voted:</h2>
+            <Card sx={{ width: '464px', mx: 'auto', my: 5, border: '1px solid black', py: 2}}>
+                <h3>{votedUsersString}</h3>
             </Card>
 
 

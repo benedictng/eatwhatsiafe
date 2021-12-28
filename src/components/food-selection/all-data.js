@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const allData = {
     error_code: 0,
     error_msg: '',
