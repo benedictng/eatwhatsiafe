@@ -2,12 +2,10 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
-import { Autocomplete } from '@material-ui/lab';
-import { TextField } from '@material-ui/core';
+import { Autocomplete, TextField, Box } from '@mui/material';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import { flexbox } from '@mui/system';
-import Box from '@mui/material/Box';
 
 const Location = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -79,7 +77,7 @@ const Location = ({
                         }
                     }}
                     id="autocomplete dropdown search bar"
-                    options={options}
+                    options={['The Godfather', 'Pulp Fiction']}
                     style={{ width: 300, margin: 'auto' }}
                     renderInput={
                         (params) => <TextField {...params} label="Options" variant="outlined" />

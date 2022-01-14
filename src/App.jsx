@@ -16,7 +16,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import FoodSelectionPage from './components/food-selection';
-import Footer from './components/footer';
 
 
 function App() {
@@ -55,7 +54,6 @@ function App() {
                         />
                     </Switch>
                 </Router>
-                <Footer />
             </div>
         </>
     )
