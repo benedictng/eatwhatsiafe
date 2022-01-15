@@ -14,9 +14,10 @@ import diningTypePresetData from 'common/constants/dining-type-preset-data';
 import locationPresetData from 'common/constants/location-preset-data';
 import pricePresetData from 'common/constants/price-preset-data';
 import Box from '@mui/material/Box';
+import Footer from 'components/footer';
 
 const UserForm = () => {
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(5)
     const [price, setPrice] = useState(null)
     const [cuisineType, setCuisineType] = useState(null)
     const [dietRest, setDietRest] = useState(null)
@@ -79,7 +80,8 @@ const UserForm = () => {
                     history={history}
                     presetData={pricePresetData}
                 />
-                <br />
+                <Footer />
+
             </div>
         );
 
@@ -93,7 +95,8 @@ const UserForm = () => {
                     formData={cuisineType}
                     presetData={cuisinePresetData}
                 />
-                <br />
+                <Footer />
+
             </div>
         )
 
@@ -107,8 +110,9 @@ const UserForm = () => {
                     formData={diningType}
                     presetData={diningTypePresetData}
                 />
-                <br />
+                <Footer />
             </div>
+
         )
 
     case 4:
@@ -121,8 +125,9 @@ const UserForm = () => {
                     formData={dietRest}
                     presetData={dietRestrictPresetData}
                 />
-                <br />
+                <Footer />
             </div>
+
         )
     case 5:
         return (
@@ -135,7 +140,7 @@ const UserForm = () => {
                     presetData={locationPresetData}
 
                 />
-                <br />
+                <Footer />
             </div>
         )
 
