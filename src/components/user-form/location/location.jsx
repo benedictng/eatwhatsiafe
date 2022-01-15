@@ -77,7 +77,7 @@ const Location = ({
                         }
                     }}
                     id="autocomplete dropdown search bar"
-                    options={['The Godfather', 'Pulp Fiction']}
+                    options={options}
                     style={{ width: 300, margin: 'auto' }}
                     renderInput={
                         (params) => <TextField {...params} label="Options" variant="outlined" />
