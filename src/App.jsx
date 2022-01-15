@@ -14,12 +14,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
 import FoodSelectionPage from './components/food-selection';
 
 
 function App() {
-    const noFooterPages = ["/room/:roomCode/selection", "/room/:roomCode"]
     return (
         <>
             <div className="App">
