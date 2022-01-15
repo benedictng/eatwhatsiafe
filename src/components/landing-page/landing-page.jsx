@@ -4,6 +4,7 @@ import CreateOrEnterRoom from 'components/landing-page/create-enter-choice'
 import GetHostName from 'components/landing-page/get-host-name'
 import GetJoinerName from 'components/landing-page/get-joiner-name'
 import RoomAPI from 'api/room'
+import Footer from 'components/footer';
 import RoomDeleted from './room-deleted'
 import './landing-page.css'
 
@@ -95,6 +96,7 @@ const LandingPage = () => {
             <div className="landing-page-content-container">
                 {renderSteps()}
             </div>
+            <Footer />
         </div>
     )
 }
