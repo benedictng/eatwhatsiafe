@@ -3,6 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const SelectionButton = ({ text, data, onCheckboxTicked }) => (
     <ToggleButton
+        className="subtitle"
         sx={{
             height: '43px',
             'border-radius': '50px',
