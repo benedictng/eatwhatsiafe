@@ -2,12 +2,10 @@
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
-import { Autocomplete } from '@material-ui/lab';
-import { TextField } from '@material-ui/core';
+import { Autocomplete, TextField, Box } from '@mui/material';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import { flexbox } from '@mui/system';
-import Box from '@mui/material/Box';
 
 const Location = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -39,7 +37,7 @@ const Location = ({
         if (result.length < 1) {
             alert('Please choose something')
         } else {
-            setFormData(result)
+            setFormData(locData)
             nextStep()
         }
     }
@@ -92,8 +90,8 @@ const Location = ({
                 }
             }
             >
-                <NextButton nextStep={onDone} />
                 <BackButton prevStep={prevStep} />
+                <NextButton nextStep={onDone} />
             </Box>
 
         </>

@@ -36,7 +36,7 @@ const DiningType = ({
         if (result.length < 1) {
             alert('Please choose something')
         } else {
-            setFormData(result)
+            setFormData(diningTypeData)
             nextStep()
         }
     }
@@ -55,8 +55,8 @@ const DiningType = ({
                 }
             }
             >
-                <NextButton nextStep={onDone} />
                 <BackButton prevStep={prevStep} />
+                <NextButton nextStep={onDone} />
             </Box>
         </>
     )

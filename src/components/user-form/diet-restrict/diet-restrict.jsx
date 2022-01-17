@@ -1,15 +1,9 @@
-/* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
-import ToggleButton from '@mui/material/ToggleButton';
-import BackButton from '../../common/back-button'
-// import ToggleButton from 'react-bootstrap/ToggleButton'
 import SelectionButton from 'components/common/selection-button'
-import { flexbox } from '@mui/system';
 import FormHeading from 'components/common/form-heading'
 import Box from '@mui/material/Box';
-
-
+import BackButton from '../../common/back-button'
 
 const DietRestrict = ({
     presetData, formData, setFormData, nextStep, prevStep,
@@ -38,7 +32,7 @@ const DietRestrict = ({
                 result.push(presetData.enum[x])
             }
         })
-        setFormData(result)
+        setFormData(restData)
         nextStep()
     }
 
@@ -50,7 +44,7 @@ const DietRestrict = ({
         <>
             <FormHeading heading="Ermmm we have these dietary restrictions" />
 
-                {buttonMap}
+            {buttonMap}
 
             <Box sx={
                 {
@@ -58,8 +52,8 @@ const DietRestrict = ({
                 }
             }
             >
-                <NextButton nextStep={onDone} />
                 <BackButton prevStep={prevStep} />
+                <NextButton nextStep={onDone} />
             </Box>
         </>
     )
