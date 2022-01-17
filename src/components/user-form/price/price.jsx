@@ -1,17 +1,15 @@
-/* eslint-disable */
 import { useState } from 'react'
-import NextButton from 'components/common/next-button'
-import { flexbox } from '@mui/system';
 import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
-
 const Price = ({
     presetData, formData, setFormData, nextStep,
 }) => {
-    const initialState  = {};
+    const [notSelectedErr, setNotSelectedErr] = useState(false)
+
+    const initialState = {};
     Object.keys(presetData.enum).forEach((x) => { initialState[x] = false })
 
     const options = Object.keys(presetData.enum)
@@ -20,12 +18,12 @@ const Price = ({
             ? { ...initialState }
             : { ...formData },
     )
+
     const onCheckboxTicked = (option) => {
         setPriceData({
             ...priceData,
             [option]: !priceData[option],
         })
-        console.log
     }
 
     const onDone = () => {
@@ -36,7 +34,7 @@ const Price = ({
             }
         })
         if (result.length < 1) {
-            alert('Please choose something')
+            setNotSelectedErr(true)
         } else {
             setFormData(priceData)
             nextStep()
@@ -48,8 +46,11 @@ const Price = ({
 
     return (
         <>
-            <FormHeading heading='What prices are we looking at?' />
-                {buttonMap}
+            <FormHeading
+                heading="What prices are we looking at?"
+                showErrMsg={notSelectedErr}
+            />
+            {buttonMap}
             <Box sx={{
                 position: 'relative',
                 bottom: '-8px',
