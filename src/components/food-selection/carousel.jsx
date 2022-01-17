@@ -24,7 +24,7 @@ const Carousel = ({ slides }) => {
                 {slides.map((slider, id) => (
                     <div className={current === id ? 'slide active' : 'slide'} key={id}>
                         {id === current && (
-                        <img src={slider} className="image" alt="Food Pictures" />
+                        <img src={`data:image/jpeg;base64,${slider}`} className="image" alt="Food Pictures" />
 
                         )}
 
