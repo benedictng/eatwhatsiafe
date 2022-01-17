@@ -10,6 +10,8 @@ import { flexbox } from '@mui/system';
 const Location = ({
     presetData, formData, setFormData, nextStep, prevStep,
 }) => {
+    const [notSelectedErr, setNotSelectedErr] = useState(false)
+
     const initialState = {};
     Object.keys(presetData.enum).forEach((x) => { initialState[x] = false })
 
@@ -35,7 +37,7 @@ const Location = ({
             }
         })
         if (result.length < 1) {
-            alert('Please choose something')
+            setNotSelectedErr(true)
         } else {
             setFormData(locData)
             nextStep()
@@ -60,7 +62,10 @@ const Location = ({
 
     return (
         <>
-            <FormHeading heading='I want to eat at these locations:' />
+            <FormHeading
+                heading='I want to eat at these locations:'
+                showErrMsg={notSelectedErr}
+            />
             <div sx={{
                 display: flexbox,
                 'justify-content': 'space-around',

@@ -9,6 +9,8 @@ import BackButton from '../../common/back-button'
 const DiningType = ({
     presetData, formData, setFormData, nextStep, prevStep,
 }) => {
+    const [notSelectedErr, setNotSelectedErr] = useState(false)
+
     const initialState = {};
     Object.keys(presetData.enum).forEach((x) => { initialState[x] = false })
 
@@ -34,7 +36,7 @@ const DiningType = ({
             }
         })
         if (result.length < 1) {
-            alert('Please choose something')
+            setNotSelectedErr(true)
         } else {
             setFormData(diningTypeData)
             nextStep()
@@ -47,7 +49,10 @@ const DiningType = ({
 
     return (
         <>
-            <FormHeading heading="We are OK with eating in these settings:" />
+            <FormHeading
+                heading="We are OK with eating in these settings:"
+                showErrMsg={notSelectedErr}
+            />
             { buttonMap }
             <Box sx={
                 {

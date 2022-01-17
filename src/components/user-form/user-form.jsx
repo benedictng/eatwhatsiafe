@@ -17,7 +17,7 @@ import Box from '@mui/material/Box';
 import Footer from 'components/footer';
 
 const UserForm = () => {
-    const [step, setStep] = useState(5)
+    const [step, setStep] = useState(1)
     const [price, setPrice] = useState(null)
     const [cuisineType, setCuisineType] = useState(null)
     const [dietRest, setDietRest] = useState(null)

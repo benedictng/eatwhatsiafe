@@ -2,6 +2,7 @@
 import 'App.css';
 import {
     useLocation,
+    Link,
     BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 import LandingPage from 'components/landing-page';
@@ -21,21 +22,23 @@ function App() {
     return (
         <>
             <div className="App">
-                <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
-                    <Toolbar variant="dense" sx={{ mx:10 }}>
-                        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
-                            EWS
-                        </Typography>
-                        <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
-                        <Button color="inherit" sx={{ flexGrow: 1 }}>About Us</Button>
-                        <Button color="inherit" sx={{ flexGrow: 1 }}>Feedback</Button>
-                    </Toolbar>
-                </Box>
-                <br />
                 <Router>
+                    <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
+                        <Toolbar variant="dense" sx={{ mx:10 }}>
+                            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
+                                EWS
+                            </Typography>
+                            <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                                <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
+                            </Link>
+                            <Button color="inherit" sx={{ flexGrow: 1 }}>About Us</Button>
+                            <Button color="inherit" sx={{ flexGrow: 1 }}>Feedback</Button>
+                        </Toolbar>
+                    </Box>
+                    <br />
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/preferences" component={UserForm} />
