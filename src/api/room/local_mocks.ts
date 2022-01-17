@@ -6,6 +6,10 @@ import {
     CloseRoomPayload, CloseRoomResponse, RoomResultsPayload, RoomResultsResponse,
 } from './room_api_interface'
 
+import {
+    image1, image2, image3, image4,
+} from './mock_image'
+
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => new Promise(
     (res, rej) => {
         setTimeout(
@@ -124,8 +128,7 @@ const MockFoodList = [
         cuisine_type: [1, 4],
         restrictions: [2, 3],
         photos: [
-            'https://danielfooddiary.com/wp-content/uploads/2020/03/twomenbagelhouse1.jpg',
-            'https://www.misstamchiak.com/wp-content/uploads/2019/11/DSCF0483-3-e1573616926486.jpg',
+            image1, image2,
         ],
         reviews: [
             {
@@ -166,10 +169,7 @@ const MockFoodList = [
         cuisine_type: [2],
         restrictions: [1, 3],
         photos: [
-            'https://cdn.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_450,h_300/https://danielfooddiary.com/wp-content/uploads/2017/10/manman41.jpg',
-            'https://media-cdn.tripadvisor.com/media/photo-s/0f/1f/3c/ef/photo0jpg.jpg',
-            'https://4.bp.blogspot.com/-pG2QheJoPqI/V_4KOTSNEzI/AAAAAAAANPY/IUhqvk2tHg8YRouAzOmrII0tXF1WdVvawCLcB/s1600/umDSCF9361.JPG',
-            'https://live.staticflickr.com/65535/48290857847_ef5efeecd1_b.jpg',
+            image1, image2, image3, image4,
         ],
         reviews: [
             {
@@ -210,8 +210,7 @@ const MockFoodList = [
         cuisine_type: [1, 4],
         restrictions: [2, 3],
         photos: [
-            'https://www.misstamchiak.com/wp-content/uploads/2019/08/DSCF4049-1-1300x867.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlMTAG1-uMbJ_Q8VBynrWQmQMBcl9dvUqAAOQJIJuDUl4qNJXup_wTXE19UV7Qn2YNVA&usqp=CAU',
+            image1, image2, image4,
         ],
         reviews: [
             {
