@@ -6,6 +6,8 @@ import {
 import LandingPage from 'components/landing-page';
 import ExampleApiCall from 'components/common/example-api-call';
 import UserForm from 'components/user-form';
+import Results from 'components/results';
+
 import Room from 'components/room';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -50,6 +52,8 @@ function App() {
                     <Route path="/preferences" component={UserForm} />
                     <Route path="/create-room" component={UserForm} />
                     <Route path="/example-api-call" component={ExampleApiCall} />
+                    <Route path="/results" component={Results} />
+
 
                     <RequireNameRoute
                         path="/room/:roomCode/selection"
@@ -61,7 +65,7 @@ function App() {
                     />
                 </Switch>
             </Router>
-          <BottomNavigation sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, 'background-color': '#9FEADD' }}>
+          <BottomNavigation sx={{ position: 'sticky', bottom: 0, left: 0, right: 0, 'background-color': '#9FEADD' }}>
             <p className="subtitle">made with love; if you like what we do, buy us a CROISSANT</p>
           </BottomNavigation>
         </div>
