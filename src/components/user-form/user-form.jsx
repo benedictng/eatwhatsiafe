@@ -50,7 +50,7 @@ const UserForm = () => {
             regions: enumerateState(location, locationPresetData),
             price_levels: enumerateState(price, pricePresetData),
             cuisine_types: enumerateState(cuisineType, cuisinePresetData),
-            dining_types: enumerateState(diningType, diningTypePresetData),
+            // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }))
 
@@ -60,7 +60,7 @@ const UserForm = () => {
             regions: enumerateState(location, locationPresetData),
             price_levels: enumerateState(price, pricePresetData),
             cuisine_types: enumerateState(cuisineType, cuisinePresetData),
-            dining_types: enumerateState(diningType, diningTypePresetData),
+            // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
@@ -100,7 +100,7 @@ const UserForm = () => {
             </div>
         )
 
-    case 3:
+    case 9:
         return (
             <div>
                 <DiningType
@@ -115,7 +115,7 @@ const UserForm = () => {
 
         )
 
-    case 4:
+    case 3:
         return (
             <div>
                 <DietRestrict
@@ -129,7 +129,7 @@ const UserForm = () => {
             </div>
 
         )
-    case 5:
+    case 4:
         return (
             <div>
                 <Location
@@ -144,7 +144,7 @@ const UserForm = () => {
             </div>
         )
 
-    case 6:
+    case 5:
         // just to show state
         return (
             <div>
