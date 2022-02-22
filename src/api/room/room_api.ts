@@ -7,7 +7,7 @@ import {
 } from './room_api_interface'
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/create'
     return axios.post(url, payload)
 }
 
