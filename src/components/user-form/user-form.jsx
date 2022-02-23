@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 import { useState } from 'react';
 import Price from 'components/user-form/price'
 import Cuisine from 'components/user-form/cuisine';
@@ -183,7 +185,6 @@ const UserForm = () => {
         )
 
     default:
-        console.log('ERROR')
         alert('ERROR')
         return <div>An error occured 😬 </div>
     }
