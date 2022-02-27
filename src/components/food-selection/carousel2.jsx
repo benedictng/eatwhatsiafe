@@ -18,7 +18,7 @@ function Carousel2({ photos }) {
         >
             {
                 photos.map((photo, id) => (
-                    <img key={id} src={photo} className="image" alt="Food Pictures" />
+                    <img key={id} src={`data:image/jpeg;base64,${photo}`} className="image" alt="Food Pictures" />
                 ))
             }
         </Carousel>

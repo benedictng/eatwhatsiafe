@@ -8,8 +8,6 @@ import ThirdPlace from './third-place';
 
 import './results.css';
 
-document.body.classList.add('background-diamond');
-
 const Results = () => (
     <>
 

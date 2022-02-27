@@ -1,6 +1,7 @@
 import './food-selection.css';
 
-import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import Container from '@mui/material/Container';
 
 // import Carousel from './carousel';
 import Carousel2 from './carousel2';
@@ -16,10 +17,13 @@ function RestaurantCard({ restaurant }) {
 
     return (
         <>
-            <div className="card">
-                <Box className="container" sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                    <Carousel2 photos={restaurant.photos} />
-                    <Box className="text-description">
+            <Container className="card">
+                <Grid container className="container" spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Carousel2 photos={restaurant.photos} />
+                    </Grid>
+
+                    <Grid item xs={12} md={6} className="text-description">
                         <ProductInformation
                             name={restaurant.name}
                             cuisineType={restaurant.cuisine_type}
@@ -27,12 +31,13 @@ function RestaurantCard({ restaurant }) {
                             location={restaurant.region}
                             hours={restaurant.opening_hours}
                         />
-                    </Box>
-                </Box>
-                <Box className="container" sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
-                    <Reviews reviews={restaurant.reviews} />
-                </Box>
-            </div>
+                    </Grid>
+                    <Grid container spacing={2}>
+                        <Reviews reviews={restaurant.reviews} />
+                    </Grid>
+                </Grid>
+
+            </Container>
         </>
     );
 }
