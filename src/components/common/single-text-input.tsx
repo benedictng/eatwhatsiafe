@@ -40,7 +40,7 @@ const SingleTextInput = (props: InputProps) => {
 
     return (
         <>
-            <FormHeading heading={label} />
+            <FormHeading heading={label} showErrMsg="" />
             <TextField id="user_input" label="" variant="outlined" onChange={onChangeInternal} />
 
             {
@@ -52,8 +52,8 @@ const SingleTextInput = (props: InputProps) => {
                     justifyContent: 'center',
                 }}
                 >
-                    <FloatingOrangeButton onClick={onSubmitInternal} buttonText={submitButtonLabel} />
                     {renderBackButton()}
+                    <FloatingOrangeButton onClick={onSubmitInternal} buttonText={submitButtonLabel} />
                 </Box>
             }
         </>
