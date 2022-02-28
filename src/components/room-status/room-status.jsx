@@ -1,6 +1,6 @@
 /*eslint-disable*/
-import { useParams, useHistory } from 'react-router-dom'
-
+import { useParams, useHistory, useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 import RoomAPI from 'api/room'
 // import Button from 'react-bootstrap/Button';
 import Button from '@mui/material/Button';
@@ -9,12 +9,26 @@ import Card from '@mui/material/Card';
 import { NoEncryption } from '@mui/icons-material';
 
 const Status = ({ roomData }) => {
+    const [swipedStatus, setSwipedStatus] = useState(false)
     const { roomCode } = useParams()
-
     const history = useHistory()
 
+    useEffect(() => {
+        //status api call
+        RoomAPI.getRoomStatus({
+            room_code: roomCode,
+        }).then((res) => {
+            alert(`received response: ${JSON.stringify(res)}`)
+            if (res.data.voted_users.includes(history.location.state.name)) {
+                setSwipedStatus(true)
+            }
+        })
+
+    },[]);
+
+
     const swipingFlow = () => {
-        history.push(`/room/${roomCode}/selection`)
+        history.push(`/room/${roomCode}/selection`, history.location.state)
     }
 
     const votedUsersString = roomData.voted_users.join(', ')
@@ -23,6 +37,7 @@ const Status = ({ roomData }) => {
         if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
             return null
         }
+
         return (
             <Button
                 onClick={swipingFlow}
@@ -78,8 +93,7 @@ const Status = ({ roomData }) => {
             >
                 <h3>{votedUsersString}</h3>
             </Card>
-
-            <SwipingButton />
+            {swipedStatus ? <SwipingButton /> : <p>close room</p>}
 
         </div>
     )
