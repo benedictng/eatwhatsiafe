@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import { TextField } from '@material-ui/core'
+import Box from '@mui/material/Box';
+import FormHeading from 'components/common/form-heading'
+import FloatingOrangeButton from 'components/common/floating-orange-button'
 
 type InputProps = {
     label: string
@@ -22,8 +24,7 @@ const SingleTextInput = (props: InputProps) => {
         setValue(e.currentTarget.value)
     }
 
-    const onSubmitInternal: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent) => {
-        e.preventDefault()
+    const onSubmitInternal = () => {
         if (value === null) {
             alert('Please enter a value!')
             return
@@ -34,23 +35,28 @@ const SingleTextInput = (props: InputProps) => {
     const renderBackButton = () => ((backButtonLabel === null || onBack === null)
         ? null
         : (
-            <Button className="back-button" variant="light" onClick={onBack}>
-                {backButtonLabel}
-            </Button>
+            <FloatingOrangeButton onClick={onBack} buttonText={backButtonLabel} />
         ))
 
     return (
-        <Form onSubmit={onSubmitInternal}>
-            <Form.Group>
-                <Form.Label>{label}</Form.Label>
-                <Form.Control type="text" name="user_input" onChange={onChangeInternal} />
-            </Form.Group>
-            <br />
-            <Button className="submit-button" variant="light" type="submit">
-                {submitButtonLabel}
-            </Button>
-            {renderBackButton()}
-        </Form>
+        <>
+            <FormHeading heading={label} />
+            <TextField id="user_input" label="" variant="outlined" onChange={onChangeInternal} />
+
+            {
+                // @ts-ignore
+                <Box sx={{
+                    display: 'flex',
+                    my: 5,
+                    'align-items': 'center',
+                    justifyContent: 'center',
+                }}
+                >
+                    <FloatingOrangeButton onClick={onSubmitInternal} buttonText={submitButtonLabel} />
+                    {renderBackButton()}
+                </Box>
+            }
+        </>
     )
 }
 
