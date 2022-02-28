@@ -8,6 +8,8 @@ import {
 import LandingPage from 'components/landing-page';
 import ExampleApiCall from 'components/common/example-api-call';
 import UserForm from 'components/user-form';
+import Results from 'components/results';
+
 import Room from 'components/room';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -16,7 +18,15 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import FoodSelectionPage from './components/food-selection';
+import Logo from './images/logo.PNG';
 
+const LogoPic = (e) => {
+	return ( 
+        <div>
+            <img src={Logo} alt=""/>
+        </div>
+    );
+}
 
 function App() {
     return (

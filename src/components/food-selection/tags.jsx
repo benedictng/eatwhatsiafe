@@ -1,26 +1,25 @@
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button'
-
 import cuisinePresetData from 'common/constants/cuisine-preset-data'
 import dietRestrictPresetData from 'common/constants/diet-restriction-preset-data'
+
+import Grid from '@material-ui/core/Grid';
 
 import './food-selection.css'
 
 const tags = ({ cuisineType, restriction }) => (
     <>
-        <ButtonGroup aria-label="Basic example">
+        <Grid container className="tag-group">
             {cuisineType.map((cuisineTag) => (
-                <Button variant="secondary">
+                <p className="tag">
                     {cuisinePresetData.enum2[cuisineTag]}
-                </Button>
+                </p>
             ))}
 
             {restriction.map((dietaryTag) => (
-                <Button variant="secondary">
+                <p className="tag">
                     {dietRestrictPresetData.enum2[dietaryTag]}
-                </Button>
+                </p>
             ))}
-        </ButtonGroup>
+        </Grid>
     </>
 );
 

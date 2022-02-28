@@ -14,7 +14,7 @@ const message = ({ isConclusive }) => {
     return (
         <div>
             <p className="h0">
-                CONGRATULATIONS,
+                CONGRATS,
                 <br />
                 SUCKERS.
             </p>

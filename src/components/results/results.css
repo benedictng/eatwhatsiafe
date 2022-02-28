@@ -1,7 +1,23 @@
+.background-diamond{
+  background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 50%, #FFB854 87.5%);
+}
+
 .winnercard {
-  background-color: #eeeeee;
-  border-radius: 2rem;
+  background-color: #f8f8f8;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   text-align: left;
+  padding-left: 112px !important;
+  padding-right: 112px !important;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-bottom:24px;
+  margin-top:24px;
+}
+
+.block{
+  margin-bottom: 24px;
 }
 
 .horizontalcenter {
@@ -13,17 +29,6 @@
 }
 
 .results_image {
-  border-radius: 1rem;
-  max-width: 100%;
+  max-width: 80%;
   object-fit: cover;
-  width: 22.5rem;
-  height: 22.5rem;
-}
-
-.results_image_others {
-  border-radius: 1rem;
-  max-width: 100%;
-  object-fit: cover;
-  width: 22.5rem;
-  height: 15rem;
 }
