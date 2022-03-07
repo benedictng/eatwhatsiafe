@@ -21,24 +21,16 @@ const Room = () => {
         })
     }, [roomCode])
 
-    const renderRoom = () => {
-        switch (status) {
-        case null:
-            return <Loading />
-        case 1:
-            return <Status roomData={data} />
-        case 2:
-            return <Results />
-        default:
-            return <h1>ERROR</h1>
-        }
+    switch (status) {
+    case null:
+        return <Loading />
+    case 1:
+        return <Status roomData={data} />
+    case 2:
+        return <Results />
+    default:
+        return <h1>ERROR</h1>
     }
-
-    return (
-        <>
-            { renderRoom() }
-        </>
-    )
 }
 
 export default Room
