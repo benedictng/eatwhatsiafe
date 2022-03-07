@@ -11,11 +11,13 @@ const Room = () => {
     const [data, setData] = useState({})
 
     useEffect(() => {
+        alert(status)
         RoomAPI.getRoomStatus({
             room_code: roomCode,
         }).then((res) => {
             setData(res.data.data)
             setStatus(res.data.data.status)
+            alert(status)
         })
     }, [roomCode])
 
