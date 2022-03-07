@@ -11,26 +11,32 @@ const Room = () => {
     const [data, setData] = useState({})
 
     useEffect(() => {
-        alert(status)
         RoomAPI.getRoomStatus({
             room_code: roomCode,
         }).then((res) => {
-            setData(res.data.data)
-            setStatus(res.data.data.status)
-            alert(status)
+            setData(res.data)
+            setStatus(res.data.status)
         })
     }, [roomCode])
 
-    switch (status) {
-    case null:
-        return <Loading />
-    case 1:
-        return <Status roomData={data} />
-    case 2:
-        return <Results />
-    default:
-        return <h1>ERROR</h1>
+    const renderRoom = () => {
+        switch (status) {
+        case null:
+            return <Loading />
+        case 1:
+            return <Status roomData={data} />
+        case 2:
+            return <Results />
+        default:
+            return <h1>ERROR</h1>
+        }
     }
+
+    return (
+        <>
+            { renderRoom() }
+        </>
+    )
 }
 
 export default Room
