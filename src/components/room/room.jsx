@@ -15,10 +15,10 @@ const Room = () => {
             room_code: roomCode,
         }).then((res) => {
             alert(JSON.stringify(res))
-            alert(JSON.stringify(res.data))
+            alert(JSON.stringify(res.data.data.status))
             console.log(JSON.stringify(res.data))
-            setData(res.data)
-            setStatus(res.data.status)
+            setData(res.data.data)
+            setStatus(res.data.data.status)
         })
     }, [roomCode])
 
