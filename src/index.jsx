@@ -9,9 +9,6 @@ import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff';
 import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot';
 import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2';
 import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf';
-//boon shit below//
-import OPTIImprovNewWideNine from './fonts/OPTIImprovNewWideNine.otf'
-import ComforterBrush from './fonts/ComforterBrush-Regular.ttf'
 
 <link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
 
