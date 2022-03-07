@@ -1,4 +1,4 @@
-/* eslint-disable no-alert */
+/* eslint-disable*/
 
 import { useState } from 'react';
 import Price from 'components/user-form/price'
@@ -65,23 +65,15 @@ const UserForm = () => {
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
+            debugger
             alert(`received response: ${JSON.stringify(res)}`)
-            alert(res.data.room_code)
-            history.push(`/room/${res.data.room_code}`, history.location.state)
+            if (res.error_code !== 0) {
+                alert('no results found')
+            } else {
+                alert(res.data.room_code)
+                history.push(`/room/${res.data.room_code}`, history.location.state)
+            }
         })
-
-    //     axios.post('https://eat-what-ah.herokuapp.com/room/create', {
-    //         room_name: history.location.state.roomName,
-    //         host_username: history.location.state.name,
-    //         regions: enumerateState(location, locationPresetData),
-    //         price_levels: enumerateState(price, pricePresetData),
-    //         cuisine_types: enumerateState(cuisineType, cuisinePresetData),
-    //         // dining_types: enumerateState(diningType, diningTypePresetData),
-    //         dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
-    //     }).then((res) => {
-    //         alert(`received response: ${JSON.stringify(res)}`)
-    //         history.push(`/room/${res.data.room_code}`, history.location.state)
-    //     })
     }
 
     switch (step) {
