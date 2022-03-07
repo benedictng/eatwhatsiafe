@@ -68,6 +68,19 @@ const UserForm = () => {
             alert(`received response: ${JSON.stringify(res)}`)
             history.push(`/room/${res.data.room_code}`, history.location.state)
         })
+
+    //     axios.post('https://eat-what-ah.herokuapp.com/room/create', {
+    //         room_name: history.location.state.roomName,
+    //         host_username: history.location.state.name,
+    //         regions: enumerateState(location, locationPresetData),
+    //         price_levels: enumerateState(price, pricePresetData),
+    //         cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+    //         // dining_types: enumerateState(diningType, diningTypePresetData),
+    //         dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
+    //     }).then((res) => {
+    //         alert(`received response: ${JSON.stringify(res)}`)
+    //         history.push(`/room/${res.data.room_code}`, history.location.state)
+    //     })
     }
 
     switch (step) {
