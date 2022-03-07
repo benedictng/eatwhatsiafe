@@ -65,13 +65,12 @@ const UserForm = () => {
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
-            debugger
             alert(`received response: ${JSON.stringify(res)}`)
-            if (res.error_code !== 0) {
+            if (res.data.error_code !== 0) {
                 alert('no results found')
             } else {
-                alert(res.data.room_code)
-                history.push(`/room/${res.data.room_code}`, history.location.state)
+                alert(res.data.data.room_code)
+                history.push(`/room/${res.data.data.room_code}`, history.location.state)
             }
         })
     }
