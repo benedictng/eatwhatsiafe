@@ -14,6 +14,8 @@ const Room = () => {
         RoomAPI.getRoomStatus({
             room_code: roomCode,
         }).then((res) => {
+            alert(res)
+            alert(res.data)
             setData(res.data)
             setStatus(res.data.status)
         })
