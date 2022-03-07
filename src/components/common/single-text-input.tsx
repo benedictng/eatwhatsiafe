@@ -40,7 +40,7 @@ const SingleTextInput = (props: InputProps) => {
 
     return (
         <>
-            <FormHeading heading={label} showErrMsg="" />
+            <FormHeading heading={label} showErrMsg="" boxStyles={{ 'margin-top': '48px' }} />
             <TextField id="user_input" label="" variant="outlined" onChange={onChangeInternal} />
 
             {
