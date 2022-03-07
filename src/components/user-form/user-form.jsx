@@ -66,6 +66,7 @@ const UserForm = () => {
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
+            alert(res.data.room_code)
             history.push(`/room/${res.data.room_code}`, history.location.state)
         })
 
