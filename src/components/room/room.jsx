@@ -19,6 +19,7 @@ const Room = () => {
             console.log(JSON.stringify(res.data))
             setData(res.data.data)
             setStatus(res.data.data.status)
+            alert(status)
         })
     }, [roomCode])
 
