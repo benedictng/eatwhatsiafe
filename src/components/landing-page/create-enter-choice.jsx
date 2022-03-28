@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
+import Box from '@mui/material/Box';
 import SingleTextInput from 'components/common/single-text-input'
+import FloatingOrangeButton from 'components/common/floating-orange-button'
 
 const CreateOrEnterRoom = ({ createOrEnter }) => {
     const [isEnter, setIsEnter] = useState(false)
@@ -14,10 +15,15 @@ const CreateOrEnterRoom = ({ createOrEnter }) => {
     }
 
     const renderChoice = () => (
-        <>
-            <Button variant="light" onClick={toggleIsEnter}>Enter Room</Button>
-            <Button variant="light" onClick={() => createOrEnter()}>Create Room</Button>
-        </>
+        <Box sx={
+            {
+                display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+            }
+        }
+        >
+            <FloatingOrangeButton onClick={toggleIsEnter} buttonText="Enter Room" />
+            <FloatingOrangeButton onClick={createOrEnter} buttonText="Create Room" />
+        </Box>
     )
 
     const renderEnterCode = () => (
