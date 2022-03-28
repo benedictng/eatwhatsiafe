@@ -89,7 +89,6 @@ const UserForm = () => {
             return (
                 <div>
                     <Dialog
-                    // eslint-disable-next-line no-restricted-globals
                         open={error}
                         onClose={restartSelection}
                         aria-labelledby="alert-dialog-title"
