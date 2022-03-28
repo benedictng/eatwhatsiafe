@@ -52,7 +52,7 @@ const RestaurantsCards = () => {
                 room_code: roomCode,
                 votes: selections,
             }).then((res) => {
-                if (res.error_code === 0) {
+                if (res.data.error_code === 0) {
                     history.push(`/room/${roomCode}`);
                 }
             });
@@ -69,7 +69,7 @@ const RestaurantsCards = () => {
                 room_code: roomCode,
                 votes: selections,
             }).then((res) => {
-                if (res.error_code === 0) {
+                if (res.data.error_code === 0) {
                     history.push(`/room/${roomCode}`);
                 }
             });
