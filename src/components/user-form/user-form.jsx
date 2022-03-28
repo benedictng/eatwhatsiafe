@@ -78,7 +78,7 @@ const UserForm = () => {
             alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
                 history.push(`/room/${res.data.room_code}`, history.location.state);
-            } else if (res.data.error_code === 2) {
+            } else if (res.error_code === 2) {
                 setError(true)
             }
         })
