@@ -53,6 +53,7 @@
 h1 {
   font-family: "OPTIImprovNewWideNine";
   font-size: 1.75rem;
+  margin-bottom: 1.5rem
  }
 
 h2 {
@@ -63,6 +64,7 @@ h2 {
 h3 {
   font-family: "OPTIImprovNewWideNine";
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 p {
@@ -70,12 +72,12 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
+  line-height: 1.33rem;
 }
 
 .p2 {
   font-family: 'soleil',sans-serif;
   font-weight: 400;
-
   font-size: 0.875rem;
 }
 
@@ -83,4 +85,9 @@ p {
   background-color: #F4F4F4;
   color: black;
   border: none;
+}
+
+/* -----Background------------------- */
+.background-diamond{
+  background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 50%, #FFB854 87.5%);
 }

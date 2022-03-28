@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
 import GetName from 'components/landing-page/get-name'
 
-const GetHostName = ({ createRoom }) => {
+const GetHostName = ({ createRoom, onBack }) => {
     const [enteringName, setEnteringName] = useState(true)
     const [state, setState] = useState({ name: '', roomName: '' })
 
@@ -20,7 +20,7 @@ const GetHostName = ({ createRoom }) => {
 
     const renderSetRoomName = () => (
         <>
-            <h4>{`Hi there, ${state.name}`}</h4>
+            <h2>{`Hi there, ${state.name}`}</h2>
             <SingleTextInput
                 label="Give your room a name"
                 submitButtonLabel="Next"
@@ -34,7 +34,7 @@ const GetHostName = ({ createRoom }) => {
     return (
         <>
             { enteringName
-                ? <GetName onSubmit={onSubmitName} />
+                ? <GetName onSubmit={onSubmitName} onBack={onBack} />
                 : renderSetRoomName()}
         </>
     )

@@ -72,7 +72,7 @@ const LandingPage = () => {
                 />
             )
         case 2:
-            return <GetHostName createRoom={createRoom} roomCode={roomCode} />
+            return <GetHostName createRoom={createRoom} roomCode={roomCode} onBack={restart} />
         case 3:
             return <RoomDeleted restart={restart} roomCode={roomCode} />
         case 4:

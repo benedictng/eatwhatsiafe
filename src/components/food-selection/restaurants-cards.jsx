@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
-import Col from 'react-bootstrap/Col';
-
-// import { allData } from "./all-data";
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Button from '@mui/material/Button';
 
 import RoomAPI from 'api/room';
 import RestaurantCard from './restaurant-card';
@@ -84,25 +84,37 @@ const RestaurantsCards = () => {
                         restaurant={currentRestaurant}
                         key={currentRestaurant}
                     />
-                    <Col>
-                        <button type="button" onClick={recordNextPage}>
-                            <img
-                                src="https://cdn.shopify.com/s/files/1/1061/1924/products/Drooling_Emoji_Icon_0ea27b99-ba08-410f-b078-94bba64c4efc_large.png?v=1571606089"
-                                className="selection"
-                                alt="Yes"
-                            />
-                        </button>
-                    </Col>
+                    <Container>
+                        <Grid container className="selectionControl">
 
-                    <Col>
-                        <button type="button" onClick={nextPage}>
-                            <img
-                                src="https://cdn.shopify.com/s/files/1/1061/1924/products/14_large.png?v=1571606116"
-                                className="selection"
-                                alt="No"
-                            />
-                        </button>
-                    </Col>
+                            <Grid item>
+                                <Button
+                                    type="button"
+                                    variant="outlined"
+                                    className="selectionNo"
+                                    onClick={nextPage}
+
+                                >
+                                    <h2>NO</h2>
+                                </Button>
+                            </Grid>
+                            <Grid item>
+
+                                <Button
+                                    type="button"
+                                    className="selectionYes"
+                                    onClick={recordNextPage}
+                                    variant="outlined"
+                                >
+                                    <h2>
+                                        YESSS
+
+                                    </h2>
+                                </Button>
+
+                            </Grid>
+                        </Grid>
+                    </Container>
                 </>
             );
         }

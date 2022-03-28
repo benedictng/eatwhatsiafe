@@ -1,16 +1,23 @@
-import Col from 'react-bootstrap/Col';
+import Grid from '@material-ui/core/Grid';
 
 const Reviews = ({ reviews }) => (
     <>
         {
             reviews.map((review, id) => (
-                <Col xs={12} md={3} key={id}>
-                    <p>
-                        Rating:
-                        {review.rating}
-                    </p>
-                    <p>{review.comment}</p>
-                </Col>
+                <Grid item xs={12} md={3}>
+                    <div
+                        className="review"
+                        key={id}
+                    >
+                        <p>
+                            Rating:
+                            {review.rating}
+                        </p>
+                        <p>{review.comment}</p>
+
+                    </div>
+                </Grid>
+
             ))
 
         }

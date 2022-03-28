@@ -1,49 +1,44 @@
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+.card {
+  border-style: solid;
+  border-color: #000;
+  border-width: 1px;
+  padding: 2rem 3rem 2rem 3rem;
+  background-color: #f8f8f8;
 }
 
-.col {
-  margin-right: 2em;
-  margin-left: 2em;
+.review{
+  border-style: solid;
+  border-color: #000;
+  border-width: 0.1rem;
+  padding: 1rem;
+  word-break: break-word;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px; /* fallback */
+   max-height: 112px; /* fallback */
+   min-height: 112px; /* fallback */
+   -webkit-line-clamp: 6; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 
-.slider {
+.carou-style {
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding:6vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
 }
 
 .image {
   border-radius: 10px;
+  display: block;
+  position:relative;
   max-width: 100%;
-  height: auto;
-}
-
-.right-arrow {
-  position: absolute;
-  right: 0em;
-  font-size: 2.5rem; 
-  color: #000;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-}
-
-.left-arrow {
-  position: absolute;
-  left: 0em;
-  font-size: 2.5rem;
-  color: #000;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
+  min-width: 394px;
+  overflow: hidden;
+  object-fit:contain;
 }
 
 .slide {
@@ -73,4 +68,49 @@
 .selection {
   width: 10%;
   height: auto;
+}
+
+.text-description {
+  text-align: left;
+  margin: 0rem 2.5rem 0vw 2.5rem;
+}
+
+.review {
+  background-color: #ffb854;
+  border-style:solid;
+  border-width: 1px;
+  text-align: left;
+}
+
+.selectionControl {
+  justify-content: center;
+  margin-top:1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectionYes {
+  background-color: #C4DC74 !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  color: black!important;
+  border-radius: 0px !important;
+}
+
+.selectionNo {
+  background-color: #E4664D !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  margin-right: 3rem !important;
+  color: black!important;
+  border-radius: 0px !important;
+}
+
+.tag {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #9FEADD;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+
 }
