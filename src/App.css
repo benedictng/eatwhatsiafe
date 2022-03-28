@@ -87,7 +87,3 @@ p {
   border: none;
 }
 
-/* -----Background------------------- */
-.background-diamond{
-  background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 50%, #FFB854 87.5%);
-}

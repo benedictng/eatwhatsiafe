@@ -5,6 +5,7 @@
   border-width: 1px;
   padding: 2rem 3rem 2rem 3rem;
   background-color: #f8f8f8;
+  margin: auto;
 }
 
 .review{
@@ -36,7 +37,8 @@
   display: block;
   position:relative;
   max-width: 100%;
-  min-width: 394px;
+  min-width: 100%;
+  min-height:100%;
   overflow: hidden;
   object-fit:contain;
 }
