@@ -18,7 +18,19 @@ import pricePresetData from 'common/constants/price-preset-data';
 import Box from '@mui/material/Box';
 import Footer from 'components/footer';
 
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 const UserForm = () => {
+    const [error, setError] = useState(false);
+
+    const restartSelection = () => {
+        window.history.back();
+    };
+
     const [step, setStep] = useState(1)
     const [price, setPrice] = useState(null)
     const [cuisineType, setCuisineType] = useState(null)
@@ -65,15 +77,44 @@ const UserForm = () => {
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
-            console.log(JSON.stringify(res))
-            alert(res)
-            if (res.data.error_code !== 0) {
-                alert('no results found')
-            } else {
-                alert(res.data.data.room_code)
-                history.push(`/room/${res.data.data.room_code}`, history.location.state)
+            alert(`received response: ${JSON.stringify(res)}`)
+            if (res.data.error_code === 0) {
+            //     history.push(`/room/${res.data.room_code}`, history.location.state);
+            // } else if (res.error_code === 2) {
+                setError(true)
             }
         })
+    }
+
+    function errorDialog() {
+        if (error === true) {
+            return (
+                <div>
+                    <Dialog
+                        open={error}
+                        onClose={restartSelection}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">
+                            There are no food places found based on your requirements.
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                                Your food selection criteria is too narrow, dumbassie.
+                                Please restart and select a wider set of criteria.
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+
+                            <Button onClick={restartSelection} autoFocus>
+                                Restart
+                            </Button>
+                        </DialogActions>
+                    </Dialog>
+                </div>
+            )
+        } return null
     }
 
     switch (step) {
@@ -156,6 +197,7 @@ const UserForm = () => {
         // just to show state
         return (
             <div>
+                {errorDialog()}
                 <p>
                     PRICE DATA:
                     {JSON.stringify(price, null, '\t')}
