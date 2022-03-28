@@ -54,12 +54,11 @@ function App() {
                         <Route path="/preferences" component={UserForm} />
                         <Route path="/create-room" component={UserForm} />
                         <Route path="/example-api-call" component={ExampleApiCall} />
-                        <Route path="/room/:roomCode" component={Room} />
-
                         <RequireNameRoute
                             path="/room/:roomCode/selection"
                             component={<FoodSelectionPage />}
                         />
+                        <Route path="/room/:roomCode" component={Room} />
                     </Switch>
                 </Router>
             </div>
