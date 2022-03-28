@@ -8,9 +8,9 @@ import Footer from 'components/footer';
 import RoomDeleted from './room-deleted'
 import './landing-page.css'
 
-document.body.className = 'backgroundcolorz';
-
 const LandingPage = () => {
+    // var backie = radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 40.62%, #FFB854 87.5%);
+    // document.body.style.backgroundColor = 'backie';
     const [step, setStep] = useState(0)
     const [roomCode, setRoomCode] = useState(null)
     const [roomStatusData, setRoomStatusData] = useState(null)

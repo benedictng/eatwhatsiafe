@@ -77,8 +77,8 @@ const UserForm = () => {
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
-                history.push(`/room/${res.data.room_code}`, history.location.state);
-            } else if (res.error_code === 2) {
+            //     history.push(`/room/${res.data.room_code}`, history.location.state);
+            // } else if (res.error_code === 2) {
                 setError(true)
             }
         })
@@ -90,7 +90,7 @@ const UserForm = () => {
                 <div>
                     <Dialog
                     // eslint-disable-next-line no-restricted-globals
-                        open={open}
+                        open={error}
                         onClose={restartSelection}
                         aria-labelledby="alert-dialog-title"
                         aria-describedby="alert-dialog-description"
