@@ -7,3 +7,7 @@
     max-width: 200px;
     margin: auto;
 }
+
+body.backgroundcolorz {
+    background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 40.62%, #FFB854 87.5%);
+}

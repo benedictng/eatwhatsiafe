@@ -8,6 +8,8 @@ import Footer from 'components/footer';
 import RoomDeleted from './room-deleted'
 import './landing-page.css'
 
+document.body.className = 'backgroundcolorz';
+
 const LandingPage = () => {
     const [step, setStep] = useState(0)
     const [roomCode, setRoomCode] = useState(null)
