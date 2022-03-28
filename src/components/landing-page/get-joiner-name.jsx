@@ -1,4 +1,4 @@
-import GetName from 'components/landing-page/get-name'
+import GetName from 'components/common/get-name'
 
 const GetJoinerName = ({ existingUsers, toRoomStatusPage }) => {
     const submitName = (name) => {
