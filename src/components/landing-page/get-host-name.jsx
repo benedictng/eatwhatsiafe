@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
-import GetName from 'components/landing-page/get-name'
+import GetName from 'components/common/get-name'
 
 const GetHostName = ({ createRoom, onBack }) => {
     const [enteringName, setEnteringName] = useState(true)
