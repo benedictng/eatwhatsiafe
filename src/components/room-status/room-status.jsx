@@ -13,25 +13,16 @@ const Status = ({ roomData }) => {
     const { roomCode } = useParams()
     const history = useHistory()
 
-    useEffect(() => {
-        //status api call
-        RoomAPI.getRoomStatus({
-            room_code: roomCode,
-        }).then((res) => {
-            alert(`received response: ${JSON.stringify(res)}`)
-            if (res.data.voted_users.includes(history.location.state.name)) {
-                setSwipedStatus(true)
-            }
-        })
-
-    },[]);
+    if (roomData.voted_users.includes(history.location.state.name)) {
+        setSwipedStatus(true)
+    }
 
 
     const swipingFlow = () => {
         history.push(`/room/${roomCode}/selection`, history.location.state)
     }
 
-    const votedUsersString = roomData.voted_users.join(', ')
+  const votedUsersString = (roomData.voted_users.length > 0) ? roomData.voted_users.join(', ') : 'Nobody has voted'
 
     const SwipingButton = () => {
         if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
@@ -93,7 +84,7 @@ const Status = ({ roomData }) => {
             >
                 <h3>{votedUsersString}</h3>
             </Card>
-            {swipedStatus ? <SwipingButton /> : <p>close room</p>}
+            {swipedStatus ? <p>close room</p> : <SwipingButton />}
 
         </div>
     )

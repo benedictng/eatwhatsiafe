@@ -15,7 +15,7 @@ const RestaurantsCards = () => {
     const history = useHistory();
 
     useEffect(() => RoomAPI.getFoodList({ room_code: roomCode }).then((res) => {
-        setAllData(res.data);
+        setAllData(res.data.data);
         setLoaded(true);
     }));
 

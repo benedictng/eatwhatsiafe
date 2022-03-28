@@ -65,10 +65,8 @@ const UserForm = () => {
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
-            alert(`received response: ${JSON.stringify(res)}`)
+            console.log(JSON.stringify(res))
             alert(res)
-            alert(res.data)
-            alert(res.data.data)
             if (res.data.error_code !== 0) {
                 alert('no results found')
             } else {

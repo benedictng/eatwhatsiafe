@@ -94,15 +94,16 @@ const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
     default:
         status = 1
     }
-
     return {
-        error_code: 0,
-        error_msg: '',
         data: {
-            room_name: 'Lonch with Greg',
-            status,
-            voted_users: ['Mary', 'Amy', 'Boon', 'Richard the Rich'],
-            host_username: 'Greg',
+            error_code: 0,
+            error_msg: '',
+            data: {
+                room_name: 'Lonch with Greg',
+                status,
+                voted_users: ['Mary', 'Amy', 'Boon', 'Richard the Rich'],
+                host_username: 'Greg',
+            },
         },
     }
 }
@@ -235,10 +236,12 @@ const MockFoodList = [
 
 const MockData = {
     CreateRoomResponse: {
-        error_code: 0,
-        error_msg: '',
         data: {
-            room_code: 'ABCD',
+            error_code: 0,
+            error_msg: '',
+            data: {
+                room_code: 'ABCD',
+            },
         },
     },
 
@@ -248,10 +251,12 @@ const MockData = {
     },
 
     FoodListResponse: {
-        error_code: 0,
-        error_msg: '',
         data: {
-            food_list: MockFoodList,
+            error_code: 0,
+            error_msg: '',
+            data: {
+                food_list: MockFoodList,
+            },
         },
     },
 

@@ -15,11 +15,8 @@ const Room = () => {
             room_code: roomCode,
         }).then((res) => {
             alert(JSON.stringify(res))
-            alert(JSON.stringify(res.data.data.status))
-            console.log(JSON.stringify(res.data))
             setData(res.data.data)
             setStatus(res.data.data.status)
-            alert(status)
         })
     }, [roomCode])
 
