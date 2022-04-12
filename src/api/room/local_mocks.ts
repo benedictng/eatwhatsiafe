@@ -249,8 +249,10 @@ const MockData = {
     },
 
     SubmitVoteResponse: {
-        error_code: 0,
-        error_msg: '',
+        data: {
+            error_code: 0,
+            error_msg: '',
+        },
     },
 
     FoodListResponse: {
@@ -262,33 +264,37 @@ const MockData = {
     },
 
     RoomResultsResponse: {
-        error_code: 0,
-        error_msg: '',
         data: {
-            results_conclusive: true,
-            results: [
-                {
-                    rank: 1,
-                    voted_users: ['Mary', 'Sue'],
-                    food_details: MockFoodList[0],
-                },
-                {
-                    rank: 2,
-                    voted_users: ['Gary', 'Snail'],
-                    food_details: MockFoodList[1],
-                },
-                {
-                    rank: 3,
-                    voted_users: ['Boon', 'Ben', 'Bong'],
-                    food_details: MockFoodList[2],
-                },
-            ],
+            error_code: 0,
+            error_msg: '',
+            data: {
+                results_conclusive: true,
+                results: [
+                    {
+                        rank: 1,
+                        voted_users: ['Mary', 'Sue'],
+                        food_details: MockFoodList[0],
+                    },
+                    {
+                        rank: 2,
+                        voted_users: ['Gary', 'Snail'],
+                        food_details: MockFoodList[1],
+                    },
+                    {
+                        rank: 3,
+                        voted_users: ['Boon', 'Ben', 'Bong'],
+                        food_details: MockFoodList[2],
+                    },
+                ],
+            },
         },
     },
 
     CloseRoomResponse: {
-        error_code: 0,
-        error_msg: '',
+        data: {
+            error_code: 0,
+            error_msg: '',
+        },
     },
 }
 
