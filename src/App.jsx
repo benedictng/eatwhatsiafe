@@ -18,17 +18,18 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import FoodSelectionPage from './components/food-selection';
-import Logo from './images/logo.PNG';
+import Logo from './images/logomain.png';
 
 const LogoPic = (e) => {
-	return ( 
+    return ( 
         <div>
-            <img src={Logo} alt=""/>
+            <img class="App-logo" src={Logo} alt=""/>
         </div>
     );
 }
 
 function App() {
+
     return (
         <>
             <div className="App">
@@ -38,8 +39,8 @@ function App() {
                             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                                 <MenuIcon />
                             </IconButton>
+                            <LogoPic/>
                             <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
-                                EWS
                             </Typography>
                             <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
                                 <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
