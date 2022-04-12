@@ -17,8 +17,7 @@ const Room = () => {
     useEffect(() => {
         RoomAPI.getRoomStatus({
             room_code: roomCode,
-        }).then((res) => res.data).then((res) => {
-            alert(JSON.stringify(res))
+        }).then((res) => {
             setData(res.data)
             setStatus(res.data.status)
         })
@@ -50,6 +49,7 @@ const Room = () => {
         case 3: // deleted
             return <RoomDeleted restart={restart} roomCode={roomCode} />
         default: // error
+            alert(status)
             setTimeout(() => restart(), 1500)
             return <h1>Error occurred, restarting..</h1>
         }

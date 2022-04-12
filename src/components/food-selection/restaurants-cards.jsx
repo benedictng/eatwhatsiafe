@@ -14,7 +14,7 @@ const RestaurantsCards = () => {
     const { roomCode } = useParams();
     const history = useHistory();
 
-    useEffect(() => RoomAPI.getFoodList({ room_code: roomCode }).then((res) => res.data)
+    useEffect(() => RoomAPI.getFoodList({ room_code: roomCode })
         .then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             setAllData(res.data);
@@ -53,7 +53,7 @@ const RestaurantsCards = () => {
                 username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
                 food_ids: selections,
-            }).then((res) => res.data).then((res) => {
+            }).then((res) => {
                 alert(JSON.stringify(history.location.state))
                 alert(`received response: ${JSON.stringify(res)}`)
                 if (res.error_code === 0) {
@@ -72,7 +72,7 @@ const RestaurantsCards = () => {
                 username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
                 food_ids: selections,
-            }).then((res) => res.data).then((res) => {
+            }).then((res) => {
                 if (res.error_code === 0) {
                     history.push(`/room/${roomCode}`, history.location.state);
                 }
