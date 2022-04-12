@@ -51,7 +51,7 @@ const Status = ({ roomData }) => {
     const closeRoom = () => {
         RoomAPI.closeRoom({
             room_code: roomCode,
-        }).then((res) => {
+        }).then((res) => res.data).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             window.location.reload()
             // after api call, room status in BE should be updated. upon reload,room page (wrapper page) should detect that status is now closed and will render results instead)

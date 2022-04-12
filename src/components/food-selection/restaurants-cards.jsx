@@ -14,10 +14,12 @@ const RestaurantsCards = () => {
     const { roomCode } = useParams();
     const history = useHistory();
 
-    useEffect(() => RoomAPI.getFoodList({ room_code: roomCode }).then((res) => {
-        setAllData(res.data.data);
-        setLoaded(true);
-    }));
+    useEffect(() => RoomAPI.getFoodList({ room_code: roomCode }).then((res) => res.data)
+        .then((res) => {
+            alert(`received response: ${JSON.stringify(res)}`)
+            setAllData(res.data);
+            setLoaded(true);
+        }), []);
 
     // () can replace return
     // "return" returns a html / UI
@@ -40,20 +42,22 @@ const RestaurantsCards = () => {
     function recordNextPage() {
     // selection.push(currentRestaurant.food_id);
     // ^ not a good idea because you cannot set currentRestaurant as an empty array without it being a global variable.
-        const newSelections = selections.concat(currentRestaurant.food_id);
+        const newSelections = selections.concat(currentRestaurant.food_id.toString());
         setSelections(newSelections);
 
         if (currentPage < totalRestaurants - 1) {
             setCurrentPage(currentPage + 1);
         } else {
+            console.log(selections)
             RoomAPI.submitVote({
-                room_name: 'my room name',
-                username: 'hoeward',
+                username: history.location.state.name,
                 room_code: roomCode,
-                votes: selections,
-            }).then((res) => {
-                if (res.data.error_code === 0) {
-                    history.push(`/room/${roomCode}`);
+                food_ids: selections,
+            }).then((res) => res.data).then((res) => {
+                alert(JSON.stringify(history.location.state))
+                alert(`received response: ${JSON.stringify(res)}`)
+                if (res.error_code === 0) {
+                    history.push(`/room/${roomCode}`, history.location.state);
                 }
             });
         }
@@ -63,14 +67,14 @@ const RestaurantsCards = () => {
         if (currentPage < totalRestaurants - 1) {
             setCurrentPage(currentPage + 1);
         } else {
+            console.log(selections)
             RoomAPI.submitVote({
-                room_name: 'my room name',
-                username: 'hoeward',
+                username: history.location.state.name,
                 room_code: roomCode,
-                votes: selections,
-            }).then((res) => {
-                if (res.data.error_code === 0) {
-                    history.push(`/room/${roomCode}`);
+                food_ids: selections,
+            }).then((res) => res.data).then((res) => {
+                if (res.error_code === 0) {
+                    history.push(`/room/${roomCode}`, history.location.state);
                 }
             });
         }

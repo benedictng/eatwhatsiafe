@@ -18,12 +18,10 @@ export interface CreateRoomPayload {
 }
 
 export interface CreateRoomResponse {
+    'error_code': number,
+    'error_msg': string,
     'data': {
-        'error_code': number,
-        'error_msg': string,
-        'data': {
-            'room_code': string
-        }
+        'room_code': string
     }
 }
 
@@ -32,21 +30,19 @@ export interface RoomStatusPayload {
 }
 
 export interface RoomStatusResponse {
+    'error_code': number
+    'error_msg': string
     'data': {
-        'error_code': number
-        'error_msg': string
-        'data': {
-            'room_name': string
-            'status': number
-            'voted_users': string[]
-            'host_username': string
-        }
+        'room_name': string
+        'status': number
+        'voted_users': string[]
+        'host_username': string
     }
 }
 
 export interface SubmitVotePayload {
     'room_code': string,
-    'food_ids': number[],
+    'food_ids': string[],
     'username': string
 }
 
@@ -60,12 +56,10 @@ export interface FoodListPayload {
 }
 
 export interface FoodListResponse {
+    'error_code': number
+    'error_msg': string
     'data': {
-        'error_code': number
-        'error_msg': string
-        'data': {
-            'food_list': Food[]
-        }
+        'food_list': Food[]
     }
 }
 
