@@ -16,7 +16,7 @@ const ExampleApiCall = () => {
             dietary_restrictions: [1, 3, 5],
         }).then((res) => res.data).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
-            setRoomCode(res.data.data.room_code)
+            setRoomCode(res.data.room_code)
         })
     }
 

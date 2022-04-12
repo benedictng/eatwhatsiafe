@@ -47,10 +47,8 @@ export interface SubmitVotePayload {
 }
 
 export interface SubmitVoteResponse {
-    'data': {
-        'error_code': number,
-        'error_msg': string
-    }
+    'error_code': number,
+    'error_msg': string
 }
 
 export interface FoodListPayload {
@@ -88,17 +86,15 @@ export interface RoomResultsPayload {
 }
 
 export interface RoomResultsResponse {
+    'error_code': number
+    'error_msg': string
     'data': {
-        'error_code': number
-        'error_msg': string
-        'data': {
-            'results_conclusive': boolean
-            'results': Array<{
-                'rank': number
-                'voted_users': string[]
-                'food_details': Food
-            }>
-        }
+        'results_conclusive': boolean
+        'results': Array<{
+            'rank': number
+            'voted_users': string[]
+            'food_details': Food
+        }>
     }
 }
 
@@ -107,8 +103,6 @@ export interface CloseRoomPayload {
 }
 
 export interface CloseRoomResponse {
-    'data': {
-        'error_code': number
-        'error_msg': string
-    }
+    'error_code': number
+    'error_msg': string
 }
