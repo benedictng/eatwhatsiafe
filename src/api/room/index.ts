@@ -4,9 +4,9 @@ import RoomAPIImpl from './room_api';
 import { IRoomAPI } from './room_api_interface';
 
 const getRoomApi = (env: string) => {
-    // if (env === 'development') {
-    //     return MockRoomAPI
-    // }
+    if (env === 'development') {
+        return MockRoomAPI
+    }
     return RoomAPIImpl
 }
 
