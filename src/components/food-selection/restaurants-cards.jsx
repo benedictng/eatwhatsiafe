@@ -50,7 +50,7 @@ const RestaurantsCards = () => {
         } else {
             console.log(selections)
             RoomAPI.submitVote({
-                username: history.location.state.name,
+                username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
                 food_ids: selections,
             }).then((res) => res.data).then((res) => {
@@ -69,7 +69,7 @@ const RestaurantsCards = () => {
         } else {
             console.log(selections)
             RoomAPI.submitVote({
-                username: history.location.state.name,
+                username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
                 food_ids: selections,
             }).then((res) => res.data).then((res) => {

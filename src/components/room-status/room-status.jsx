@@ -13,7 +13,7 @@ const Status = ({ roomData }) => {
     const { roomCode } = useParams()
     const history = useHistory()
 
-    if (roomData.voted_users.includes(history.location.state.name)) {
+    if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
         setSwipedStatus(true)
     }
 

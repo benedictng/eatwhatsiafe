@@ -22,7 +22,7 @@ const Room = () => {
             setData(res.data)
             setStatus(res.data.status)
         })
-    }, [roomCode])
+    }, [])
 
     const submitName = (newName) => {
         window.sessionStorage.setItem('name', newName)
