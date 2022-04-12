@@ -17,11 +17,12 @@ const Room = () => {
     useEffect(() => {
         RoomAPI.getRoomStatus({
             room_code: roomCode,
-        }).then((res) => {
+        }).then((res) => res.data).then((res) => {
+            alert(JSON.stringify(res))
             setData(res.data)
             setStatus(res.data.status)
         })
-    }, [roomCode])
+    }, [])
 
     const submitName = (newName) => {
         window.sessionStorage.setItem('name', newName)

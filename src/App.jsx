@@ -35,9 +35,6 @@ function App() {
                 <Router>
                     <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
                         <Toolbar variant="dense" sx={{ mx:10 }}>
-                            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                                <MenuIcon />
-                            </IconButton>
                             <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
                                 EWS
                             </Typography>

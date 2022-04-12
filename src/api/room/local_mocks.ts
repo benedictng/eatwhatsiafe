@@ -94,7 +94,6 @@ const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
     default:
         status = 1
     }
-
     return {
         error_code: 0,
         error_msg: '',

@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 import { useState } from 'react';
 import Price from 'components/user-form/price'
 import Cuisine from 'components/user-form/cuisine';
@@ -68,13 +70,13 @@ const UserForm = () => {
 
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
-            host_username: history.location.state.name,
+            host_username: window.sessionStorage.getItem('name'),
             regions: enumerateState(location, locationPresetData),
             price_levels: enumerateState(price, pricePresetData),
             cuisine_types: enumerateState(cuisineType, cuisinePresetData),
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
-        }).then((res) => {
+        }).then((res) => res.data).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
                 history.push(`/room/${res.data.room_code}`, history.location.state);
@@ -231,7 +233,6 @@ const UserForm = () => {
         )
 
     default:
-        console.log('ERROR')
         alert('ERROR')
         return <div>An error occured 😬 </div>
     }

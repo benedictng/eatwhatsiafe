@@ -24,9 +24,9 @@ const ProductInformation = ({
                     <h3>Opening Hours:</h3>
                 </Grid>
                 <Grid item xs={6}>
-                    {hours.map((hour) => (
+                    {hours ? hours.map((hour) => (
                         <p>{hour}</p>
-                    ))}
+                    )) : null}
                 </Grid>
             </Grid>
         </div>

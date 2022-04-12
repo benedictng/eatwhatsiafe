@@ -7,32 +7,32 @@ import {
 } from './room_api_interface'
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/create'
     return axios.post(url, payload)
 }
 
 const getRoomStatus = (payload: RoomStatusPayload): Promise<RoomStatusResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/status'
     return axios.post(url, payload)
 }
 
 const submitVote = (payload: SubmitVotePayload): Promise<SubmitVoteResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/vote'
     return axios.post(url, payload)
 }
 
 const getFoodList = (payload: FoodListPayload): Promise<FoodListResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/foodlist'
     return axios.post(url, payload)
 }
 
 const getRoomResults = (payload: RoomResultsPayload): Promise<RoomResultsResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/results'
     return axios.post(url, payload)
 }
 
 const closeRoom = (payload: CloseRoomPayload): Promise<CloseRoomResponse> => {
-    const url = 'some url to be separated into a config / env file'
+    const url = 'https://eat-what-ah.herokuapp.com/room/close'
     return axios.post(url, payload)
 }
 
