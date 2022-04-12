@@ -76,7 +76,7 @@ const UserForm = () => {
             cuisine_types: enumerateState(cuisineType, cuisinePresetData),
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
-        }).then((res) => res.data).then((res) => {
+        }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
                 history.push(`/room/${res.data.room_code}`, history.location.state);
