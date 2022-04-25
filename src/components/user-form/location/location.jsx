@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from 'react'
 import NextButton from 'components/common/next-button'
 import BackButton from 'components/common/back-button'
@@ -55,7 +54,7 @@ const Location = ({
     Object.keys(locData).forEach((key) => {
         if (locData[key] === true) {
             tagMap.push(
-              <SelectionButton text={key} data={locData} onCheckboxTicked={onCheckboxTicked} />
+                <SelectionButton text={key} data={locData} onCheckboxTicked={onCheckboxTicked} />,
             )
         }
     })
@@ -63,13 +62,14 @@ const Location = ({
     return (
         <>
             <FormHeading
-                heading='I want to eat at these locations:'
+                heading="I want to eat at these locations:"
                 showErrMsg={notSelectedErr}
             />
             <div sx={{
                 display: flexbox,
                 'justify-content': 'space-around',
-            }}>
+            }}
+            >
                 {tagMap}
             </div>
             <br />

@@ -21,7 +21,7 @@ const Room = () => {
             setData(res.data)
             setStatus(res.data.status)
         })
-    }, [roomCode])
+    }, [])
 
     const submitName = (newName) => {
         window.sessionStorage.setItem('name', newName)
@@ -49,6 +49,7 @@ const Room = () => {
         case 3: // deleted
             return <RoomDeleted restart={restart} roomCode={roomCode} />
         default: // error
+            alert(status)
             setTimeout(() => restart(), 1500)
             return <h1>Error occurred, restarting..</h1>
         }

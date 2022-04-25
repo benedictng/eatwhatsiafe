@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -10,18 +9,18 @@ import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot';
 import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2';
 import './fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf';
 
-<link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
+    <link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
 
 const theme = createTheme({
     typography: {
-    fontFamily: 'OPTIImprovNewWideNine',
-    }
+        fontFamily: 'OPTIImprovNewWideNine',
+    },
 });
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme = {theme}>
-          <App />
+        <ThemeProvider theme={theme}>
+            <App />
         </ThemeProvider>
 
     </React.StrictMode>,

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import MockRoomAPI from './local_mocks';
 import RoomAPIImpl from './room_api';
 import { IRoomAPI } from './room_api_interface';
