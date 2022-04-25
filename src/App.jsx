@@ -18,25 +18,29 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import FoodSelectionPage from './components/food-selection';
-import Logo from './images/logo.PNG';
+import Logo from './images/logomain.png';
 
 const LogoPic = (e) => {
-	return ( 
+    return ( 
         <div>
-            <img src={Logo} alt=""/>
+            <img class="App-logo" src={Logo} alt=""/>
         </div>
     );
 }
 
 function App() {
+
     return (
         <>
             <div className="App">
                 <Router>
                     <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
                         <Toolbar variant="dense" sx={{ mx:10 }}>
+                            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                                <MenuIcon />
+                            </IconButton>
+                            <LogoPic/>
                             <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
-                                EWS
                             </Typography>
                             <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
                                 <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
