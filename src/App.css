@@ -4,12 +4,13 @@
 
 .App-logo {
   height: 40vmin;
+  max-height: 96px;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 
