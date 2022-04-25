@@ -9,14 +9,10 @@ import Card from '@mui/material/Card';
 import { NoEncryption } from '@mui/icons-material';
 
 const Status = ({ roomData }) => {
-    const [swipedStatus, setSwipedStatus] = useState(false)
     const { roomCode } = useParams()
     const history = useHistory()
 
-    if (roomData.voted_users.includes(window.sessionStorage.getItem('name'))) {
-        setSwipedStatus(true)
-    }
-
+    const swipedStatus = roomData.voted_users.includes(window.sessionStorage.getItem('name'))
 
     const swipingFlow = () => {
         history.push(`/room/${roomCode}/selection`, history.location.state)
