@@ -1,9 +1,12 @@
-import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 
 import './food-selection.css';
 
 function Carousel2({ photos }) {
+    const photoMaps = photos.map((photo, id) => (
+        <img key={id} src={`data:image/jpeg;base64,${photo}`} className="image" alt="Food Pictures" />
+    ))
+
     return (
         <Carousel
             className="carou-style"
@@ -16,11 +19,7 @@ function Carousel2({ photos }) {
             next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
             prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
         >
-            {
-                photos.map((photo, id) => (
-                    <img key={id} src={`data:image/jpeg;base64,${photo}`} className="image" alt="Food Pictures" />
-                ))
-            }
+            {photoMaps}
         </Carousel>
     )
 }

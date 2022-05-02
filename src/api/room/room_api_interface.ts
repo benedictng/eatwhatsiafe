@@ -42,7 +42,7 @@ export interface RoomStatusResponse {
 
 export interface SubmitVotePayload {
     'room_code': string,
-    'food_ids': number[],
+    'food_ids': string[],
     'username': string
 }
 
