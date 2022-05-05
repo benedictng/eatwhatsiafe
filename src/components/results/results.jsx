@@ -20,6 +20,7 @@ const Results = () => {
             room_code: roomCode,
         }).then((res) => {
             alert(`received response: ${JSON.stringify(res)}`)
+            alert(JSON.stringify(res.data))
             setAllData(res.data)
             setLoaded(true)
         })
@@ -27,6 +28,9 @@ const Results = () => {
 
     function renderContentOrLoading() {
         if (loaded) {
+            alert('loading')
+            alert(JSON.stringify(allData))
+            console.log(allData.results[0])
             return (
                 <>
                     <div className="p-5 overflow">
