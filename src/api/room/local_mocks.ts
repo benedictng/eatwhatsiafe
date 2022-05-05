@@ -220,8 +220,8 @@ const MockFoodList = [
             'Sun: 1000 AM – 1200 PM',
             'Sun: 1300 AM – 2000 PM',
         ],
-        cuisine_type: [1, 4],
-        restrictions: [2, 3],
+        cuisine_type: [1, 4, 4, 4, 4],
+        restrictions: [1, 1, 2, 2, 3, 3],
         photos: [
             image1, image2, image4,
         ],
