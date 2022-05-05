@@ -270,17 +270,17 @@ const MockData = {
                 {
                     rank: 1,
                     voted_users: ['Mary', 'Sue'],
-                    food: MockFoodList[0],
+                    food_details: MockFoodList[0],
                 },
                 {
                     rank: 2,
                     voted_users: ['Gary', 'Snail'],
-                    food: MockFoodList[1],
+                    food_details: MockFoodList[1],
                 },
                 {
                     rank: 3,
                     voted_users: ['happy', 'tree', 'buddies'],
-                    food: MockFoodList[2],
+                    food_details: MockFoodList[2],
                 },
             ],
         },
