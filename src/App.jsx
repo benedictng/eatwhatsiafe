@@ -1,32 +1,14 @@
 /* eslint-disable */
 import 'App.css';
 import {
-    useLocation,
-    Link,
     BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 import LandingPage from 'components/landing-page';
-import ExampleApiCall from 'components/common/example-api-call';
 import UserForm from 'components/user-form';
-import Results from 'components/results';
 
 import Room from 'components/room';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
-import Box from '@mui/material/Box';
 import FoodSelectionPage from './components/food-selection';
-import Logo from './images/logomain.png';
-
-const LogoPic = (e) => {
-    return ( 
-        <div>
-            <img class="App-logo" src={Logo} alt=""/>
-        </div>
-    );
-}
+import Header from 'components/header';
 
 function App() {
 
@@ -34,21 +16,7 @@ function App() {
         <>
             <div className="App">
                 <Router>
-                    <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
-                        <Toolbar variant="dense" sx={{ mx:10 }}>
-                            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                                <MenuIcon />
-                            </IconButton>
-                            <LogoPic/>
-                            <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 20, textAlign: 'left' }}>
-                            </Typography>
-                            <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                                <Button color="inherit" sx={{ flexGrow: 1 }}>Home</Button>
-                            </Link>
-                            <Button color="inherit" sx={{ flexGrow: 1 }}>About Us</Button>
-                            <Button color="inherit" sx={{ flexGrow: 1 }}>Feedback</Button>
-                        </Toolbar>
-                    </Box>
+                    <Header />
                     <br />
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
