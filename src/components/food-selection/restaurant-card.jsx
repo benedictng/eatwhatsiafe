@@ -14,6 +14,8 @@ import Reviews from './reviews';
 // {} extract out key for you. If it is individual elements you have to put {} but not if props
 // props passes everything
 
+const NUM_REVIEWS_TO_DISPLAY = 4;
+
 function RestaurantCard({ restaurant }) {
     // API to call food list
 
@@ -61,7 +63,7 @@ function RestaurantCard({ restaurant }) {
                     <Grid container spacing={2}>
                         <Reviews
                             onClick={(review) => { setDisplayReviewModal(review) }}
-                            reviews={restaurant.reviews}
+                            reviews={restaurant.reviews.slice(0, NUM_REVIEWS_TO_DISPLAY)}
                         />
                     </Grid>
                 </Grid>
