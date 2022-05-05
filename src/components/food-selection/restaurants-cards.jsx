@@ -86,7 +86,7 @@ const RestaurantsCards = () => {
                 <>
                     <RestaurantCard
                         restaurant={currentRestaurant}
-                        key={currentRestaurant}
+                        key={currentRestaurant.food_id}
                     />
                     <Container sx={{ m: 2 }}>
                         <Grid container className="selectionControl">

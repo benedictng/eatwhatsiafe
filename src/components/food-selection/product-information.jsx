@@ -5,31 +5,48 @@ import Tags from './tags';
 
 const ProductInformation = ({
     name, location, hours, cuisineType, restriction,
-}) => (
-    <>
-        <div>
-            <h1>{name}</h1>
-            <Tags
-                cuisineType={cuisineType}
-                restriction={restriction}
-            />
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                    <h3>Region:</h3>
+}) => {
+    function combineDuplicateDays(openingHoursArray) {
+        const openingHoursMap = new Map()
+        openingHoursArray.forEach((entry) => {
+            const [day, timeslot] = entry.split(': ')
+            if (openingHoursMap.has(day)) {
+                openingHoursMap.set(day, `${openingHoursMap.get(day)}, ${timeslot}`)
+            } else {
+                openingHoursMap.set(day, timeslot)
+            }
+        })
+
+        return Array.from(openingHoursMap, ([day, openingHours]) => (
+            <p>{`${day}: ${openingHours}`}</p>
+        ))
+    }
+
+    return (
+        <>
+            <div>
+                <h1>{name}</h1>
+                <Tags
+                    cuisineType={cuisineType}
+                    restriction={restriction}
+                />
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <h3>Region:</h3>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <p>{locationPresetData.enum2[location]}</p>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <h3>Opening Hours:</h3>
+                    </Grid>
+                    <Grid item xs={6}>
+                        {hours ? combineDuplicateDays(hours) : null}
+                    </Grid>
                 </Grid>
-                <Grid item xs={6}>
-                    <p>{locationPresetData.enum2[location]}</p>
-                </Grid>
-                <Grid item xs={6}>
-                    <h3>Opening Hours:</h3>
-                </Grid>
-                <Grid item xs={6}>
-                    {hours ? hours.map((hour) => (
-                        <p>{hour}</p>
-                    )) : null}
-                </Grid>
-            </Grid>
-        </div>
-    </>
-);
+            </div>
+        </>
+    )
+}
+
 export default ProductInformation;
