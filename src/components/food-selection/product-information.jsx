@@ -18,7 +18,7 @@ const ProductInformation = ({
         })
 
         return Array.from(openingHoursMap, ([day, openingHours]) => (
-            <p>{`${day}: ${openingHours}`}</p>
+            <p key={day}>{`${day}: ${openingHours}`}</p>
         ))
     }
 

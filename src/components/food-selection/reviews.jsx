@@ -1,17 +1,16 @@
 import Grid from '@material-ui/core/Grid';
 
-const Reviews = ({ reviews }) => (
+const Reviews = ({ reviews, onClick }) => (
     <>
         {
             !reviews ? null
                 : reviews.map((review, id) => (
-                    <Grid item xs={12} md={3}>
+                    <Grid key={id} item xs={12} md={3} onClick={() => { onClick(review) }}>
                         <div
                             className="review"
-                            key={id}
                         >
                             <p>
-                                Rating:
+                                Rating:&nbsp;
                                 {review.rating}
                             </p>
                             <p>{review.comment}</p>
