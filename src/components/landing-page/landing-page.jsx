@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import CreateOrEnterRoom from 'components/landing-page/create-enter-choice'
 import GetHostName from 'components/landing-page/get-host-name'
 import Footer from 'components/footer'
@@ -46,13 +46,6 @@ const LandingPage = () => {
     return (
         <div>
             <h1>Welcome!</h1>
-            <Link to="/create-room">Shortcut to create room</Link>
-            <br />
-            <Link to="/room/roomcode:test">Shortcut to status page</Link>
-            <br />
-            <Link to="/example-api-call">Example API Call</Link>
-            <br />
-            <hr />
             <br />
             <div className="landing-page-content-container">
                 {renderSteps()}
