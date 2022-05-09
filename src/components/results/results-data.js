@@ -7,7 +7,7 @@ const resultsData = {
             {
                 rank: 1,
                 voted_users: ['Mary', 'Sue'],
-                food: {
+                food_details: {
                     food_id: 1111,
                     name: 'Delicious Kebabs',
                     address: '52 Kranji Road, Singapore 622111',
@@ -45,7 +45,7 @@ const resultsData = {
             {
                 rank: 2,
                 voted_users: ['Gary', 'Snail'],
-                food: {
+                food_details: {
                     food_id: 1133,
                     name: 'Armoury Craft Beer and Steak',
                     address: '36 #01- 01 Beach Rd, Singapore 189766',
@@ -79,7 +79,7 @@ const resultsData = {
             {
                 rank: 3,
                 voted_users: ['happy', 'tree', 'buddies'],
-                food: {
+                food_details: {
                     food_id: 1345,
                     name: 'Mr Biryani',
                     address: '32 Norris Rd, Singapore 208274',

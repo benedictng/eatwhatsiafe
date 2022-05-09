@@ -93,7 +93,7 @@ export interface RoomResultsResponse {
         'results': Array<{
             'rank': number
             'voted_users': string[]
-            'food': Food
+            'food_details': Food
         }>
     }
 }

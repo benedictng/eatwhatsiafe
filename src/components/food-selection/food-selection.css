@@ -24,6 +24,26 @@
    -webkit-box-orient: vertical;
 }
 
+.reviewModal{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: content-box;
+  word-break: break-word;
+  border-style: solid;
+  border-color: #000;
+  border-width: 0.1rem;
+  box-shadow: 0px 1px 2px grey;
+  background: #ffb854;
+  padding: 2rem 3rem 2rem 3rem;
+   line-height: 16px; /* fallback */
+   min-height: 112px; /* fallback */
+   min-width: 50%;
+   -webkit-line-clamp: 6; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
 .carou-style {
   position: relative;
   justify-content: center;
