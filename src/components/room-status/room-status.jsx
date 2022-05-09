@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { NoEncryption } from '@mui/icons-material';
 import FloatingOrangeButton from 'components/common/floating-orange-button'
+import Footer from 'components/footer'
+
 
 
 const Status = ({ roomData }) => {
@@ -125,6 +127,7 @@ const Status = ({ roomData }) => {
             >
                 {swipedStatus ? <FloatingOrangeButton sx={{ mx: 'auto' }} onClick={closeRoom} buttonText="Close Room" /> : <SwipingButton />}
             </Box>
+            <Footer/>
         </div>
     )
 }
