@@ -20,14 +20,19 @@ const GetHostName = ({ createRoom, onBack }) => {
 
     const renderSetRoomName = () => (
         <>
-            <h2>{`Hi there, ${state.name}`}</h2>
-            <SingleTextInput
-                label="Give your room a name"
-                submitButtonLabel="Next"
-                onSubmit={onSubmitRoomName}
-                backButtonLabel="Back"
-                onBack={() => setEnteringName(true)}
-            />
+            <h2 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</h2>
+            <h3>Your indecisive friends will ❤️💚💜 you for helping to settle where to eat.</h3>
+            <div style={{ 'max-width': '50vw', margin: 'auto' }}>
+                <SingleTextInput
+                    label="Give your room a name"
+                    placeholder="e.g. dinz with da special lads"
+                    submitButtonLabel="Next"
+                    onSubmit={onSubmitRoomName}
+                    backButtonLabel="Back"
+                    onBack={() => setEnteringName(true)}
+                    fullWidth
+                />
+            </div>
         </>
     )
 

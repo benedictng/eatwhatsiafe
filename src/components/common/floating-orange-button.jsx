@@ -42,6 +42,7 @@ class FloatingOrangeButton extends Component {
 
                         },
                         transition: 'transform 0.3s',
+                        'white-space': 'pre',
                     }}
                 >
                     {buttonText}
