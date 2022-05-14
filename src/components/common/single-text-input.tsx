@@ -5,16 +5,19 @@ import FormHeading from 'components/common/form-heading'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 
 type InputProps = {
-    label: string
+    label: string | null
+    helperText: string | null
+    placeholder: string | null
     submitButtonLabel: string
     onSubmit: (s: string) => void
     backButtonLabel?: string
     onBack?: React.MouseEventHandler
+    fullWidth: boolean | null
 }
 
 const SingleTextInput = (props: InputProps) => {
     const {
-        label, submitButtonLabel, onSubmit, backButtonLabel, onBack,
+        label, helperText, placeholder, submitButtonLabel, onSubmit, backButtonLabel, onBack, fullWidth,
     } = props
     const [value, setValue] = useState<string | null>(null)
 
@@ -41,7 +44,15 @@ const SingleTextInput = (props: InputProps) => {
     return (
         <>
             <FormHeading heading={label} showErrMsg="" boxStyles={{ 'margin-top': '48px' }} />
-            <TextField id="user_input" label="" variant="outlined" onChange={onChangeInternal} />
+            <TextField
+                id="user_input"
+                label=""
+                helperText={helperText}
+                placeholder={(placeholder !== null) ? placeholder : ''}
+                variant="outlined"
+                onChange={onChangeInternal}
+                fullWidth={fullWidth !== null ? fullWidth : false}
+            />
 
             {
                 // @ts-ignore
