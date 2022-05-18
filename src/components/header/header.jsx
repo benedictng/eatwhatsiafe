@@ -9,7 +9,7 @@ const LogoPic = () => (
 );
 
 const Header = () => (
-    <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
+    <Box sx={{ flexGrow: 1, mb: 1 }}>
         <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                 <MenuIcon />
