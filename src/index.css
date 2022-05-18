@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "OPTIImprovNewWideNine";
-  src: local("fonts"),
-   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff") format("woff"),
-   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.otf") format("opentype"),
-   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot") format("embedded-opentype"),
-   url("./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2") format("woff2"),
-
-  }
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -76,7 +66,10 @@ table {
 /* ---------------------------------------- */
 @font-face {
   font-family: 'OPTIImprovNewWideNine';
-  src: local('OPTIImprovNewWideNine'), url(./fonts/OPTIImprovNewWideNine.otf) format('opentype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+  src:
+    local('OPTIImprovNewWideNine'),
+    url(./fonts/OPTIImprovNewWideNine.otf) format('opentype'),
+    url(./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff) format("woff"),
+    url(./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.eot) format("embedded-opentype"),
+    url(./fonts/OPTIImprovNewWideNine/OPTIImprovNewWideNine.woff2) format("woff2");
 }

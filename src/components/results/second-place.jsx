@@ -11,7 +11,7 @@ const SecondPlace = ({ secondResult }) => (
             <Grid item sm={6} className="horizontalcenter">
                 <img
                     className="results_image"
-                    src={secondResult.food.photos[0]}
+                    src={secondResult.food_details.photos[0]}
                     alt="restaurant food"
                 />
             </Grid>
@@ -20,9 +20,9 @@ const SecondPlace = ({ secondResult }) => (
                     <h1>
                         2.
                         {' '}
-                        {secondResult.food.name}
+                        {secondResult.food_details.name}
                     </h1>
-                    <p>{secondResult.food.address}</p>
+                    <p>{secondResult.food_details.address}</p>
                 </div>
 
                 <h2>Suckers who voted</h2>

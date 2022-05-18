@@ -9,7 +9,7 @@ const FirstPlace = ({ firstResult }) => (
             <Grid item sm={6} className="horizontalcenter">
                 <img
                     className="results_image"
-                    src={firstResult.food.photos[0]}
+                    src={firstResult.food_details.photos[0]}
                     alt="restaurant food"
                 />
             </Grid>
@@ -18,9 +18,9 @@ const FirstPlace = ({ firstResult }) => (
                     <h1>
                         1.
                         {' '}
-                        {firstResult.food.name}
+                        {firstResult.food_details.name}
                     </h1>
-                    <p>{firstResult.food.address}</p>
+                    <p>{firstResult.food_details.address}</p>
                 </div>
                 <h2>
                     Suckers who voted
@@ -32,7 +32,7 @@ const FirstPlace = ({ firstResult }) => (
                 <br />
                 <button type="button">Share</button>
 
-                {/* {first_results.food.voted_users.map((voters, id) => (
+                {/* {first_results.food_details.voted_users.map((voters, id) => (
           <h3>{voters}</h3>
         ))} */}
             </Grid>

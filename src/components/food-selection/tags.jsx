@@ -14,13 +14,13 @@ const tags = ({ cuisineType, restriction }) => {
             <Grid container className="tag-group">
                 {cuisineNDType.map((cuisineTag) => (
 
-                    <p className="tag">
+                    <p className="tag" key={cuisineTag}>
                         {cuisinePresetData.enum2[cuisineTag]}
                     </p>
                 ))}
 
                 {restrictionND.map((dietaryTag) => (
-                    <p className="tag">
+                    <p className="tag" key={dietaryTag}>
                         {dietRestrictPresetData.enum2[dietaryTag]}
                     </p>
                 ))}

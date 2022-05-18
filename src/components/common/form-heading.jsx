@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box'
 
 const FormHeading = ({ heading, showErrMsg, boxStyles = {} }) => (
-    <Box sx={{ ...{ 'margin-bottom': '48px', mt: 15 }, ...boxStyles }}>
-        <h1>{heading}</h1>
+    <Box sx={{ 'margin-bottom': '48px', mt: 15, ...boxStyles }}>
+        { (heading !== null) ? <h1>{heading}</h1> : null }
         { showErrMsg ? <p style={{ color: 'red' }}>**please select something</p> : null }
     </Box>
 )
