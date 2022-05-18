@@ -34,7 +34,7 @@ function App() {
         <>
             <div className="App">
                 <Router>
-                    <Box sx={{ flexGrow: 1, mt: 5, mb: 5 }}>
+                    <Box sx={{ flexGrow: 1}}>
                         <Toolbar variant="dense" sx={{ mx:10 }}>
                             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                                 <MenuIcon />

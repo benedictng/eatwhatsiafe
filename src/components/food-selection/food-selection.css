@@ -30,17 +30,20 @@
   align-items: center;
   padding-left: 6vw;
   padding-right: 6vw;
+  object-fit: contain;
+  align-items: stretch;
+
 }
 
 .image {
   border-radius: 10px;
   display: block;
   position:relative;
-  max-width: 100%;
   min-width: 100%;
-  min-height:100%;
+  max-height: 100%;
   overflow: hidden;
-  object-fit:contain;
+  object-fit: cover;
+  align-items: stretch;
 }
 
 .slide {
