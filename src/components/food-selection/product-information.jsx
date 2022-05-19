@@ -31,16 +31,16 @@ const ProductInformation = ({
                     restriction={restriction}
                 />
                 <Grid container spacing={2}>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <h3>Region:</h3>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={8}>
                         <p>{locationPresetData.enum2[location]}</p>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <h3>Opening Hours:</h3>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={8}>
                         {hours ? combineDuplicateDays(hours) : null}
                     </Grid>
                 </Grid>

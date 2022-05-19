@@ -54,8 +54,8 @@ const RestaurantsCards = () => {
                 room_code: roomCode,
                 food_ids: selections,
             }).then((res) => {
-                alert(JSON.stringify(history.location.state))
-                alert(`received response: ${JSON.stringify(res)}`)
+                // alert(JSON.stringify(history.location.state))
+                // alert(`received response: ${JSON.stringify(res)}`)
                 if (res.error_code === 0) {
                     history.push(`/room/${roomCode}`, history.location.state);
                 }
