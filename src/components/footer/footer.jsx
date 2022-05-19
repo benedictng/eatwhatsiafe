@@ -8,7 +8,11 @@ const Footer = () => (
         }}
         >
             <Box px={5} py={2} sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-                <h3 sx={{ margin: 'auto' }}>made with love; if you like what we do, buy us a coffee</h3>
+                <h3 sx={{ margin: 'auto' }}>
+                    made with ❤️; if you like what we do,
+                    {' '}
+                    <a href="https://ko-fi.com/eatherelah">buy us a ☕️ or 🍜</a>
+                </h3>
             </Box>
         </BottomNavigation>
     </>
