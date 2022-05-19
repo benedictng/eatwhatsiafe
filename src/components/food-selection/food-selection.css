@@ -50,17 +50,20 @@
   align-items: center;
   padding-left: 6vw;
   padding-right: 6vw;
+  object-fit: contain;
+  align-items: stretch;
+
 }
 
 .image {
   border-radius: 10px;
   display: block;
   position:relative;
-  max-width: 100%;
   min-width: 100%;
-  min-height:100%;
+  max-height: 100%;
   overflow: hidden;
-  object-fit:contain;
+  object-fit: cover;
+  align-items: stretch;
 }
 
 .slide {
@@ -104,10 +107,16 @@
   text-align: left;
 }
 
+.lockup{
+  position: sticky;
+  bottom: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background:white;
+}
+
 .selectionControl {
   justify-content: center;
-  margin-top:1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .selectionYes {
