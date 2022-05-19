@@ -3,11 +3,11 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const SelectionButton = ({ text, data, onCheckboxTicked }) => (
     <ToggleButton
-        className="subtitle"
         sx={{
             height: '43px',
             'border-radius': '50px',
             mx: 1,
+            mb: 2,
             p: 1,
             'background-color': '#1D1D1D',
             color: '#FBFBFB',
@@ -30,7 +30,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
         thumbStyle={{ backgroundColor: 'red' }}
         trackStyle={{ backgroundColor: 'green' }}
     >
-        {text}
+        <p className="subtitle">{text}</p>
         {(data[text]) ? <CloseIcon /> : ''}
     </ToggleButton>
 )
