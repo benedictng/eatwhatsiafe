@@ -20,8 +20,8 @@ const GetHostName = ({ createRoom, onBack }) => {
 
     const renderSetRoomName = () => (
         <>
-            <h2 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</h2>
-            <h3>Your indecisive friends will ❤️💚💜 you for helping to settle where to eat.</h3>
+            <h1 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</h1>
+            <h1 style={{ 'margin-bottom': '3rem' }}>Thanks for helping your poor friend decide.</h1>
             <div style={{ 'max-width': '50vw', margin: 'auto' }}>
                 <SingleTextInput
                     label="Give your room a name"
