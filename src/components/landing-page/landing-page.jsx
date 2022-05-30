@@ -17,7 +17,6 @@ const LandingPage = () => {
     }
 
     const createRoom = (data) => {
-        console.log(`Creating room with data: ${JSON.stringify(data)}`)
         history.push('/create-room', data)
     }
 
