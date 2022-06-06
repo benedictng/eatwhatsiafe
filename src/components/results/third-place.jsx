@@ -11,7 +11,7 @@ const ThirdPlace = ({ thirdResult }) => (
             <Grid item lg={6} className="horizontalcenter">
                 <img
                     className="results_image"
-                    src={thirdResult.food_details.photos[0]}
+                    src={`data:image/jpeg;base64,${thirdResult.food_details.photos[0]}`}
                     alt="restaurant food"
                 />
             </Grid>
