@@ -8,7 +8,6 @@ import Toolbar from '@mui/material/Toolbar';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
 
-
 const LogoPic = () => (
     <img className="App-logo" src="/logomain.png" alt="" />
 );
@@ -74,19 +73,6 @@ const Header = () => {
         </Box>
     )
 }
-
-const HeaderButton = ({ children, link }) => (
-    <Button
-        href={link}
-        color="inherit"
-        sx={{
-            'white-space': 'pre',
-            'min-width': 'fit-content',
-        }}
-    >
-        {children}
-    </Button>
-)
 
 const HeaderButton = ({ children, link }) => (
     <Button
