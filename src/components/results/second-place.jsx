@@ -11,7 +11,7 @@ const SecondPlace = ({ secondResult }) => (
             <Grid item sm={6} className="horizontalcenter">
                 <img
                     className="results_image"
-                    src={secondResult.food_details.photos[0]}
+                    src={`data:image/jpeg;base64,${secondResult.food_details.photos[0]}`}
                     alt="restaurant food"
                 />
             </Grid>
