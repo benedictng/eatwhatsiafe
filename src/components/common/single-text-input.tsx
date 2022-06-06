@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 import { TextField } from '@material-ui/core'
 import Box from '@mui/material/Box';
-import FormHeading from 'components/common/form-heading'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 
 type InputProps = {
@@ -41,9 +40,11 @@ const SingleTextInput = (props: InputProps) => {
             <FloatingOrangeButton onClick={onBack} buttonText={backButtonLabel} />
         ))
 
+    const headerStyles: CSSProperties = { marginTop: '1rem', marginBottom: '1rem' }
+
     return (
         <>
-            <FormHeading heading={label} showErrMsg="" boxStyles={{ 'margin-top': '48px' }} />
+            <h2 style={headerStyles}>{label}</h2>
             <TextField
                 id="user_input"
                 label=""

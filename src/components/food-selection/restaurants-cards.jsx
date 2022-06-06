@@ -16,7 +16,6 @@ const RestaurantsCards = () => {
 
     useEffect(() => RoomAPI.getFoodList({ room_code: roomCode })
         .then((res) => {
-            alert(`received response: ${JSON.stringify(res)}`)
             setAllData(res.data);
             setLoaded(true);
         }), []);
@@ -48,14 +47,11 @@ const RestaurantsCards = () => {
         if (currentPage < totalRestaurants - 1) {
             setCurrentPage(currentPage + 1);
         } else {
-            console.log(selections)
             RoomAPI.submitVote({
                 username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
                 food_ids: selections,
             }).then((res) => {
-                alert(JSON.stringify(history.location.state))
-                alert(`received response: ${JSON.stringify(res)}`)
                 if (res.error_code === 0) {
                     history.push(`/room/${roomCode}`, history.location.state);
                 }
@@ -67,7 +63,6 @@ const RestaurantsCards = () => {
         if (currentPage < totalRestaurants - 1) {
             setCurrentPage(currentPage + 1);
         } else {
-            console.log(selections)
             RoomAPI.submitVote({
                 username: window.sessionStorage.getItem('name'),
                 room_code: roomCode,
@@ -88,7 +83,7 @@ const RestaurantsCards = () => {
                         restaurant={currentRestaurant}
                         key={currentRestaurant.food_id}
                     />
-                    <Container sx={{ m: 2 }}>
+                    <Container className="lockup" sx={{ m: 2 }}>
                         <Grid container className="selectionControl">
 
                             <Grid item>

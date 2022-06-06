@@ -60,14 +60,6 @@ const UserForm = () => {
     }
 
     const createRoom = () => {
-        alert(JSON.stringify({
-            regions: enumerateState(location, locationPresetData),
-            price_levels: enumerateState(price, pricePresetData),
-            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
-            // dining_types: enumerateState(diningType, diningTypePresetData),
-            dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
-        }))
-
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
             host_username: window.sessionStorage.getItem('name'),
@@ -77,7 +69,6 @@ const UserForm = () => {
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
-            alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
                 history.push(`/room/${res.data.room_code}`, history.location.state);
             } else if (res.error_code === 2) {
@@ -187,13 +178,17 @@ const UserForm = () => {
                     setFormData={setLocation}
                     formData={location}
                     presetData={locationPresetData}
-
+                    createRoom={createRoom}
                 />
                 <Footer />
             </div>
         )
 
     case 5:
+        createRoom()
+        return <></>
+
+    case 6:
         // just to show state
         return (
             <div>

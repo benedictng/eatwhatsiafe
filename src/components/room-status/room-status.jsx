@@ -80,6 +80,15 @@ const Status = ({ roomData }) => {
         )
     }
 
+    function copy() {
+        const el = document.createElement('input');
+        el.value = window.location.href;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+
     const closeRoom = () => {
         RoomAPI.closeRoom({
             room_code: roomCode,
@@ -110,7 +119,7 @@ const Status = ({ roomData }) => {
                 >
                     <p className="subtitle">{window.location.href}</p>
                 </Box>
-                <Button class="subtitle copy-button">COPY</Button>
+                <Button class="subtitle copy-button" onClick={copy}>COPY</Button>
             </Box>
             <h2>Suckers who have already voted:</h2>
             <Card sx={{

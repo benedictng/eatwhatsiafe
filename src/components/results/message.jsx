@@ -10,7 +10,6 @@ const message = ({ isConclusive }) => {
         document.execCommand('copy');
         document.body.removeChild(el);
     }
-    console.log(window.location.href);
     return (
         <div>
             <p className="h0">

@@ -36,20 +36,21 @@ const WelcomeScreen = ({ createRoom, enterRoom }) => {
 
     const renderWelcomeText = (
         <>
-            <p>So.. where you guys wanna eat??</p>
-            <br />
-            <h3>&quot;umm... IDK sia..&quot; &quot;idm anything&quot; &quot;not feeling macs sia&quot;</h3>
-            <br />
-            <br />
-            <h1 style={{ 'font-size': '3rem' }}>Decide together and just Eat Here Lah</h1>
+            <p className="h0" style={{ 'font-size': '6rem' }}>
+                Eatwhatsia...
+                <br />
+                IDK F***
+            </p>
+            <div style={{ height: '1.5rem' }} />
+            <h1 style={{ 'line-height': '2rem' }}>Decide together and EatHereLah</h1>
         </>
     )
 
     return (
-        <>
+        <div style={{ margin: 'auto' }}>
             {renderWelcomeText}
             {renderButtons()}
-        </>
+        </div>
     )
 }
 
