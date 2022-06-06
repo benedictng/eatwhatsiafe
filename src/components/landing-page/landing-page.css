@@ -10,3 +10,21 @@
 #backgroundcolorz {
     background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 40.62%, #FFB854 87.5%);
 }
+
+.welcomeText {
+    font-family: "OPTIImprovNewWideNine";
+    font-size: 6rem;
+    line-height: 7.5rem;
+}
+
+@media only screen and (max-width: 950px) {
+    .welcomeText {
+        font-size: 3.5rem;
+        line-height: 5rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem
+    }
+}

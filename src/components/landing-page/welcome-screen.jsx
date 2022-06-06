@@ -36,13 +36,13 @@ const WelcomeScreen = ({ createRoom, enterRoom }) => {
 
     const renderWelcomeText = (
         <>
-            <p className="h0" style={{ 'font-size': '6rem' }}>
+            <p className="welcomeText">
                 Eatwhatsia...
                 <br />
                 IDK F***
             </p>
             <div style={{ height: '1.5rem' }} />
-            <h1 style={{ 'line-height': '2rem' }}>Decide together and EatHereLah</h1>
+            <h1>Decide together and EatHereLah</h1>
         </>
     )
 
