@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Link } from 'react-router-dom';
 
 const LogoPic = () => (
     <img className="App-logo" src="/logomain.png" alt="" />
@@ -42,9 +43,9 @@ const HamburgerMenu = () => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem href="/">Home</MenuItem>
-                <MenuItem onClick={handleClose}>About Us</MenuItem>
-                <MenuItem onClick={handleClose}>Feedback</MenuItem>
+                <MenuItem component={Link} to="/">Home</MenuItem>
+                <MenuItem component={Link} to="/about">About Us</MenuItem>
+                <MenuItem component={Link} to="/contact">Feedback</MenuItem>
             </Menu>
         </div>
     )
@@ -52,7 +53,7 @@ const HamburgerMenu = () => {
 
 const HeaderButtons = () => (
     <>
-        <HeaderButton href="/">Home</HeaderButton>
+        <HeaderButton link="/">Home</HeaderButton>
         <HeaderButton link="/about">About Us</HeaderButton>
         <HeaderButton link="/contact">Feedback</HeaderButton>
     </>
