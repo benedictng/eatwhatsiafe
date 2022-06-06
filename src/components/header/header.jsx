@@ -65,10 +65,9 @@ const Header = () => {
     return (
         <Box sx={{ flexGrow: 1, mb: 1 }}>
             <Toolbar>
-                { !isMinWidth && <HamburgerMenu /> }
                 <LogoPic />
                 <div style={{ flexGrow: 1 }} />
-                { isMinWidth && <HeaderButtons /> }
+                { isMinWidth ? <HeaderButtons /> : <HamburgerMenu /> }
             </Toolbar>
         </Box>
     )
