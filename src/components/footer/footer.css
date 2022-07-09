@@ -1,0 +1,4 @@
+h3.footer-text {
+    /* 2.3vw: magic number to make text fit in one line. */
+    font-size: min(2.3vw, var(--default-font-size));
+}

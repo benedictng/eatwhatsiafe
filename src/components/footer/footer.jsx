@@ -1,5 +1,6 @@
 import BottomNavigation from '@mui/material/BottomNavigation';
 import { Box } from '@mui/material';
+import './footer.css'
 
 const Footer = () => (
     <>
@@ -8,7 +9,7 @@ const Footer = () => (
         }}
         >
             <Box px={5} py={2} sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-                <h3 sx={{ margin: 'auto' }}>
+                <h3 className="footer-text" sx={{ margin: 'auto' }}>
                     made with ❤️; if you like what we do,
                     {' '}
                     <a href="https://ko-fi.com/eatherelah">buy us a ☕️ or 🍜</a>
