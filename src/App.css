@@ -30,6 +30,13 @@
   line-height: 7.5rem;
 }
 
+@media screen and (max-width: 450px) {
+  p.h0 {
+    font-size: 3rem !important;
+    line-height: 4rem;
+  }
+}
+
 .subtitle {
   font-family: 'soleil',sans-serif;
   font-size: 1rem;
@@ -39,7 +46,14 @@
 h1 {
   font-family: "OPTIImprovNewWideNine";
   font-size: 1.75rem;
+  line-height: 2.5rem;
  }
+
+ @media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.75rem !important;
+  }
+}
 
 h2 {
   font-family: "OPTIImprovNewWideNine";

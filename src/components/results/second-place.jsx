@@ -7,7 +7,7 @@ import './results.css';
 
 const SecondPlace = ({ secondResult }) => (
     <>
-        <Grid container>
+        <Grid container spacing={3}>
             <Grid item sm={6} className="horizontalcenter">
                 <img
                     className="results_image"
