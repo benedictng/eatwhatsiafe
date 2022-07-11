@@ -7,7 +7,7 @@ import SelectionButton from 'components/common/selection-button'
 import { flexbox } from '@mui/system';
 
 const Location = ({
-    presetData, formData, setFormData, nextStep, prevStep,
+    presetData, formData, setFormData, prevStep, nextStep,
 }) => {
     const [notSelectedErr, setNotSelectedErr] = useState(false)
 
