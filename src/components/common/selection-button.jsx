@@ -8,7 +8,8 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
             'border-radius': '50px',
             mx: 1,
             mb: 2,
-            p: 1,
+            py: 1.5,
+            px: 3,
             'background-color': '#1D1D1D',
             color: '#FBFBFB',
             '&.Mui-selected': {

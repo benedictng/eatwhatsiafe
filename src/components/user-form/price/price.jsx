@@ -45,7 +45,7 @@ const Price = ({
     ))
 
     return (
-        <>
+        <div>
             <FormHeading
                 heading="What prices are we looking at?"
                 showErrMsg={notSelectedErr}
@@ -86,7 +86,7 @@ const Price = ({
                     Next
                 </Button>
             </Box>
-        </>
+        </div>
     )
 }
 
