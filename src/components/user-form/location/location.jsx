@@ -60,46 +60,77 @@ const Location = ({
     })
 
     return (
-        <>
-            <FormHeading
-                heading="I want to eat at these locations:"
-                showErrMsg={notSelectedErr}
-            />
-            <div sx={{
-                display: flexbox,
-                'justify-content': 'space-around',
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center',
+                minHeight: '100vh',
+                position: 'absolute',
+                top: '0',
+                width: '100vw',
             }}
+        >
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
             >
-                {tagMap}
-            </div>
-            <br />
-            <br />
-            <div>
-                <Autocomplete
-                    onChange={(event, newValue) => {
-                        if (newValue) {
-                            handleChange(newValue)
-                        }
+                <>
+                    <FormHeading
+                        heading="I want to eat at these locations:"
+                        showErrMsg={notSelectedErr}
+                    />
+                    <div sx={{
+                        display: flexbox,
+                        'justify-content': 'space-around',
                     }}
-                    id="autocomplete dropdown search bar"
-                    options={options}
-                    style={{ width: 300, margin: 'auto' }}
-                    renderInput={
-                        (params) => <TextField {...params} label="Options" variant="outlined" />
+                    >
+                        {tagMap}
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <Autocomplete
+                            onChange={(event, newValue) => {
+                                if (newValue) {
+                                    handleChange(newValue)
+                                }
+                            }}
+                            id="autocomplete dropdown search bar"
+                            options={options}
+                            style={{ width: 300, margin: 'auto' }}
+                            renderInput={
+                                (params) => (
+                                    <TextField
+                                        {...params}
+                                        label="Options"
+                                        variant="outlined"
+                                    />
+                                )
+                            }
+                        />
+                    </div>
+                    <Box sx={
+                        {
+                            display: 'flex',
+                            my: 5,
+                            'align-items': 'center',
+                            justifyContent: 'center',
+                        }
                     }
-                />
-            </div>
-            <Box sx={
-                {
-                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
-                }
-            }
-            >
-                <BackButton prevStep={prevStep} />
-                <NextButton nextStep={onDone} />
-            </Box>
+                    >
+                        <BackButton prevStep={prevStep} />
+                        <NextButton nextStep={onDone} />
+                    </Box>
 
-        </>
+                </>
+            </Box>
+        </Box>
     )
 }
 

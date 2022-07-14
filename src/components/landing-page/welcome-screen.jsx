@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import SingleTextInput from 'components/common/single-text-input'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 
+import Container from '@material-ui/core/Container';
+
 const WelcomeScreen = ({ createRoom, enterRoom }) => {
     const [enteringRoom, setEnteringRoom] = useState(false)
 
@@ -35,15 +37,15 @@ const WelcomeScreen = ({ createRoom, enterRoom }) => {
     }
 
     const renderWelcomeText = (
-        <>
-            <p className="welcomeText">
-                Eatwhatsia...
+        <Container>
+            <p className="h0">
+                Eat what sia...
                 <br />
                 IDK F***
             </p>
             <div style={{ height: '1.5rem' }} />
             <h1>Decide together and EatHereLah</h1>
-        </>
+        </Container>
     )
 
     return (

@@ -42,20 +42,47 @@ const Cuisine = ({
     ))
 
     return (
-        <>
-
-            <FormHeading heading="I want to opt out of these cuisines" />
-            {buttonMap}
-            <Box sx={
-                {
-                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
-                }
-            }
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center',
+                minHeight: '100vh',
+                position: 'absolute',
+                top: '0',
+                width: '100vw',
+            }}
+        >
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
             >
-                <BackButton prevStep={prevStep} />
-                <NextButton nextStep={onDone} />
+                <>
+
+                    <FormHeading heading="I want to opt out of these cuisines" />
+                    <Box>
+                        {buttonMap}
+                    </Box>
+                    <Box sx={
+                        {
+                            display: 'flex',
+                            my: 5,
+                            'align-items': 'center',
+                            justifyContent: 'center',
+                        }
+                    }
+                    >
+                        <BackButton prevStep={prevStep} />
+                        <NextButton nextStep={onDone} />
+                    </Box>
+                </>
             </Box>
-        </>
+        </Box>
     )
 }
 

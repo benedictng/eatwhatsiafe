@@ -3,6 +3,7 @@ import RoomAPI from 'api/room'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import Loading from 'components/common/loading';
 import Message from './message';
 import FirstPlace from './first-place';
 import SecondPlace from './second-place';
@@ -27,25 +28,25 @@ const Results = () => {
     function renderContentOrLoading() {
         if (loaded) {
             return (
-                <>
+                <Container>
                     <div className="p-5 overflow">
                         <Message isConclusive={allData.results_conclusive} />
                     </div>
-                    <Container className="results">
-                        <Container className="winnercard p-5">
+                    <div className="results">
+                        <div className="winnercard">
                             <FirstPlace firstResult={allData.results[0]} />
-                        </Container>
-                        <Container className="winnercard p-5">
+                        </div>
+                        <div className="winnercard">
                             <SecondPlace secondResult={allData.results[1]} />
-                        </Container>
-                        <Container className="winnercard p-5">
+                        </div>
+                        <div className="winnercard">
                             <ThirdPlace thirdResult={allData.results[2]} />
-                        </Container>
-                    </Container>
-                </>
+                        </div>
+                    </div>
+                </Container>
             )
         }
-        return <p>Loading...</p>;
+        return <Loading />
     }
 
     return <>{renderContentOrLoading()}</>;

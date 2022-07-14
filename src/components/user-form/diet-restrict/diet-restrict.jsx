@@ -41,21 +41,47 @@ const DietRestrict = ({
     ))
 
     return (
-        <>
-            <FormHeading heading="Ermmm we have these dietary restrictions" />
-
-            {buttonMap}
-
-            <Box sx={
-                {
-                    display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
-                }
-            }
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center',
+                minHeight: '100vh',
+                position: 'absolute',
+                top: '0',
+                width: '100vw',
+            }}
+        >
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
             >
-                <BackButton prevStep={prevStep} />
-                <NextButton nextStep={onDone} />
+                <>
+                    <FormHeading heading="Ermmm we have these dietary restrictions" />
+                    <Box>
+                        {buttonMap}
+                    </Box>
+                    <Box sx={
+                        {
+                            display: 'flex',
+                            my: 5,
+                            'align-items': 'center',
+                            justifyContent: 'center',
+                        }
+                    }
+                    >
+                        <BackButton prevStep={prevStep} />
+                        <NextButton nextStep={onDone} />
+                    </Box>
+                </>
+
             </Box>
-        </>
+        </Box>
     )
 }
 
