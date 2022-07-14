@@ -146,18 +146,34 @@ const Status = ({ roomData }) => {
                 onClose={()=>{setCloseRoomPopup(false)}}
             >
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description" fontSize={'28px'}>
-                        To reveal the results, you will be closing voting permanently.
+                    <DialogContentText id="alert-dialog-description" fontSize={'28px'} color={'black'}>
+                        <h1>To reveal the results, you will be closing voting permanently.</h1>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button sx={{
-                        backgroundColor: '#E4664D', fontSize: '16px', color: 'black'
-                    }} onClick={()=>{setCloseRoomPopup(false)}}>no, continue voting</Button>
+                        backgroundColor: '#E4664D', color: 'black', 'box-shadow': '8px 8px #1D1D1D', mx: 'auto', 'margin-bottom': '1rem',
+                        '&:hover': {
+                            transform: 'translate(8px, 8px)',
+                            'background-color': '#9eeadd',
+                        }
+                    }} 
+                    variant="contained"
+                    onClick={()=>{setCloseRoomPopup(false)}}
+                    >
+                        <h3>no, continue voting</h3>
+                    </Button>
                     <Button sx={{
-                        backgroundColor: '#C4DC74', fontSize: '16px', color: 'black'
-                    }} onClick={closeRoom}>
-                        yes, end votes
+                        backgroundColor: '#C4DC74', color: 'black', 'box-shadow': '8px 8px #1D1D1D', mx: 'auto', 'margin-bottom': '1rem',
+                        '&:hover': {
+                            transform: 'translate(8px, 8px)',
+                            'background-color': '#9eeadd',
+                        }
+                    }} 
+                    onClick={closeRoom}
+                    variant="contained"
+                    >
+                        <h3>yes, end votes</h3>
                     </Button>
                 </DialogActions>
             </Dialog>
