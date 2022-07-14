@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Button from '@mui/material/Button';
 
 import RoomAPI from 'api/room';
+import Loading from 'components/common/loading';
 import RestaurantCard from './restaurant-card';
 
 const RestaurantsCards = () => {
@@ -117,7 +118,7 @@ const RestaurantsCards = () => {
                 </>
             );
         }
-        return <p>Loading...</p>;
+        return <Loading />;
     }
 
     return <>{renderContentOrLoading()}</>;

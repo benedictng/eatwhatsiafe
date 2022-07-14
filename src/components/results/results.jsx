@@ -3,10 +3,10 @@ import RoomAPI from 'api/room'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import Loading from 'components/common/loading';
 import Message from './message';
 import FirstPlace from './first-place';
 import SecondPlace from './second-place';
-
 import ThirdPlace from './third-place';
 
 import './results.css';
@@ -46,7 +46,7 @@ const Results = () => {
                 </Container>
             )
         }
-        return <p>Loading...</p>;
+        return <Loading />
     }
 
     return <>{renderContentOrLoading()}</>;
