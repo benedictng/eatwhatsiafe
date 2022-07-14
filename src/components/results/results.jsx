@@ -33,13 +33,13 @@ const Results = () => {
                         <Message isConclusive={allData.results_conclusive} />
                     </div>
                     <div className="results">
-                        <div className="winnercard p-5">
+                        <div className="winnercard">
                             <FirstPlace firstResult={allData.results[0]} />
                         </div>
-                        <div className="winnercard p-5">
+                        <div className="winnercard">
                             <SecondPlace secondResult={allData.results[1]} />
                         </div>
-                        <div className="winnercard p-5">
+                        <div className="winnercard">
                             <ThirdPlace thirdResult={allData.results[2]} />
                         </div>
                     </div>

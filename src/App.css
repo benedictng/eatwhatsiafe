@@ -32,7 +32,7 @@
 
 @media screen and (max-width: 450px) {
   p.h0 {
-    font-size: 3rem !important;
+    font-size: 3rem;
     line-height: 4rem;
   }
 }
@@ -51,7 +51,7 @@ h1 {
 
  @media screen and (max-width: 450px) {
   h1 {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
 }
 
