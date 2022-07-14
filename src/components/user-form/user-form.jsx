@@ -23,6 +23,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Container from '@material-ui/core/Container';
 
 const UserForm = () => {
     const [error, setError] = useState(false);
@@ -214,7 +215,7 @@ const UserForm = () => {
                     {JSON.stringify(location, null, '\t')}
                 </p>
 
-                <Button variant="contained" onClick={createRoom}>Create room</Button>
+                <Button variant="contained" onClick={createRoom}><h3>Create room</h3></Button>
                 <br />
                 <Box sx={
                     {

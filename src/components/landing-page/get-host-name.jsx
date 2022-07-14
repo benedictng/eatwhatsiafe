@@ -2,6 +2,8 @@ import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
 import GetName from 'components/common/get-name'
 
+import Container from '@material-ui/core/Container';
+
 const GetHostName = ({ createRoom, onBack }) => {
     const [enteringName, setEnteringName] = useState(true)
     const [state, setState] = useState({ name: '', roomName: '' })
@@ -38,11 +40,11 @@ const GetHostName = ({ createRoom, onBack }) => {
     )
 
     return (
-        <>
+        <Container>
             { enteringName
                 ? <GetName onSubmit={onSubmitName} onBack={onBack} />
                 : renderSetRoomName()}
-        </>
+        </Container>
     )
 }
 
