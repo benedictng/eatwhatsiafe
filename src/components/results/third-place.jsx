@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import Box from '@mui/material/Box';
 
 import './results.css';
 
@@ -7,7 +8,7 @@ import './results.css';
 
 const ThirdPlace = ({ thirdResult }) => (
     <>
-        <Grid container>
+        <Grid container spacing={3}>
             <Grid item lg={6} className="horizontalcenter">
                 <img
                     className="results_image"
@@ -17,19 +18,28 @@ const ThirdPlace = ({ thirdResult }) => (
             </Grid>
             <Grid item lg={6}>
                 <div className="block">
-                    <h1>
-                        3.
-                        {' '}
-                        {thirdResult.food_details.name}
-                    </h1>
-                    <p>{thirdResult.food_details.address}</p>
+                    <Box mb={2}>
+                        <h1>
+                            3.
+                            {' '}
+                            {thirdResult.food_details.name}
+                        </h1>
+                    </Box>
+                    <Box mb={3}>
+                        <p>{thirdResult.food_details.address}</p>
+
+                    </Box>
                 </div>
-                <h2>
-                    Who voted:
-                </h2>
-                <p>
-                    {thirdResult.voted_users}
-                </p>
+                <Box mb={3}>
+                    <h2>
+                        Who voted:
+                    </h2>
+                </Box>
+                <Box mb={2}>
+                    <p>
+                        {thirdResult.voted_users}
+                    </p>
+                </Box>
             </Grid>
         </Grid>
     </>
