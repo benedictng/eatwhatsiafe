@@ -13,6 +13,13 @@ const theme = responsiveFontSizes(
                 fontFamily: fontFamilies.headings,
                 fontSize: '5rem',
                 lineHeight: 1.5,
+                // NOTE - setting breakpoints manually as custom variants are not supported by responsiveFontSizes
+                '@media (max-width:900px)': {
+                    fontSize: '4rem',
+                },
+                '@media (max-width:600px)': {
+                    fontSize: '2.5rem',
+                },
             },
             h1: {
                 fontFamily: fontFamilies.headings,
