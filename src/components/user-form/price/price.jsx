@@ -3,6 +3,7 @@ import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { EwsH3 } from 'components/common/typography/text-components';
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
@@ -105,7 +106,7 @@ const Price = ({
                                 transition: 'transform 0.3s',
                             }}
                         >
-                            <h3>next</h3>
+                            <EwsH3>next</EwsH3>
                         </Button>
                     </Box>
                 </>

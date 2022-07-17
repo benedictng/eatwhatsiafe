@@ -1,11 +1,12 @@
 import './food-selection.css';
 
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 // import Carousel from './carousel';
 import { useState } from 'react';
 import { Modal, Box } from '@mui/material';
+import { EwsP } from 'components/common/typography/text-components';
 import Carousel2 from './carousel2';
 
 import ProductInformation from './product-information';
@@ -31,13 +32,13 @@ function RestaurantCard({ restaurant }) {
                 <Box
                     className="reviewModal"
                 >
-                    <p>
+                    <EwsP>
                         Rating:&nbsp;
                         {displayReviewModal.rating}
-                    </p>
-                    <p>
+                    </EwsP>
+                    <EwsP>
                         {displayReviewModal.comment}
-                    </p>
+                    </EwsP>
                 </Box>
             </Modal>
         )

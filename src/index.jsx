@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
+import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
+import theme from './theme'
 import reportWebVitals from './reportWebVitals';
 
 // <link rel="stylesheet" href="https://use.typekit.net/res8kla.css" />;
-
-const theme = createTheme({
-    typography: {
-        fontFamily: 'OPTIImprovNewWideNine',
-    },
-});
 
 ReactDOM.render(
     <React.StrictMode>

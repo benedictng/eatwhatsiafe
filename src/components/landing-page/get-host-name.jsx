@@ -2,7 +2,8 @@ import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
 import GetName from 'components/common/get-name'
 
-import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
+import { EwsH1 } from 'components/common/typography/text-components';
 
 const GetHostName = ({ createRoom, onBack }) => {
     const [enteringName, setEnteringName] = useState(true)
@@ -22,8 +23,8 @@ const GetHostName = ({ createRoom, onBack }) => {
 
     const renderSetRoomName = () => (
         <>
-            <h1 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</h1>
-            <h1 style={{ 'margin-bottom': '3rem' }}>Thanks for helping your poor friend decide.</h1>
+            <EwsH1 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</EwsH1>
+            <EwsH1 style={{ 'margin-bottom': '3rem' }}>Thanks for helping your poor friend decide.</EwsH1>
 
             <div style={{ 'max-width': '50vw', margin: 'auto' }}>
                 <SingleTextInput
