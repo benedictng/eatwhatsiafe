@@ -1,4 +1,5 @@
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
+import { EwsH1, EwsH3, EwsP } from 'components/common/typography/text-components';
 
 import locationPresetData from '../../common/constants/location-preset-data';
 import Tags from './tags';
@@ -18,27 +19,27 @@ const ProductInformation = ({
         })
 
         return Array.from(openingHoursMap, ([day, openingHours]) => (
-            <p key={day}>{`${day}: ${openingHours}`}</p>
+            <EwsP key={day}>{`${day}: ${openingHours}`}</EwsP>
         ))
     }
 
     return (
         <>
             <div>
-                <h1>{name}</h1>
+                <EwsH1>{name}</EwsH1>
                 <Tags
                     cuisineType={cuisineType}
                     restriction={restriction}
                 />
                 <Grid container spacing={2}>
                     <Grid item xs={4}>
-                        <h3>Region:</h3>
+                        <EwsH3>Region:</EwsH3>
                     </Grid>
                     <Grid item xs={8}>
-                        <p>{locationPresetData.enum2[location]}</p>
+                        <EwsP>{locationPresetData.enum2[location]}</EwsP>
                     </Grid>
                     <Grid item xs={4}>
-                        <h3>Opening Hours:</h3>
+                        <EwsH3>Opening Hours:</EwsH3>
                     </Grid>
                     <Grid item xs={8}>
                         {hours ? combineDuplicateDays(hours) : null}

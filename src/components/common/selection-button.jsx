@@ -1,5 +1,6 @@
 import ToggleButton from '@mui/material/ToggleButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { EwsSubtitle } from './typography/text-components';
 
 const SelectionButton = ({ text, data, onCheckboxTicked }) => (
     <ToggleButton
@@ -31,7 +32,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
         thumbStyle={{ backgroundColor: 'red' }}
         trackStyle={{ backgroundColor: 'green' }}
     >
-        <p className="subtitle">{text}</p>
+        <EwsSubtitle>{text}</EwsSubtitle>
         {(data[text]) ? <CloseIcon /> : ''}
     </ToggleButton>
 )

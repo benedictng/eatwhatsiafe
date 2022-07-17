@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import NextButton from 'components/common/next-button'
+import { EwsH1, EwsP } from 'components/common/typography/text-components'
 
 const Entrance = ({ nextStep }) => {
     const location = useLocation()
@@ -8,30 +9,30 @@ const Entrance = ({ nextStep }) => {
         const { name, roomName } = location.state || {}
         if (name && roomName) {
             return (
-                <h1>
+                <EwsH1>
                     {name}
                     {' '}
                     is organizing
                     {' '}
                     {roomName}
-                </h1>
+                </EwsH1>
             )
         }
         return (
-            <h1>
+            <EwsH1>
                 Please go to the
                 <Link to="/">main page</Link>
                 {' '}
                 to create room
-            </h1>
+            </EwsH1>
         )
     }
 
     return (
         <div>
             {renderReceivedData()}
-            <p> Eatwhatsia... </p>
-            <p> Dont beta, force your friends to decide together lah</p>
+            <EwsP> Eatwhatsia... </EwsP>
+            <EwsP> Dont beta, force your friends to decide together lah</EwsP>
             <NextButton
                 nextStep={nextStep}
             />

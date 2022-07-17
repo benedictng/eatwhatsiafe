@@ -1,4 +1,5 @@
-import Button from 'react-bootstrap/Button'
+import { EwsP } from 'components/common/typography/text-components'
+import { Button } from '@mui/material'
 
 interface RoomDeletedProps {
     roomCode: string,
@@ -7,12 +8,12 @@ interface RoomDeletedProps {
 
 const RoomDeleted = ({ roomCode, restart }: RoomDeletedProps) => (
     <>
-        <p>
+        <EwsP>
             Room
             {roomCode.toUpperCase()}
             {' '}
             has expired. Double check your room code or create your own Room!
-        </p>
+        </EwsP>
         <Button onClick={restart}>Restart</Button>
     </>
 )
