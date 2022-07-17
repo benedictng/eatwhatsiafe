@@ -2,7 +2,6 @@
 import { useParams, useHistory, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import RoomAPI from 'api/room'
-// import Button from 'react-bootstrap/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';

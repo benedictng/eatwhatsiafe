@@ -1,5 +1,5 @@
 import Col from 'react-bootstrap/Col';
-import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 

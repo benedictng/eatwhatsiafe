@@ -1,6 +1,6 @@
 import './food-selection.css';
 
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 // import Carousel from './carousel';

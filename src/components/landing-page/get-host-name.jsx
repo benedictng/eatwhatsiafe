@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SingleTextInput from 'components/common/single-text-input'
 import GetName from 'components/common/get-name'
 
-import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
 
 const GetHostName = ({ createRoom, onBack }) => {
     const [enteringName, setEnteringName] = useState(true)

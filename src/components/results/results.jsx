@@ -1,4 +1,4 @@
-import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
 import RoomAPI from 'api/room'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'

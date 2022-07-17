@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import SingleTextInput from 'components/common/single-text-input'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 
-import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
 
 const WelcomeScreen = ({ createRoom, enterRoom }) => {
     const [enteringRoom, setEnteringRoom] = useState(false)
