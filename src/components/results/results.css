@@ -2,7 +2,7 @@
   background: radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 50%, #FFB854 87.5%);
 }
 
-.winnercard {
+.winner-card {
   background-color: #ffffff;
   border-style: solid;
   border-width: 1px;
@@ -25,12 +25,13 @@
   margin-bottom: 24px;
 }
 
-.horizontalcenter {
+.horizontal-center {
   margin: auto;
 }
 
-.overflow {
+.message-container {
   overflow: hidden;
+  margin-bottom: 2vh
 }
 
 .results_image {
