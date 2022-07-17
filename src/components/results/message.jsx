@@ -1,5 +1,3 @@
-import Col from 'react-bootstrap/Col';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { EwsH0, EwsH1, EwsP } from 'components/common/typography/text-components';
@@ -30,21 +28,15 @@ const message = ({ isConclusive }) => {
                     this for you.
                 </EwsP>
             )}
-            <Container>
-                <Col>
-                    <Box sx={{
-                        display: 'flex', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1,
-                    }}
-                    >
-                        <EwsP>{window.location.href}</EwsP>
-                    </Box>
-                </Col>
-                <Col>
-                    <Button onClick={copy}>
-                        Copy URL
-                    </Button>
-                </Col>
-            </Container>
+            <Box sx={{
+                display: 'inline', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1,
+            }}
+            >
+                <EwsP>{window.location.href}</EwsP>
+            </Box>
+            <Button onClick={copy}>
+                Copy URL
+            </Button>
         </div>
     );
 };
