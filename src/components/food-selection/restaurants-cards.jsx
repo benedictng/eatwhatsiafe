@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 
 import RoomAPI from 'api/room';
 import Loading from 'components/common/loading';
+import { EwsH2 } from 'components/common/typography/text-components';
 import RestaurantCard from './restaurant-card';
 
 const RestaurantsCards = () => {
@@ -95,23 +96,20 @@ const RestaurantsCards = () => {
                                     onClick={nextPage}
 
                                 >
-                                    <h2>NO</h2>
+                                    <EwsH2>NO</EwsH2>
                                 </Button>
                             </Grid>
                             <Grid item>
-
                                 <Button
                                     type="button"
                                     className="selectionYes"
                                     onClick={recordNextPage}
                                     variant="outlined"
                                 >
-                                    <h2>
+                                    <EwsH2>
                                         YESSS
-
-                                    </h2>
+                                    </EwsH2>
                                 </Button>
-
                             </Grid>
                         </Grid>
                     </Container>
@@ -120,7 +118,6 @@ const RestaurantsCards = () => {
         }
         return <Loading />;
     }
-
     return <>{renderContentOrLoading()}</>;
 };
 

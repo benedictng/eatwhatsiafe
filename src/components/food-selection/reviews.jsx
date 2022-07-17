@@ -1,4 +1,5 @@
 import Grid from '@mui/material/Grid';
+import { EwsP } from 'components/common/typography/text-components';
 
 const Reviews = ({ reviews, onClick }) => (
     <>
@@ -9,19 +10,16 @@ const Reviews = ({ reviews, onClick }) => (
                         <div
                             className="review"
                         >
-                            <p>
+                            <EwsP>
                                 Rating:&nbsp;
                                 {review.rating}
-                            </p>
-                            <p>{review.comment}</p>
+                            </EwsP>
+                            <EwsP>{review.comment}</EwsP>
 
                         </div>
                     </Grid>
-
                 ))
-
         }
-
     </>
 );
 

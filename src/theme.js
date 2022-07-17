@@ -8,6 +8,7 @@ const fontFamilies = {
 const theme = responsiveFontSizes(
     createTheme({
         typography: {
+            fontFamily: fontFamilies.text,
             h0: {
                 fontFamily: fontFamilies.headings,
                 fontSize: '5rem',

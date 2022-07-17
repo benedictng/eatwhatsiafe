@@ -4,6 +4,7 @@ import SingleTextInput from 'components/common/single-text-input'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 
 import Container from '@mui/material/Container';
+import { EwsH0, EwsH1 } from 'components/common/typography/text-components';
 
 const WelcomeScreen = ({ createRoom, enterRoom }) => {
     const [enteringRoom, setEnteringRoom] = useState(false)
@@ -38,13 +39,13 @@ const WelcomeScreen = ({ createRoom, enterRoom }) => {
 
     const renderWelcomeText = (
         <Container>
-            <p className="h0">
+            <EwsH0>
                 Eat what sia...
                 <br />
                 IDK F***
-            </p>
+            </EwsH0>
             <div style={{ height: '1.5rem' }} />
-            <h1>Decide together and EatHereLah</h1>
+            <EwsH1>Decide together and EatHereLah</EwsH1>
         </Container>
     )
 

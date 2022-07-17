@@ -3,42 +3,42 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
 import './results.css';
+import { EwsH1, EwsH2, EwsP } from 'components/common/typography/text-components';
 
 // Class name image is in react bootstrap
 
 const ThirdPlace = ({ thirdResult }) => (
     <>
         <Grid container spacing={3}>
-            <Grid item lg={6} className="horizontalcenter">
+            <Grid item sm={6} className="horizontalcenter">
                 <img
                     className="results_image"
                     src={`data:image/jpeg;base64,${thirdResult.food_details.photos[0]}`}
                     alt="restaurant food"
                 />
             </Grid>
-            <Grid item lg={6}>
+            <Grid item sm={6}>
                 <div className="block">
                     <Box mb={2}>
-                        <h1>
+                        <EwsH1>
                             3.
                             {' '}
                             {thirdResult.food_details.name}
-                        </h1>
+                        </EwsH1>
                     </Box>
                     <Box mb={3}>
-                        <p>{thirdResult.food_details.address}</p>
-
+                        <EwsP>{thirdResult.food_details.address}</EwsP>
                     </Box>
                 </div>
                 <Box mb={3}>
-                    <h2>
-                        Who voted:
-                    </h2>
+                    <EwsH2>
+                        Suckers who voted
+                    </EwsH2>
                 </Box>
                 <Box mb={2}>
-                    <p>
+                    <EwsP>
                         {thirdResult.voted_users}
-                    </p>
+                    </EwsP>
                 </Box>
             </Grid>
         </Grid>

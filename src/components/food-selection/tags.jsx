@@ -4,6 +4,7 @@ import dietRestrictPresetData from 'common/constants/diet-restriction-preset-dat
 import Grid from '@mui/material/Grid';
 
 import './food-selection.css'
+import { EwsP } from 'components/common/typography/text-components';
 
 const tags = ({ cuisineType, restriction }) => {
     const cuisineNDType = [...new Set(cuisineType)];
@@ -14,15 +15,15 @@ const tags = ({ cuisineType, restriction }) => {
             <Grid container className="tag-group">
                 {cuisineNDType.map((cuisineTag) => (
 
-                    <p className="tag" key={cuisineTag}>
+                    <EwsP className="tag" key={cuisineTag}>
                         {cuisinePresetData.enum2[cuisineTag]}
-                    </p>
+                    </EwsP>
                 ))}
 
                 {restrictionND.map((dietaryTag) => (
-                    <p className="tag" key={dietaryTag}>
+                    <EwsP className="tag" key={dietaryTag}>
                         {dietRestrictPresetData.enum2[dietaryTag]}
-                    </p>
+                    </EwsP>
                 ))}
             </Grid>
         </>

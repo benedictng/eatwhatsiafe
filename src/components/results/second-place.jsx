@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import './results.css';
 
 import Box from '@mui/material/Box';
+import { EwsH1, EwsH2, EwsP } from 'components/common/typography/text-components';
 
 // Class name image is in react bootstrap
 
@@ -18,30 +19,25 @@ const SecondPlace = ({ secondResult }) => (
                 />
             </Grid>
             <Grid item sm={6}>
-
                 <div className="block">
                     <Box mb={2}>
-                        <h1>
+                        <EwsH1>
                             2.
                             {' '}
                             {secondResult.food_details.name}
-                        </h1>
+                        </EwsH1>
                     </Box>
                     <Box mb={3}>
-                        <p>{secondResult.food_details.address}</p>
-                        {' '}
-
+                        <EwsP>{secondResult.food_details.address}</EwsP>
                     </Box>
                 </div>
                 <Box mb={3}>
-                    <h2>Suckers who voted</h2>
-                    {' '}
-
+                    <EwsH2>Suckers who voted</EwsH2>
                 </Box>
                 <Box mb={2}>
-                    <p>
+                    <EwsP>
                         {secondResult.voted_users}
-                    </p>
+                    </EwsP>
                 </Box>
             </Grid>
         </Grid>

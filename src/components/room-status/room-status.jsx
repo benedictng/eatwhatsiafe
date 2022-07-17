@@ -12,6 +12,7 @@ import Card from '@mui/material/Card';
 import { NoEncryption } from '@mui/icons-material';
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 import Footer from 'components/footer'
+import { EwsH1, EwsH2, EwsH3, EwsSubtitle } from 'components/common/typography/text-components';
 
 
 
@@ -108,9 +109,9 @@ const Status = ({ roomData }) => {
 
     return (
         <div>
-            <h1>Nice,</h1>
-            <h1>Time to make a bloody decision!</h1>
-            <p className="subtitle">Share this link with your friends and start swiping. Please.</p>
+            <EwsH1>Nice,</EwsH1>
+            <EwsH1>Time to make a bloody decision!</EwsH1>
+            <EwsSubtitle>Share this link with your friends and start swiping. Please.</EwsSubtitle>
             <Box sx={
                 {
                     display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height: '52px',
@@ -121,16 +122,16 @@ const Status = ({ roomData }) => {
                     display: 'flex', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1,
                 }}
                 >
-                    <p className="subtitle">{window.location.href}</p>
+                    <EwsSubtitle>{window.location.href}</EwsSubtitle>
                 </Box>
-                <Button class="subtitle copy-button" onClick={copy}>COPY</Button>
+                <Button class="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
             </Box>
-            <h2>Suckers who have already voted:</h2>
+            <EwsH2>Suckers who have already voted:</EwsH2>
             <Card sx={{
                 width: '464px', mx: 'auto', my: 5, border: '1px solid black', py: 2,
             }}
             >
-                <h3>{votedUsersString}</h3>
+                <EwsH3>{votedUsersString}</EwsH3>
             </Card>
             <Box sx={
                 {
@@ -146,7 +147,7 @@ const Status = ({ roomData }) => {
             >
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description" fontSize={'28px'} color={'black'}>
-                        <h1>To reveal the results, you will be closing voting permanently.</h1>
+                        <EwsH1>To reveal the results, you will be closing voting permanently.</EwsH1>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -160,7 +161,7 @@ const Status = ({ roomData }) => {
                     variant="contained"
                     onClick={()=>{setCloseRoomPopup(false)}}
                     >
-                        <h3>no, continue voting</h3>
+                        <EwsH3>no, continue voting</EwsH3>
                     </Button>
                     <Button sx={{
                         backgroundColor: '#C4DC74', color: 'black', 'box-shadow': '8px 8px #1D1D1D', mx: 'auto', 'margin-bottom': '1rem',
@@ -172,7 +173,7 @@ const Status = ({ roomData }) => {
                     onClick={closeRoom}
                     variant="contained"
                     >
-                        <h3>yes, end votes</h3>
+                        <EwsH3>yes, end votes</EwsH3>
                     </Button>
                 </DialogActions>
             </Dialog>

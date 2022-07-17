@@ -24,6 +24,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Container from '@mui/material/Container';
+import { EwsH3, EwsP } from 'components/common/typography/text-components';
 
 const UserForm = () => {
     const [error, setError] = useState(false);
@@ -194,28 +195,28 @@ const UserForm = () => {
         return (
             <div>
                 {errorDialog()}
-                <p>
+                <EwsP>
                     PRICE DATA:
                     {JSON.stringify(price, null, '\t')}
-                </p>
-                <p>
+                </EwsP>
+                <EwsP>
                     VETO DATA:
                     {JSON.stringify(cuisineType, null, '\t')}
-                </p>
-                <p>
+                </EwsP>
+                <EwsP>
                     DININGTYPE DATA:
                     {JSON.stringify(diningType, null, '\t')}
-                </p>
-                <p>
+                </EwsP>
+                <EwsP>
                     REST DATA:
                     {JSON.stringify(dietRest, null, '\t')}
-                </p>
-                <p>
+                </EwsP>
+                <EwsP>
                     LOCATION DATA:
                     {JSON.stringify(location, null, '\t')}
-                </p>
+                </EwsP>
 
-                <Button variant="contained" onClick={createRoom}><h3>Create room</h3></Button>
+                <Button variant="contained" onClick={createRoom}><EwsH3>Create room</EwsH3></Button>
                 <br />
                 <Box sx={
                     {
