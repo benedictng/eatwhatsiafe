@@ -11,11 +11,13 @@ const SecondPlace = ({ secondResult }) => (
     <>
         <Grid container spacing={3}>
             <Grid item sm={6} className="horizontalcenter">
-                <img
-                    className="results_image"
-                    src={`data:image/jpeg;base64,${secondResult.food_details.photos[0]}`}
-                    alt="restaurant food"
-                />
+                <div className="imgContain">
+                    <img
+                        className="results_image"
+                        src={`data:image/jpeg;base64,${secondResult.food_details.photos[0]}`}
+                        alt="restaurant food"
+                    />
+                </div>
             </Grid>
             <Grid item sm={6}>
 

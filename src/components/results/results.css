@@ -8,11 +8,16 @@
   border-width: 1px;
   border-color: black;
   text-align: left;
-  padding-left: 5vw !important;
-  padding-right: 5vw !important;
+  padding-left: 5vw;
+  padding-right: 5vw;
   padding-top: 5vh;
   padding-bottom: 5vh;
   margin-bottom:16px;
+}
+
+.imgContain {
+  width: 25vw;
+  float: right;
 }
 
 @media screen and (max-width: 450px) {
