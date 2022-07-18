@@ -125,7 +125,7 @@ const Status = ({ roomData }) => {
         } else {
             return (
                 <Card sx={{
-                    width: '80vw', mx: 'auto', my: 5, border: '1px solid black', py: 2,
+                    width: '90vw', mx: 'auto', my: 5, border: '1px solid black', py: 2,
                 }}
                 >
                     <EwsH3>{votedUsersString}</EwsH3>
