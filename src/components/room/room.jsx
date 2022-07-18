@@ -5,6 +5,7 @@ import Loading from 'components/common/loading'
 import Status from 'components/room-status'
 import Results from 'components/results/results'
 import GetName from 'components/common/get-name'
+import { EwsH1 } from 'components/common/typography/text-components'
 import RoomDeleted from './room-deleted'
 
 const Room = () => {
@@ -51,7 +52,7 @@ const Room = () => {
         default: // error
             alert(status)
             setTimeout(() => restart(), 1500)
-            return <h1>Error occurred, restarting..</h1>
+            return <EwsH1>Error occurred, restarting..</EwsH1>
         }
     }
 

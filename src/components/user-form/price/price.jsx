@@ -3,6 +3,7 @@ import FormHeading from 'components/common/form-heading'
 import SelectionButton from 'components/common/selection-button'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { EwsH3 } from 'components/common/typography/text-components';
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
@@ -45,48 +46,72 @@ const Price = ({
     ))
 
     return (
-        <div>
-            <FormHeading
-                heading="What prices are we looking at?"
-                showErrMsg={notSelectedErr}
-            />
-            {buttonMap}
-            <Box sx={{
-                position: 'relative',
-                bottom: '-8px',
-                right: '-8px',
-                'background-color': '#1d1d1d',
-                width: '343px',
-                height: '48px',
-                mx: 'auto',
-                my: 5,
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center',
+                minHeight: '100vh',
+                position: 'absolute',
+                top: '0',
+                width: '100vw',
             }}
+        >
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
             >
-                <Button
-                    data={priceData}
-                    onClick={onDone}
-                    variant="contained"
-                    sx={{
-                        bottom: '8px',
-                        right: '8px',
+                <>
+                    <FormHeading
+                        heading="What prices are we looking at?"
+                        showErrMsg={notSelectedErr}
+                    />
+                    <Box>
+                        {buttonMap}
+                    </Box>
+                    <Box sx={{
                         position: 'relative',
-                        'border-radius': 0,
-                        width: '100%',
-                        height: '100%',
-                        'background-color': '#FFB854',
-                        color: '#1D1D1D',
-                        '&:hover': {
-                            transform: 'translate(8px, 8px)',
-                            'background-color': '#9eeadd',
-
-                        },
-                        transition: 'transform 0.3s',
+                        bottom: '-8px',
+                        right: '-8px',
+                        'background-color': '#1d1d1d',
+                        width: '343px',
+                        height: '48px',
+                        mx: 'auto',
+                        my: 5,
                     }}
-                >
-                    Next
-                </Button>
+                    >
+                        <Button
+                            data={priceData}
+                            onClick={onDone}
+                            variant="contained"
+                            sx={{
+                                bottom: '8px',
+                                right: '8px',
+                                position: 'relative',
+                                'border-radius': 0,
+                                width: '100%',
+                                height: '100%',
+                                'background-color': '#FFB854',
+                                color: '#1D1D1D',
+                                '&:hover': {
+                                    transform: 'translate(8px, 8px)',
+                                    'background-color': '#9eeadd',
+
+                                },
+                                transition: 'transform 0.3s',
+                            }}
+                        >
+                            <EwsH3>next</EwsH3>
+                        </Button>
+                    </Box>
+                </>
             </Box>
-        </div>
+        </Box>
     )
 }
 

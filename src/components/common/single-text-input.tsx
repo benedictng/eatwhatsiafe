@@ -1,7 +1,8 @@
 import React, { useState, CSSProperties } from 'react'
-import { TextField } from '@material-ui/core'
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import FloatingOrangeButton from 'components/common/floating-orange-button'
+import { EwsH2 } from './typography/text-components';
 
 type InputProps = {
     label: string | null
@@ -44,7 +45,7 @@ const SingleTextInput = (props: InputProps) => {
 
     return (
         <>
-            <h2 style={headerStyles}>{label}</h2>
+            <EwsH2 style={headerStyles}>{label}</EwsH2>
             <TextField
                 id="user_input"
                 label=""
