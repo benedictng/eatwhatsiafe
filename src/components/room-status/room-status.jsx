@@ -13,6 +13,9 @@ import { NoEncryption } from '@mui/icons-material';
 import FloatingOrangeButton from 'components/common/floating-orange-button'
 import Footer from 'components/footer'
 import { EwsH1, EwsH2, EwsH3, EwsSubtitle } from 'components/common/typography/text-components';
+import { minWidth } from '@mui/system';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 
 
@@ -107,11 +110,37 @@ const Status = ({ roomData }) => {
         })
     }
 
+    const UserList = () => {
+        const isMinWidth = useMediaQuery('(min-width:600px)')
+
+        if (isMinWidth) {
+            return (
+                <Card sx={{
+                    width: '30vw', mx: 'auto', my: 5, border: '1px solid black', py: 2,
+                }}
+                >
+                    <EwsH3>{votedUsersString}</EwsH3>
+                </Card>
+            )
+        } else {
+            return (
+                <Card sx={{
+                    width: '80vw', mx: 'auto', my: 5, border: '1px solid black', py: 2,
+                }}
+                >
+                    <EwsH3>{votedUsersString}</EwsH3>
+                </Card>
+            )
+        }
+    }
+
     return (
         <div>
             <EwsH1>Nice,</EwsH1>
             <EwsH1>Time to make a bloody decision!</EwsH1>
-            <EwsSubtitle>Share this link with your friends and start swiping. Please.</EwsSubtitle>
+            <Box sx={{mt:1}}>
+                <EwsSubtitle>Share this link with your friends and start swiping. Please.</EwsSubtitle>
+            </Box>
             <Box sx={
                 {
                     display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height: '52px',
@@ -127,12 +156,7 @@ const Status = ({ roomData }) => {
                 <Button class="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
             </Box>
             <EwsH2>Suckers who have already voted:</EwsH2>
-            <Card sx={{
-                width: '464px', mx: 'auto', my: 5, border: '1px solid black', py: 2,
-            }}
-            >
-                <EwsH3>{votedUsersString}</EwsH3>
-            </Card>
+            <UserList />
             <Box sx={
                 {
                     display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height: '52px',
@@ -157,7 +181,7 @@ const Status = ({ roomData }) => {
                             transform: 'translate(8px, 8px)',
                             'background-color': '#9eeadd',
                         }
-                    }} 
+                    }}
                     variant="contained"
                     onClick={()=>{setCloseRoomPopup(false)}}
                     >
@@ -169,7 +193,7 @@ const Status = ({ roomData }) => {
                             transform: 'translate(8px, 8px)',
                             'background-color': '#9eeadd',
                         }
-                    }} 
+                    }}
                     onClick={closeRoom}
                     variant="contained"
                     >
