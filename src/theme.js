@@ -7,6 +7,17 @@ const fontFamilies = {
 
 const theme = responsiveFontSizes(
     createTheme({
+        components: {
+            MuiTypography: {
+                defaultProps: {
+                    variantMapping: {
+                        p: 'p',
+                        p2: 'p',
+                        subtitle: 'p',
+                    },
+                },
+            },
+        },
         typography: {
             fontFamily: fontFamilies.text,
             h0: {
