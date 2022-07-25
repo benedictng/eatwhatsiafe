@@ -25,13 +25,15 @@ const ProductInformation = ({
 
     return (
         <>
-            <div>
-                <EwsH1>{name}</EwsH1>
-                <Tags
-                    cuisineType={cuisineType}
-                    restriction={restriction}
-                />
-                <Grid container spacing={2}>
+            <Grid container spacing={2}>
+                <Grid item><EwsH1>{name}</EwsH1></Grid>
+                <Grid item>
+                    <Tags
+                        cuisineType={cuisineType}
+                        restriction={restriction}
+                    />
+                </Grid>
+                <Grid container item spacing={2}>
                     <Grid item xs={4}>
                         <EwsH3>Region:</EwsH3>
                     </Grid>
@@ -45,7 +47,7 @@ const ProductInformation = ({
                         {hours ? combineDuplicateDays(hours) : null}
                     </Grid>
                 </Grid>
-            </div>
+            </Grid>
         </>
     )
 }

@@ -80,40 +80,36 @@ const RestaurantsCards = () => {
     function renderContentOrLoading() {
         if (loaded) {
             return (
-                <>
+                <Container>
                     <RestaurantCard
                         restaurant={currentRestaurant}
                         key={currentRestaurant.food_id}
                     />
-                    <Container className="lockup" sx={{ m: 2 }}>
-                        <Grid container className="selectionControl">
-
-                            <Grid item>
-                                <Button
-                                    type="button"
-                                    variant="outlined"
-                                    className="selectionNo"
-                                    onClick={nextPage}
-
-                                >
-                                    <EwsH2>NO</EwsH2>
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button
-                                    type="button"
-                                    className="selectionYes"
-                                    onClick={recordNextPage}
-                                    variant="outlined"
-                                >
-                                    <EwsH2>
-                                        YESSS
-                                    </EwsH2>
-                                </Button>
-                            </Grid>
+                    <Grid container className="selectionControl lockup">
+                        <Grid item>
+                            <Button
+                                type="button"
+                                variant="outlined"
+                                className="selectionNo"
+                                onClick={nextPage}
+                            >
+                                <EwsH2>NO</EwsH2>
+                            </Button>
                         </Grid>
-                    </Container>
-                </>
+                        <Grid item>
+                            <Button
+                                type="button"
+                                className="selectionYes"
+                                onClick={recordNextPage}
+                                variant="outlined"
+                            >
+                                <EwsH2>
+                                    YESSS
+                                </EwsH2>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Container>
             );
         }
         return <Loading />;
