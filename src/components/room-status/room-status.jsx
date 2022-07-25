@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { NoEncryption } from '@mui/icons-material';
 import FloatingOrangeButton from 'components/common/floating-orange-button'
+import LongFloatingOrangeButton from 'components/common/long-floating-orange-button'
 import Footer from 'components/footer'
 import { EwsH1, EwsH2, EwsH3, EwsSubtitle } from 'components/common/typography/text-components';
 import { minWidth } from '@mui/system';
@@ -70,21 +71,7 @@ const Status = ({ roomData }) => {
         }
 
         return (
-            <Button
-                onClick={swipingFlow}
-                variant="contained"
-                sx={{
-                    'border-radius': 0,
-                    width: '343px',
-                    height: '48px',
-                    'background-color': '#FFB854',
-                    color: '#1D1D1D',
-                    'box-shadow': '8px 8px #1D1D1D',
-                    mx: 1,
-                }}
-            >
-                START SWIPING!
-            </Button>
+            <LongFloatingOrangeButton sx={{ mx: 'auto' }} onClick={swipingFlow} buttonText="START SWIPING!" />
         )
     }
 
