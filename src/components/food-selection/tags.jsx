@@ -12,18 +12,21 @@ const tags = ({ cuisineType, restriction }) => {
 
     return (
         <>
-            <Grid container className="tag-group">
+            <Grid container spacing={2} className="tag-group">
                 {cuisineNDType.map((cuisineTag) => (
-
-                    <EwsP className="tag" key={cuisineTag}>
-                        {cuisinePresetData.enum2[cuisineTag]}
-                    </EwsP>
+                    <Grid item>
+                        <EwsP className="tag" key={cuisineTag}>
+                            {cuisinePresetData.enum2[cuisineTag]}
+                        </EwsP>
+                    </Grid>
                 ))}
 
                 {restrictionND.map((dietaryTag) => (
-                    <EwsP className="tag" key={dietaryTag}>
-                        {dietRestrictPresetData.enum2[dietaryTag]}
-                    </EwsP>
+                    <Grid item>
+                        <EwsP className="tag" key={dietaryTag}>
+                            {dietRestrictPresetData.enum2[dietaryTag]}
+                        </EwsP>
+                    </Grid>
                 ))}
             </Grid>
         </>

@@ -61,7 +61,7 @@ function RestaurantCard({ restaurant }) {
                             hours={restaurant.opening_hours}
                         />
                     </Grid>
-                    <Grid container spacing={2}>
+                    <Grid container item spacing={2}>
                         <Reviews
                             onClick={(review) => { setDisplayReviewModal(review) }}
                             reviews={restaurant.reviews.slice(0, NUM_REVIEWS_TO_DISPLAY)}

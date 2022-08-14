@@ -15,7 +15,6 @@ function Carousel2({ photos }) {
     return (
         <Carousel
             className="carou-style"
-            height={50}
             autoPlay={0}
             dynamicHeight={1}
             navButtonsProps={{ // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
