@@ -2,26 +2,32 @@ import Carousel from 'react-material-ui-carousel';
 
 import './food-selection.css';
 
-function Carousel2({ photos }) {
+function FoodImageCarousel({ photos }) {
     const photoMaps = photos.map((photo, id) => (
-        <img
-            key={id}
-            src={`data:image/jpeg;base64,${photo}`}
-            className="image"
-            alt="Food Pictures"
-        />
+        <div
+            style={{
+                display: 'flex', alignItems: 'center', height: '100%', width: '100%', margin: 'auto',
+            }}
+        >
+            <img
+                key={id}
+                src={`data:image/jpeg;base64,${photo}`}
+                className="image"
+                alt="Food Pictures"
+            />
+        </div>
     ))
 
     return (
         <Carousel
             className="carou-style"
             autoPlay={0}
-            dynamicHeight={1}
             navButtonsProps={{ // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
                 style: {
                     opacity: 100,
                 },
             }}
+            height={500}
             next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
             prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
         >
@@ -30,4 +36,4 @@ function Carousel2({ photos }) {
     )
 }
 
-export default Carousel2;
+export default FoodImageCarousel;

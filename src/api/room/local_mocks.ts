@@ -7,7 +7,7 @@ import {
 } from './room_api_interface'
 
 import {
-    image1, image2, image3, image4,
+    image1, image2, image3, image4, image5, image6,
 } from './mock_image'
 
 const createRoom = (payload: CreateRoomPayload): Promise<CreateRoomResponse> => new Promise(
@@ -175,7 +175,7 @@ const MockFoodList = [
         cuisine_type: [2],
         restrictions: [1, 3],
         photos: [
-            image1, image2, image3, image4,
+            image5, image6, image3, image4,
         ],
         reviews: [
             {

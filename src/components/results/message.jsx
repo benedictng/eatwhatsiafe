@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import GreyTextHighlightBox from 'components/common/grey-text-highlight-box';
 import { EwsH0, EwsH1, EwsP } from 'components/common/typography/text-components';
 
 const message = ({ isConclusive }) => {
@@ -28,12 +29,9 @@ const message = ({ isConclusive }) => {
                     this for you.
                 </EwsP>
             )}
-            <Box sx={{
-                display: 'inline', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1,
-            }}
-            >
+            <GreyTextHighlightBox>
                 <EwsP>{window.location.href}</EwsP>
-            </Box>
+            </GreyTextHighlightBox>
             <Button onClick={copy}>
                 Copy URL
             </Button>

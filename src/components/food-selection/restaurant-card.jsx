@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import { useState } from 'react';
 import { Modal, Box } from '@mui/material';
 import { EwsP } from 'components/common/typography/text-components';
-import Carousel2 from './carousel2';
+import FoodImageCarousel from './carousel';
 
 import ProductInformation from './product-information';
 import Reviews from './reviews';
@@ -49,7 +49,7 @@ function RestaurantCard({ restaurant }) {
             <Container className="card">
                 <Grid container className="container" spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <Carousel2 photos={restaurant.photos} />
+                        <FoodImageCarousel photos={restaurant.photos} />
                     </Grid>
 
                     <Grid item xs={12} md={6} className="text-description">
