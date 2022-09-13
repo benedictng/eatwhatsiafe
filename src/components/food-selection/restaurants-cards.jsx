@@ -85,7 +85,9 @@ const RestaurantsCards = () => {
                         restaurant={currentRestaurant}
                         key={currentRestaurant.food_id}
                     />
+
                     <Grid container className="selectionControl lockup">
+
                         <Grid item>
                             <Button
                                 type="button"
@@ -109,7 +111,9 @@ const RestaurantsCards = () => {
                             </Button>
                         </Grid>
                     </Grid>
+
                 </Container>
+
             );
         }
         return <Loading />;
