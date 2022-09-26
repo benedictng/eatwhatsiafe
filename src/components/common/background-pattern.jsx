@@ -11,7 +11,7 @@ const BackgroundPattern = () => (
         left: 0,
         right: 0,
         backgroundImage: `radial-gradient(circle at top left, ${colors.orange} 10%, ${colors.turquoise} 60%, transparent), `
-                    + `\radial-gradient(circle at bottom right, ${colors.orange} 50%,${colors.turquoise} 70%, transparent 100%)`,
+                    + `radial-gradient(circle at bottom right, ${colors.orange} 50%,${colors.turquoise} 70%, transparent 100%)`,
         zIndex: -1,
     }}
     />
