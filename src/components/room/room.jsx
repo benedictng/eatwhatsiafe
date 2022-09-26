@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import RoomAPI from 'api/room'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams, useLocation } from 'react-router-dom'
 import Loading from 'components/common/loading'
 import Status from 'components/room-status'
 import Results from 'components/results/results'
@@ -13,14 +13,24 @@ const Room = () => {
     const [status, setStatus] = useState(null)
     const [data, setData] = useState({})
     const [name, setName] = useState(window.sessionStorage.getItem('name'))
+    const location = useLocation()
     const history = useHistory()
 
     useEffect(() => {
         RoomAPI.getRoomStatus({
             room_code: roomCode,
         }).then((res) => {
-            setData(res.data)
-            setStatus(res.data.status)
+            if (location.state
+                && Object.prototype.hasOwnProperty.call(location.state, 'create_room')
+                && location.state.create_room) {
+                setTimeout(() => {
+                    setData(res.data)
+                    setStatus(res.data.status)
+                }, 5000)
+            } else {
+                setData(res.data)
+                setStatus(res.data.status)
+            }
         })
     }, [])
 

@@ -72,7 +72,7 @@ const UserForm = () => {
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
             if (res.error_code === 0) {
-                history.push(`/room/${res.data.room_code}`, history.location.state);
+                history.push(`/room/${res.data.room_code}`, {'create_room': true});
             } else if (res.error_code === 2) {
                 setError(true)
             }
