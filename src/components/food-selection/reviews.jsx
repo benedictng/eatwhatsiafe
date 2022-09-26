@@ -14,7 +14,7 @@ const Reviews = ({ reviews, onClick }) => (
                                 Rating:&nbsp;
                                 {review.rating}
                             </EwsP>
-                            <EwsP>{review.comment}</EwsP>
+                            <EwsP mb={1}>{review.comment}</EwsP>
 
                         </div>
                     </Grid>
