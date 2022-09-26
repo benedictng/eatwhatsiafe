@@ -22,7 +22,7 @@ const Room = () => {
             setTimeout(() => {
                 setData(res.data)
                 setStatus(res.data.status)
-            }, 5000)
+            })
             // setData(res.data)
             // setStatus(res.data.status)
         })
@@ -55,7 +55,6 @@ const Room = () => {
             return <RoomDeleted restart={restart} roomCode={roomCode} />
         default: // error
             alert(status)
-            setTimeout(() => restart(), 1500)
             return <EwsH1>Error occurred, restarting..</EwsH1>
         }
     }

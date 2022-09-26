@@ -73,7 +73,6 @@ const UserForm = () => {
         }).then((res) => {
             if (res.error_code === 0) {
                 setError(true)
-                console.log("dfdfdfd")
                 history.push(`/room/${res.data.room_code}`, history.location.state);
             } else if (res.error_code === 2) {
                 setError(true)
