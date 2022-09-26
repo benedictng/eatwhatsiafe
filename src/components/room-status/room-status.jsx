@@ -16,6 +16,7 @@ import Footer from 'components/footer'
 import { EwsH1, EwsH2, EwsH3, EwsSubtitle } from 'components/common/typography/text-components';
 import { minWidth } from '@mui/system';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import colors from 'common/colors';
 
 
 
@@ -163,7 +164,7 @@ const Status = ({ roomData }) => {
                 </DialogContent>
                 <DialogActions>
                     <Button sx={{
-                        backgroundColor: '#E4664D', color: 'black', 'box-shadow': '8px 8px #1D1D1D', mx: 'auto', 'margin-bottom': '1rem',
+                        backgroundColor: '#E4664D', color: 'black', 'box-shadow': `8px 8px ${colors.almostBlack}`, mx: 'auto', 'margin-bottom': '1rem',
                         '&:hover': {
                             transform: 'translate(8px, 8px)',
                             'background-color': '#9eeadd',
@@ -175,7 +176,7 @@ const Status = ({ roomData }) => {
                         <EwsH3>no, continue voting</EwsH3>
                     </Button>
                     <Button sx={{
-                        backgroundColor: '#C4DC74', color: 'black', 'box-shadow': '8px 8px #1D1D1D', mx: 'auto', 'margin-bottom': '1rem',
+                        backgroundColor: '#C4DC74', color: 'black', 'box-shadow': `8px 8px ${colors.almostBlack}`, mx: 'auto', 'margin-bottom': '1rem',
                         '&:hover': {
                             transform: 'translate(8px, 8px)',
                             'background-color': '#9eeadd',

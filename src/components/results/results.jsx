@@ -1,17 +1,18 @@
-import Container from '@mui/material/Container';
+import Container from '@mui/material/Container'
 import RoomAPI from 'api/room'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import Loading from 'components/common/loading';
-import Message from './message';
-import WinnerCard from './winner-card';
+import Loading from 'components/common/loading'
+import BackgroundPattern from 'components/common/background-pattern'
+import Message from './message'
+import WinnerCard from './winner-card'
 
-import './results.css';
+import './results.css'
 
 const Results = () => {
-    const [loaded, setLoaded] = useState(false);
-    const [allData, setAllData] = useState({});
+    const [loaded, setLoaded] = useState(false)
+    const [allData, setAllData] = useState({})
     const { roomCode } = useParams()
 
     useEffect(() => {
@@ -47,7 +48,12 @@ const Results = () => {
         return <Loading />
     }
 
-    return <>{renderContentOrLoading()}</>;
+    return (
+        <>
+            <BackgroundPattern />
+            {renderContentOrLoading()}
+        </>
+    );
 }
 
 export default Results;

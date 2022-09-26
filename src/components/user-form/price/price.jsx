@@ -4,6 +4,7 @@ import SelectionButton from 'components/common/selection-button'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { EwsH3 } from 'components/common/typography/text-components';
+import colors from 'common/colors';
 
 const Price = ({
     presetData, formData, setFormData, nextStep,
@@ -78,7 +79,7 @@ const Price = ({
                         position: 'relative',
                         bottom: '-8px',
                         right: '-8px',
-                        'background-color': '#1d1d1d',
+                        'background-color': colors.almostBlack,
                         width: '343px',
                         height: '48px',
                         mx: 'auto',
@@ -96,8 +97,8 @@ const Price = ({
                                 'border-radius': 0,
                                 width: '100%',
                                 height: '100%',
-                                'background-color': '#FFB854',
-                                color: '#1D1D1D',
+                                'background-color': colors.orange,
+                                color: colors.almostBlack,
                                 '&:hover': {
                                     transform: 'translate(8px, 8px)',
                                     'background-color': '#9eeadd',

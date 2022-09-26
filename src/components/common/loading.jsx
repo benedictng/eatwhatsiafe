@@ -1,10 +1,12 @@
-const Loading = () => (
-    <div style={{ 'font-size': '35px' }}>
-        Loading...
-        {' '}
-        <br />
-        🥐 🥖 🫓 🥨 🥯 🥞 🧇 🧀 🍖 🍗 🥩 🥓 🍔 🍟 🍕 🌭 🥪 🌮 🌯 🫔 🥙 🧆 🥚 🍳 🥘 🍲 🫕 🥣 🥗 🍿 🧈
-    </div>
-)
+import Lottie from 'lottie-react';
+import loadingFood from './loading-food.json';
 
-export default Loading
+const Loading = () => (
+    <Lottie
+        height={50}
+        width={50}
+        animationData={loadingFood}
+    />
+);
+
+export default Loading;
