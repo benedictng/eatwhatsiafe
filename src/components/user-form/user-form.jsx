@@ -82,7 +82,7 @@ const UserForm = () => {
     }
 
     function errorDialog() {
-        if (error === true) {
+        if (error) {
             return (
                 <div>
                     <Dialog
@@ -190,13 +190,12 @@ const UserForm = () => {
 
     case 5:
         createRoom()
-        return <></>
+        return <>{errorDialog()}</>
 
     case 6:
         // just to show state
         return (
             <div>
-                {errorDialog()}
                 <EwsP>
                     PRICE DATA:
                     {JSON.stringify(price, null, '\t')}
@@ -232,7 +231,7 @@ const UserForm = () => {
         )
 
     default:
-        alert('ERROR')
+        alert('ERROR - Boons Brain Damage')
         return <div>An error occured 😬 </div>
     }
 }

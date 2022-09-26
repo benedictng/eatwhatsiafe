@@ -3,6 +3,7 @@ import './results.css';
 
 import Box from '@mui/material/Box';
 import { EwsH1, EwsH2, EwsP } from 'components/common/typography/text-components';
+import GreyTextHighlightBox from 'components/common/grey-text-highlight-box';
 // Class name image is in react bootstrap
 
 const WinnerCard = ({ result, placing }) => (
@@ -34,12 +35,9 @@ const WinnerCard = ({ result, placing }) => (
             </Box>
             <Box mb={2}>
                 {result.voted_users.map((user) => (
-                    <Box sx={{
-                        display: 'inline', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 0.3,
-                    }}
-                    >
+                    <GreyTextHighlightBox>
                         <EwsP>{user}</EwsP>
-                    </Box>
+                    </GreyTextHighlightBox>
                 ))}
             </Box>
         </Grid>

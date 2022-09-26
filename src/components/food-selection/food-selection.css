@@ -49,7 +49,7 @@
    -webkit-box-orient: vertical;
 }
 
-.carou-style {
+/* .carou-style {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -57,18 +57,17 @@
   padding-right: 6vw;
   object-fit: contain;
   align-items: stretch;
-
-}
+} */
 
 .image {
   border-radius: 10px;
-  display: block;
-  position:relative;
+  /* display: block; */
+  /* position:relative; */
   min-width: 100%;
   max-height: 100%;
   overflow: hidden;
   object-fit: cover;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 .slide {
