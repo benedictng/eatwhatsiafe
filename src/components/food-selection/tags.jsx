@@ -15,9 +15,11 @@ const tags = ({ cuisineType, restriction }) => {
             <Grid container spacing={2} className="tag-group">
                 {cuisineNDType.map((cuisineTag) => (
                     <Grid item>
+
                         <EwsP className="tag" key={cuisineTag}>
                             {cuisinePresetData.enum2[cuisineTag]}
                         </EwsP>
+
                     </Grid>
                 ))}
 
