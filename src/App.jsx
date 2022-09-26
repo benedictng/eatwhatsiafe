@@ -1,14 +1,14 @@
 /* eslint-disable */
-import 'App.css';
+import 'App.css'
 import {
     BrowserRouter as Router, Route, Switch, Redirect,
-} from 'react-router-dom';
-import LandingPage from 'components/landing-page';
-import UserForm from 'components/user-form';
+} from 'react-router-dom'
+import LandingPage from 'components/landing-page'
+import UserForm from 'components/user-form'
 
-import Room from 'components/room';
-import FoodSelectionPage from './components/food-selection';
-import Header from 'components/header';
+import Room from 'components/room'
+import FoodSelectionPage from './components/food-selection'
+import Header from 'components/header'
 
 function App() {
 
@@ -45,4 +45,4 @@ const RequireNameRoute = ({ component, ...rest }) => (
     />
 )
 
-export default App;
+export default App
