@@ -3,11 +3,10 @@ import { useHistory } from 'react-router-dom'
 import GetHostName from 'components/landing-page/get-host-name'
 import Footer from 'components/footer'
 import './landing-page.css'
+import BackgroundPattern from 'components/common/background-pattern'
 import WelcomeScreen from './welcome-screen'
 
 const LandingPage = () => {
-    // var backie = radial-gradient(76.72% 76.72% at 50.49% 48.67%, #9FEADD 40.62%, #FFB854 87.5%);
-    // document.body.style.backgroundColor = 'backie';
     const [step, setStep] = useState(0)
     const [roomCode, setRoomCode] = useState(null)
     const history = useHistory()
@@ -38,6 +37,7 @@ const LandingPage = () => {
 
     return (
         <div>
+            <BackgroundPattern />
             <div className="landing-page-content-container">
                 {renderSteps()}
             </div>

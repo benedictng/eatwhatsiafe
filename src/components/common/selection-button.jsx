@@ -1,5 +1,6 @@
 import ToggleButton from '@mui/material/ToggleButton';
 import CloseIcon from '@mui/icons-material/Close';
+import colors from 'common/colors';
 import { EwsSubtitle } from './typography/text-components';
 
 const SelectionButton = ({ text, data, onCheckboxTicked }) => (
@@ -11,18 +12,18 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
             mb: 2,
             py: 1.5,
             px: 3,
-            'background-color': '#1D1D1D',
-            color: '#FBFBFB',
+            'background-color': colors.almostBlack,
+            color: colors.almostWhite,
             '&.Mui-selected': {
-                backgroundColor: '#9FEADD',
+                backgroundColor: colors.turquoise,
                 color: 'black',
                 '&:hover': {
-                    backgroundColor: '#9FEADD',
+                    backgroundColor: colors.turquoise,
                     color: 'black',
                 },
             },
             '&:hover': {
-                backgroundColor: '#9FEADD',
+                backgroundColor: colors.turquoise,
                 color: 'black',
             },
         }}
