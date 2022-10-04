@@ -29,15 +29,17 @@ export interface RoomStatusPayload {
     'room_code': string
 }
 
+export interface RoomStatusData {
+    'room_name': string
+    'status': number
+    'voted_users': string[]
+    'host_username': string
+}
+
 export interface RoomStatusResponse {
     'error_code': number
     'error_msg': string
-    'data': {
-        'room_name': string
-        'status': number
-        'voted_users': string[]
-        'host_username': string
-    }
+    'data': RoomStatusData
 }
 
 export interface SubmitVotePayload {
