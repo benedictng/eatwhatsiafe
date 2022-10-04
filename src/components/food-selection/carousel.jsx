@@ -6,7 +6,11 @@ const FoodImageCarousel = ({ photos }) => {
     const photoMaps = photos.map((photo, id) => (
         <div
             style={{
-                display: 'flex', alignItems: 'center', height: '100%', width: '100%', margin: 'auto',
+                display: 'flex',
+                alignItems: 'center',
+                height: '100%',
+                width: '100%',
+                margin: 'auto',
             }}
         >
             <img
@@ -28,8 +32,6 @@ const FoodImageCarousel = ({ photos }) => {
                 },
             }}
             height={500}
-            next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
-            prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
         >
             {photoMaps}
         </Carousel>

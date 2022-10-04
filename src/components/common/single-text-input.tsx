@@ -1,8 +1,8 @@
 import React, { useState, CSSProperties } from 'react'
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField'
+import Box from '@mui/material/Box'
 import FloatingOrangeButton from 'components/common/floating-orange-button'
-import { EwsH2 } from './typography/text-components';
+import { EwsH2 } from './typography/text-components'
 
 type InputProps = {
     label: string | null
@@ -17,7 +17,8 @@ type InputProps = {
 
 const SingleTextInput = (props: InputProps) => {
     const {
-        label, helperText, placeholder, submitButtonLabel, onSubmit, backButtonLabel, onBack, fullWidth,
+        label, helperText, placeholder, submitButtonLabel,
+        onSubmit, backButtonLabel, onBack, fullWidth,
     } = props
     const [value, setValue] = useState<string | null>(null)
 
@@ -29,7 +30,6 @@ const SingleTextInput = (props: InputProps) => {
 
     const onSubmitInternal = () => {
         if (value === null) {
-            alert('Please enter a value!')
             return
         }
         onSubmit(value)
@@ -66,7 +66,10 @@ const SingleTextInput = (props: InputProps) => {
                 }}
                 >
                     {renderBackButton()}
-                    <FloatingOrangeButton onClick={onSubmitInternal} buttonText={submitButtonLabel} />
+                    <FloatingOrangeButton
+                        onClick={onSubmitInternal}
+                        buttonText={submitButtonLabel}
+                    />
                 </Box>
             }
         </>

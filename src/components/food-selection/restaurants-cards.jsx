@@ -20,7 +20,7 @@ const RestaurantsCards = () => {
         .then((res) => {
             setAllData(res.data);
             setLoaded(true);
-        }), []);
+        }), [roomCode]);
 
     // () can replace return
     // "return" returns a html / UI

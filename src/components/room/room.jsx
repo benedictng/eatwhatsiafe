@@ -28,7 +28,7 @@ const Room = () => {
                 setErrorMsg(res.error_msg)
             }
         })
-    }, [])
+    }, [roomCode])
 
     const submitName = (newName) => {
         window.sessionStorage.setItem('name', newName)
