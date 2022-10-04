@@ -1,8 +1,8 @@
-import Carousel from 'react-material-ui-carousel';
+import Carousel from 'react-material-ui-carousel'
 
-import './food-selection.css';
+import './food-selection.css'
 
-function FoodImageCarousel({ photos }) {
+const FoodImageCarousel = ({ photos }) => {
     const photoMaps = photos.map((photo, id) => (
         <div
             style={{
@@ -36,4 +36,4 @@ function FoodImageCarousel({ photos }) {
     )
 }
 
-export default FoodImageCarousel;
+export default FoodImageCarousel
