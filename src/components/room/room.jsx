@@ -20,6 +20,9 @@ const Room = () => {
         RoomAPI.getRoomStatus({
             room_code: roomCode,
         }).then((res) => {
+            if (res.error_code === 5) {
+                setStatus(0)
+            }
             if (location.state
                 && Object.prototype.hasOwnProperty.call(location.state, 'create_room')
                 && location.state.create_room) {
@@ -59,6 +62,8 @@ const Room = () => {
             return <Results />
         case 3: // deleted
             return <RoomDeleted restart={restart} roomCode={roomCode} />
+        case 0: // room not found
+            return <EwsH1>Room not found, please use a valid room code</EwsH1>
         default: // error
             alert(status)
             setTimeout(() => restart(), 1500)
