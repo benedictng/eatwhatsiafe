@@ -15,7 +15,7 @@ const initialRoomStatusData: RoomStatusData = {
 
 const Room: React.FC = () => {
     const { roomCode } = useParams<{ roomCode: string }>()
-    const [status, setStatus] = useState<number>(0)
+    const [status, setStatus] = useState<number | null>(null)
     const [errorMsg, setErrorMsg] = useState<string>('')
     const [data, setData] = useState<RoomStatusData>(initialRoomStatusData)
     const [name, setName] = useState<string | null>(window.sessionStorage.getItem('name'))
