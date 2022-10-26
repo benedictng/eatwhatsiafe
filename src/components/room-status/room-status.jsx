@@ -89,7 +89,6 @@ const Status = ({ roomData }) => {
         RoomAPI.closeRoom({
             room_code: roomCode,
         }).then((res) => {
-            alert(`received response: ${JSON.stringify(res)}`)
             if (res.error_code === 0) {
                 window.location.reload()
             } else {

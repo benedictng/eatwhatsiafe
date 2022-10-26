@@ -73,7 +73,7 @@ const UserForm = () => {
         }).then((res) => {
             if (res.error_code === 0) {
                 setError(true)
-                history.push(`/room/${res.data.room_code}`, history.location.state);
+                history.push(`/room/${res.data.room_code}`, {'create': true});
             } else if (res.error_code === 2) {
                 setError(true)
             }
