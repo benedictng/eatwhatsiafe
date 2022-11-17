@@ -61,13 +61,27 @@ const UserForm = () => {
         return result
     }
 
+    const enumerateStateForOptOut = (state, presetData) => {
+        var result = new Set()
+        for (const key in presetData.enum) {
+            result.add(presetData.enum[key]);
+        }
+        Object.keys(state).forEach((x) => {
+            if (state[x] === true) {
+                result.delete(presetData.enum[x])
+            }
+        })
+        result = Array.from(result)
+        return result
+    }
+
     const createRoom = () => {
         RoomAPI.createRoom({
             room_name: history.location.state.roomName,
             host_username: window.sessionStorage.getItem('name'),
             regions: enumerateState(location, locationPresetData),
             price_levels: enumerateState(price, pricePresetData),
-            cuisine_types: enumerateState(cuisineType, cuisinePresetData),
+            cuisine_types: enumerateStateForOptOut(cuisineType, cuisinePresetData),
             // dining_types: enumerateState(diningType, diningTypePresetData),
             dietary_restrictions: enumerateState(dietRest, dietRestrictPresetData),
         }).then((res) => {
