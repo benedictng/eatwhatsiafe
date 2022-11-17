@@ -24,7 +24,9 @@ const GetHostName = ({ createRoom, onBack }) => {
     const renderSetRoomName = () => (
         <>
             <EwsH1 style={{ 'margin-bottom': '1.25rem' }}>{`Hi there, ${state.name}`}</EwsH1>
-            <EwsH1 style={{ 'margin-bottom': '3rem' }}>Thanks for helping your poor friend decide.</EwsH1>
+            <EwsH1 style={{ 'margin-bottom': '3rem' }}>
+                Thanks for helping your poor friend decide.
+            </EwsH1>
 
             <div style={{ 'max-width': '50vw', margin: 'auto' }}>
                 <SingleTextInput

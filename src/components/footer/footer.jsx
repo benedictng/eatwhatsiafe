@@ -10,7 +10,11 @@ const Footer = () => (
             position: 'fixed', bottom: 0, left: 0, right: 0, 'background-color': colors.turquoise,
         }}
         >
-            <Box px={5} py={2} sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+            <Box
+                px={5}
+                py={2}
+                sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}
+            >
                 <EwsSubtitle sx={{ margin: 'auto' }}>
                     made with ❤️; if you like what we do,
                     {' '}

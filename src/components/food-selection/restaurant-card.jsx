@@ -7,10 +7,10 @@ import Container from '@mui/material/Container';
 import { useState } from 'react';
 import { Modal, Box } from '@mui/material';
 import { EwsP } from 'components/common/typography/text-components';
-import FoodImageCarousel from './carousel';
 
 import ProductInformation from './product-information';
 import Reviews from './reviews';
+import FoodImageCarousel from './carousel';
 
 // {} extract out key for you. If it is individual elements you have to put {} but not if props
 // props passes everything

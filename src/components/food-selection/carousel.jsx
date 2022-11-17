@@ -1,12 +1,16 @@
-import Carousel from 'react-material-ui-carousel';
+import Carousel from 'react-material-ui-carousel'
 
-import './food-selection.css';
+import './food-selection.css'
 
-function FoodImageCarousel({ photos }) {
+const FoodImageCarousel = ({ photos }) => {
     const photoMaps = photos.map((photo, id) => (
         <div
             style={{
-                display: 'flex', alignItems: 'center', height: '100%', width: '100%', margin: 'auto',
+                display: 'flex',
+                alignItems: 'center',
+                height: '100%',
+                width: '100%',
+                margin: 'auto',
             }}
         >
             <img
@@ -28,12 +32,10 @@ function FoodImageCarousel({ photos }) {
                 },
             }}
             height={500}
-            next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
-            prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
         >
             {photoMaps}
         </Carousel>
     )
 }
 
-export default FoodImageCarousel;
+export default FoodImageCarousel

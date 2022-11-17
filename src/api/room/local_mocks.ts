@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars, max-len */
 import {
     IRoomAPI,
     CreateRoomPayload, CreateRoomResponse, RoomStatusPayload, RoomStatusResponse,
@@ -81,9 +81,13 @@ const MockRoomAPI: IRoomAPI = {
 
 const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
     let status: number
+    let errorMsg = ''
+    let errorCode = 0
     switch (roomCode.toUpperCase()) {
     case 'ERROR':
-        status = 4
+        status = 0
+        errorMsg = 'glitchpaw mice are on the loose'
+        errorCode = 5
         break
     case 'DELETED':
         status = 3
@@ -95,8 +99,8 @@ const getMockedRoomStatus = (roomCode: string): RoomStatusResponse => {
         status = 1
     }
     return {
-        error_code: 0,
-        error_msg: '',
+        error_msg: errorMsg,
+        error_code: errorCode,
         data: {
             room_name: 'Lonch with Greg',
             status,

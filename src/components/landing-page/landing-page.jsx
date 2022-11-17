@@ -8,7 +8,6 @@ import WelcomeScreen from './welcome-screen'
 
 const LandingPage = () => {
     const [step, setStep] = useState(0)
-    const [roomCode, setRoomCode] = useState(null)
     const history = useHistory()
 
     const enterRoom = (_roomCode) => {
@@ -20,7 +19,6 @@ const LandingPage = () => {
     }
 
     const restart = () => {
-        setRoomCode(null)
         setStep(0)
     }
 
@@ -29,7 +27,7 @@ const LandingPage = () => {
         case 0:
             return <WelcomeScreen createRoom={() => setStep(1)} enterRoom={enterRoom} />
         case 1:
-            return <GetHostName createRoom={createRoom} roomCode={roomCode} onBack={restart} />
+            return <GetHostName createRoom={createRoom} onBack={restart} />
         default:
             return null
         }
