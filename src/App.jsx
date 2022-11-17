@@ -9,6 +9,7 @@ import UserForm from 'components/user-form'
 import Room from 'components/room'
 import FoodSelectionPage from './components/food-selection'
 import Header from 'components/header'
+import PageNotFound from 'components/page-not-found'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                             component={<FoodSelectionPage />}
                         />
                         <Route path="/room/:roomCode" component={Room} />
+                        <Route path="*" component={PageNotFound} />
                     </Switch>
                 </Router>
             </div>
