@@ -10,6 +10,7 @@ import Room from 'components/room'
 import FoodSelectionPage from './components/food-selection'
 import Header from 'components/header'
 import PageNotFound from 'components/page-not-found'
+import About from 'components/about'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                     <br />
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
+                        <Route path="/about" component={About} />
                         <Route path="/preferences" component={UserForm} />
                         <Route path="/create-room" component={UserForm} />
                         <RequireNameRoute
