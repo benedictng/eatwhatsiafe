@@ -130,23 +130,23 @@ const Status = ({ roomData }) => {
             </Box>
             <Box sx={
                 {
-                    display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height: '52px',
+                    display: 'flex', my: 5, alignItems: 'stretch', justifyContent: 'center', height: '52px',
                 }
             }
             >
                 <Box sx={{
-                    display: 'flex', 'align-items': 'center', 'background-color': '#F4F4F4', p: 1, mx: 1,
+                    display: 'flex', alignItems: 'center', backgroundColor: '#F4F4F4', p: 1, mx: 1,
                 }}
                 >
                     <EwsSubtitle>{window.location.href}</EwsSubtitle>
                 </Box>
-                <Button class="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
+                <Button className="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
             </Box>
             <EwsH2>Suckers who have already voted:</EwsH2>
             <UserList />
             <Box sx={
                 {
-                    display: 'flex', my: 5, 'align-items': 'stretch', justifyContent: 'center', height: '52px',
+                    display: 'flex', my: 5, alignItems: 'stretch', justifyContent: 'center', height: '52px',
                 }
             }
             >
@@ -166,7 +166,7 @@ const Status = ({ roomData }) => {
                         backgroundColor: '#E4664D', color: 'black', 'box-shadow': `8px 8px ${colors.almostBlack}`, mx: 'auto', 'margin-bottom': '1rem',
                         '&:hover': {
                             transform: 'translate(8px, 8px)',
-                            'background-color': '#9eeadd',
+                            backgroundColor: '#9eeadd',
                         }
                     }}
                     variant="contained"
@@ -178,7 +178,7 @@ const Status = ({ roomData }) => {
                         backgroundColor: '#C4DC74', color: 'black', 'box-shadow': `8px 8px ${colors.almostBlack}`, mx: 'auto', 'margin-bottom': '1rem',
                         '&:hover': {
                             transform: 'translate(8px, 8px)',
-                            'background-color': '#9eeadd',
+                            backgroundColor: '#9eeadd',
                         }
                     }}
                     onClick={closeRoom}

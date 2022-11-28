@@ -12,7 +12,7 @@ const SelectionButton = ({ text, data, onCheckboxTicked }) => (
             mb: 2,
             py: 1.5,
             px: 3,
-            'background-color': colors.almostBlack,
+            backgroundColor: colors.almostBlack,
             color: colors.almostWhite,
             '&.Mui-selected': {
                 backgroundColor: colors.turquoise,

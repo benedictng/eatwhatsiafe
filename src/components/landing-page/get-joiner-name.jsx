@@ -5,11 +5,11 @@ const GetJoinerName = ({ existingUsers, toRoomStatusPage }) => {
         window.sessionStorage.setItem('name', name)
         if (existingUsers.includes(name)) {
             // direct to results page
-            alert(`${name} has already voted. Direct to results page now.`)
+            console.log(`${name} has already voted. Direct to results page now.`)
             toRoomStatusPage(true)
         } else {
             // direct to voting page
-            alert(`${name} has not voted. Direct to rooms landing page.`)
+            console.log(`${name} has not voted. Direct to rooms landing page.`)
             toRoomStatusPage(false)
         }
     }

@@ -7,7 +7,7 @@ import colors from 'common/colors';
 const Footer = () => (
     <>
         <BottomNavigation sx={{
-            position: 'fixed', bottom: 0, left: 0, right: 0, 'background-color': colors.turquoise,
+            position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: colors.turquoise,
         }}
         >
             <Box

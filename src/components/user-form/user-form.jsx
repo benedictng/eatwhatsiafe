@@ -234,7 +234,7 @@ const UserForm = () => {
                 <br />
                 <Box sx={
                     {
-                        display: 'flex', my: 5, 'align-items': 'center', justifyContent: 'center',
+                        display: 'flex', my: 5, alignItems: 'center', justifyContent: 'center',
                     }
                 }
                 >

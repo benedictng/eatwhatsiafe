@@ -34,7 +34,7 @@ const message = ({ isConclusive }) => {
                 {
                     display: 'flex',
                     my: 5,
-                    'align-items': 'stretch',
+                    alignItems: 'stretch',
                     justifyContent: 'center',
                     height: '52px',
                 }
@@ -42,15 +42,15 @@ const message = ({ isConclusive }) => {
             >
                 <Box sx={{
                     display: 'flex',
-                    'align-items': 'center',
-                    'background-color': '#F4F4F4',
+                    alignItems: 'center',
+                    backgroundColor: '#F4F4F4',
                     p: 1,
                     mx: 1,
                 }}
                 >
                     <EwsSubtitle>{window.location.href}</EwsSubtitle>
                 </Box>
-                <Button class="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
+                <Button className="copy-button" onClick={copy}><EwsSubtitle>COPY</EwsSubtitle></Button>
             </Box>
         </div>
     );
