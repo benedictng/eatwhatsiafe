@@ -79,7 +79,7 @@ const Price = ({
                         position: 'relative',
                         bottom: '-8px',
                         right: '-8px',
-                        'background-color': colors.almostBlack,
+                        backgroundColor: colors.almostBlack,
                         width: '343px',
                         height: '48px',
                         mx: 'auto',
@@ -97,11 +97,11 @@ const Price = ({
                                 'border-radius': 0,
                                 width: '100%',
                                 height: '100%',
-                                'background-color': colors.orange,
+                                backgroundColor: colors.orange,
                                 color: colors.almostBlack,
                                 '&:hover': {
                                     transform: 'translate(8px, 8px)',
-                                    'background-color': '#9eeadd',
+                                    backgroundColor: '#9eeadd',
 
                                 },
                                 transition: 'transform 0.3s',

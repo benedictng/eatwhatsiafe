@@ -78,8 +78,8 @@ const HeaderButton = ({ children, link }) => (
         href={link}
         color="inherit"
         sx={{
-            'white-space': 'pre',
-            'min-width': 'fit-content',
+            whiteSpace: 'pre',
+            minWidth: 'fit-content',
         }}
     >
         {children}

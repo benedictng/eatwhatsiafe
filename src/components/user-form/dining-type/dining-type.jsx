@@ -80,7 +80,7 @@ const DiningType = ({
                         {
                             display: 'flex',
                             my: 5,
-                            'align-items': 'center',
+                            alignItems: 'center',
                             justifyContent: 'center',
                         }
                     }
