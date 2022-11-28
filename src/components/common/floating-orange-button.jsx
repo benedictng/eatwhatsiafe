@@ -18,7 +18,7 @@ class FloatingOrangeButton extends Component {
                 position: 'relative',
                 bottom: '-8px',
                 right: '-8px',
-                'background-color': colors.almostBlack,
+                backgroundColor: colors.almostBlack,
                 width: '166px',
                 height: '48px',
                 mx: 1,
@@ -31,18 +31,18 @@ class FloatingOrangeButton extends Component {
                         bottom: '8px',
                         right: '8px',
                         position: 'relative',
-                        'border-radius': 0,
+                        borderRadius: 0,
                         width: '100%',
                         height: '100%',
-                        'background-color': colors.orange,
+                        backgroundColor: colors.orange,
                         color: colors.almostBlack,
                         '&:hover': {
                             transform: 'translate(8px, 8px)',
-                            'background-color': colors.turquoise,
+                            backgroundColor: colors.turquoise,
 
                         },
                         transition: 'transform 0.3s',
-                        'white-space': 'pre',
+                        whiteSpace: 'pre',
                     }}
                 >
                     {buttonText}

@@ -47,7 +47,7 @@ const Room: React.FC = () => {
                 setStatus(res.data.status)
             }
         })
-    }, [roomCode])
+    }, [roomCode, location])
 
     const submitName = (newName: string): void => {
         window.sessionStorage.setItem('name', newName)

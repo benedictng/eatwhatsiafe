@@ -1,0 +1,14 @@
+.bird-logo {
+  border-radius: 10px;
+  max-width: 50%;
+  max-height: 300px;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.profileImage {
+  border-radius: 50%;
+  border: 3px solid black;
+  max-width: 200px;
+  overflow: hidden;
+}
