@@ -55,7 +55,7 @@ const HeaderButtons = () => (
     <>
         <HeaderButton link="/">Home</HeaderButton>
         <HeaderButton link="/about">About Us</HeaderButton>
-        <HeaderButton link="/contact">Feedback</HeaderButton>
+        <HeaderButton><a href="https://forms.gle/7Uw7sBExF4QmT3YM6" style={{ textDecoration: 'none' }}>Feedback</a></HeaderButton>
     </>
 )
 
