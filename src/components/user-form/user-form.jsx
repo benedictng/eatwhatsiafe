@@ -17,6 +17,7 @@ import locationPresetData from 'common/constants/location-preset-data';
 import pricePresetData from 'common/constants/price-preset-data';
 import Box from '@mui/material/Box';
 import Footer from 'components/footer';
+import Loading from 'components/common/loading'
 
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -122,7 +123,7 @@ const UserForm = () => {
                     </Dialog>
                 </div>
             )
-        } return null
+        } return <Loading />
     }
 
     switch (step) {
