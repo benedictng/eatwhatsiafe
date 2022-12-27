@@ -123,7 +123,7 @@ const UserForm = () => {
                     </Dialog>
                 </div>
             )
-      } return <Loading />
+        } return <Loading />
     }
 
     switch (step) {
