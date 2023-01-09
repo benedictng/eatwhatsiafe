@@ -55,6 +55,9 @@
       "react-app/jest",
       "airbnb"
     ],
+    "globals": {
+      "JSX": true
+    },
     "settings": {
       "import/resolver": {
         "typescript": {}

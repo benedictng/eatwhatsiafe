@@ -1,0 +1,5 @@
+.popupContainer {
+    position: absolute;
+    min-height: 200px;
+    min-width: 400px;
+}
