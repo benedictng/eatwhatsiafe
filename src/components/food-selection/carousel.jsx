@@ -52,7 +52,10 @@ const FoodImageCarousel = ({ photos }) => {
             autoPlay={0}
             navButtonsProps={{ // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
                 style: {
-                    opacity: 100,
+                    opacity: 0.4,
+                    height: '200px',
+                    margin: 'unset',
+                    borderRadius: 0,
                 },
             }}
         >

@@ -128,3 +128,7 @@
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+
+.MuiButtonBase-root.MuiIconButton-root {
+  top: calc(50% - 120px) !important
+}

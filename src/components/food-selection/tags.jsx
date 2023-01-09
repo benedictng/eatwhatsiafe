@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import './food-selection.css'
 import { EwsP } from 'components/common/typography/text-components';
 
-const tags = ({ cuisineType, restriction }) => {
+const Tags = ({ cuisineType, restriction }) => {
     const cuisineNDType = [...new Set(cuisineType)];
     const restrictionND = [...new Set(restriction)];
 
@@ -35,4 +35,4 @@ const tags = ({ cuisineType, restriction }) => {
     )
 };
 
-export default tags;
+export default Tags;
